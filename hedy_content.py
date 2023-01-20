@@ -142,8 +142,12 @@ ADVENTURE_ORDER_PER_LEVEL = {
         'rock',
         'story',
         'calculator',
+        'restaurant',
         'haunted',
-        'restaurant'
+        'turtle',
+        'pressit',
+        'next',
+        'end'
     ],
     10: [
         'default',
@@ -376,7 +380,7 @@ class Tutorials(StructuredDataFile):
     def get_tutorial_for_level_step(self, level, step, keyword_lang="en"):
         if level not in ["intro", "teacher"]:
             level = int(level)
-        return deep_translate_keywords(self.file.get(level, {}).get(step), keyword_lang)
+        return deep_translate_keywords(self.file.get(level, {}).get('steps', {}).get(step), keyword_lang)
 
 
 class NoSuchTutorial:
