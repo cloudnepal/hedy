@@ -1,9 +1,11 @@
+import { initializeAdminUserPage, InitializeAdminUsersPageOptions } from './admin';
+import { initializeCustomAdventurePage, InitializeCustomizeAdventurePage } from './adventure';
+import { initializeMyProfilePage, InitializeMyProfilePage } from './profile';
 import { initializeApp, initializeCodePage, InitializeCodePageOptions, initializeViewProgramPage, InitializeViewProgramPageOptions } from './app';
 import { initializeFormSubmits } from './auth';
 import { setClientMessageLanguage } from './client-messages';
 import { logs } from './logs';
-import { initializeQuiz } from './quiz';
-import { initializeCustomizeClassPage, InitializeCustomizeClassPageOptions, initializeTeacherPage, InitializeTeacherPageOptions } from './teachers';
+import { initializeClassOverviewPage, InitializeClassOverviewPageOptions, initializeCustomizeClassPage, InitializeCustomizeClassPageOptions, initializeTeacherPage, InitializeTeacherPageOptions } from './teachers';
 import { initializeTutorial } from './tutorials/tutorial';
 
 export interface InitializeOptions {
@@ -38,6 +40,11 @@ export interface InitializeOptions {
 
   readonly logs?: boolean;
 
+  /**
+   * The URL root where static content is hosted
+   */
+  readonly staticRoot?: string;
+
   readonly javascriptPageOptions?: InitializePageOptions;
 }
 
@@ -45,7 +52,12 @@ type InitializePageOptions =
   | InitializeCodePageOptions
   | InitializeCustomizeClassPageOptions
   | InitializeTeacherPageOptions
-  | InitializeViewProgramPageOptions;
+  | InitializeViewProgramPageOptions
+  | InitializeClassOverviewPageOptions
+  | InitializeAdminUsersPageOptions
+  | InitializeCustomizeAdventurePage
+  | InitializeMyProfilePage
+  ;
 
 
 /**
@@ -57,9 +69,9 @@ export function initialize(options: InitializeOptions) {
   initializeApp({
     level: options.level,
     keywordLanguage: options.keyword_language,
+    staticRoot: options.staticRoot,
   });
   initializeFormSubmits();
-  initializeQuiz();
   initializeTutorial();
 
   // The above initializations are often also page-specific
@@ -76,9 +88,26 @@ export function initialize(options: InitializeOptions) {
       initializeTeacherPage(options.javascriptPageOptions);
       break;
 
+    case 'class-overview':
+      initializeClassOverviewPage(options.javascriptPageOptions);
+      break;
+
     case 'view-program':
       initializeViewProgramPage(options.javascriptPageOptions);
       break;
+
+    case 'admin-users':
+      initializeAdminUserPage(options.javascriptPageOptions);
+      break;
+    
+    case 'customize-adventure':
+      initializeCustomAdventurePage(options.javascriptPageOptions);
+      break;
+
+    case 'my-profile':
+      initializeMyProfilePage(options.javascriptPageOptions);
+      break;
+
   }
 
   // FIXME: I think this might also be page-specific

@@ -14,10 +14,18 @@ from website.yaml_file import YamlFile  # noqa
 
 OUTPUT_FILE = 'static/js/message-translations.ts'
 
+# Every key you add here must also be added to content/client-messages.txt
 ADDITIONAL_GETTEXT_KEYS = [
     'level_title',
     'unsaved_class_changes',
     'teacher_welcome',
+    'copy_link_to_share',
+    'customization_deleted',
+    'directly_available',
+    'disabled',
+    'adventures_restored',
+    'multiple_keywords_warning',
+    'selected'
 ]
 
 

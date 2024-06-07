@@ -21,6 +21,10 @@ class Helpers:
             dict(id='key', sort=2, x=1, y=3, m=9),
             dict(id='key', sort=3, x=1, y=2, m=8))
 
+    def insert_many_sample_datas(self, n):
+        self.insert(*(
+            dict(id='key', sort=i + 1, x=1) for i in range(n)))
+
     def get_pages(self, key, **kwargs):
         ret = []
 
@@ -122,6 +126,60 @@ class TestDynamoAbstraction(unittest.TestCase, Helpers):
             'z': None,
         })
 
+    def test_no_memory_sharing_direct(self):
+        """Ensure that changes to objects retrieved from the database do not leak into other operations."""
+        self.table.put({'id': 'key', 'x': 1})
+
+        # WHEN
+        retrieved = self.table.get({'id': 'key'})
+        retrieved['x'] = 666
+
+        # THEN
+        retrieved2 = self.table.get({'id': 'key'})
+        self.assertEqual(retrieved2['x'], 1)
+
+    def test_no_memory_sharing_sublists(self):
+        """Ensure that changes to objects retrieved from the database do not leak into other operations."""
+        # GIVEN
+        self.table.put(dict(
+            id='with_list',
+            sublist=[1]
+        ))
+
+        # WHEN
+        retrieved = self.table.get(dict(id='with_list'))
+        retrieved['sublist'].append(2)
+
+        # THEN
+        retrieved2 = self.table.get(dict(id='with_list'))
+        self.assertEqual(retrieved2['sublist'], [1])
+
+    def test_no_memory_sharing_insert_direct(self):
+        """Ensure that changes to objects we insert aren't accidentally seen by other viewers."""
+        # GIVEN
+        obj = dict(id='lookatme', x=0)
+
+        # WHEN
+        self.table.put(obj)
+        obj['x'] = 1
+
+        # THEN
+        obj2 = self.table.get(dict(id='lookatme'))
+        self.assertEqual(obj2['x'], 0)
+
+    def test_no_memory_sharing_insert_sublist(self):
+        """Ensure that changes to objects we insert aren't accidentally seen by other viewers."""
+        # GIVEN
+        obj = dict(id='lookatme', x=[0])
+
+        # WHEN
+        self.table.put(obj)
+        obj['x'].append(1)
+
+        # THEN
+        obj2 = self.table.get(dict(id='lookatme'))
+        self.assertEqual(obj2['x'], [0])
+
 
 class TestSortKeysInMemory(unittest.TestCase):
     """Test that the operations work on an in-memory table with a sort key."""
@@ -192,6 +250,24 @@ class TestQueryInMemory(unittest.TestCase, Helpers):
             {'id': 'key', 'sort': 2, 'm': 'another'}
         ])
 
+    def test_cant_use_array_for_indexed_field(self):
+        with self.assertRaises(ValueError):
+            self.table.create({'id': 'key', 'sort': 1, 'm': [1, 2, 3]})
+
+    def test_cant_use_array_for_partition(self):
+        with self.assertRaises(ValueError):
+            self.table.create({'id': [1, 2]})
+
+    def test_query_with_filter(self):
+        self.table.create({'id': 'key', 'sort': 1, 'm': 'val'})
+        self.table.create({'id': 'key', 'sort': 2, 'm': 'another'})
+
+        ret = list(self.table.get_many({'id': 'key'}, filter={'m': 'another'}))
+
+        self.assertEqual(ret, [
+            {'id': 'key', 'sort': 2, 'm': 'another'}
+        ])
+
     def test_between_query(self):
         self.table.create({'id': 'key', 'sort': 1, 'x': 'x'})
         self.table.create({'id': 'key', 'sort': 2, 'x': 'y'})
@@ -206,6 +282,10 @@ class TestQueryInMemory(unittest.TestCase, Helpers):
             {'id': 'key', 'sort': 3, 'x': 'z'},
         ])
 
+    def test_no_superfluous_keys(self):
+        with self.assertRaises(ValueError):
+            self.table.get_many({'m': 'some_value', 'Z': 'some_other_value'})
+
     def test_query_index(self):
         self.table.create({'id': 'key', 'sort': 1, 'm': 'val'})
         self.table.create({'id': 'key', 'sort': 2, 'm': 'another'})
@@ -214,6 +294,18 @@ class TestQueryInMemory(unittest.TestCase, Helpers):
 
         self.assertEqual(ret, [
             {'id': 'key', 'sort': 1, 'm': 'val'}
+        ])
+
+    def test_query_index_with_filter(self):
+        self.table.create({'id': 'key', 'sort': 1, 'm': 'val', 'p': 'p'})
+        self.table.create({'id': 'key', 'sort': 3, 'm': 'val', 'p': 'p'})
+        self.table.create({'id': 'key', 'sort': 2, 'm': 'another', 'q': 'q'})
+
+        ret = list(self.table.get_many({'m': 'val'}, filter={'p': 'p'}))
+
+        self.assertEqual(ret, [
+            {'id': 'key', 'sort': 1, 'm': 'val', 'p': 'p'},
+            {'id': 'key', 'sort': 3, 'm': 'val', 'p': 'p'},
         ])
 
     def test_query_index_with_partition_key(self):
@@ -266,6 +358,34 @@ class TestQueryInMemory(unittest.TestCase, Helpers):
             [dict(id='key', sort=3, x=1, y=2, m=8)],
         ])
 
+    def test_paginated_query_and_back(self):
+        self.insert_many_sample_datas(5)
+        key = {'id': 'key'}
+        kwargs = {'limit': 2}
+        p1 = self.table.get_many(key, **kwargs)
+        p12 = self.table.get_many(key, **kwargs, pagination_token=p1.next_page_token)
+        p123 = self.table.get_many(key, **kwargs, pagination_token=p12.next_page_token)
+
+        p121 = self.table.get_many(key, **kwargs, pagination_token=p12.prev_page_token)
+        p1212 = self.table.get_many(key, **kwargs, pagination_token=p121.next_page_token)
+        p12123 = self.table.get_many(key, **kwargs, pagination_token=p1212.next_page_token)
+
+        p1232 = self.table.get_many(key, **kwargs, pagination_token=p123.prev_page_token)
+        p12321 = self.table.get_many(key, **kwargs, pagination_token=p1232.prev_page_token)
+
+        for p in [p121, p12321]:
+            self.assertEqual(list(p1), list(p))
+        for p in [p1212, p1232]:
+            self.assertEqual(list(p12), list(p))
+        for p in [p12123]:
+            self.assertEqual(list(p123), list(p))
+
+        self.assertEqual(p1.prev_page_token, None)
+        self.assertEqual(p121.prev_page_token, None)
+        self.assertEqual(p12321.prev_page_token, None)
+        self.assertEqual(p123.next_page_token, None)
+        self.assertEqual(p12123.next_page_token, None)
+
     def test_paginated_query_reverse(self):
         self.insert_sample_data()
         pages = self.get_pages({'id': 'key'}, limit=1, reverse=True)
@@ -275,6 +395,53 @@ class TestQueryInMemory(unittest.TestCase, Helpers):
             [dict(id='key', sort=2, x=1, y=3, m=9)],
             [dict(id='key', sort=1, x=1, y=1, m=9)],
         ])
+
+    def test_get_page_and_back(self):
+        self.insert_many_sample_datas(40)
+
+        def even_only(row):
+            return row['sort'] % 2 == 0
+
+        key = dict(id='key')
+
+        # Get everything forward
+        pages = []
+        pagination_token = None
+        prev_page_token = None
+        while True:
+            page = self.table.get_page(key, 5, pagination_token=pagination_token, client_side_filter=even_only)
+            pages.append(list(page))
+            pagination_token, prev_page_token = page.next_page_token, page.prev_page_token
+            if not pagination_token:
+                break
+
+        # Then get everything backwards
+        prev_pages = []
+        while prev_page_token:
+            page = self.table.get_page(key, 5, pagination_token=prev_page_token, client_side_filter=even_only)
+            prev_pages.insert(0, list(page))
+            prev_page_token = page.prev_page_token
+
+        # Everything except the last page should be the same
+        self.assertGreater(len(pages), 3)
+        self.assertNotIn([], pages)
+        self.assertEqual(pages[:-1], prev_pages)
+
+    def test_get_page_pagination_makes_progress_even_if_cancelled(self):
+        """Even if all elements from a page are rejected and the query is cancelled, next_page_token still makes progress."""
+        self.insert_many_sample_datas(40)
+        key = dict(id='key')
+
+        rows = []
+        pagination_token = None
+        while True:
+            page = self.table.get_page(key, 5, pagination_token=pagination_token,
+                                       client_side_filter=lambda row: row['sort'] > 20, timeout=dynamo.Cancel.immediate())
+            rows.extend(page)
+            pagination_token = page.next_page_token
+            if not pagination_token:
+                break
+        self.assertEqual(20, len(rows))
 
     def test_paginated_query_on_sortkey_index(self):
         self.insert_sample_data()
@@ -331,6 +498,14 @@ class TestQueryInMemory(unittest.TestCase, Helpers):
 
         self.assertIsNone(ret.next_page_token)
 
+    def test_scan_all_items_doesnt_return_pagination_key(self):
+        self.insert(
+            dict(id='key', sort=1, y=1),
+            dict(id='key', sort=2, y=3),
+            dict(id='key', sort=3, y=6))
+        page = self.table.scan(limit=3)
+        self.assertIsNone(page.next_page_token)
+
     def test_keys_only_index(self):
         self.insert(
             dict(id='key', sort=1, n=1, other='1'),
@@ -345,6 +520,40 @@ class TestQueryInMemory(unittest.TestCase, Helpers):
             dict(id='key', sort=2, n=1),
             dict(id='key', sort=3, n=1),
         ])
+
+    def test_get_many_iterator(self):
+        N = 10
+
+        for i in range(N):
+            self.insert(
+                dict(id='key', sort=i + 1))
+
+        expected = [dict(id='key', sort=i + 1) for i in range(N)]
+
+        # Query everything at once, using the Python iterator protocol
+        self.assertEqual(list(dynamo.GetManyIterator(self.table, dict(id='key'))), expected)
+
+        # Query paginated, using the Python iterator protocol
+        self.assertEqual(list(dynamo.GetManyIterator(self.table, dict(id='key'), batch_size=3)), expected)
+
+        # Reuse the client-side pager every time, using the Python iterator protocol
+        ret = []
+        token = None
+        while True:
+            many = dynamo.GetManyIterator(self.table, dict(id='key'), batch_size=3, pagination_token=token)
+            ret.append(next(iter(many)))
+            token = many.next_page_token
+            if not token:
+                break
+        self.assertEqual(ret, expected)
+
+        # Also test using the eof/current/advance protocol
+        ret = []
+        many = dynamo.GetManyIterator(self.table, dict(id='key'), batch_size=3, pagination_token=token)
+        while many:
+            ret.append(many.current)
+            many.advance()
+        self.assertEqual(ret, expected)
 
 
 class TestSortKeysAgainstAws(unittest.TestCase):

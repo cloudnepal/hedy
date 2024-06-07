@@ -1,4 +1,7 @@
+import random
 import textwrap
+from dataclasses import dataclass
+import pickle
 import hashlib
 import hedy
 import hedy_translation
@@ -10,25 +13,118 @@ from contextlib import contextmanager
 import inspect
 import unittest
 import utils
+import typing
 from hedy_content import ALL_KEYWORD_LANGUAGES, KEYWORDS
-import pickle
+
+from hedy_sourcemap import SourceRange
+from functools import cache
+
+from app import app
+from hedy_error import get_error_text
+from flask_babel import force_locale
+
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class Snippet:
-    def __init__(self, filename, level, code, field_name=None, adventure_name=None, error=None, language=None):
+    def __init__(self, filename, level, code, username=None, field_name=None, adventure_name=None, experiment_language=None, error=None, language=None, key=None, counter=0):
         self.filename = filename
         self.level = level
-        self.field_name = field_name
+        self.field_name = field_name if field_name is not None else ''
         self.code = code
+        self.username = username
         self.error = error
+        self.key = key if key is not None else ''
         filename_shorter = os.path.basename(filename)
         if language is None:
             self.language = filename_shorter.split(".")[0]
         else:
             self.language = language
         self.adventure_name = adventure_name
-        self.name = f'{self.language}-{self.level}-{self.field_name}'
-        self.hash = md5digest(self.code)
+        self.experiment_language = experiment_language
+        self.name = f'{self.language}-{self.level}-{self.key}-{self.field_name}'
+        self.hash = sha1digest(self.code)
+        self.counter = counter
+        if counter > 0:
+            self.name += f'-{self.counter + 1}'
+
+    def __repr__(self):
+        return f'Snippet({self.name})'
+
+
+@dataclass
+class YamlSnippet:
+    """A snippet found in one of the YAML files.
+
+    This is a replacement of 'Snippet' with fewer fields, only the fields that
+    are used in the snippet tests.
+
+    `yaml_path` is the path in the YAML where this snippet was found, as an
+    array of either strings or ints.
+
+    For example, in a YAML file that looks like:
+
+    ```
+    adventures:
+        1:
+            code: |
+               print hello
+    ```
+
+    The `yaml_path` would be `['adventures', 1, 'code']`.
+    """
+    filename: str
+    yaml_path: typing.List
+    code: str
+    language: str
+    level: int
+
+    def __post_init__(self):
+        # 'code' may be replaced later on when translating keywords
+        self.original_code = self.code
+        self.name = f'{self.relative_filename}-{self.yaml_path_str}'
+
+    @property
+    def relative_filename(self):
+        return os.path.relpath(self.filename, ROOT_DIR)
+
+    @property
+    def yaml_path_str(self):
+        return '.'.join(str(x) for x in self.yaml_path)
+
+    @property
+    def location(self):
+        """Returns a description of the location."""
+        return f'{self.relative_filename} at {self.yaml_path_str}'
+
+
+class SkippedMapping:
+    """ Class used to test if a certain source mapping contains an exception type """
+
+    def __init__(self, source_range: SourceRange, exception_type: type(Exception)):
+        self.source_range = source_range
+        self.exception_type = exception_type
+
+
+@cache
+def get_hedy_source_hash():
+    directory = os.path.join(ROOT_DIR, 'grammars')
+
+    files_affecting_parsing = (
+        [os.path.join(directory, filename) for filename in os.listdir(directory)] +
+        [os.path.join(ROOT_DIR, 'hedy.py')]
+    )
+
+    files_affecting_parsing.sort()
+
+    files_contents = []
+    for filename in files_affecting_parsing:
+        with open(filename, 'r', encoding='utf-8', newline='\n') as f:
+            contents = f.read()
+            files_contents.append(contents)
+
+    all_language_texts = '\n|\n'.join(files_contents)
+    return hashlib.sha1(all_language_texts.encode('utf-8')).hexdigest()
 
 
 class HedyTester(unittest.TestCase):
@@ -39,44 +135,27 @@ class HedyTester(unittest.TestCase):
     number_comparison_commands = ['>', '>=', '<', '<=']
     comparison_commands = number_comparison_commands + ['!=']
     arithmetic_operations = ['+', '-', '*', '/']
+    in_not_in_list_commands = ['in', 'not in']
     quotes = ["'", '"']
+    booleans = [('true', True), ('True', True), ('false', False), ('False', False)]
+    commands_level_4 = [("print 'hello'", "print(f'hello')"),
+                        ("name is ask 'who?'", "name = input(f'who?')"),
+                        ('name is Harry', "name = 'Harry'")]
 
     @classmethod
     def setUpClass(cls):
-        ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        directory = os.path.join(ROOT_DIR, 'grammars')
+        os.environ["ENABLE_SKIP_FAULTY"] = 'True'  # Always test with skipping faulty enabled
 
-        files_affecting_parsing = (
-            [os.path.join(directory, filename) for filename in os.listdir(directory)] +
-            [os.path.join(ROOT_DIR, 'hedy.py')]
-        )
-
-        # Sort these files so that the order is consistent between all platforms (this affects the hash!)
-        files_affecting_parsing.sort()
-
-        files_contents = []
-        for filename in files_affecting_parsing:
-            with open(filename, 'r', encoding='utf-8', newline='\n') as f:
-                contents = f.read()
-                files_contents.append(contents)
-
-        all_language_texts = '\n|\n'.join(files_contents)
-
-        cls.all_language_texts = all_language_texts
-        cls.snippet_hashes = get_list_from_pickle(ROOT_DIR + '/all_snippet_hashes.pkl')
-        cls.snippet_hashes_original_len = len(cls.snippet_hashes)
-
-    @classmethod
-    def tearDownClass(cls):
-        ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        # Only write file if we added any hashes to it and the env var is set
-        if os.getenv('save_snippet_hashes') and cls.snippet_hashes_original_len != len(cls.snippet_hashes):
-            with open(ROOT_DIR + '/all_snippet_hashes.pkl', 'wb') as f:
-                pickle.dump(cls.snippet_hashes, f)
-
-    def snippet_already_tested_with_current_hedy_version(self, snippet, level):
-        hash_language_plus_snippet_and_level = self.create_hash(self.all_language_texts, snippet, level)
-        return hash_language_plus_snippet_and_level in self.snippet_hashes
+    def snippet_already_tested_with_current_hedy_version(self, test_hash):
+        try:
+            total_hash_incl_the_hedy_language = create_hash(get_hedy_source_hash(), test_hash)
+            if total_hash_incl_the_hedy_language is None:
+                return False
+            filename = get_hash_filename(total_hash_incl_the_hedy_language)
+            already_successful = os.path.isfile(filename)
+            return already_successful
+        except UnicodeEncodeError:  # some tests (generated by Hypothesis) can't be hashed
+            return False
 
     @staticmethod
     @contextmanager
@@ -95,23 +174,13 @@ class HedyTester(unittest.TestCase):
 
         if parse_result.has_turtle:
             code += utils.TURTLE_PREFIX_CODE
-        if parse_result.has_pygame:
-            pygame_test_prefix = (
-                'import os\n'
-                'os.environ["SDL_VIDEODRIVER"] = "dummy" # No real image drivers exist, set to dummy for testing\n'
-                'os.environ["SDL_AUDIODRIVER"] = "disk" # No real audio drivers exist, set to disk for testing\n'
-            ) + utils.PYGAME_PREFIX_CODE + (
-                "pygame_end = True # Set to True so that we don't get stuck in a loop during testing\n"
-            )
-
-            code += pygame_test_prefix
 
         code += parse_result.code
         # remove sleep comments to make program execution less slow
         code = re.sub(r'time\.sleep\([^\n]*\)', 'pass', code)
 
         with HedyTester.captured_output() as (out, err):
-            exec(code)
+            exec(code, locals())
         return out.getvalue().strip()
 
     def name(self):
@@ -140,26 +209,22 @@ class HedyTester(unittest.TestCase):
             res.append(t)
         return res
 
-    def codeToInvalidInfo(self, code):
-        instance = hedy.IsValid()
-        instance.level = self.level
-        program_root = hedy.parse_input(code, self.level, 'en')
-        is_valid = instance.transform(program_root)
-        _, invalid_info = is_valid
-
-        return invalid_info[0].line, invalid_info[0].column
-
     def multi_level_tester(
             self,
             code,
             max_level=hedy.HEDY_MAX_LEVEL,
             expected=None,
             exception=None,
+            skipped_mappings: 'list[SkippedMapping]' = None,
             extra_check_function=None,
             expected_commands=None,
+            unused_allowed=False,
             lang='en',
             translate=True,
-            output=None):
+            output=None,
+            skip_faulty=True,
+            microbit=False
+    ):
         # used to test the same code snippet over multiple levels
         # Use exception to check for an exception
 
@@ -183,11 +248,15 @@ class HedyTester(unittest.TestCase):
                 level,
                 expected=expected,
                 exception=exception,
+                skipped_mappings=skipped_mappings,
                 extra_check_function=extra_check_function,
                 expected_commands=expected_commands,
+                unused_allowed=unused_allowed,
                 lang=lang,
                 translate=translate,
-                output=output)
+                output=output,
+                skip_faulty=skip_faulty,
+                microbit=microbit)
             print(f'Passed for level {level}')
 
     def single_level_tester(
@@ -195,58 +264,128 @@ class HedyTester(unittest.TestCase):
             code,
             level=None,
             exception=None,
+            skipped_mappings: 'list[SkippedMapping]' = None,
             expected=None,
             extra_check_function=None,
             output=None,
             expected_commands=None,
+            unused_allowed=False,
             lang='en',
-            translate=True):
+            translate=True,
+            skip_faulty=True,
+            microbit=False
+    ):
         if level is None:  # no level set (from the multi-tester)? grap current level from class
             level = self.level
-        if not self.snippet_already_tested_with_current_hedy_version(code, level):
-            if exception is not None:
-                with self.assertRaises(exception) as context:
-                    result = hedy.transpile(code, level, lang)
-                if extra_check_function is not None:
-                    self.assertTrue(extra_check_function(context))
-            else:
-                result = hedy.transpile(code, level, lang)
-                if expected is not None:
+
+        # To speed up the test executing we calculate a hash of the test.
+        # It is important to capture all the parameters that are passed to the function
+        # as sometimes we expect a snippet to fail and sometimes we expect it to succeed.
+        # We do this with `locals`, which captures a kwargs of this function and then we hash that.
+        # This means we have to collect the locals at the beginning because else there will be
+        # other things than arguments in the `locals()` output.
+
+        all_args = locals()
+        del all_args["self"]
+        try:
+            # we use pickle instead of hash for consistency across test-runs
+            # see PYTHONHASHSEED
+            test_hash = pickle.dumps(all_args)
+        except AttributeError:
+            test_hash = None
+        except TypeError:
+            test_hash = None
+
+        if not self.snippet_already_tested_with_current_hedy_version(test_hash):
+            if skipped_mappings is not None:
+                result = hedy.transpile(code, level, lang, skip_faulty=skip_faulty, unused_allowed=unused_allowed)
+                for skipped in skipped_mappings:
+                    result_error = result.source_map.get_error_from_hedy_source_range(skipped.source_range)
                     self.assertEqual(expected, result.code)
+                    self.assertEqual(type(result_error), skipped.exception_type)
+                    if extra_check_function is not None:
+                        self.assertTrue(extra_check_function(result_error))
+            else:
+                if exception is not None:
+                    with self.assertRaises(exception) as context:
+                        result = hedy.transpile(code, level, lang, skip_faulty=skip_faulty,
+                                                unused_allowed=unused_allowed)
+                    if extra_check_function is not None:
+                        self.assertTrue(extra_check_function(context))
+                else:
+                    result = hedy.transpile(code, level, lang, skip_faulty=skip_faulty,
+                                            unused_allowed=unused_allowed, microbit=microbit)
+                    if expected is not None:
+                        self.assertEqual(expected, result.code)
 
-                if translate:
-                    if lang == 'en':  # if it is English
-                        # and if the code transpiles (evidenced by the fact that we reach this
-                        # line) we should be able to translate too
+                    all_commands = result.commands
+                    if expected_commands is not None:
+                        self.assertEqual(expected_commands, all_commands)
+                    # <- use this to run tests locally with unittest
+                    skipped_commands = ['ask', 'input', 'clear', 'play']
+                    if not any(x for x in skipped_commands if x in all_commands):
+                        if microbit:
+                            return
+                        else:
+                            self.assertTrue(self.validate_Python_code(result))
 
-                        # TODO FH Feb 2022: we pick Dutch here not really fair or good practice :D
-                        # Maybe we should do a random language?
-                        in_dutch = hedy_translation.translate_keywords(
-                            code, from_lang=lang, to_lang="nl", level=self.level)
-                        back_in_english = hedy_translation.translate_keywords(
-                            in_dutch, from_lang="nl", to_lang=lang, level=self.level).strip()
-                        self.assert_translated_code_equal(code, back_in_english)
-                    else:  # not English? translate to it and back!
-                        in_english = hedy_translation.translate_keywords(
-                            code, from_lang=lang, to_lang="en", level=self.level)
-                        back_in_org = hedy_translation.translate_keywords(
-                            in_english, from_lang="en", to_lang=lang, level=self.level)
-                        self.assert_translated_code_equal(code, back_in_org)
+                    if output is not None:
+                        if extra_check_function is None:  # most programs have no turtle so make that the default
+                            extra_check_function = self.is_not_turtle()
+                        self.assertEqual(output, HedyTester.run_code(result))
+                        self.assertTrue(extra_check_function(result))
 
-                all_commands = hedy.all_commands(code, level, lang)
-                if expected_commands is not None:
-                    self.assertEqual(expected_commands, all_commands)
-                # <- use this to run tests locally with unittest
-                if ('ask' not in all_commands) and ('input' not in all_commands) and ('clear' not in all_commands):
-                    self.assertTrue(self.validate_Python_code(result))
-                if output is not None:
-                    if extra_check_function is None:  # most programs have no turtle so make that the default
-                        extra_check_function = self.is_not_turtle()
-                    self.assertEqual(output, HedyTester.run_code(result))
-                    self.assertTrue(extra_check_function(result))
+            # whether or not the code should give an exception,
+            # if it parses, it should always be possible
+            # to translate it, unless there is an NoIndentationException
+            # because in that case our preprocessor throws the error so there is no parsetree
+            # (todo maybe parse first?)
+
+            skipped_exceptions = [
+                hedy.exceptions.ParseException, hedy.exceptions.CodePlaceholdersPresentException,
+                hedy.exceptions.TooFewIndentsStartLevelException, hedy.exceptions.TooManyIndentsStartLevelException,
+                hedy.exceptions.NoIndentationException, hedy.exceptions.IndentationException,
+                hedy.exceptions.ElseWithoutIfException
+            ]
+
+            if translate and exception not in skipped_exceptions and skipped_mappings is None:
+                self.verify_translation(code, lang, level)
 
             # all ok? -> save hash!
-            self.snippet_hashes.add(self.create_hash(self.all_language_texts, code, level))
+            hash_of_run = create_hash(get_hedy_source_hash(), test_hash)
+            if hash_of_run:
+                filename = get_hash_filename(hash_of_run)
+                os.makedirs(os.path.dirname(filename), mode=0o777, exist_ok=True)
+                with open(filename, "w") as fp:
+                    fp.write("")
+
+    def verify_translation(self, code, lang, level):
+        if lang == 'en':  # if it is English
+
+            # pick a random language to translate to
+            # all = list(ALL_KEYWORD_LANGUAGES.keys()) <- this no longer really holds
+            # all keyword languages! TODO fix or remove
+
+            # a nice mix of latin/non-latin and l2r and r2l!
+            all = ['ar', 'ca', 'sq', 'bg', 'es', 'fi', 'fr', 'he', 'nl', 'hi', 'ur', 'te', 'th', 'vi', 'uk', 'tr']
+
+            to_lang = random.choice(all)
+
+            translated = hedy_translation.translate_keywords(
+                code, from_lang=lang, to_lang=to_lang, level=level)
+            back_in_english = hedy_translation.translate_keywords(
+                translated, from_lang=to_lang, to_lang=lang, level=level).strip()
+            self.assert_translated_code_equal(code, back_in_english)
+        else:  # not English? translate to it and back!
+            in_english = hedy_translation.translate_keywords(
+                code, from_lang=lang, to_lang="en", level=level)
+            back_in_org = hedy_translation.translate_keywords(
+                in_english, from_lang="en", to_lang=lang, level=level)
+            self.assert_translated_code_equal(code, back_in_org)
+
+    def source_map_tester(self, code, expected_source_map: dict):
+        result = hedy.transpile(code, self.level, 'en')
+        self.assertDictEqual(result.source_map.get_compressed_mapping(), expected_source_map)
 
     def assert_translated_code_equal(self, orignal, translation):
         # When we translate a program we lose information about the whitespaces of the original program.
@@ -258,7 +397,7 @@ class HedyTester(unittest.TestCase):
         # Code used in the Adventure and Level Defaults tester to validate Hedy code
 
         try:
-            if not parseresult.has_turtle and not parseresult.has_pygame:  # ouput from turtle or pygame cannot be captured
+            if not parseresult.has_turtle and not parseresult.has_pressed:  # ouput from turtle or pygame cannot be captured
                 HedyTester.run_code(parseresult)
         except hedy.exceptions.CodePlaceholdersPresentException:  # Code with blanks is allowed
             pass
@@ -280,37 +419,35 @@ class HedyTester(unittest.TestCase):
 
     @staticmethod
     def turtle_command_transpiled(command, val, level):
-        command_text = 'turn'
         suffix = ''
         if command == 'forward':
-            command_text = 'forward'
             suffix = '\n      time.sleep(0.1)'
 
-        type = 'int' if level < 12 else 'float'
+        func = 'int_with_error' if level < 12 else 'number_with_error'
 
-        return textwrap.dedent(f"""\
-      __trtl = {val}
-      try:
-        __trtl = {type}(__trtl)
-      except ValueError:
-        raise Exception(f'While running your program the command <span class="command-highlighted">{command_text}</span> received the value <span class="command-highlighted">{{__trtl}}</span> which is not allowed. Try changing the value to a number.')
-      t.{command}(min(600, __trtl) if __trtl > 0 else max(-600, __trtl)){suffix}""")
+        return textwrap.dedent(f'''\
+      __trtl = {func}({val}, {HedyTester.value_exception_transpiled()})
+      t.{command}(min(600, __trtl) if __trtl > 0 else max(-600, __trtl)){suffix}''')
 
     @staticmethod
     def sleep_command_transpiled(val):
-        return textwrap.dedent(f"""\
-        try:
-          time.sleep(int({val}))
-        except ValueError:
-          raise Exception(f'While running your program the command <span class="command-highlighted">sleep</span> received the value <span class="command-highlighted">{{{val}}}</span> which is not allowed. Try changing the value to a number.')""")
+        return textwrap.dedent(f'\
+          time.sleep(int_with_error({val}, {HedyTester.value_exception_transpiled()}))')
 
     @staticmethod
-    def turtle_color_command_transpiled(val):
-        return textwrap.dedent(f"""\
-      __trtl = f'{val}'
-      if __trtl not in ['black', 'blue', 'brown', 'gray', 'green', 'orange', 'pink', 'purple', 'red', 'white', 'yellow']:
-        raise Exception(f'While running your program the command <span class="command-highlighted">color</span> received the value <span class="command-highlighted">{{__trtl}}</span> which is not allowed. Try using another color.')
-      t.pencolor(__trtl)""")
+    def turtle_color_command_transpiled(val, lang="en"):
+        color_dict = {hedy_translation.translate_keyword_from_en(x, lang): x for x in hedy.english_colors}
+        both_colors = hedy.command_make_color_local(lang)
+
+        return textwrap.dedent(f'''\
+        __trtl = f'{val}'
+        color_dict = {color_dict}
+        if __trtl not in {both_colors}:
+          raise Exception(f{HedyTester.value_exception_transpiled()})
+        else:
+          if not __trtl in {hedy.english_colors}:
+            __trtl = color_dict[__trtl]
+        t.pencolor(__trtl)''')
 
     @staticmethod
     def input_transpiled(var_name, text):
@@ -333,15 +470,56 @@ class HedyTester(unittest.TestCase):
         pass""")
 
     @staticmethod
-    def list_access_transpiled(list_access):
+    def play_transpiled(arg, quotes=True):
+        argument = f"'{arg}'" if quotes else arg
         return textwrap.dedent(f"""\
+            play(note_with_error({argument}, {HedyTester.value_exception_transpiled()}))
+            time.sleep(0.5)""")
+
+    @staticmethod
+    def list_access_transpiled(list_access):
+        return textwrap.dedent(f'''\
         try:
           {list_access}
         except IndexError:
-          raise Exception('catch_index_exception')""")
+          raise Exception({HedyTester.index_exception_transpiled()})''')
+
+    @staticmethod
+    def int_cast_transpiled(val, quotes=True):
+        value = f"'{val}'" if quotes else val
+        return f'''int_with_error({value}, {HedyTester.value_exception_transpiled()})'''
+
+    @staticmethod
+    def number_cast_transpiled(val, quotes=False):
+        value = f"'{val}'" if quotes else val
+        return f'''number_with_error({value}, {HedyTester.value_exception_transpiled()})'''
+
+    @staticmethod
+    def addition_transpiled(left, right):
+        return f'''sum_with_error({left}, {right}, """Runtime Values Error""")'''
+
+    @staticmethod
+    def value_exception_transpiled():
+        return '"""Runtime Value Error"""'
+
+    @staticmethod
+    def index_exception_transpiled():
+        return '"""Runtime Index Error"""'
+
+    @staticmethod
+    def return_transpiled(arg):
+        return textwrap.dedent(f"""\
+        try:
+          return int(f'''{arg}''')
+        except ValueError:
+          try:
+            return float(f'''{arg}''')
+          except ValueError:
+            return f'''{arg}'''""")
 
     # Used to overcome indentation issues when the above code is inserted
     # in test cases which use different indentation style (e.g. 2 or 4 spaces)
+
     @staticmethod
     def dedent(*args):
         return '\n'.join([textwrap.indent(textwrap.dedent(a[0]), a[1]) if isinstance(a, tuple) else textwrap.dedent(a)
@@ -358,6 +536,8 @@ class HedyTester(unittest.TestCase):
 
     @staticmethod
     def translate_keywords_in_snippets(snippets):
+        """Mutates the snippets in-place."""
+
         # fill keyword dict for all keyword languages
         keyword_dict = {}
         for lang in ALL_KEYWORD_LANGUAGES:
@@ -371,44 +551,87 @@ class HedyTester(unittest.TestCase):
         # We replace the code snippet placeholders with actual keywords to the code is valid: {print} -> print
         # NOTE: .format() instead of safe_format() on purpose!
         for snippet in snippets:
+            # store original code
+            snippet.original_code = snippet.code
             try:
-                if snippet[1].language in ALL_KEYWORD_LANGUAGES.keys():
-                    snippet[1].code = snippet[1].code.format(**keyword_dict[snippet[1].language])
+                if snippet.language in ALL_KEYWORD_LANGUAGES.keys():
+                    snippet.code = snippet.code.format(**keyword_dict[snippet.language])
                 else:
-                    snippet[1].code = snippet[1].code.format(**english_keywords)
+                    snippet.code = snippet.code.format(**english_keywords)
             except KeyError:
                 print("This following snippet contains an invalid placeholder...")
-                print(snippet)
+                print(snippet.code)
             except ValueError:
                 print("This following snippet contains an unclosed invalid placeholder...")
-                print(snippet)
+                print(snippet.code)
 
-        return snippets
+    def format_test_error_md(self, E, snippet: Snippet):
+        """Given a snippet and an exception, return a Markdown string describing the problem."""
+        message = []
 
-    def create_hash(self, hedy_language, snippet, level):
-        t = snippet + "|\n" + str(level) + "|\n" + hedy_language
-        return hashlib.md5(t.encode('utf-8')).hexdigest()
+        arrow = True  # set to False if you want to remove the <---- in the output f.e. for easy copy-pasting
+        try:
+            location = E.error_location
+        except BaseException:
+            location = 'No Location Found'
+
+        # Must run this in the context of the Flask app, because FlaskBabel requires that.
+        with app.app_context():
+            with force_locale('en'):
+                error_message = get_error_text(E, 'en')
+                error_message = error_message.replace('<span class="command-highlighted">', '`')
+                error_message = error_message.replace('</span>', '`')
+
+        def add_arrow(code):
+            """Adds an arrow to the given code snippet on the line that caused the error."""
+            if not arrow:
+                return code
+            lines = code.split('\n')
+            lines = [line + (" <---- ERROR HERE" if i+1 == location[0] else "")
+                     for i, line in enumerate(lines)]
+            return '\n'.join(lines).strip()
+
+        rel_file = os.path.relpath(snippet.filename, ROOT_DIR)
+        message.append(f'## {rel_file}')
+        message.append(f'There was a problem in a level {snippet.level} snippet, at {snippet.yaml_path_str}:')
+
+        # Use a 'caution' admonition because it renders in red
+        message.append('> [!CAUTION]')
+        message.append(f'> {error_message} at line {location}')
+
+        message.append('\nTranslation source')
+        message.append('```')
+        message.append(add_arrow(snippet.original_code))
+        message.append('```')
+        message.append('\nTranslated version')
+        message.append('```')
+        message.append(add_arrow(snippet.code))
+        message.append('```')
+
+        return '\n'.join(message)
 
 
-def get_list_from_pickle(filename):
-    try:
-        with open(filename, 'rb') as f:
-            snippet_hashes = pickle.load(f)
-    except FileNotFoundError:  # non existent file
-        snippet_hashes = set()
-        with open(filename, 'wb') as f:
-            pickle.dump(snippet_hashes, f)
-    except pickle.UnpicklingError:
-        snippet_hashes = set()
-        with open(filename, 'wb') as f:
-            pickle.dump(snippet_hashes, f)
-    except EOFError:
-        snippet_hashes = set()
-        with open(filename, 'wb') as f:
-            pickle.dump(snippet_hashes, f)
-
-    return snippet_hashes
+def create_hash(hedy_language, test_hash):
+    if test_hash is None:
+        return None
+    t = str(test_hash) + "|\n" + hedy_language
+    return hashlib.sha1(t.encode('utf-8')).hexdigest()
 
 
-def md5digest(x):
-    return hashlib.md5(x.encode('utf-8')).hexdigest()
+def get_hash_filename(input_hash):
+    # We make one level of subdirectories
+    # as some OS'es (Windows) does not like having too many files
+    # in one directory.
+    # This might be based on very outdated preconceptions, but let's
+    # just copy what git does with their hash storage and not think about
+    # it too long
+    return os.path.join(
+        ROOT_DIR,
+        ".test-cache",
+        input_hash[0:2],
+        input_hash,
+    )
+
+
+def sha1digest(x):
+    return hashlib.sha1(x.encode('utf-8')).hexdigest()

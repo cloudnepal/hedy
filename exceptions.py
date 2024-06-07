@@ -1,3 +1,11 @@
+import inspect
+"""
+    Any exception added in this file must be also added to error-messages.txt
+    So we can translate the error message. The exception must also be assigned
+    an Exception Type in the exception_types dictionary in statistics.py
+"""
+
+
 class HedyException(Exception):
     def __init__(self, error_code, **arguments):
         """Create a new HedyException.
@@ -22,7 +30,9 @@ class HedyException(Exception):
         Returns either an array of [row, col] or just [row].
 
         If 'location' is part of the keyword arguments, return that.
-        Otherwise, if 'line_number' is part of the keyword arguments, return that instead.
+        Otherwise, if 'line_number' is part of the keyword arguments, return that instead
+        wrapped in a list so we are sure the return type is always a list.
+
         """
         if 'location' in self.arguments:
             return self.arguments['location']
@@ -53,6 +63,16 @@ class InvalidSpaceException(WarningException):
                          level=level,
                          line_number=line_number,
                          fixed_code=fixed_code,
+                         fixed_result=fixed_result)  # what is the difference??
+
+
+class UnusedVariableException(WarningException):
+    def __init__(self, level, line_number, variable_name, fixed_code, fixed_result):
+        super().__init__('Unused Variable',
+                         level=level,
+                         line_number=line_number,
+                         variable_name=variable_name,
+                         fixed_code=fixed_code,
                          fixed_result=fixed_result)
 
 
@@ -70,18 +90,19 @@ class ParseException(HedyException):
         self.fixed_code = fixed_code
 
 
-class UnquotedEqualityCheck(HedyException):
+class UnquotedEqualityCheckException(HedyException):
     def __init__(self, line_number):
         super().__init__('Unquoted Equality Check',
                          line_number=line_number)
         self.location = [line_number]
 
 
-class AccessBeforeAssign(HedyException):
+class AccessBeforeAssignException(HedyException):
     def __init__(self, name, access_line_number, definition_line_number):
         super().__init__('Access Before Assign',
                          name=name,
                          access_line_number=access_line_number,
+                         line_number=access_line_number,
                          definition_line_number=definition_line_number)
 
 
@@ -92,45 +113,57 @@ class UndefinedVarException(HedyException):
                          line_number=line_number)
 
 
+class UndefinedFunctionException(HedyException):
+    def __init__(self, name, line_number):
+        super().__init__('Function Undefined',
+                         name=name,
+                         line_number=line_number)
+
+
 class CyclicVariableDefinitionException(HedyException):
-    def __init__(self, variable):
+    def __init__(self, variable, line_number):
         super().__init__('Cyclic Var Definition',
-                         variable=variable)
+                         variable=variable,
+                         line_number=line_number)
 
 
 class InvalidArgumentTypeException(HedyException):
-    def __init__(self, command, invalid_type, allowed_types, invalid_argument):
+    def __init__(self, command, invalid_type, allowed_types, invalid_argument, line_number):
         super().__init__('Invalid Argument Type',
                          command=command,
                          invalid_type=invalid_type,
                          allowed_types=allowed_types,
-                         invalid_argument=invalid_argument)
+                         invalid_argument=invalid_argument,
+                         line_number=line_number)
 
 
 class InvalidTypeCombinationException(HedyException):
-    def __init__(self, command, arg1, arg2, type1, type2):
+    def __init__(self, command, arg1, arg2, type1, type2, line_number):
         super().__init__('Invalid Type Combination',
                          command=command,
                          invalid_argument=arg1,
                          invalid_argument_2=arg2,
                          invalid_type=type1,
-                         invalid_type_2=type2)
+                         invalid_type_2=type2,
+                         line_number=line_number)
 
 
 class InvalidArgumentException(HedyException):
-    def __init__(self, command, allowed_types, invalid_argument):
+    def __init__(self, command, allowed_types, invalid_argument, line_number):
         super().__init__('Invalid Argument',
                          command=command,
                          allowed_types=allowed_types,
-                         invalid_argument=invalid_argument)
+                         invalid_argument=invalid_argument,
+                         line_number=line_number)
 
 
 class WrongLevelException(HedyException):
-    def __init__(self, working_level, offending_keyword, tip):
+    def __init__(self, working_level, offending_keyword, tip, line_number):
         super().__init__('Wrong Level',
                          working_level=working_level,
                          offending_keyword=offending_keyword,
-                         tip=tip)
+                         tip=tip,
+                         line_number=line_number)
 
 
 class InputTooBigException(HedyException):
@@ -169,6 +202,14 @@ class MissingCommandException(HedyException):
 class MissingInnerCommandException(HedyException):
     def __init__(self, command, level, line_number):
         super().__init__('Missing Inner Command',
+                         command=command,
+                         level=level,
+                         line_number=line_number)
+
+
+class MissingVariableException(HedyException):
+    def __init__(self, command, level, line_number):
+        super().__init__('Missing Variable',
                          command=command,
                          level=level,
                          line_number=line_number)
@@ -217,9 +258,37 @@ class UnquotedTextException(HedyException):
                          line_number=line_number)
 
 
+class MissingAdditionalCommand(HedyException):
+    def __init__(self, command, missing_command, line_number):
+        super().__init__('Missing Additional Command',
+                         command=command,
+                         missing_command=missing_command,
+                         line_number=line_number)
+
+
+class MisspelledAtCommand(HedyException):
+    def __init__(self, command, arg1, line_number):
+        super().__init__('Misspelled At Command',
+                         command=command,
+                         invalid_argument=arg1,
+                         line_number=line_number)
+
+
+class NonDecimalVariable(HedyException):
+    def __init__(self, line_number):
+        super().__init__('Non Decimal Variable',
+                         line_number=line_number)
+
+
 class UnquotedAssignTextException(HedyException):
-    def __init__(self, text):
-        super().__init__('Unquoted Assignment', text=text)
+    def __init__(self, text, line_number):
+        super().__init__('Unquoted Assignment', text=text, line_number=line_number)
+
+
+class MissingBracketsException(HedyException):
+    def __init__(self, level, line_number):
+        super().__init__('Missing Square Brackets',
+                         line_number=line_number)
 
 
 class LonelyEchoException(HedyException):
@@ -228,8 +297,20 @@ class LonelyEchoException(HedyException):
 
 
 class CodePlaceholdersPresentException(HedyException):
-    def __init__(self):
-        super().__init__('Has Blanks')
+    def __init__(self, line_number):
+        super().__init__('Has Blanks', line_number=line_number)
+
+
+class TooManyIndentsStartLevelException(HedyException):
+    def __init__(self, line_number, leading_spaces, fixed_code=None):
+        super().__init__('Too Many Indents', line_number=line_number, leading_spaces=leading_spaces)
+        self.fixed_code = fixed_code
+
+
+class TooFewIndentsStartLevelException(HedyException):
+    def __init__(self, line_number, leading_spaces, fixed_code=None):
+        super().__init__('Too Few Indents', line_number=line_number, leading_spaces=leading_spaces)
+        self.fixed_code = fixed_code
 
 
 class NoIndentationException(HedyException):
@@ -255,11 +336,61 @@ class UnsupportedFloatException(HedyException):
         super().__init__('Unsupported Float', value=value)
 
 
-class LockedLanguageFeatureException(HedyException):
-    def __init__(self, concept):
-        super().__init__('Locked Language Feature', concept=concept)
-
-
 class UnsupportedStringValue(HedyException):
     def __init__(self, invalid_value):
         super().__init__('Unsupported String Value', invalid_value=invalid_value)
+
+
+class MissingElseForPressitException(HedyException):
+    def __init__(self, command, level, line_number):
+        super().__init__('Pressit Missing Else',
+                         command=command,
+                         level=level,
+                         line_number=line_number)
+
+
+class NestedFunctionException(HedyException):
+    def __init__(self):
+        super().__init__('Nested Function')
+
+
+class WrongNumberofArguments(HedyException):
+    def __init__(self, name, defined_number, used_number, line_number):
+        super().__init__('Wrong Number of Arguments',
+                         name=name,
+                         defined_number=defined_number,
+                         used_number=used_number,
+                         line_number=line_number)
+
+
+class InvalidErrorSkippedException(HedyException):
+    def __init__(self):
+        super().__init__('Invalid Error Skipped')
+
+
+class RuntimeValueException(HedyException):
+    def __init__(self, command, value, tip):
+        super().__init__('Runtime Value Error', command=command, value=value, tip=tip)
+
+
+class RuntimeValuesException(HedyException):
+    def __init__(self, command, value, tip):
+        super().__init__('Runtime Values Error', command=command, value=value, tip=tip)
+
+
+class RuntimeIndexException(HedyException):
+    def __init__(self, name):
+        super().__init__('Runtime Index Error', name=name)
+
+
+class ElseWithoutIfException(HedyException):
+    def __init__(self, line_number):
+        super().__init__('Else Without If Error', line_number=line_number)
+
+
+class MissingColonException(HedyException):
+    def __init__(self, command, line_number):
+        super().__init__('Missing Colon Error', command=command, line_number=line_number)
+
+
+HEDY_EXCEPTIONS = {name: cls for name, cls in globals().items() if inspect.isclass(cls)}

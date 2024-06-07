@@ -5,19 +5,19 @@ describe('Is able to click on create new class', () => {
     loginForTeacher();
 
     // Click 'Create class' button
-    cy.get('#teacher_classes > .green-btn').click();
+    cy.get('#create_class_button').click();
 
     // Assert that the input field is empty,
     // the ok button is visible and
     // the cancel button is visible
-    cy.get('#modal-prompt-input').should('be.empty');
-    cy.get('#modal-prompt-input').should('be.visible');
-    cy.get('#modal-prompt-input').should('be.enabled');
+    cy.getDataCy('modal_prompt_input').should('be.empty');
+    cy.getDataCy('modal_prompt_input').should('be.visible');
+    cy.getDataCy('modal_prompt_input').should('be.enabled');
 
-    cy.get('#modal-ok-button').should('be.visible');
-    cy.get('#modal-ok-button').should('be.enabled');
+    cy.getDataCy('modal_ok_button').should('be.visible');
+    cy.getDataCy('modal_ok_button').should('be.enabled');
 
-    cy.get('#modal-cancel-button').should('be.visible');
-    cy.get('#modal-cancel-button').should('be.enabled');
+    cy.get('#modal_cancel_button').should('be.visible');
+    cy.get('#modal_cancel_button').should('be.enabled');
   })
 })

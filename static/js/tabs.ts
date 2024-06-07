@@ -13,6 +13,7 @@ export interface TabEvents {
 export interface TabOptions {
   readonly initialTab?: string;
 }
+
 /**
  * Tabs
  *
@@ -68,6 +69,7 @@ export class Tabs {
 
   public switchToTab(tabName: string) {
     const doSwitch = () => {
+      const oldTab = this._currentTab;
       this._currentTab = tabName;
 
       // Do a 'replaceState' to add a '#anchor' to the URL
@@ -89,10 +91,10 @@ export class Tabs {
       allTargets.addClass('hidden');
       target.removeClass('hidden');
 
-      this.tabEvents.emit('afterSwitch', { oldTab: this._currentTab, newTab: tabName });
+      this.tabEvents.emit('afterSwitch', { oldTab, newTab: tabName });
     }
 
-    // We don't do an even for the very first tab switch
+    // We don't do a beforeSwitch event for the very first tab switch
     if (this._currentTab != '') {
       const event = this.tabEvents.emit('beforeSwitch', { oldTab: this._currentTab, newTab: tabName });
       event.then(doSwitch);
@@ -106,7 +108,21 @@ export class Tabs {
   }
 
   public on(key: Parameters<typeof this.tabEvents.on>[0], handler: Parameters<typeof this.tabEvents.on>[1]) {
-    return this.tabEvents.on(key, handler);
+    const ret = this.tabEvents.on(key, handler);
+    // Immediately invoke afterSwitch when it's being registered
+    if (key === 'afterSwitch') {
+      this.tabEvents.emit('afterSwitch', { oldTab: '', newTab: this._currentTab });
+    }
+    return ret;
   }
 }
 
+
+export function getPreviousAndNext() {
+  const selected = document.querySelector('.tab-selected')
+  if (!selected) return []
+  const i = parseInt(selected.getAttribute('tabindex') || '0')
+  const prev = document.querySelector(`.tab[tabindex='${i-1}']`)
+  const next = document.querySelector(`.tab[tabindex='${i+1}']`)
+  return [prev, next]
+}

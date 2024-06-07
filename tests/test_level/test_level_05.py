@@ -1,6 +1,8 @@
 import hedy
 import textwrap
-from tests.Tester import HedyTester
+
+from hedy_sourcemap import SourceRange
+from tests.Tester import HedyTester, SkippedMapping
 from parameterized import parameterized
 
 
@@ -22,19 +24,20 @@ class TestsLevel5(HedyTester):
     #
     # if tests
     #
-    def test_if_equality_linebreak_print(self):
+    @parameterized.expand(HedyTester.commands_level_4)
+    def test_if_equality_linebreak_print(self,  hedy, python):
         # line breaks after if-condition are allowed
-        code = textwrap.dedent("""\
+        code = textwrap.dedent(f"""\
         naam is Hedy
         if naam is Hedy
-        print 'leuk'""")
+        {hedy}""")
 
-        expected = textwrap.dedent("""\
+        expected = textwrap.dedent(f"""\
         naam = 'Hedy'
         if naam == 'Hedy':
-          print(f'leuk')""")
+          {python}""")
 
-        self.single_level_tester(code=code, expected=expected)
+        self.single_level_tester(code=code, expected=expected, unused_allowed=True)
 
     def test_if_equality_trailing_space_linebreak_print(self):
         code = textwrap.dedent("""\
@@ -162,17 +165,74 @@ class TestsLevel5(HedyTester):
 
     def test_if_equality_unquoted_rhs_with_space_print_gives_error(self):
         code = textwrap.dedent("""\
+        prind skipping
         naam is James
         if naam is James Bond print 'shaken'""")
 
-        self.multi_level_tester(code=code, exception=hedy.exceptions.UnquotedEqualityCheck, max_level=11)
+        expected = textwrap.dedent("""\
+        pass
+        naam = 'James'
+        pass""")
+
+        skipped_mappings = [
+            SkippedMapping(SourceRange(1, 1, 1, 15), hedy.exceptions.InvalidCommandException),
+            SkippedMapping(SourceRange(3, 1, 3, 37), hedy.exceptions.UnquotedEqualityCheckException),
+        ]
+
+        self.multi_level_tester(
+            code=code,
+            expected=expected,
+            skipped_mappings=skipped_mappings,
+            max_level=7
+        )
+
+    def test_if_equality_unquoted_rhs_with_space_and_following_command_print_gives_error(self):
+        code = textwrap.dedent("""\
+        naam is James
+        if naam is James Bond print 'shaken'
+        print naam
+        prind skipping""")
+
+        expected = textwrap.dedent("""\
+        naam = 'James'
+        pass
+        print(f'{naam}')
+        pass""")
+
+        skipped_mappings = [
+            SkippedMapping(SourceRange(2, 1, 2, 58), hedy.exceptions.UnquotedEqualityCheckException),
+            SkippedMapping(SourceRange(4, 1, 4, 15), hedy.exceptions.InvalidCommandException)
+        ]
+
+        self.multi_level_tester(
+            code=code,
+            expected=expected,
+            skipped_mappings=skipped_mappings,
+            max_level=7
+        )
 
     def test_if_equality_unquoted_rhs_with_space_assign_gives_error(self):
         code = textwrap.dedent("""\
+        prind skipping
         naam is James
         if naam is James Bond naam is 'Pietjansma'""")
 
-        self.multi_level_tester(code=code, exception=hedy.exceptions.UnquotedEqualityCheck, max_level=11)
+        expected = textwrap.dedent("""\
+        pass
+        naam = 'James'
+        pass""")
+
+        skipped_mappings = [
+            SkippedMapping(SourceRange(3, 1, 3, 43), hedy.exceptions.UnquotedEqualityCheckException),
+            SkippedMapping(SourceRange(1, 1, 1, 15), hedy.exceptions.InvalidCommandException)
+        ]
+
+        self.multi_level_tester(
+            code=code,
+            expected=expected,
+            skipped_mappings=skipped_mappings,
+            max_level=7
+        )
 
     @parameterized.expand(HedyTester.quotes)
     def test_if_equality_quoted_rhs_with_space(self, q):
@@ -258,7 +318,7 @@ class TestsLevel5(HedyTester):
         if a == b:
           c = '1'""")
 
-        self.single_level_tester(code=code, expected=expected)
+        self.single_level_tester(code=code, expected=expected, unused_allowed=True)
 
     def test_quoted_ask(self):
         code = textwrap.dedent("""\
@@ -268,7 +328,8 @@ class TestsLevel5(HedyTester):
 
         self.multi_level_tester(code=code,
                                 expected=expected,
-                                max_level=11)
+                                max_level=11,
+                                unused_allowed=True)
 
     def test_equality_with_lists_gives_error(self):
         code = textwrap.dedent("""\
@@ -279,26 +340,31 @@ class TestsLevel5(HedyTester):
         self.multi_level_tester(
             max_level=7,
             code=code,
+            extra_check_function=lambda c: c.exception.arguments['line_number'] == 3,
             exception=hedy.exceptions.InvalidArgumentTypeException
         )
 
-    def test_if_in_list_with_string_var_gives_type_error(self):
-        code = textwrap.dedent("""\
+    @parameterized.expand(HedyTester.in_not_in_list_commands)
+    def test_if_not_in_and_in_list_with_string_var_gives_type_error(self, operator):
+        code = textwrap.dedent(f"""\
         items is red
-        if red in items print 'found!'""")
+        if red {operator} items print 'found!'""")
         self.multi_level_tester(
             max_level=7,
             code=code,
+            extra_check_function=lambda c: c.exception.arguments['line_number'] == 2,
             exception=hedy.exceptions.InvalidArgumentTypeException
         )
 
-    def test_if_in_list_with_input_gives_type_error(self):
-        code = textwrap.dedent("""\
+    @parameterized.expand(HedyTester.in_not_in_list_commands)
+    def test_if_not_in_and_in_list_with_input_gives_type_error(self, operator):
+        code = textwrap.dedent(f"""\
         items is ask 'What are the items?'
-        if red in items print 'found!'""")
+        if red {operator} items print 'found!'""")
         self.multi_level_tester(
             max_level=7,
             code=code,
+            extra_check_function=lambda c: c.exception.arguments['line_number'] == 2,
             exception=hedy.exceptions.InvalidArgumentTypeException
         )
 
@@ -381,6 +447,22 @@ class TestsLevel5(HedyTester):
 
         self.single_level_tester(code=code, expected=expected)
 
+    def test_if_equality_print_linebreaks_else_print(self):
+        # line break before else is allowed
+        code = textwrap.dedent("""\
+        naam is Hedy
+        if naam is Hedy print 'leuk'\n\n       
+        else print 'minder leuk'""")
+
+        expected = textwrap.dedent("""\
+        naam = 'Hedy'
+        if naam == 'Hedy':
+          print(f'leuk')
+        else:
+          print(f'minder leuk')""")
+
+        self.single_level_tester(code=code, expected=expected)
+
     def test_if_equality_linebreak_print_else_print(self):
         # line break after if-condition is allowed
         code = textwrap.dedent("""\
@@ -411,6 +493,36 @@ class TestsLevel5(HedyTester):
           print(f'biertje!')""")
 
         self.multi_level_tester(max_level=7, code=code, expected=expected)
+
+    def test_two_ifs_assign_no_following(self):
+        code = textwrap.dedent("""\
+        if order is fries price is 5
+        drink is water""")
+
+        expected = textwrap.dedent("""\
+        if 'order' == 'fries':
+          price = '5'
+        else:
+          x__x__x__x = '5'
+        drink = 'water'""")
+
+        self.single_level_tester(code=code, expected=expected, translate=False, unused_allowed=True)
+
+    def test_two_ifs_assign_following(self):
+        code = textwrap.dedent("""\
+        if order is fries price is 5
+        drink is water
+        print drink""")
+
+        expected = textwrap.dedent("""\
+        if 'order' == 'fries':
+          price = '5'
+        else:
+          x__x__x__x = '5'
+        drink = 'water'
+        print(f'{drink}')""")
+
+        self.single_level_tester(code=code, expected=expected, translate=False, unused_allowed=True)
 
     def test_if_equality_print_else_linebreak_print(self):
         # line break after else is allowed
@@ -572,6 +684,24 @@ class TestsLevel5(HedyTester):
 
         self.single_level_tester(code=code, expected=expected)
 
+    def test_else_without_if_gives_error(self):
+        code = "else print 'wrong'"
+
+        self.multi_level_tester(code=code, exception=hedy.exceptions.ElseWithoutIfException, max_level=7)
+
+    def test_else_without_if_indentation_gives_error(self):
+        code = textwrap.dedent("""\
+            if answer is yes print 'great!'
+            print 'correct'
+            else print 'wrong'""")
+
+        self.multi_level_tester(
+            code=code,
+            exception=hedy.exceptions.ElseWithoutIfException,
+            max_level=7,
+            skip_faulty=False
+        )
+
     #
     # combined tests
     #
@@ -589,11 +719,11 @@ class TestsLevel5(HedyTester):
         if name == 'Hedy':
           print(f'nice!')
         else:
-          _ = 'x'
+          x__x__x__x = '5'
         if name in names:
           print(f'nice!')""")
 
-        self.single_level_tester(code=code, expected=expected, translate=False)
+        self.single_level_tester(code=code, expected=expected)
 
     def test_onno_3372(self):
         code = textwrap.dedent("""\
@@ -606,12 +736,11 @@ class TestsLevel5(HedyTester):
         if antw == 'schaar':
           print(f'gelijk spel!')
         else:
-          _ = 'x'
+          x__x__x__x = '5'
         print(f'test')""")
 
         self.single_level_tester(code=code,
-                                 expected=expected,
-                                 translate=False)
+                                 expected=expected)
 
     def test_restaurant_example(self):
         code = textwrap.dedent("""\
@@ -627,16 +756,15 @@ class TestsLevel5(HedyTester):
         if eten == 'friet':
           saus = input(f'Welke saus wilt u bij de friet?')
         else:
-          _ = 'x'
+          x__x__x__x = '5'
         if eten == 'pizza':
           topping = input(f'Welke topping wilt u op de pizza?')
         else:
-          _ = 'x'
+          x__x__x__x = '5'
         print(f'{eten}')""")
 
         self.single_level_tester(code=code,
-                                 expected=expected,
-                                 translate=False)
+                                 expected=expected, translate=False, unused_allowed=True)
 
     def test_onno_3372_else(self):
         code = textwrap.dedent("""\
@@ -653,8 +781,7 @@ class TestsLevel5(HedyTester):
         print(f'test')""")
 
         self.single_level_tester(code=code,
-                                 expected=expected,
-                                 translate=False)
+                                 expected=expected)
 
     def test_consecutive_if_and_if_else_statements(self):
         code = textwrap.dedent("""\
@@ -668,15 +795,14 @@ class TestsLevel5(HedyTester):
         if naam == 'Hedy':
           print(f'leuk')
         else:
-          _ = 'x'
+          x__x__x__x = '5'
         if naam == 'Python':
           print(f'ook leuk')
         else:
           print(f'minder leuk!')""")
 
         self.single_level_tester(code=code,
-                                 expected=expected,
-                                 translate=False)
+                                 expected=expected)
 
     def test_consecutive_if_else_statements(self):
         code = textwrap.dedent("""\
@@ -697,7 +823,7 @@ class TestsLevel5(HedyTester):
         else:
           print(f'meh')""")
 
-        self.single_level_tester(code=code, expected=expected, translate=False)
+        self.single_level_tester(code=code, expected=expected)
 
     def test_turn_if_forward(self):
         code = textwrap.dedent("""\
@@ -759,52 +885,107 @@ class TestsLevel5(HedyTester):
         if option is Scissors
             print 'Its a tie!'""")
 
+        expected = textwrap.dedent("""\
+        option = input(f'Rock Paper or Scissors?')
+        pass
+        pass""")
+
+        skipped_mappings = [
+            SkippedMapping(SourceRange(2, 1, 2, 22), hedy.exceptions.ParseException),
+            SkippedMapping(SourceRange(3, 1, 3, 23), hedy.exceptions.InvalidSpaceException),
+        ]
+
         self.multi_level_tester(
-            max_level=7,
             code=code,
-            exception=hedy.exceptions.ParseException,
-            extra_check_function=lambda c: c.exception.error_location[0] == 3 and c.exception.error_location[1] == 1
+            expected=expected,
+            skipped_mappings=skipped_mappings,
+            max_level=7
         )
 
     def test_line_with_if_with_space_gives_invalid(self):
         code = textwrap.dedent("""\
+        prind skipping
         name is Hedy
          if name is 3 print 'leuk' else print 'stom'""")
 
+        expected = textwrap.dedent("""\
+        pass
+        name = 'Hedy'
+        pass""")
+
+        skipped_mappings = [
+            SkippedMapping(SourceRange(1, 1, 1, 15), hedy.exceptions.InvalidCommandException),
+            SkippedMapping(SourceRange(3, 1, 3, 45), hedy.exceptions.InvalidSpaceException),
+        ]
+
         self.multi_level_tester(
             code=code,
-            exception=hedy.exceptions.InvalidSpaceException,
+            expected=expected,
+            skipped_mappings=skipped_mappings,
             max_level=7)
 
     def test_pront_should_suggest_print(self):
-        code = "pront 'Hedy is leuk!'"
+        code = textwrap.dedent("""\
+        pront 'Hedy is leuk!'
+        prind skipping""")
+
+        expected = textwrap.dedent("""\
+        pass
+        pass""")
+
+        skipped_mappings = [
+            SkippedMapping(SourceRange(1, 1, 1, 22), hedy.exceptions.InvalidCommandException),
+            SkippedMapping(SourceRange(2, 1, 2, 15), hedy.exceptions.InvalidCommandException)
+        ]
 
         self.multi_level_tester(
             code=code,
-            exception=hedy.exceptions.InvalidCommandException,
-            extra_check_function=lambda c: str(c.exception.arguments['guessed_command']) == 'print'
+            expected=expected,
+            skipped_mappings=skipped_mappings
         )
 
     def test_print_no_quotes(self):
         code = textwrap.dedent("""\
         print 'Hoi ik ben Hedy de Waarzegger
         print 'Ik kan voorspellen wie morgen de loterij wint!'
-        naam is ask 'Wie ben jij?'""")
+        naam is ask 'Wie ben jij?'
+        prind skipping""")
+
+        expected = textwrap.dedent("""\
+        pass
+        print(f'Ik kan voorspellen wie morgen de loterij wint!')
+        naam = input(f'Wie ben jij?')
+        pass""")
+
+        skipped_mappings = [
+            SkippedMapping(SourceRange(1, 1, 1, 37), hedy.exceptions.UnquotedTextException),
+            SkippedMapping(SourceRange(4, 1, 4, 15), hedy.exceptions.InvalidCommandException)
+        ]
 
         self.single_level_tester(
             code=code,
-            exception=hedy.exceptions.UnquotedTextException,
-            extra_check_function=lambda c: c.exception.error_location[0] == 1
+            expected=expected,
+            skipped_mappings=skipped_mappings
         )
 
     def test_print_quote_gives_exception(self):
         code = textwrap.dedent("""\
-        print 'what's your name?'""")
+        print 'what's your name?'
+        prind skipping""")
+
+        expected = textwrap.dedent("""\
+        pass
+        pass""")
+
+        skipped_mappings = [
+            SkippedMapping(SourceRange(1, 1, 1, 26), hedy.exceptions.UnquotedTextException),
+            SkippedMapping(SourceRange(2, 1, 2, 15), hedy.exceptions.InvalidCommandException)
+        ]
 
         self.single_level_tester(
             code=code,
-            exception=hedy.exceptions.UnquotedTextException,
-            extra_check_function=lambda c: c.exception.error_location[0] == 1
+            expected=expected,
+            skipped_mappings=skipped_mappings
         )
 
     def test_ask_with_quote(self):
@@ -820,12 +1001,28 @@ class TestsLevel5(HedyTester):
         )
 
     def test_if_equality_print_backtick_text_gives_error(self):
-        code = "if 1 is 1 print `yay!` else print `nay`"
+        code = textwrap.dedent("""\
+        prind skipping
+        if 1 is 1 print `yay!` else print `nay`""")
+
+        expected = textwrap.dedent("""\
+        pass
+        if '1' == '1':
+          pass
+        else:
+          pass""")
+
+        skipped_mappings = [
+            SkippedMapping(SourceRange(1, 1, 1, 15), hedy.exceptions.InvalidCommandException),
+            SkippedMapping(SourceRange(2, 11, 2, 23), hedy.exceptions.UnquotedTextException),
+            SkippedMapping(SourceRange(2, 29, 2, 40), hedy.exceptions.UnquotedTextException),
+        ]
 
         self.multi_level_tester(
-            max_level=6,
+            max_level=5,
             code=code,
-            exception=hedy.exceptions.UnquotedTextException
+            expected=expected,
+            skipped_mappings=skipped_mappings
         )
 
     def test_if_fix_nl(self):
@@ -839,7 +1036,7 @@ class TestsLevel5(HedyTester):
         if naam == '5':
           print(f'leuk')
         else:
-          _ = 'x'
+          x__x__x__x = '5'
         print(f'minder leuk!')""")
 
         self.multi_level_tester(
@@ -856,175 +1053,111 @@ class TestsLevel5(HedyTester):
 
     def test_if_pressed_x_is_letter_key(self):
         code = textwrap.dedent("""\
-        if x is pressed print 'it is a letter key'""")
+        if x is pressed print 'it is a letter key' else print 'it is another letter key'""")
 
         expected = HedyTester.dedent("""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode != 'x':
-                pygame_end = True
-            if event.unicode == 'x':
-              print(f'it is a letter key')
-              break
-            # End of PyGame Event Handler""")
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['x'] = 'if_pressed_x_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_x_():
+          print(f'it is a letter key')
+        def if_pressed_else_():
+          print(f'it is another letter key')
+        extensions.if_pressed(if_pressed_mapping)""")
 
         self.multi_level_tester(code=code, expected=expected, max_level=7)
 
     def test_if_pressed_x_is_variable(self):
         code = textwrap.dedent("""\
         x is a
-        if x is pressed print 'it is a letter key'""")
+        if x is pressed print 'it is a letter key' else print 'it is another letter key'
+        print x""")
 
         expected = HedyTester.dedent("""\
         x = 'a'
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode != x:
-                pygame_end = True
-            if event.unicode == x:
-              print(f'it is a letter key')
-              break
-            # End of PyGame Event Handler""")
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['x'] = 'if_pressed_x_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_x_():
+          print(f'it is a letter key')
+        def if_pressed_else_():
+          print(f'it is another letter key')
+        extensions.if_pressed(if_pressed_mapping)
+        print(f'{x}')""")
 
         self.multi_level_tester(code=code, expected=expected, max_level=7)
 
     def test_double_if_pressed(self):
         code = textwrap.dedent("""\
-        if x is pressed print 'first key'
-        if y is pressed print 'second key'""")
+        if x is pressed print 'first key' else print 'something else'
+        if y is pressed print 'second key' else print 'something else'""")
 
         expected = HedyTester.dedent("""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode == 'x':
-              print(f'first key')
-              break
-            else:
-              _ = 'x'
-          if event.type == pygame.KEYDOWN:
-            if event.unicode != 'y':
-                pygame_end = True
-            if event.unicode == 'y':
-              print(f'second key')
-              break
-            # End of PyGame Event Handler""")
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['x'] = 'if_pressed_x_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_x_():
+          print(f'first key')
+        def if_pressed_else_():
+          print(f'something else')
+        extensions.if_pressed(if_pressed_mapping)
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['y'] = 'if_pressed_y_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_y_():
+          print(f'second key')
+        def if_pressed_else_():
+          print(f'something else')
+        extensions.if_pressed(if_pressed_mapping)""")
 
-        self.multi_level_tester(code=code, expected=expected, max_level=7, translate=False)
+        self.multi_level_tester(code=code, expected=expected, max_level=7)
 
     def test_if_pressed_has_enter_after_pressed(self):
         code = textwrap.dedent("""\
         if x is pressed
-        print 'it is a letter key'""")
+        print 'it is a letter key' else print 'something else'""")
 
         expected = HedyTester.dedent("""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode != 'x':
-                pygame_end = True
-            if event.unicode == 'x':
-              print(f'it is a letter key')
-              break
-            # End of PyGame Event Handler""")
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['x'] = 'if_pressed_x_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_x_():
+          print(f'it is a letter key')
+        def if_pressed_else_():
+          print(f'something else')
+        extensions.if_pressed(if_pressed_mapping)""")
 
         self.multi_level_tester(code=code, expected=expected, max_level=7)
 
     def test_if_pressed_1_is_number_key(self):
         code = textwrap.dedent("""\
-        if 1 is pressed print 'it is a number key'""")
+        if 1 is pressed print 'it is a number key' else print 'something else'""")
 
         expected = HedyTester.dedent("""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode != '1':
-                pygame_end = True
-            if event.unicode == '1':
-              print(f'it is a number key')
-              break
-            # End of PyGame Event Handler""")
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['1'] = 'if_pressed_1_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_1_():
+          print(f'it is a number key')
+        def if_pressed_else_():
+          print(f'something else')
+        extensions.if_pressed(if_pressed_mapping)""")
 
         self.multi_level_tester(code=code, expected=expected, max_level=7)
 
     def test_if_pressed_with_trailing_spaces_after_key(self):
         code = textwrap.dedent("""\
-        if x       is pressed print 'trailing spaces!'""")
+        if x       is pressed print 'trailing spaces!' else print 'something else'""")
 
         expected = HedyTester.dedent("""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode != 'x':
-                pygame_end = True
-            if event.unicode == 'x':
-              print(f'trailing spaces!')
-              break
-            # End of PyGame Event Handler""")
-
-        self.multi_level_tester(code=code, expected=expected, max_level=7)
-
-    #
-    # if pressed else tests
-    #
-    def test_if_pressed_x_else(self):
-        code = textwrap.dedent("""\
-        if x is pressed print 'x is pressed!' else print 'x is not pressed!'""")
-
-        expected = HedyTester.dedent("""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode == 'x':
-              print(f'x is pressed!')
-              break
-            else:
-              print(f'x is not pressed!')
-            # End of PyGame Event Handler""")
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['x'] = 'if_pressed_x_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_x_():
+          print(f'trailing spaces!')
+        def if_pressed_else_():
+          print(f'something else')
+        extensions.if_pressed(if_pressed_mapping)""")
 
         self.multi_level_tester(code=code, expected=expected, max_level=7)
 
@@ -1034,21 +1167,14 @@ class TestsLevel5(HedyTester):
         else print 'x is not pressed!'""")
 
         expected = HedyTester.dedent("""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode == 'x':
-              print(f'x is pressed!')
-              break
-            else:
-              print(f'x is not pressed!')
-            # End of PyGame Event Handler""")
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['x'] = 'if_pressed_x_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_x_():
+          print(f'x is pressed!')
+        def if_pressed_else_():
+          print(f'x is not pressed!')
+        extensions.if_pressed(if_pressed_mapping)""")
 
         self.multi_level_tester(code=code, expected=expected, max_level=7)
 
@@ -1060,21 +1186,14 @@ class TestsLevel5(HedyTester):
         print 'x is not pressed!'""")
 
         expected = HedyTester.dedent("""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode == 'x':
-              print(f'x is pressed!')
-              break
-            else:
-              print(f'x is not pressed!')
-            # End of PyGame Event Handler""")
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['x'] = 'if_pressed_x_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_x_():
+          print(f'x is pressed!')
+        def if_pressed_else_():
+          print(f'x is not pressed!')
+        extensions.if_pressed(if_pressed_mapping)""")
 
         self.multi_level_tester(code=code, expected=expected, max_level=7)
 
@@ -1085,21 +1204,14 @@ class TestsLevel5(HedyTester):
         else print 'x is not pressed!'""")
 
         expected = HedyTester.dedent("""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode == 'x':
-              print(f'x is pressed!')
-              break
-            else:
-              print(f'x is not pressed!')
-            # End of PyGame Event Handler""")
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['x'] = 'if_pressed_x_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_x_():
+          print(f'x is pressed!')
+        def if_pressed_else_():
+          print(f'x is not pressed!')
+        extensions.if_pressed(if_pressed_mapping)""")
 
         self.multi_level_tester(code=code, expected=expected, max_level=7)
 
@@ -1110,21 +1222,14 @@ class TestsLevel5(HedyTester):
         print 'x is not pressed!'""")
 
         expected = HedyTester.dedent("""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode == 'x':
-              print(f'x is pressed!')
-              break
-            else:
-              print(f'x is not pressed!')
-            # End of PyGame Event Handler""")
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['x'] = 'if_pressed_x_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_x_():
+          print(f'x is pressed!')
+        def if_pressed_else_():
+          print(f'x is not pressed!')
+        extensions.if_pressed(if_pressed_mapping)""")
 
         self.multi_level_tester(code=code, expected=expected, max_level=7)
 
@@ -1135,146 +1240,31 @@ class TestsLevel5(HedyTester):
         else print 'x is not pressed!'""")
 
         expected = HedyTester.dedent("""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode == 'x':
-              print(f'x is pressed!')
-              break
-            else:
-              print(f'x is not pressed!')
-            # End of PyGame Event Handler""")
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['x'] = 'if_pressed_x_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_x_():
+          print(f'x is pressed!')
+        def if_pressed_else_():
+          print(f'x is not pressed!')
+        extensions.if_pressed(if_pressed_mapping)""")
 
         self.multi_level_tester(code=code, expected=expected, max_level=7)
 
-    #
-    # pressed turtle tests
-    #
-    def test_if_pressed_with_turtleforward(self):
-        code = textwrap.dedent("""\
-        if x is pressed forward 50""")
-
-        expected = HedyTester.dedent(f"""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode != 'x':
-                pygame_end = True
-            if event.unicode == 'x':
-              {HedyTester.indent(
-                HedyTester.forward_transpiled(50, self.level),
-                14, True)
-              }
-              break
-            # End of PyGame Event Handler""")
-
-        self.multi_level_tester(
-            code=code,
-            expected=expected,
-            extra_check_function=self.is_turtle(),
-            max_level=7
-        )
-
-    def test_if_pressed_with_turtleturn(self):
-        code = textwrap.dedent("""\
-        if x is pressed turn 90""")
-
-        expected = HedyTester.dedent(f"""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode != 'x':
-                pygame_end = True
-            if event.unicode == 'x':
-              {HedyTester.indent(
-                HedyTester.turn_transpiled(90, self.level),
-                14, True)
-              }
-              break
-            # End of PyGame Event Handler""")
-
-        self.multi_level_tester(
-            code=code,
-            expected=expected,
-            extra_check_function=self.is_turtle(),
-            max_level=7
-        )
-
-    def test_if_pressed_with_turtlecolor(self):
-        code = textwrap.dedent("""\
-        if x is pressed color red""")
-
-        expected = HedyTester.dedent(f"""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode != 'x':
-                pygame_end = True
-            if event.unicode == 'x':
-              {HedyTester.indent(
-                HedyTester.turtle_color_command_transpiled('red'),
-                14, True)
-              }
-              break
-            # End of PyGame Event Handler""")
-
-        self.multi_level_tester(
-            code=code,
-            expected=expected,
-            extra_check_function=self.is_turtle(),
-            max_level=7
-        )
-
     def test_if_pressed_else_with_turtle(self):
+        self.maxDiff = None
         code = textwrap.dedent("""\
         if x is pressed forward 25 else turn 90""")
 
         expected = HedyTester.dedent(f"""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode == 'x':
-              {HedyTester.indent(
-                HedyTester.forward_transpiled(25, self.level),
-                14, True)
-              }
-              break
-            else:
-              {HedyTester.indent(
-                HedyTester.turn_transpiled(90, self.level),
-                14, True)
-              }
-            # End of PyGame Event Handler""")
+if_pressed_mapping = {{"else": "if_pressed_default_else"}}
+if_pressed_mapping['x'] = 'if_pressed_x_'
+if_pressed_mapping['else'] = 'if_pressed_else_'
+def if_pressed_x_():
+{HedyTester.indent(HedyTester.forward_transpiled(25, self.level))}
+def if_pressed_else_():
+{HedyTester.indent(HedyTester.turn_transpiled(90, self.level))}
+extensions.if_pressed(if_pressed_mapping)""")
 
         self.multi_level_tester(
             code=code,
@@ -1285,163 +1275,137 @@ class TestsLevel5(HedyTester):
 
     def test_if_pressed_non_latin(self):
         code = textwrap.dedent("""\
-        if ض is pressed print 'arabic'
-        if ש is pressed print 'hebrew'
-        if й is pressed print 'russian'""")
+        if ض is pressed print 'arabic' else print 'something else'
+        if ש is pressed print 'hebrew' else print 'something else'
+        if й is pressed print 'russian' else print 'something else'""")
 
-        expected = HedyTester.dedent("""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode == 'ض':
-              print(f'arabic')
-              break
-            else:
-              _ = 'x'
-          if event.type == pygame.KEYDOWN:
-            if event.unicode == 'ש':
-              print(f'hebrew')
-              break
-            else:
-              _ = 'x'
-          if event.type == pygame.KEYDOWN:
-            if event.unicode != 'й':
-                pygame_end = True
-            if event.unicode == 'й':
-              print(f'russian')
-              break
-            # End of PyGame Event Handler""")
+        expected = textwrap.dedent("""\
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['ض'] = 'if_pressed_ض_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_ض_():
+          print(f'arabic')
+        def if_pressed_else_():
+          print(f'something else')
+        extensions.if_pressed(if_pressed_mapping)
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['ש'] = 'if_pressed_ש_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_ש_():
+          print(f'hebrew')
+        def if_pressed_else_():
+          print(f'something else')
+        extensions.if_pressed(if_pressed_mapping)
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['й'] = 'if_pressed_й_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_й_():
+          print(f'russian')
+        def if_pressed_else_():
+          print(f'something else')
+        extensions.if_pressed(if_pressed_mapping)""")
 
-        self.multi_level_tester(code=code, expected=expected, max_level=7, translate=False)
+        self.multi_level_tester(code=code, expected=expected, max_level=7)
 
-    #
-    # pressed negative tests
-    #
-
-    def test_if_indent_after_pressed_gives_parse_error(self):
+    def test_if_pressed_missing_else_gives_error(self):
         code = textwrap.dedent("""\
-        if x is pressed
-            print 'a double indent!'""")
+        prind skipping
+        if x is pressed print 'hi!'""")
+
+        expected = textwrap.dedent("""\
+        pass
+        pass""")
+
+        skipped_mappings = [
+            SkippedMapping(SourceRange(1, 1, 1, 15), hedy.exceptions.InvalidCommandException),
+            SkippedMapping(SourceRange(2, 1, 2, 28), hedy.exceptions.MissingElseForPressitException)
+        ]
 
         self.multi_level_tester(
             max_level=7,
             code=code,
-            exception=hedy.exceptions.ParseException,
-            extra_check_function=lambda c: c.exception.error_location[0] == 1 and c.exception.error_location[1] == 1
+            expected=expected,
+            skipped_mappings=skipped_mappings
         )
 
-    #
-    # button tests
-    #
-    def test_button(self):
+    def test_if_pressed_missing_else_gives_error_with_new_line(self):
         code = textwrap.dedent("""\
-        knop is button""")
+        prind skipping
+        if x is pressed print 'hi!'\n""")
+
+        expected = textwrap.dedent("""\
+        pass
+        pass""")
+
+        skipped_mappings = [
+            SkippedMapping(SourceRange(1, 1, 1, 15), hedy.exceptions.InvalidCommandException),
+            SkippedMapping(SourceRange(2, 1, 2, 28), hedy.exceptions.MissingElseForPressitException),
+        ]
+
+        self.multi_level_tester(
+            max_level=7,
+            code=code,
+            expected=expected,
+            skipped_mappings=skipped_mappings
+        )
+
+    def test_source_map(self):
+        code = textwrap.dedent("""\
+        print 'Do you want a good (g) or bad (b) ending?'
+        if g is pressed print 'They lived happily ever after ❤'
+        else print 'The prince was eaten by a hippopotamus 😭'""")
+
+        expected_code = textwrap.dedent("""\
+        print(f'Do you want a good (g) or bad (b) ending?')
+        if_pressed_mapping = {"else": "if_pressed_default_else"}
+        if_pressed_mapping['g'] = 'if_pressed_g_'
+        if_pressed_mapping['else'] = 'if_pressed_else_'
+        def if_pressed_g_():
+          print(f'They lived happily ever after ❤')
+        def if_pressed_else_():
+          print(f'The prince was eaten by a hippopotamus 😭')
+        extensions.if_pressed(if_pressed_mapping)""")
+
+        expected_source_map = {
+            '1/1-1/50': '1/1-1/52',
+            '1/1-3/55': '1/1-9/42',
+            '2/1-3/54': '2/1-9/42',
+            '2/17-2/56': '6/3-6/44',
+            '3/6-3/54': '8/3-8/53'
+        }
+
+        self.single_level_tester(code, expected=expected_code)
+        self.source_map_tester(code=code, expected_source_map=expected_source_map)
+
+    def test_turn_if_play(self):
+        code = textwrap.dedent("""\
+            answer is ask 'What is the capital of Zimbabwe?'
+            if answer is Harare play C6""")
 
         expected = HedyTester.dedent(f"""\
-        create_button('knop')""")
+            answer = input(f'What is the capital of Zimbabwe?')
+            if answer == 'Harare':""",
+                                     (self.play_transpiled('C6'), '  '))
 
-        self.multi_level_tester(code=code, expected=expected, max_level=11)
+        self.single_level_tester(
+            code=code,
+            skip_faulty=True,
+            expected=expected)
 
-    def test_two_buttons(self):
+    def test_turn_if_else_play(self):
         code = textwrap.dedent("""\
-        knop1 is button
-        knop2 is button""")
+            answer is ask 'What is the capital of Zimbabwe?'
+            if answer is Harare play C6 else play C1""")
 
-        expected = HedyTester.dedent(f"""\
-        create_button('knop1')
-        create_button('knop2')""")
+        expected = HedyTester.dedent(
+            f"""\
+            answer = input(f'What is the capital of Zimbabwe?')
+            if answer == 'Harare':""",
+            (self.play_transpiled('C6'), '  '),
+            "else:",
+            (self.play_transpiled('C1'), '  '))
 
-        self.multi_level_tester(code=code, expected=expected, max_level=11)
-
-    def test_if_button_is_pressed_print(self):
-        code = textwrap.dedent("""\
-        PRINT is button
-        if PRINT is pressed print 'The button got pressed!'""")
-
-        expected = HedyTester.dedent(f"""\
-        create_button('PRINT')
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.USEREVENT:
-            if event.key != 'PRINT':
-                pygame_end = True
-            if event.key == 'PRINT':
-              print(f'The button got pressed!')
-              break
-            # End of PyGame Event Handler""")
-
-        self.multi_level_tester(code=code, expected=expected, max_level=7)
-
-    def test_if_button_is_pressed_make_button(self):
-        code = textwrap.dedent("""\
-        BUTTON1 is button
-        if BUTTON1 is pressed BUTTON2 is button""")
-
-        expected = HedyTester.dedent(f"""\
-        create_button('BUTTON1')
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.USEREVENT:
-            if event.key != 'BUTTON1':
-                pygame_end = True
-            if event.key == 'BUTTON1':
-              create_button('BUTTON2')
-              break
-            # End of PyGame Event Handler""")
-
-        self.multi_level_tester(code=code, expected=expected, max_level=7)
-
-    def test_if_in_list_then_button(self):
-        code = textwrap.dedent("""\
-        buttonlist is knop1, knop2, knop3
-        x is knop1
-        if x in buttonlist x is button""")
-
-        expected = HedyTester.dedent(f"""\
-        buttonlist = ['knop1', 'knop2', 'knop3']
-        x = 'knop1'
-        if x in buttonlist:
-          create_button(x)""")
-
-        self.single_level_tester(code=code, expected=expected)
-
-    def if_x_is_pressed_make_button(self):
-        code = textwrap.dedent("""\
-        if x is pressed knop is button""")
-
-        expected = HedyTester.dedent(f"""\
-        pygame_end = False
-        while not pygame_end:
-          pygame.display.update()
-          event = pygame.event.wait()
-          if event.type == pygame.QUIT:
-            pygame_end = True
-            pygame.quit()
-            break
-          if event.type == pygame.KEYDOWN:
-            if event.unicode != 'x':
-                pygame_end = True
-            if event.unicode == 'x':
-              create_button('knop')
-              break
-            # End of PyGame Event Handler""")
-
-        self.multi_level_tester(code=code, expected=expected, max_level=18)
+        self.single_level_tester(
+            code=code,
+            skip_faulty=False,
+            expected=expected)

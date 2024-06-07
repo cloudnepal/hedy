@@ -1,20 +1,78 @@
-import { createClass } from '../../tools/classes/class.js';
-import {loginForTeacher} from '../../tools/login/login.js'
+import { createClass, addCustomizations } from '../../tools/classes/class.js';
+import { loginForTeacher, logout} from '../../tools/login/login.js'
 import { goToTeachersPage } from '../../tools/navigation/nav.js';
 
-describe('Is able to click on duplicate class', () => {
-  it('Passes', () => {
+describe('Duplicate class tests', () => {
+  it('Is able to duplicate class without adding second teachers', () => {
     loginForTeacher();
-    createClass();
+    const classname = createClass();
+    addCustomizations(classname);
     goToTeachersPage();
+    const duplicate_class = `test class ${Math.random()}`;
 
     // Click on duplicate icon
-    cy.get('.no-underline > .fas').first().click();
+    cy.reload();
+    cy.wait(500);
+    cy.getDataCy('view_class_link').then($viewClass => {
+      if (!$viewClass.is(':visible')) {
+          cy.getDataCy('view_classes').click();
+      }
+    });
+    cy.get('#duplicate_class').first().click();
 
     // Checks for input field
-    cy.get('#modal-prompt-input').type('test class 2');
-    cy.get('#modal-ok-button').click();
+    cy.getDataCy('modal_prompt_input').type(duplicate_class);
+    cy.getDataCy('modal_ok_button').click();
 
+    cy.reload();
+    cy.wait(500);
+
+    cy.getDataCy('view_class_link').then($viewClass => {
+      if (!$viewClass.is(':visible')) {
+          cy.getDataCy('view_classes').click();
+      }
+    });
+    cy.getDataCy('view_class_link').contains(duplicate_class).click();
+    cy.getDataCy('customize_class_button').click();
+    cy.get("#opening_date_container").should("not.be.visible")
+    cy.get("#opening_date_label").click();
+    cy.get("#opening_date_container").should("be.visible")
+    cy.get("#enable_level_7").should('be.enabled');
+    logout();
+  })
+
+  it('Is able to duplicate class with adding second teachers', () => {
+    loginForTeacher();
     goToTeachersPage();
+
+    cy.getDataCy('view_class_link').then($viewClass => {
+      if (!$viewClass.is(':visible')) {
+          cy.getDataCy('view_classes').click();
+      }
+    });
+    cy.get("tr") // This class has second teachers.
+    cy.getDataCy("duplicate_CLASS1").click();
+
+    cy.getDataCy('modal_yes_button').should('be.enabled').click();
+
+    const duplicate_class = `test class ${Math.random()}`;
+    cy.getDataCy('modal_prompt_input').type(duplicate_class);
+    cy.getDataCy('modal_ok_button').click();
+
+    cy.reload();
+    cy.wait(500);
+
+    cy.getDataCy('view_class_link').then($viewClass => {
+      if (!$viewClass.is(':visible')) {
+          cy.getDataCy('view_classes').click();
+      }
+    });
+    cy.getDataCy('view_class_link').contains(duplicate_class).click();
+    cy.getDataCy('invites_block').should('be.visible');
+    cy.getDataCy('customize_class_button').click();
+    cy.get("#opening_date_container").should("not.be.visible")
+    cy.get("#opening_date_label").click();
+    cy.get("#opening_date_container").should("be.visible")
+    cy.get("#enable_level_7").should('be.enabled');
   })
 })

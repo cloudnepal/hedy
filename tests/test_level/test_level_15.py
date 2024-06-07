@@ -10,6 +10,92 @@ from tests.Tester import HedyTester
 class TestsLevel15(HedyTester):
     level = 15
 
+    #
+    # boolean values
+    #
+    @parameterized.expand(HedyTester.booleans)
+    def test_assign_var_boolean(self, value, expected):
+        code = f"cond = {value}"
+        expected = f"cond = {expected}"
+
+        self.multi_level_tester(
+            code=code,
+            expected=expected,
+            unused_allowed=True,
+            translate=False
+        )
+
+    def test_assign_list_var_boolean(self):
+        code = "cond = True, False, true, false"
+        expected = "cond = [True, False, True, False]"
+
+        self.single_level_tester(
+            code=code,
+            expected=expected,
+            unused_allowed=True
+        )
+
+    @parameterized.expand(HedyTester.booleans)
+    def test_print_boolean(self, value, expected):
+        code = f"print 'variable is ' {value}"
+        expected = f"print(f'''variable is {{convert_numerals(\"Latin\", {expected})}}''')"
+
+        self.multi_level_tester(
+            code=code,
+            max_level=17,
+            expected=expected,
+            translate=False
+        )
+
+    @parameterized.expand([('вярно', True), ('Вярно', True), ('невярно', False), ('Невярно', False)])
+    def test_print_boolean_bulgarian(self, value, exp):
+        code = f"принтирай 'Това е ' {value}"
+        expected = f"print(f'''Това е {{convert_numerals(\"Latin\", {exp})}}''')"
+
+        self.multi_level_tester(
+            code=code,
+            max_level=17,
+            expected=expected,
+            lang='bg'
+        )
+
+    @parameterized.expand(HedyTester.booleans)
+    def test_print_boolean_var(self, value, expected):
+        code = textwrap.dedent(f"""\
+            cond = {value}
+            print 'variable is ' cond""")
+        expected = textwrap.dedent(f"""\
+            cond = {expected}
+            print(f'''variable is {{cond}}''')""")
+
+        self.multi_level_tester(
+            code=code,
+            max_level=17,
+            expected=expected,
+            translate=False
+        )
+
+    @parameterized.expand(HedyTester.booleans)
+    def test_cond_boolean(self, value, expected):
+        code = textwrap.dedent(f"""\
+            cond = {value}
+            if cond is {value}
+                sleep""")
+        expected = textwrap.dedent(f"""\
+            cond = {expected}
+            if convert_numerals('Latin', cond) == convert_numerals('Latin', '{expected}'):
+              time.sleep(1)""")
+
+        self.multi_level_tester(
+            code=code,
+            max_level=16,
+            expected=expected,
+            translate=False
+        )
+
+    #
+    # while
+    #
     def test_while_equals(self):
         code = textwrap.dedent("""\
       antwoord is 0
@@ -35,6 +121,26 @@ class TestsLevel15(HedyTester):
             max_level=16,
             expected=expected,
             expected_commands=['is', 'while', 'ask', 'print']
+        )
+
+    @parameterized.expand(HedyTester.booleans)
+    def test_while_equals_boolean(self, value, expected):
+        code = textwrap.dedent(f"""\
+            cond is {value}
+            while cond != {value}
+              cond is {value}""")
+        expected = textwrap.dedent(f"""\
+            cond = {expected}
+            while convert_numerals('Latin', cond)!={expected}:
+              cond = {expected}
+              time.sleep(0.1)""")
+
+        self.multi_level_tester(
+            code=code,
+            max_level=16,
+            expected=expected,
+            skip_faulty=False,
+            translate=False
         )
 
     @parameterized.expand(['and', 'or'])
@@ -146,9 +252,19 @@ class TestsLevel15(HedyTester):
             exception=exceptions.NoIndentationException
         )
 
-    #
-    # pressed with while loop tests
-    #
+    def test_if_pressed_without_else_works(self):
+        code = textwrap.dedent("""\
+        if p is pressed
+            print 'press'""")
+
+        expected = textwrap.dedent("""\
+         if_pressed_mapping = {"else": "if_pressed_default_else"}
+         if_pressed_mapping['p'] = 'if_pressed_p_'
+         def if_pressed_p_():
+             print(f'''press''')
+         extensions.if_pressed(if_pressed_mapping)""")
+
+        self.multi_level_tester(code, expected=expected, max_level=16)
 
     def test_if_pressed_works_in_while_loop(self):
         code = textwrap.dedent("""\
@@ -161,34 +277,86 @@ class TestsLevel15(HedyTester):
       print 'Uit de loop!'""")
 
         expected = textwrap.dedent("""\
-        stop = 0
-        while convert_numerals('Latin', stop)!=convert_numerals('Latin', 1):
-          pygame_end = False
-          while not pygame_end:
-            pygame.display.update()
-            event = pygame.event.wait()
-            if event.type == pygame.QUIT:
-              pygame_end = True
-              pygame.quit()
-              break
-            if event.type == pygame.KEYDOWN:
-              if event.unicode != 'p':
-                  pygame_end = True
-              if event.unicode == 'p':
-                print(f'''press''')
-                break
-            if event.type == pygame.KEYDOWN:
-              if event.unicode != 's':
-                  pygame_end = True
-              if event.unicode == 's':
-                stop = 1
-                break
-              # End of PyGame Event Handler
-          time.sleep(0.1)
-        print(f'''Uit de loop!''')""")
+         stop = 0
+         while convert_numerals('Latin', stop)!=convert_numerals('Latin', 1):
+           if_pressed_mapping = {"else": "if_pressed_default_else"}
+           if_pressed_mapping['p'] = 'if_pressed_p_'
+           def if_pressed_p_():
+               print(f'''press''')
+           extensions.if_pressed(if_pressed_mapping)
+           if_pressed_mapping = {"else": "if_pressed_default_else"}
+           if_pressed_mapping['s'] = 'if_pressed_s_'
+           def if_pressed_s_():
+               stop = 1
+           extensions.if_pressed(if_pressed_mapping)
+           time.sleep(0.1)
+         print(f'''Uit de loop!''')""")
 
         self.multi_level_tester(
             code=code,
             max_level=16,
             expected=expected,
         )
+
+    def test_if_pressed_multiple_lines_body(self):
+        code = textwrap.dedent("""\
+        if x is pressed
+            print 'x'
+            print 'lalalalala'
+        else
+            print 'not x'
+            print 'lalalalala'""")
+
+        expected = textwrap.dedent("""\
+         if_pressed_mapping = {"else": "if_pressed_default_else"}
+         if_pressed_mapping['x'] = 'if_pressed_x_'
+         def if_pressed_x_():
+             print(f'''x''')
+             print(f'''lalalalala''')
+         if_pressed_mapping['else'] = 'if_pressed_else_'
+         def if_pressed_else_():
+             print(f'''not x''')
+             print(f'''lalalalala''')
+         extensions.if_pressed(if_pressed_mapping)""")
+
+        self.multi_level_tester(
+            code=code,
+            max_level=16,
+            expected=expected,
+        )
+
+    def test_source_map(self):
+        code = textwrap.dedent("""\
+        answer = 0
+        while answer != 25
+            answer = ask 'What is 5 times 5?'
+        print 'A correct answer has been given'""")
+
+        excepted_code = textwrap.dedent("""\
+        answer = 0
+        while convert_numerals('Latin', answer)!=convert_numerals('Latin', 25):
+          answer = input(f'''What is 5 times 5?''')
+          try:
+            answer = int(answer)
+          except ValueError:
+            try:
+              answer = float(answer)
+            except ValueError:
+              pass
+          time.sleep(0.1)
+        print(f'''A correct answer has been given''')""")
+
+        expected_source_map = {
+            '1/1-1/7': '1/1-1/7',
+            '1/1-1/11': '1/1-1/11',
+            '2/7-2/13': '2/33-2/39',
+            '2/7-2/19': '2/7-2/71',
+            '3/5-3/11': '8/5-8/11',
+            '3/5-3/38': '3/1-9/18',
+            '2/1-3/47': '2/1-11/18',
+            '4/1-4/40': '12/1-12/46',
+            '1/1-4/41': '1/1-12/46'
+        }
+
+        self.single_level_tester(code, expected=excepted_code)
+        self.source_map_tester(code=code, expected_source_map=expected_source_map)

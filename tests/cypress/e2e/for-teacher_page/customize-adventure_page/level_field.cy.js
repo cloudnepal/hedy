@@ -1,16 +1,26 @@
-import {loginForTeacher} from '../../tools/login/login.js'
-import {goToEditAdventure} from '../../tools/navigation/nav.js'
+import { loginForTeacher } from '../../tools/login/login.js'
+import { goToEditAdventure } from '../../tools/navigation/nav.js'
 
-describe('Level Field test', () => {
-  it('passes', () => {
-    loginForTeacher();
-    goToEditAdventure();
+describe('Levels Dropdown Select test', () => {
+  const levels = ["3", "5"];
+  for (const level of levels) {
+    for (const teacher of ["teacher1", "teacher4"]) {
+      it(`${teacher} can select level ${level}`, () => {
+        loginForTeacher(teacher);
+        goToEditAdventure();
 
-    // Tests level field interaction
-    cy.get('#custom_adventure_level')
-      .should('be.visible')
-      .should('not.be.disabled')
-      .select('1')
-      .should('have.value', '1');
-  })
+        // Tests level field interaction
+        cy.get("#level_select")
+          .should('be.visible')
+          .should('not.be.disabled')
+          .click()
+        
+        cy.get(`#levels_dropdown > div.option[data-value="${level}"]`)
+          .click()
+        
+        cy.get(`#levels_dropdown > div.option[data-value="${level}"]`)
+          .should('have.class', 'selected')
+      })
+    }
+  }
 })

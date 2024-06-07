@@ -1,26 +1,32 @@
 # Translations template for PROJECT.
-# Copyright (C) 2023 ORGANIZATION
+# Copyright (C) 2024 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-03 20:12+0100\n"
+"POT-Creation-Date: 2024-04-22 12:26-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.3\n"
+"Generated-By: Babel 2.14.0\n"
 
 msgid "Access Before Assign"
 msgstr ""
 
 msgid "Cyclic Var Definition"
+msgstr ""
+
+msgid "Else Without If Error"
+msgstr ""
+
+msgid "Function Undefined"
 msgstr ""
 
 msgid "Has Blanks"
@@ -50,13 +56,16 @@ msgstr ""
 msgid "Invalid Type Combination"
 msgstr ""
 
-msgid "Locked Language Feature"
-msgstr ""
-
 msgid "Lonely Echo"
 msgstr ""
 
 msgid "Lonely Text"
+msgstr ""
+
+msgid "Missing Additional Command"
+msgstr ""
+
+msgid "Missing Colon Error"
 msgstr ""
 
 msgid "Missing Command"
@@ -65,13 +74,46 @@ msgstr ""
 msgid "Missing Inner Command"
 msgstr ""
 
+msgid "Missing Square Brackets"
+msgstr ""
+
+msgid "Missing Variable"
+msgstr ""
+
+msgid "Misspelled At Command"
+msgstr ""
+
 msgid "No Indentation"
+msgstr ""
+
+msgid "Non Decimal Variable"
 msgstr ""
 
 msgid "Parse"
 msgstr ""
 
+msgid "Pressit Missing Else"
+msgstr ""
+
+msgid "Runtime Index Error"
+msgstr ""
+
+msgid "Runtime Value Error"
+msgstr ""
+
+msgid "Runtime Values Error"
+msgstr ""
+
+msgid "Save Microbit code "
+msgstr ""
+
 msgid "Too Big"
+msgstr ""
+
+msgid "Too Few Indents"
+msgstr ""
+
+msgid "Too Many Indents"
 msgstr ""
 
 msgid "Unexpected Indentation"
@@ -92,10 +134,16 @@ msgstr ""
 msgid "Unsupported String Value"
 msgstr ""
 
+msgid "Unused Variable"
+msgstr ""
+
 msgid "Var Undefined"
 msgstr ""
 
 msgid "Wrong Level"
+msgstr ""
+
+msgid "Wrong Number of Arguments"
 msgstr ""
 
 msgid "account_overview"
@@ -119,10 +167,19 @@ msgstr ""
 msgid "achievements_logo_alt"
 msgstr ""
 
+msgid "actions"
+msgstr ""
+
+msgid "add"
+msgstr ""
+
 msgid "add_students"
 msgstr ""
 
 msgid "add_students_options"
+msgstr ""
+
+msgid "add_your_language"
 msgstr ""
 
 msgid "admin"
@@ -134,19 +191,28 @@ msgstr ""
 msgid "adventure"
 msgstr ""
 
+msgid "adventure_cloned"
+msgstr ""
+
+msgid "adventure_code_button"
+msgstr ""
+
+msgid "adventure_codeblock_button"
+msgstr ""
+
 msgid "adventure_duplicate"
 msgstr ""
 
 msgid "adventure_empty"
 msgstr ""
 
-msgid "adventure_exp_1"
-msgstr ""
-
-msgid "adventure_exp_2"
-msgstr ""
-
 msgid "adventure_exp_3"
+msgstr ""
+
+msgid "adventure_exp_classes"
+msgstr ""
+
+msgid "adventure_flagged"
 msgstr ""
 
 msgid "adventure_id_invalid"
@@ -167,13 +233,19 @@ msgstr ""
 msgid "adventure_updated"
 msgstr ""
 
+msgid "adventures"
+msgstr ""
+
+msgid "adventures_info"
+msgstr ""
+
+msgid "adventures_restored"
+msgstr ""
+
 msgid "ago"
 msgstr ""
 
 msgid "agree_invalid"
-msgstr ""
-
-msgid "agree_third_party"
 msgstr ""
 
 msgid "agree_with"
@@ -209,22 +281,13 @@ msgstr ""
 msgid "amount_submitted"
 msgstr ""
 
-msgid "answer_invalid"
-msgstr ""
-
 msgid "are_you_sure"
 msgstr ""
 
 msgid "ask_needs_var"
 msgstr ""
 
-msgid "available_adventures_level"
-msgstr ""
-
-msgid "back_to_class"
-msgstr ""
-
-msgid "back_to_teachers_page"
+msgid "available_in"
 msgstr ""
 
 msgid "become_a_sponsor"
@@ -233,13 +296,16 @@ msgstr ""
 msgid "birth_year"
 msgstr ""
 
+msgid "bug"
+msgstr ""
+
 msgid "by"
 msgstr ""
 
 msgid "cancel"
 msgstr ""
 
-msgid "catch_index_exception"
+msgid "cant_parse_exception"
 msgstr ""
 
 msgid "certificate"
@@ -260,7 +326,7 @@ msgstr ""
 msgid "class_customize_success"
 msgstr ""
 
-msgid "class_logs"
+msgid "class_live"
 msgstr ""
 
 msgid "class_name_duplicate"
@@ -275,19 +341,64 @@ msgstr ""
 msgid "class_name_prompt"
 msgstr ""
 
-msgid "class_stats"
+msgid "class_overview"
 msgstr ""
 
-msgid "classes_invalid"
+msgid "class_survey_description"
+msgstr ""
+
+msgid "class_survey_later"
+msgstr ""
+
+msgid "class_survey_question1"
+msgstr ""
+
+msgid "class_survey_question2"
+msgstr ""
+
+msgid "class_survey_question3"
+msgstr ""
+
+msgid "class_survey_question4"
+msgstr ""
+
+msgid "classes"
+msgstr ""
+
+msgid "classes_info"
+msgstr ""
+
+msgid "clone"
+msgstr ""
+
+msgid "cloned_times"
+msgstr ""
+
+msgid "close"
 msgstr ""
 
 msgid "comma"
 msgstr ""
 
+msgid "command_not_available_yet_exception"
+msgstr ""
+
+msgid "command_unavailable_exception"
+msgstr ""
+
 msgid "commands"
 msgstr ""
 
+msgid "common_errors"
+msgstr ""
+
 msgid "congrats_message"
+msgstr ""
+
+msgid "connect_guest_teacher"
+msgstr ""
+
+msgid "constant_variable_role"
 msgstr ""
 
 msgid "content_invalid"
@@ -297,6 +408,9 @@ msgid "contributor"
 msgstr ""
 
 msgid "copy_clipboard"
+msgstr ""
+
+msgid "copy_code"
 msgstr ""
 
 msgid "copy_join_link"
@@ -368,43 +482,19 @@ msgstr ""
 msgid "customization_deleted"
 msgstr ""
 
+msgid "customize"
+msgstr ""
+
 msgid "customize_adventure"
 msgstr ""
 
 msgid "customize_class"
 msgstr ""
 
-msgid "customize_class_exp_1"
-msgstr ""
-
-msgid "customize_class_exp_2"
-msgstr ""
-
-msgid "customize_class_step_1"
-msgstr ""
-
-msgid "customize_class_step_2"
-msgstr ""
-
-msgid "customize_class_step_3"
-msgstr ""
-
-msgid "customize_class_step_4"
-msgstr ""
-
-msgid "customize_class_step_5"
-msgstr ""
-
-msgid "customize_class_step_6"
-msgstr ""
-
-msgid "customize_class_step_7"
-msgstr ""
-
-msgid "customize_class_step_8"
-msgstr ""
-
 msgid "dash"
+msgstr ""
+
+msgid "default_401"
 msgstr ""
 
 msgid "default_403"
@@ -446,13 +536,22 @@ msgstr ""
 msgid "developers_mode"
 msgstr ""
 
-msgid "directly_add_adventure_to_classes"
-msgstr ""
-
 msgid "directly_available"
 msgstr ""
 
-msgid "disabled_button_locked"
+msgid "disable"
+msgstr ""
+
+msgid "disable_explore_page"
+msgstr ""
+
+msgid "disable_parsons"
+msgstr ""
+
+msgid "disable_quizes"
+msgstr ""
+
+msgid "disabled"
 msgstr ""
 
 msgid "disabled_button_quiz"
@@ -476,7 +575,13 @@ msgstr ""
 msgid "duplicate"
 msgstr ""
 
+msgid "echo_and_ask_mismatch_exception"
+msgstr ""
+
 msgid "echo_out"
+msgstr ""
+
+msgid "edit_adventure"
 msgstr ""
 
 msgid "edit_code_button"
@@ -506,9 +611,6 @@ msgstr ""
 msgid "error_logo_alt"
 msgstr ""
 
-msgid "example_code_header"
-msgstr ""
-
 msgid "exclamation mark"
 msgstr ""
 
@@ -522,6 +624,9 @@ msgid "exists_email"
 msgstr ""
 
 msgid "exists_username"
+msgstr ""
+
+msgid "exit_preview_mode"
 msgstr ""
 
 msgid "experience_invalid"
@@ -539,6 +644,9 @@ msgstr ""
 msgid "explore_programs_logo_alt"
 msgstr ""
 
+msgid "favorite_program"
+msgstr ""
+
 msgid "favourite_confirm"
 msgstr ""
 
@@ -551,13 +659,25 @@ msgstr ""
 msgid "favourite_success"
 msgstr ""
 
-msgid "feedback_failure"
+msgid "feature"
 msgstr ""
 
-msgid "feedback_success"
+msgid "feedback"
+msgstr ""
+
+msgid "feedback_message_error"
+msgstr ""
+
+msgid "feedback_message_success"
+msgstr ""
+
+msgid "feedback_modal_message"
 msgstr ""
 
 msgid "female"
+msgstr ""
+
+msgid "flag_adventure_prompt"
 msgstr ""
 
 msgid "float"
@@ -599,10 +719,13 @@ msgstr ""
 msgid "get_certificate"
 msgstr ""
 
-msgid "go_back_to_main"
+msgid "give_link_to_teacher"
 msgstr ""
 
-msgid "go_to_first_question"
+msgid "go_back"
+msgstr ""
+
+msgid "go_back_to_main"
 msgstr ""
 
 msgid "go_to_question"
@@ -612,6 +735,15 @@ msgid "go_to_quiz_result"
 msgstr ""
 
 msgid "goto_profile"
+msgstr ""
+
+msgid "grid_overview"
+msgstr ""
+
+msgid "hand_in"
+msgstr ""
+
+msgid "hand_in_exercise"
 msgstr ""
 
 msgid "heard_about_hedy"
@@ -626,6 +758,9 @@ msgstr ""
 msgid "hedy_choice_title"
 msgstr ""
 
+msgid "hedy_introduction_slides"
+msgstr ""
+
 msgid "hedy_logo_alt"
 msgstr ""
 
@@ -635,7 +770,7 @@ msgstr ""
 msgid "hedy_tutorial_logo_alt"
 msgstr ""
 
-msgid "hello_world"
+msgid "hello_logo"
 msgstr ""
 
 msgid "hidden"
@@ -645,12 +780,6 @@ msgid "hide_cheatsheet"
 msgstr ""
 
 msgid "hide_keyword_switcher"
-msgstr ""
-
-msgid "hide_parsons"
-msgstr ""
-
-msgid "hide_quiz"
 msgstr ""
 
 msgid "highest_level_reached"
@@ -671,16 +800,52 @@ msgstr ""
 msgid "hint"
 msgstr ""
 
+msgid "ill_work_some_more"
+msgstr ""
+
 msgid "image_invalid"
 msgstr ""
 
+msgid "incomplete_command_exception"
+msgstr ""
+
+msgid "incorrect_handling_of_quotes_exception"
+msgstr ""
+
+msgid "incorrect_use_of_types_exception"
+msgstr ""
+
+msgid "incorrect_use_of_variable_exception"
+msgstr ""
+
+msgid "indentation_exception"
+msgstr ""
+
 msgid "input"
+msgstr ""
+
+msgid "input_variable_role"
 msgstr ""
 
 msgid "integer"
 msgstr ""
 
 msgid "invalid_class_link"
+msgstr ""
+
+msgid "invalid_command_exception"
+msgstr ""
+
+msgid "invalid_keyword_language_comment"
+msgstr ""
+
+msgid "invalid_language_comment"
+msgstr ""
+
+msgid "invalid_level_comment"
+msgstr ""
+
+msgid "invalid_program_comment"
 msgstr ""
 
 msgid "invalid_teacher_invitation_code"
@@ -704,13 +869,25 @@ msgstr ""
 msgid "invite_prompt"
 msgstr ""
 
+msgid "invite_teacher"
+msgstr ""
+
 msgid "join_class"
 msgstr ""
 
 msgid "join_prompt"
 msgstr ""
 
+msgid "keybinding_waiting_for_keypress"
+msgstr ""
+
 msgid "keyword_language_invalid"
+msgstr ""
+
+msgid "landcode_phone_number"
+msgstr ""
+
+msgid "language"
 msgstr ""
 
 msgid "language_invalid"
@@ -725,7 +902,13 @@ msgstr ""
 msgid "last_edited"
 msgstr ""
 
+msgid "last_error"
+msgstr ""
+
 msgid "last_login"
+msgstr ""
+
+msgid "last_program"
 msgstr ""
 
 msgid "last_update"
@@ -740,6 +923,15 @@ msgstr ""
 msgid "level"
 msgstr ""
 
+msgid "level_accessible"
+msgstr ""
+
+msgid "level_disabled"
+msgstr ""
+
+msgid "level_future"
+msgstr ""
+
 msgid "level_invalid"
 msgstr ""
 
@@ -749,16 +941,31 @@ msgstr ""
 msgid "level_title"
 msgstr ""
 
+msgid "levels"
+msgstr ""
+
 msgid "link"
 msgstr ""
 
 msgid "list"
 msgstr ""
 
+msgid "list_variable_role"
+msgstr ""
+
+msgid "live_dashboard"
+msgstr ""
+
+msgid "logged_in_to_share"
+msgstr ""
+
 msgid "login"
 msgstr ""
 
 msgid "login_long"
+msgstr ""
+
+msgid "login_to_save_your_work"
 msgstr ""
 
 msgid "logout"
@@ -815,10 +1022,22 @@ msgstr ""
 msgid "main_title"
 msgstr ""
 
+msgid "make_sure_you_are_done"
+msgstr ""
+
 msgid "male"
 msgstr ""
 
 msgid "mandatory_mode"
+msgstr ""
+
+msgid "more_options"
+msgstr ""
+
+msgid "multiple_keywords_warning"
+msgstr ""
+
+msgid "multiple_levels_warning"
 msgstr ""
 
 msgid "my_account"
@@ -836,6 +1055,9 @@ msgstr ""
 msgid "my_messages"
 msgstr ""
 
+msgid "my_public_profile"
+msgstr ""
+
 msgid "name"
 msgstr ""
 
@@ -851,16 +1073,19 @@ msgstr ""
 msgid "nav_start"
 msgstr ""
 
-msgid "nested blocks"
+msgid "new_password"
 msgstr ""
 
-msgid "new_password"
+msgid "new_password_repeat"
 msgstr ""
 
 msgid "newline"
 msgstr ""
 
 msgid "next_exercise"
+msgstr ""
+
+msgid "next_page"
 msgstr ""
 
 msgid "next_step_tutorial"
@@ -873,6 +1098,9 @@ msgid "no_account"
 msgstr ""
 
 msgid "no_accounts"
+msgstr ""
+
+msgid "no_adventures_yet"
 msgstr ""
 
 msgid "no_certificate"
@@ -905,7 +1133,19 @@ msgstr ""
 msgid "no_such_program"
 msgstr ""
 
+msgid "no_tag"
+msgstr ""
+
 msgid "not_enrolled"
+msgstr ""
+
+msgid "not_in_class_no_handin"
+msgstr ""
+
+msgid "not_logged_in_cantsave"
+msgstr ""
+
+msgid "not_logged_in_handin"
 msgstr ""
 
 msgid "not_teacher"
@@ -924,6 +1164,9 @@ msgid "number_programs"
 msgstr ""
 
 msgid "ok"
+msgstr ""
+
+msgid "only_you_can_see"
 msgstr ""
 
 msgid "open"
@@ -959,10 +1202,16 @@ msgstr ""
 msgid "overwrite_warning"
 msgstr ""
 
+msgid "owner"
+msgstr ""
+
 msgid "page"
 msgstr ""
 
 msgid "page_not_found"
+msgstr ""
+
+msgid "pair_with_teacher"
 msgstr ""
 
 msgid "parsons_title"
@@ -1001,6 +1250,9 @@ msgstr ""
 msgid "pending_invites"
 msgstr ""
 
+msgid "people_with_a_link"
+msgstr ""
+
 msgid "percentage"
 msgstr ""
 
@@ -1016,6 +1268,9 @@ msgstr ""
 msgid "personal_text_invalid"
 msgstr ""
 
+msgid "phone_number"
+msgstr ""
+
 msgid "postfix_classname"
 msgstr ""
 
@@ -1028,10 +1283,25 @@ msgstr ""
 msgid "preview"
 msgstr ""
 
+msgid "previewing_adventure"
+msgstr ""
+
+msgid "previewing_class"
+msgstr ""
+
 msgid "previous_campaigns"
 msgstr ""
 
+msgid "previous_page"
+msgstr ""
+
+msgid "print_logo"
+msgstr ""
+
 msgid "privacy_terms"
+msgstr ""
+
+msgid "private"
 msgstr ""
 
 msgid "profile_logo_alt"
@@ -1050,6 +1320,9 @@ msgid "program_contains_error"
 msgstr ""
 
 msgid "program_header"
+msgstr ""
+
+msgid "program_too_large_exception"
 msgstr ""
 
 msgid "programming_experience"
@@ -1073,6 +1346,18 @@ msgstr ""
 msgid "prompt_join_class"
 msgstr ""
 
+msgid "public"
+msgstr ""
+
+msgid "public_adventures"
+msgstr ""
+
+msgid "public_content"
+msgstr ""
+
+msgid "public_content_info"
+msgstr ""
+
 msgid "public_invalid"
 msgstr ""
 
@@ -1085,19 +1370,7 @@ msgstr ""
 msgid "public_profile_updated"
 msgstr ""
 
-msgid "pygame_waiting_for_input"
-msgstr ""
-
-msgid "question"
-msgstr ""
-
 msgid "question mark"
-msgstr ""
-
-msgid "question_doesnt_exist"
-msgstr ""
-
-msgid "question_invalid"
 msgstr ""
 
 msgid "quiz_logo_alt"
@@ -1136,7 +1409,13 @@ msgstr ""
 msgid "remove_student_prompt"
 msgstr ""
 
+msgid "remove_user_prompt"
+msgstr ""
+
 msgid "repair_program_logo_alt"
+msgstr ""
+
+msgid "repeat_dep"
 msgstr ""
 
 msgid "repeat_match_password"
@@ -1154,6 +1433,9 @@ msgstr ""
 msgid "report_success"
 msgstr ""
 
+msgid "request_invalid"
+msgstr ""
+
 msgid "request_teacher"
 msgstr ""
 
@@ -1169,6 +1451,9 @@ msgstr ""
 msgid "reset_adventures"
 msgstr ""
 
+msgid "reset_button"
+msgstr ""
+
 msgid "reset_password"
 msgstr ""
 
@@ -1181,13 +1466,16 @@ msgstr ""
 msgid "retrieve_class_error"
 msgstr ""
 
+msgid "retrieve_tag_error"
+msgstr ""
+
+msgid "role"
+msgstr ""
+
 msgid "run_code_button"
 msgstr ""
 
-msgid "save"
-msgstr ""
-
-msgid "save_code_button"
+msgid "runs_over_time"
 msgstr ""
 
 msgid "save_parse_warning"
@@ -1208,19 +1496,40 @@ msgstr ""
 msgid "search_button"
 msgstr ""
 
+msgid "second_teacher"
+msgstr ""
+
+msgid "second_teacher_copy_prompt"
+msgstr ""
+
+msgid "second_teacher_prompt"
+msgstr ""
+
+msgid "second_teacher_warning"
+msgstr ""
+
 msgid "see_certificate"
 msgstr ""
 
 msgid "select"
 msgstr ""
 
-msgid "select_a_level"
-msgstr ""
-
 msgid "select_adventures"
 msgstr ""
 
+msgid "select_all"
+msgstr ""
+
+msgid "select_lang"
+msgstr ""
+
 msgid "select_levels"
+msgstr ""
+
+msgid "select_tag"
+msgstr ""
+
+msgid "selected"
 msgstr ""
 
 msgid "self_removal_prompt"
@@ -1238,16 +1547,10 @@ msgstr ""
 msgid "settings"
 msgstr ""
 
-msgid "share"
+msgid "share_by_giving_link"
 msgstr ""
 
-msgid "share_code_button"
-msgstr ""
-
-msgid "share_confirm"
-msgstr ""
-
-msgid "share_success_detail"
+msgid "share_your_program"
 msgstr ""
 
 msgid "signup_student_or_teacher"
@@ -1257,6 +1560,18 @@ msgid "single quotes"
 msgstr ""
 
 msgid "slash"
+msgstr ""
+
+msgid "sleeping"
+msgstr ""
+
+msgid "slides"
+msgstr ""
+
+msgid "slides_for_level"
+msgstr ""
+
+msgid "slides_info"
 msgstr ""
 
 msgid "social_media"
@@ -1274,6 +1589,9 @@ msgstr ""
 msgid "start_hedy_tutorial"
 msgstr ""
 
+msgid "start_learning"
+msgstr ""
+
 msgid "start_programming"
 msgstr ""
 
@@ -1286,7 +1604,13 @@ msgstr ""
 msgid "start_teacher_tutorial"
 msgstr ""
 
+msgid "start_teaching"
+msgstr ""
+
 msgid "step_title"
+msgstr ""
+
+msgid "stepper_variable_role"
 msgstr ""
 
 msgid "stop_code_button"
@@ -1295,10 +1619,22 @@ msgstr ""
 msgid "string"
 msgstr ""
 
+msgid "student"
+msgstr ""
+
 msgid "student_already_in_class"
 msgstr ""
 
 msgid "student_already_invite"
+msgstr ""
+
+msgid "student_details"
+msgstr ""
+
+msgid "student_list"
+msgstr ""
+
+msgid "student_not_allowed_in_class"
 msgstr ""
 
 msgid "student_not_existing"
@@ -1334,7 +1670,40 @@ msgstr ""
 msgid "subscribe_newsletter"
 msgstr ""
 
+msgid "suggestion_color"
+msgstr ""
+
+msgid "suggestion_note"
+msgstr ""
+
+msgid "suggestion_number"
+msgstr ""
+
+msgid "suggestion_numbers_or_strings"
+msgstr ""
+
 msgid "surname"
+msgstr ""
+
+msgid "survey"
+msgstr ""
+
+msgid "survey_completed"
+msgstr ""
+
+msgid "survey_skip"
+msgstr ""
+
+msgid "survey_submit"
+msgstr ""
+
+msgid "tag_in_adventure"
+msgstr ""
+
+msgid "tag_input_placeholder"
+msgstr ""
+
+msgid "tags"
 msgstr ""
 
 msgid "teacher"
@@ -1364,7 +1733,13 @@ msgstr ""
 msgid "teacher_welcome"
 msgstr ""
 
+msgid "teachers"
+msgstr ""
+
 msgid "template_code"
+msgstr ""
+
+msgid "this_turns_in_assignment"
 msgstr ""
 
 msgid "title"
@@ -1376,10 +1751,10 @@ msgstr ""
 msgid "title_admin"
 msgstr ""
 
-msgid "title_class logs"
+msgid "title_class grid_overview"
 msgstr ""
 
-msgid "title_class statistics"
+msgid "title_class live_statistics"
 msgstr ""
 
 msgid "title_class-overview"
@@ -1418,6 +1793,9 @@ msgstr ""
 msgid "title_programs"
 msgstr ""
 
+msgid "title_public-adventures"
+msgstr ""
+
 msgid "title_recover"
 msgstr ""
 
@@ -1436,7 +1814,7 @@ msgstr ""
 msgid "token_invalid"
 msgstr ""
 
-msgid "too_many_attempts"
+msgid "tooltip_level_locked"
 msgstr ""
 
 msgid "translate_error"
@@ -1445,7 +1823,7 @@ msgstr ""
 msgid "translating_hedy"
 msgstr ""
 
-msgid "try_it"
+msgid "translator"
 msgstr ""
 
 msgid "tutorial"
@@ -1463,7 +1841,16 @@ msgstr ""
 msgid "unauthorized"
 msgstr ""
 
+msgid "unfavourite_confirm"
+msgstr ""
+
+msgid "unfavourite_success"
+msgstr ""
+
 msgid "unique_usernames"
+msgstr ""
+
+msgid "unknown_variable_role"
 msgstr ""
 
 msgid "unlock_thresholds"
@@ -1472,22 +1859,31 @@ msgstr ""
 msgid "unsaved_class_changes"
 msgstr ""
 
-msgid "unshare"
+msgid "unsubmit_program"
 msgstr ""
 
-msgid "unshare_confirm"
+msgid "unsubmit_warning"
 msgstr ""
 
-msgid "unshare_success_detail"
+msgid "unsubmitted"
 msgstr ""
 
 msgid "update_adventure_prompt"
 msgstr ""
 
-msgid "update_profile"
+msgid "update_public"
 msgstr ""
 
-msgid "update_public"
+msgid "updating_indicator"
+msgstr ""
+
+msgid "use_of_blanks_exception"
+msgstr ""
+
+msgid "use_of_nested_functions_exception"
+msgstr ""
+
+msgid "used_in"
 msgstr ""
 
 msgid "user"
@@ -1520,13 +1916,19 @@ msgstr ""
 msgid "value"
 msgstr ""
 
-msgid "variables"
+msgid "view_adventures"
+msgstr ""
+
+msgid "view_classes"
 msgstr ""
 
 msgid "view_program"
 msgstr ""
 
-msgid "visit_own_public_profile"
+msgid "view_slides"
+msgstr ""
+
+msgid "walker_variable_role"
 msgstr ""
 
 msgid "welcome"
@@ -1535,13 +1937,13 @@ msgstr ""
 msgid "welcome_back"
 msgstr ""
 
+msgid "what_is_your_role"
+msgstr ""
+
 msgid "what_should_my_code_do"
 msgstr ""
 
 msgid "whole_world"
-msgstr ""
-
-msgid "write_first_program"
 msgstr ""
 
 msgid "year_invalid"
@@ -1560,5 +1962,8 @@ msgid "your_last_program"
 msgstr ""
 
 msgid "your_personal_text"
+msgstr ""
+
+msgid "your_program"
 msgstr ""
 

@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hedy - Slides</title>
+    <title>Hedy - Slides - {{ level }} </title>
     <link rel="stylesheet" href="{{static('css/reveal-js-custom.css')}}">
     <link rel="stylesheet" href="{{static('vendor/reveal/dist/reset.css')}}">
     <link rel="stylesheet" href="{{static('vendor/reveal/dist/reveal.css')}}">
-    <link rel="stylesheet" href="{{static('vendor/reveal/dist/theme/simple.css')}}">
+    <link rel="stylesheet" href="{{static('vendor/reveal/dist/theme/sky.css')}}">
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="{{static('vendor/reveal/plugin/highlight/monokai.css')}}">
@@ -15,14 +15,18 @@
     <div class="reveal">
       <div class="slides">
           {% for index, slide in slides.items() %}
-            <section data-markdown style="text-align: left; height: 1018px; left: 91.5px; top: 0px;">
+            <section data-markdown style="text-align: left; height: 1018px; font-size:0.8em">
                 {{ slide['header'] }}
                 <textarea data-template>
                     ### {{ slide['header'] }}
 
                     {{ slide['text'] }}
-
-                    {{ slide['editor'] }}
+                    {% if slide['code'] %}
+                    <iframe class="fragment" src="/render_code/{{ level }}?code={{ slide['code'] | urlencode }}"></iframe>
+                    {% endif %}
+                    {% if slide['editor'] %}
+                    <iframe class="fragment" src="{{ slide['editor'] }}"></iframe>
+                    {% endif %}
                 </textarea>
             </section>
           {% endfor %}
@@ -41,10 +45,10 @@
             transition: 'none',
             slideNumber: true,
             keyboard: true,
+            width: "90%",
             // Learn about plugins: https://revealjs.com/plugins/
             plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
         });
     </script>
 </body>
-
 </html>
