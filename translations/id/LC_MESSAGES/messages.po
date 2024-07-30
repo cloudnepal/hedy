@@ -354,6 +354,9 @@ msgstr "Apakah kamu yakin? Kamu tidak dapat membatalkan aksi ini."
 msgid "ask_needs_var"
 msgstr "Mulai level 2, `{ask}` perlu digunakan dengan variabel. Contoh: nama `{is}` `{ask}` Siapa namamu?"
 
+msgid "available_in"
+msgstr "Available in:"
+
 msgid "become_a_sponsor"
 msgstr "Menjadi sponsor"
 
@@ -465,9 +468,6 @@ msgstr "Perintah tidak benar lagi"
 
 msgid "commands"
 msgstr "Perintah"
-
-msgid "common_errors"
-msgstr "Kesalahan Umum"
 
 msgid "congrats_message"
 msgstr "Selamat, {username}, Anda telah mencapai hasil berikut dengan Hedy!"
@@ -730,9 +730,6 @@ msgstr "Silakan pilih pengalaman yang valid, pilih (Ya, Tidak)."
 msgid "expiration_date"
 msgstr "Tanggal habis tempo"
 
-msgid "explore_explanation"
-msgstr "Di halaman ini Anda dapat melihat program yang dibuat oleh pengguna Hedy lainnya. Anda dapat memfilter level Hedy dan petualangan. Klik \"Lihat program\" untuk membuka program dan menjalankannya. Program dengan header berwarna merah mengandung kesalahan. Anda masih dapat membuka program tersebut, tetapi menjalankannya akan menghasilkan kesalahan. Anda tentu saja dapat mencoba memperbaikinya! Jika pembuatnya memiliki profil publik, Anda dapat mengeklik nama penggunanya untuk mengunjungi profilnya. Di sana Anda akan menemukan semua program bersama mereka dan banyak lagi!"
-
 msgid "explore_programs"
 msgstr "Jelajahi program"
 
@@ -842,9 +839,6 @@ msgstr "Ke profil saya"
 #, fuzzy
 msgid "graph_title"
 msgstr "Errors per adventure completed on level {level}"
-
-msgid "grid_overview"
-msgstr "Ikhtisar program per petualangan"
 
 msgid "hand_in"
 msgstr "Menyerahkan"
@@ -1012,12 +1006,6 @@ msgstr "Prestasi yang terakhir diperoleh"
 msgid "last_edited"
 msgstr "Terakhir diedit"
 
-msgid "last_error"
-msgstr "Kesalahan terakhir"
-
-msgid "last_program"
-msgstr "Program terakhir"
-
 msgid "last_update"
 msgstr "Pembaharuan Terakhir"
 
@@ -1062,9 +1050,6 @@ msgstr "daftar"
 #, fuzzy
 msgid "list_variable_role"
 msgstr "list"
-
-msgid "live_dashboard"
-msgstr "Dasbor Langsung"
 
 msgid "logged_in_to_share"
 msgstr "Anda harus masuk untuk menyimpan dan berbagi program."
@@ -1315,6 +1300,9 @@ msgstr "Jumlah program"
 
 msgid "ok"
 msgstr "Ok"
+
+msgid "one_level_error"
+msgstr ""
 
 msgid "only_you_can_see"
 msgstr "Hanya Anda yang dapat melihat program ini."
@@ -1637,9 +1625,6 @@ msgstr "Peran"
 msgid "run_code_button"
 msgstr "Jalankan kode"
 
-msgid "runs_over_time"
-msgstr "Berjalan seiring waktu"
-
 msgid "save_parse_warning"
 msgstr "Program ini mengandung kesalahan, apakah Anda yakin ingin menyimpannya?"
 
@@ -1807,10 +1792,6 @@ msgstr "Siswa ini sudah ada di kelas Anda."
 
 msgid "student_already_invite"
 msgstr "Siswa ini sudah memiliki undangan yang menunggu keputusan."
-
-#, fuzzy
-msgid "student_details"
-msgstr "Student details"
 
 #, fuzzy
 msgid "student_not_allowed_in_class"
@@ -2360,6 +2341,27 @@ msgstr "Program Anda"
 #~ msgid "variables"
 #~ msgstr "Variabel"
 
-#~ msgid "available_in"
-#~ msgstr "Available in:"
+#~ msgid "explore_explanation"
+#~ msgstr "Di halaman ini Anda dapat melihat program yang dibuat oleh pengguna Hedy lainnya. Anda dapat memfilter level Hedy dan petualangan. Klik \"Lihat program\" untuk membuka program dan menjalankannya. Program dengan header berwarna merah mengandung kesalahan. Anda masih dapat membuka program tersebut, tetapi menjalankannya akan menghasilkan kesalahan. Anda tentu saja dapat mencoba memperbaikinya! Jika pembuatnya memiliki profil publik, Anda dapat mengeklik nama penggunanya untuk mengunjungi profilnya. Di sana Anda akan menemukan semua program bersama mereka dan banyak lagi!"
+
+#~ msgid "common_errors"
+#~ msgstr "Kesalahan Umum"
+
+#~ msgid "grid_overview"
+#~ msgstr "Ikhtisar program per petualangan"
+
+#~ msgid "last_error"
+#~ msgstr "Kesalahan terakhir"
+
+#~ msgid "last_program"
+#~ msgstr "Program terakhir"
+
+#~ msgid "live_dashboard"
+#~ msgstr "Dasbor Langsung"
+
+#~ msgid "runs_over_time"
+#~ msgstr "Berjalan seiring waktu"
+
+#~ msgid "student_details"
+#~ msgstr "Student details"
 
