@@ -32,7 +32,6 @@ class Modal {
     $('#modal_copy').hide();
     $('#modal_repair').hide();
     $('#modal_preview').hide();
-    $('#modal_feedback').hide();
   }
 
   public hide_alert() {
@@ -52,6 +51,7 @@ class Modal {
   public notifyError(message: string, timeoutMs: number = 5000) {
     return this.alert(message, timeoutMs, true);
   }
+
 
   /**
    * Display a temporary popup
@@ -185,14 +185,6 @@ class Modal {
       }
     });
   }
-
-    public feedback(message: string) {
-      this.hide();
-      $('#modal_feedback_message').text(message);
-      this.show();
-      $('#modal_feedback').show();
-      $('#modal_feedback_input').trigger("focus");
-    }
 }
 
 /**
@@ -226,21 +218,19 @@ export const error = {
     $('#errorbox').hide();
     $('#warningbox').hide();
   },
-  showWarning(caption: string, message: string) {
+  showWarning(message: string) {
     this.hide();
-    $('#warningbox .caption').text(caption);
     $('#warningbox .details').text(message);
     $('#warningbox').show();
   },
 
   show(caption: string, message: string) {
-    $('#errorbox .caption').text(caption);
-    $('#errorbox .details').html(message);
+    $('#errorbox .details').html(caption + " " + message);
     $('#errorbox').show();
   },
 
-  showFadingWarning(caption: string, message: string) {
-    error.showWarning(caption, message);
+  showFadingWarning(message: string) {
+    error.showWarning(message);
     setTimeout(function(){
       $('#warningbox').fadeOut();
     }, 10000);

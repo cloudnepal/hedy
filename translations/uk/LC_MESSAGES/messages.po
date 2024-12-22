@@ -8,213 +8,160 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2000-01-01 00:00+0000\n"
-"PO-Revision-Date: 2024-08-06 14:07+0000\n"
-"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"PO-Revision-Date: 2024-12-16 23:27+0000\n"
+"Last-Translator: Максим Горпиніч <mgorpinic2005@gmail.com>\n"
 "Language-Team: uk <LL@li.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.7-dev\n"
+"X-Generator: Weblate 5.9\n"
 "Generated-By: Babel 2.14.0\n"
 
-#, fuzzy
 msgid "Access Before Assign"
-msgstr "You tried to use the variable {name} on line {access_line_number}, but you set it on line {definition_line_number}. Set a variable before using it."
+msgstr "Ми виявили, що змінна `{name}` використовується в рядку {access_line_number} до встановлення. Чи можете ви встановити змінну перед її використанням?"
 
-#, fuzzy
 msgid "Cyclic Var Definition"
-msgstr "Ім'я `{variable}` повинно бути задане до того, як ви зможете використовувати її в правій частині команди `{is}`."
+msgstr "Ми виявили, що змінна `{variable}` використовується в правій частині команди `{is}` перед встановленням. Чи можете ви встановити змінну перед її використанням?"
 
-#, fuzzy
 msgid "Else Without If Error"
-msgstr "On line {line_number} you used an `{else}` but there is no `{if}` on the line before it."
+msgstr "Ми виявили, що перед {if} у рядку {line_number} використовується «{else}». Чи можете ви спробувати написати `{if}` перед `{else}`?"
 
-#, fuzzy
 msgid "Function Undefined"
-msgstr "You tried to use the function {name}, but you didn't define it."
+msgstr "Ми виявили, що функція {name} використовується без визначення. Чи можете ви визначити функцію перед її використанням?"
 
-#, fuzzy
 msgid "Has Blanks"
-msgstr "Ваш код є неповним. Він містить пробіли, які необхідно замінити кодом."
+msgstr "Ми виявили, що код виглядає неповним. Чи можете ви заповнити пропуски кодом?"
 
-#, fuzzy
 msgid "Incomplete"
-msgstr "Ой! Ви забули трохи коду! У рядку {line_number} потрібно ввести текст за `{incomplete_command}`."
+msgstr "Ми виявили, що частина коду, схоже, відсутня в `{incomplete_command}` у рядку {line_number}. Чи можете ви спробувати додати те, чого не вистачає?"
 
-#, fuzzy
 msgid "Incomplete Repeat"
-msgstr "Схоже на те, що ви забули використати команду `{repeat}`, яку використовували в рядку {line_number}."
+msgstr "Ми виявили, що в `{repeat}` у рядку {line_number} відсутня команда `{command}`. Ви можете спробувати його додати?"
 
-#, fuzzy
 msgid "Invalid"
-msgstr "`{invalid_command}` не є командою рівня {level} Hedy. Ви мали на увазі `{guessed_command}`?"
+msgstr "Ми виявили, що `{invalid_command}` не є командою рівня Hedy {level}. Чи можете ви спробувати використати `{guessed_command}`?"
 
-#, fuzzy
 msgid "Invalid Argument"
-msgstr "Ви не можете використовувати команду `{command}` з `{invalid_argument}`. Спробуйте змінити `{invalid_argument}` на {allowed_types}."
+msgstr "Ми виявили, що `{command}` не можна використовувати з `{invalid_argument}`. Чи можете ви спробувати змінити `{invalid_argument}` на {allowed_types}?"
 
-#, fuzzy
 msgid "Invalid Argument Type"
-msgstr "Ви не можете використовувати `{command}` з `{invalid_argument}`, оскільки він є {invalid_type}. Спробуйте змінити `{invalid_argument}` на {allowed_types}."
+msgstr "Ми виявили, що `{command}` не працює з `{invalid_argument}`, оскільки це {invalid_type}. Чи можете ви спробувати змінити `{invalid_argument}` на {allowed_types}?"
 
-#, fuzzy
 msgid "Invalid At Command"
-msgstr "Команду `{command}` не можна використовувати, починаючи з рівня 16. Ви можете використовувати квадратні дужки для використання елемента зі списку, наприклад `friends[i]`, `lucky_numbers[{random}]`."
+msgstr "Ми виявили, що `{command}` не можна використовувати з рівня 16 і далі. Чи можете ви спробувати використати квадратні дужки `[]` для списків?"
 
-#, fuzzy
 msgid "Invalid Space"
-msgstr "Упс! Ви почали рядок з пробілу в рядку {line_number}. Пробіли збивають з пантелику комп'ютер, чи можете ви його прибрати?"
+msgstr "Ми виявили, що рядок {line_number} починається з пробілу. Чи можете ви спробувати видалити пробіл?"
 
-#, fuzzy
 msgid "Invalid Type Combination"
-msgstr "Ви не можете використовувати `{invalid_argument}` і `{invalid_argument_2}` з `{command}`, оскільки один з них є {invalid_type}, а інший - {invalid_type_2}. Спробуйте змінити `{invalid_argument}` на {invalid_type_2} або `{invalid_argument_2}` на {invalid_type}."
+msgstr "Ми виявили, що `{invalid_argument}` і `{invalid_argument_2}` не можна використовувати з `{command}`, оскільки один — {invalid_type}, а інший — {invalid_type_2}. Чи можете ви спробувати змінити `{invalid_argument}` на {invalid_type_2} або `{invalid_argument_2}` на {invalid_type}?"
 
-#, fuzzy
 msgid "Lonely Echo"
-msgstr "Ви використали `{echo}` перед `{ask}` або `{echo}` без `{ask}`. Поставте `{ask}` перед `{echo}`."
+msgstr "Ми виявили, що `{echo}` використовується перед використанням `{ask}` або без нього. Чи можете ви спробувати написати `{ask}` перед `{echo}`?"
 
-#, fuzzy
 msgid "Lonely Text"
-msgstr "Схоже, що ви забули використати команду з текстом, яка використовується в рядку {line_number}"
+msgstr "Ми виявили, що в коді, здається, відсутня команда з текстом, який використовувався в рядку {line_number}. Чи можете ви спробувати написати потрібну команду з текстом"
 
-#, fuzzy
 msgid "Missing Additional Command"
-msgstr "It looks like you forgot to complete writing `{command}` on line {line_number}."
+msgstr "Ми виявили, що в команді `{command}` у рядку {line_number} чогось не вистачає. Чи можете ви спробувати використати `{missing_command}` у своєму коді?"
 
-#, fuzzy
 msgid "Missing Colon Error"
-msgstr "Starting at level 17, `{command}` needs a `:`. It looks like you forgot to use one at the end of line {line_number}."
+msgstr "Ми виявили, що  {command}  потребує  :  у кінці рядка {line_number}. Починаючи з рівня 17, чи можете ви почати додавати  :  в кінці рядка з командами?"
 
-#, fuzzy
 msgid "Missing Command"
-msgstr "Схоже, що ви забули використати команду в рядку {line_number}."
+msgstr "Ми виявили, що в коді, схоже, відсутня команда в рядку {line_number}. Чи можете ви спробувати переглянути розділ вправ, щоб знайти, яку команду використовувати?"
 
-#, fuzzy
 msgid "Missing Inner Command"
-msgstr "Схоже, що ви забули використати команду з оператором `{command}`, який ви використовували в рядку {line_number}."
+msgstr "Ми виявили, що в коді, схоже, відсутня команда для оператора  {command}  у рядку {line_number}. Чи можете ви спробувати переглянути розділ вправ, щоб знайти, яку команду використовувати?"
 
-#, fuzzy
 msgid "Missing Square Brackets"
-msgstr "It looks like you forgot to use square brackets `[]` around the list you were creating on line {line_number}."
+msgstr "Ми виявили, що у списку, який ви створили в рядку {line_number}, відсутні квадратні дужки `[]`. Чи можете ви спробувати додати квадратні дужки навколо `[]` списку?"
 
-#, fuzzy
 msgid "Missing Variable"
-msgstr "It looks like your `{command}` is missing a variable at the start of the line."
+msgstr "Ми виявили, що в `{command}` відсутня змінна на початку рядка. Чи можете ви спробувати записати змінну перед `{command}?`"
 
-#, fuzzy
 msgid "Misspelled At Command"
-msgstr "It looks like you might have misspelled the `{command}` command, instead you wrote `{invalid_argument}` in line {line_number}."
+msgstr "Ми виявили, що `{invalid_argument}` містить орфографічну помилку в рядку {line_number}. Чи можете ви замість цього спробувати написати `{command}`."
 
-#, fuzzy
 msgid "No Indentation"
-msgstr "У рядку {line_number} використано занадто мало пробілів. Ви використали {leading_spaces} пробілів, що недостатньо. Починайте кожен новий блок з {indent_size} пробілів більше, ніж у попередньому рядку."
+msgstr "Ми виявили, що в рядку {line_number} замало {leading_spaces} пробілів. Чи можете ви спробувати збільшити відступ на {indent_size} для кожного нового блоку."
 
-#, fuzzy
 msgid "Non Decimal Variable"
-msgstr "At line {line_number}, you might have tried using a number which Hedy does not like very much! Try changing it to a decimal number like 2."
+msgstr "Ми виявили, що в рядку {line_number} ви використали номер, який Hedy не підтримує! Чи можете ви спробувати десяткове число, наприклад 2?"
 
-#, fuzzy
 msgid "Parse"
-msgstr "Введений вами код не є дійсним кодом Hedy. У рядку {location[0]}, в позиції {location[1]}, помилка. Ви ввели `{character_found}`, але це не допустимо."
+msgstr "Ми виявили, що `{character_found}` використовується в рядку {location[0]}, що заборонено. Чи можете ви спробувати знайти відсутній або зайвий символ у своєму коді?"
 
-#, fuzzy
 msgid "Pressit Missing Else"
-msgstr "You forgot to add what happens when you press a different key, add an `{else}` to your code"
+msgstr "Ми виявили, що в коді відсутній `{else}` для обробки інших натискань клавіш. Чи можете ви спробувати додати `{else}` до свого коду?"
 
-#, fuzzy
 msgid "Runtime Index Error"
-msgstr "Ви намагалися отримати доступ до списку {name}, але він або порожній, або індекс там відсутній."
+msgstr "Ми виявили, що список {name} порожній або його індекс відсутній. Чи можете ви переконатися, що список не порожній, або спробувати ввести число всередині «[]» для відсутнього індексу?"
 
-#, fuzzy
 msgid "Runtime Value Error"
-msgstr "While running your program the command `{command}` received the value `{value}` which is not allowed. {tip}."
+msgstr "Ми виявили, що `{command}` отримала заборонене значення `{value}`. {tip}."
 
-#, fuzzy
 msgid "Runtime Values Error"
-msgstr "While running your program the command `{command}` received the values `{value}` and `{value}` which are not allowed. {tip}."
+msgstr "Ми виявили, що `{command}` отримала заборонені значення `{value}` і `{value}`. {tip}."
 
-#, fuzzy
 msgid "Save Microbit code "
-msgstr "Save Microbit code"
+msgstr "Збережіть код Microbit"
 
-#, fuzzy
 msgid "Too Big"
-msgstr "Ого! Ваша програма має вражаючу кількість {lines_of_code} рядків коду! Але ми можемо обробити лише {max_lines} рядків на цьому рівні. Зменште розмір програми та спробуйте ще раз."
+msgstr "Ми виявили, що програма містить {lines_of_code} рядків, але ми можемо обробити лише {max_lines} рядків. Чи можете ви спробувати скоротити свою програму?"
 
-#, fuzzy
 msgid "Too Few Indents"
-msgstr "You used too few leading spaces in line {line_number}. You used {leading_spaces} spaces, which is too few."
+msgstr "Ми виявили, що в рядку {line_number} замало ({leading_spaces}) пробілів. Чи можете ви спробувати додати додатковий простір?"
 
-#, fuzzy
 msgid "Too Many Indents"
-msgstr "You used too many leading spaces in line {line_number}. You used {leading_spaces} spaces, which is too many."
+msgstr "Ми виявили, що в рядку {line_number} забагато ({leading_spaces}) пробілів. Чи можете ви спробувати прибрати зайве місце?"
 
-#, fuzzy
 msgid "Unexpected Indentation"
-msgstr "У рядку {line_number} використано занадто багато пробілів. Ви використали {leading_spaces} пробілів, що є занадто багато. Починайте кожен новий блок з {indent_size} пробілів більше, ніж у попередньому рядку."
+msgstr "Ми виявили, що в рядку {line_number} забагато ({leading_spaces}) пробілів. Чи можете ви спробувати додати ще {indent_size} пробілів на новий блок?"
 
-#, fuzzy
 msgid "Unquoted Assignment"
-msgstr "З цього рівня потрібно розміщувати тексти праворуч від `{is}` між лапками. Ви забули, це для тексту {text}."
+msgstr "Ми виявили, що текст праворуч від `{is}` не написаний у лапках. Цей рівень вимагає, щоб ви почали писати текст між лапками. Спробуйте зробити це для тексту {text}"
 
-#, fuzzy
 msgid "Unquoted Equality Check"
-msgstr "Якщо потрібно перевірити, чи дорівнює змінна декільком словам, то слова повинні бути взяті в лапки!"
+msgstr "Ми виявили, що код намагається перевірити, чи дорівнює змінна кільком словам. Чи можете ви спробувати взяти в лапки слова, які ви хочете перевірити?"
 
-#, fuzzy
 msgid "Unquoted Text"
-msgstr "Будьте уважні. Якщо ви щось `{ask}` або `{print}`, то текст повинен починатися і закінчуватися лапками. Це ви забули для тексту {unquotedtext}."
+msgstr "Ми виявили, що в тексті для `{ask}` або `{print}`, схоже, відсутні лапки. Чи можете ви спробувати додати цитати для {unquotedtext}?"
 
-#, fuzzy
 msgid "Unsupported Float"
-msgstr "Нецілі числа поки що не підтримуються, але це буде через декілька рівнів. Наразі змініть `{value}` на ціле число."
+msgstr "Ми виявили, що код використовує нецілі числа, які ще не підтримуються. Чи можете ви спробувати змінити `{value}` на ціле число?"
 
-#, fuzzy
 msgid "Unsupported String Value"
-msgstr "Текстові значення не можуть містити `{invalid_value}`."
+msgstr "Ми виявили, що текст використовує значення, які не може містити `{invalid_value}`. Чи можете ви спробувати видалити записане значення або змінити його тип?"
 
-#, fuzzy
 msgid "Unused Variable"
-msgstr "You defined the variable {variable_name} on line {line_number}, but you did not use it."
+msgstr "Ми виявили, що змінна {variable_name} визначена в рядку {line_number}, але не використовується. Чи можете ви спробувати використати визначену змінну чи видалити її?"
 
-#, fuzzy
 msgid "Var Undefined"
-msgstr "Ви намагалися використати перемінну {name}, але не задали її. Також можливо, що ви намагалися використати слово {name}, але забули взяти лапки."
+msgstr "Ми виявили, що змінна `{name}` використовується до встановлення. Чи можете ви встановити змінну перед її використанням або взяти лапки для `{name}`?"
 
-#, fuzzy
 msgid "Wrong Level"
-msgstr "Це був правильний код Hedy, але не на тому рівні. Ви написали `{offending_keyword}` для рівня {working_level}. Підказка: {tip}"
+msgstr "Ми виявили, що написаний код є правильним кодом Hedy, але `{offending_keyword}` використовується на рівні {working_level}. {tip}"
 
-#, fuzzy
 msgid "Wrong Number of Arguments"
-msgstr "Your function used the wrong number of arguments. You provided {used_number} but the function {name} needs {defined_number}"
+msgstr "Ми виявили, що функція {name} має неправильну кількість аргументів: {used_number}. Чи можете ви замість цього спробувати написати {defined_number}?"
 
 msgid "account_overview"
 msgstr "Огляд облікового запису"
 
-#, fuzzy
-msgid "accounts_created"
-msgstr "Облікові записи успішно створено."
-
-msgid "accounts_intro"
-msgstr "На цій сторінці ви можете створити аккаунти для декількох учнів одночасно. Вони автоматично додаються до поточного класу, переконайтеся, що обраний клас є правильним! Натиснувши на зелений + в правому нижньому куті сторінки ви можете додати додаткові рядки. Видалити рядок можна, натиснувши відповідний червоний хрестик. Переконайтеся, що при натисканні кнопки \"Створити акаунт\" не залишилося порожніх рядків. Будь ласка, пам'ятайте, що кожне ім'я користувача повинно бути унікальним, а пароль повинен містити <b>не менше</b> 6 символів."
-
-#, fuzzy
 msgid "actions"
-msgstr "Actions"
+msgstr "Дії"
 
-#, fuzzy
 msgid "add"
-msgstr "Add"
+msgstr "додати"
 
 msgid "add_students"
 msgstr "Додати учня"
 
-#, fuzzy
 msgid "add_your_language"
-msgstr "Add your language!"
+msgstr "Додайте свою мову!"
 
 msgid "admin"
 msgstr "Адміністратор"
@@ -225,17 +172,14 @@ msgstr "Перейдіть на рівень {level}"
 msgid "adventure"
 msgstr "Пригода"
 
-#, fuzzy
 msgid "adventure_cloned"
-msgstr "Adventure is cloned"
+msgstr "Пригоди клоновані"
 
-#, fuzzy
 msgid "adventure_code_button"
-msgstr "Adventure Code"
+msgstr "Код пригод"
 
-#, fuzzy
 msgid "adventure_codeblock_button"
-msgstr "Use this button when you want to create a block of code that students can run in your adventure. Tip: put the selection at the end of the last line of the code block and <kbd>Enter</kbd> 3 times to type after a code block."
+msgstr "Використовуйте цю кнопку, якщо хочете створити блок коду, який студенти зможуть запускати у вашій пригоді. Порада: поставте виділення в кінці останнього рядка блоку коду та <kbd>введіть</kbd> 3 рази, щоб ввести після блоку коду."
 
 msgid "adventure_duplicate"
 msgstr "У вас вже є пригода з такою назвою."
@@ -243,16 +187,15 @@ msgstr "У вас вже є пригода з такою назвою."
 msgid "adventure_empty"
 msgstr "Ви не ввели назву пригоди!"
 
+#, fuzzy
 msgid "adventure_exp_3"
 msgstr "Переконайтеся, що ви завжди оточуєте ключові слова символом { }, тоді вони будуть розпізнані правильно. Ви можете скористатися кнопкою \"попередній перегляд\", щоб переглянути стилізовану версію вашої пригоди. Щоб переглянути завдання на окремій сторінці, виберіть \"переглянути\" на сторінці вчителя."
 
-#, fuzzy
 msgid "adventure_exp_classes"
-msgstr "Your adventure is used within the following classes"
+msgstr "Ваша пригода використовується в наступних класах"
 
-#, fuzzy
 msgid "adventure_flagged"
-msgstr "The adventure was flagged successfully."
+msgstr "Пригода була успішно позначена."
 
 msgid "adventure_id_invalid"
 msgstr "Цей ідентифікатор пригоди є недійсним."
@@ -272,25 +215,20 @@ msgstr "Я згоден з тим, що моя пригода може бути 
 msgid "adventure_updated"
 msgstr "Пригоду оновлено!"
 
-#, fuzzy
-msgid "adventures"
-msgstr "Adventures"
-
-#, fuzzy
 msgid "adventures_completed"
-msgstr "Adventures completed: {number_of_adventures}"
+msgstr "Здійснено пригод: {number_of_adventures}"
 
-#, fuzzy
 msgid "adventures_info"
-msgstr "Each Hedy level has built-in exercises for students, which we call adventures. You can create your own adventures and add them to your classes. With your own adventures you can create adventures that are relevant and interesting for your students. You can find more information about creating your own adventures <a href=\"https://hedy.org/for-teachers/manual/features\">here</a>."
+msgstr "Кожен рівень Hedy має вбудовані вправи для учнів, які ми називаємо пригодами. Ви можете створювати власні пригоди та додавати їх до своїх класів. За допомогою власних пригод ви можете створювати пригоди, які будуть актуальними та цікавими для ваших учнів. Ви можете знайти більше інформації про створення власних пригод <a href=\"https://hedy.org/for-teachers/manual/features\">тут</a> ."
 
-#, fuzzy
 msgid "adventures_restored"
-msgstr "The default adventures have been restored!"
+msgstr "Стандартні пригоди відновлено."
 
-#, fuzzy
+msgid "adventures_ticked"
+msgstr "Пригоди відзначилися"
+
 msgid "adventures_tried"
-msgstr "Adventures tried"
+msgstr "Пригоди пробували"
 
 msgid "ago"
 msgstr "{timestamp} тому"
@@ -310,17 +248,14 @@ msgstr "Всі"
 msgid "all_class_highscores"
 msgstr "Усіх учнів видно в рейтингу успішності класу"
 
+msgid "all_rows_missing_separator"
+msgstr "Жоден із рядків не містить крапки з комою. Можливо, ви хочете дозволити нам автоматично генерувати паролі? Якщо так, натисніть перемикач паролів і створіть облікові записи знову. Якщо це не так, використовуйте крапку з комою, щоб розділити імена користувачів і паролі в таких рядках: {rows}"
+
 msgid "already_account"
 msgstr "Вже маєте обліковий запис?"
 
 msgid "already_program_running"
 msgstr "Програма вже запущена, завершіть її спочатку."
-
-msgid "already_teacher"
-msgstr "У вас вже є обліковий запис викладача."
-
-msgid "already_teacher_request"
-msgstr "У вас вже є заявка на викладача, яка перебуває на розгляді."
 
 msgid "are_you_sure"
 msgstr "Ви впевнені? Ви не можете відкликати цю операцію."
@@ -329,7 +264,10 @@ msgid "ask_needs_var"
 msgstr "Починаючи з рівня 2, `{ask}` потрібно використовувати із перемінною. Приклад: name `{is}` `{ask}` Як тебе звати?"
 
 msgid "available_in"
-msgstr "Available in:"
+msgstr "Доступний у:"
+
+msgid "back_to_class"
+msgstr "Поверніться до класу"
 
 msgid "become_a_sponsor"
 msgstr "Стати спонсором"
@@ -337,20 +275,14 @@ msgstr "Стати спонсором"
 msgid "birth_year"
 msgstr "Рік народження"
 
-#, fuzzy
-msgid "bug"
-msgstr "Bug"
-
-#, fuzzy
 msgid "by"
-msgstr "by"
+msgstr "за"
 
 msgid "cancel"
 msgstr "Скасувати"
 
-#, fuzzy
 msgid "cant_parse_exception"
-msgstr "Couldn't parse the program"
+msgstr "Не вдалося проаналізувати програму"
 
 msgid "certificate"
 msgstr "Свідоцтво про проходження курсу"
@@ -370,9 +302,11 @@ msgstr "Ви вже є учнем класу"
 msgid "class_customize_success"
 msgstr "Клас успішно налаштовано."
 
-#, fuzzy
 msgid "class_graph_explanation"
-msgstr "In this graph you can see represented the numbers of adventures your students have attempted (meaning they have done meaninful work in that adventure), with respect to the number of errors and successful runs."
+msgstr "На цьому графіку ви можете побачити кількість пригод, у яких спробували ваші учні (це означає, що вони виконали значущу роботу в цій пригоді), по відношенню до кількості помилок і успішних запусків."
+
+msgid "class_logs"
+msgstr "Логи"
 
 msgid "class_name_duplicate"
 msgstr "У вас вже є клас з такою назвою."
@@ -386,49 +320,35 @@ msgstr "Це ім'я класу є неприпустимим."
 msgid "class_name_prompt"
 msgstr "Введіть назву нового класу"
 
-#, fuzzy
 msgid "class_performance_graph"
-msgstr "Class performance graph"
+msgstr "Графік роботи класу"
 
-#, fuzzy
 msgid "class_survey_description"
-msgstr "We would like to get a better overview of our Hedy users. By providing these answers, you would help improve Hedy. Thank you!"
+msgstr "Ми хочемо, щоб отримати кращий огляд наших користувачів. Надаючи ці відповіді, ви допоможете покращити Hedy. Дякуємо!"
 
-#, fuzzy
 msgid "class_survey_later"
-msgstr "Remind me tomorrow"
+msgstr "Нагадати мені завтра"
 
-#, fuzzy
 msgid "class_survey_question1"
-msgstr "What is the age range in your class?"
+msgstr "Що таке віковий діапазон у класі?"
 
-#, fuzzy
 msgid "class_survey_question2"
-msgstr "What is the spoken language in your class?"
+msgstr "Яка розмовна мова у вашому класі?"
 
-#, fuzzy
 msgid "class_survey_question3"
-msgstr "What is the gender balance in your class?"
+msgstr "Який гендерний баланс у вашому класі?"
 
-#, fuzzy
 msgid "class_survey_question4"
-msgstr "What distinguishes your students from others?"
+msgstr "Що відрізняє ваших студентів від інших?"
 
-#, fuzzy
-msgid "classes"
-msgstr "Classes"
-
-#, fuzzy
 msgid "classes_info"
-msgstr "Create a class to follow the progress of each student in dashboard, and to customize the adventures your students see, and even adding your own! You can create as many classes as you like, and each class can have multiple teachers each one with different roles. You can also add as many students as you want, but mind that each student can only be in one class at a time. You can find more information about classes in the <a href=\"https://hedy.org/for-teachers/manual/preparations#for-teachers\">teacher manual</a>."
+msgstr "Створіть клас, щоб слідкувати за прогресом кожного студента в панельній панелі, і налаштувати пригоди, які ви бачите, і навіть додати свій власний! Ви можете створити якомога більше класів, як вам подобається, і кожен клас може мати кілька вчителів кожен з різних ролей. Ви також можете додати стільки студентів, скільки ви хочете, але розум, що кожен студент може бути тільки в одному класі. Дізнатися більше про класи в <a href=\"https://hedy.org/for-teachers/manual/preparations#for-teachers\">навчання </a>."
 
-#, fuzzy
 msgid "clone"
-msgstr "Clone"
+msgstr "Клон"
 
-#, fuzzy
 msgid "cloned_times"
-msgstr "Clones"
+msgstr "Клони"
 
 msgid "close"
 msgstr "Закрити"
@@ -436,41 +356,44 @@ msgstr "Закрити"
 msgid "comma"
 msgstr "кома"
 
-#, fuzzy
 msgid "command_not_available_yet_exception"
-msgstr "Command not available yet"
+msgstr "Команда ще не доступна"
 
-#, fuzzy
 msgid "command_unavailable_exception"
-msgstr "Command not correct anymore"
+msgstr "Команда більше не правильна"
 
 msgid "commands"
 msgstr "Команди"
 
+msgid "complete"
+msgstr "Виконано"
+
 msgid "congrats_message"
 msgstr "Вітаємо, {username}, ви успішно прошли курс Hedy!"
 
-#, fuzzy
 msgid "connect_guest_teacher"
-msgstr "I would like to be connected with a guest teacher who can give a few lessons"
+msgstr "Я хотів би зв’язатися з запрошеним учителем, який може провести кілька уроків"
 
-#, fuzzy
 msgid "constant_variable_role"
-msgstr "constant"
+msgstr "постійний"
 
 msgid "content_invalid"
 msgstr "Ця пригода є недійсною."
 
-#, fuzzy
+msgid "continue"
+msgstr "Продовжити"
+
 msgid "contributor"
 msgstr "Дописувач"
+
+msgid "copy_accounts_to_clipboard"
+msgstr "Копіювати в буфер обміну"
 
 msgid "copy_clipboard"
 msgstr "Успішно скопійовано до буфера обміну"
 
-#, fuzzy
 msgid "copy_code"
-msgstr "Copy code"
+msgstr "Скопіюйте код"
 
 msgid "copy_join_link"
 msgstr "Скопіювати посилання для вступу"
@@ -499,8 +422,11 @@ msgstr "Створити обліковий запис"
 msgid "create_accounts"
 msgstr "Створити акаунт"
 
+msgid "create_accounts_placeholder"
+msgstr "Введіть облікові записи або вставте їх із електронної таблиці"
+
 msgid "create_accounts_prompt"
-msgstr "Ви впевнені, що хочете створити ці акаунти?"
+msgstr "Ви створите стільки облікових записів студентів: {number_of_accounts}. Ви впевнені?"
 
 msgid "create_adventure"
 msgstr "Створіть пригоду"
@@ -508,23 +434,32 @@ msgstr "Створіть пригоду"
 msgid "create_class"
 msgstr "Створіть новий клас"
 
-msgid "create_multiple_accounts"
-msgstr "Створіть кілька акаунтів"
-
-msgid "create_question"
-msgstr "Хочете створити один?"
-
 msgid "create_student_account"
 msgstr "Створіть обліковий запис"
 
 msgid "create_student_account_explanation"
 msgstr "Ви можете зберігати власні програми якщо маєте обліковий запис."
 
+msgid "create_student_accounts"
+msgstr "Створіть облікові записи студентів для"
+
 msgid "create_teacher_account"
 msgstr "Створіть обліковий запис викладача"
 
 msgid "create_teacher_account_explanation"
 msgstr "За допомогою облікового запису вчителя ви можете зберігати свої програми і бачити результати своїх учнів."
+
+msgid "create_usernames_and_passwords_desc"
+msgstr "Введіть по одному імені користувача та паролю на рядок, розділивши їх крапкою з комою. Або, якщо у вас є дані в електронній таблиці з двома стовпцями, скопіюйте вміст файлу та вставте сюди."
+
+msgid "create_usernames_and_passwords_title"
+msgstr "Імена користувачів і паролі"
+
+msgid "create_usernames_desc"
+msgstr "Введіть по одному імені користувача на рядок або вставте їх із електронної таблиці."
+
+msgid "create_usernames_title"
+msgstr "Імена користувачів"
 
 msgid "creator"
 msgstr "Автор"
@@ -535,9 +470,8 @@ msgstr "Поточний пароль"
 msgid "customization_deleted"
 msgstr "Налаштування успішно видалено."
 
-#, fuzzy
 msgid "customize"
-msgstr "Customize"
+msgstr "Налаштувати"
 
 msgid "customize_adventure"
 msgstr "Налаштуйте пригоду"
@@ -548,12 +482,14 @@ msgstr "Кастомізація класу"
 msgid "dash"
 msgstr "тире"
 
+msgid "debug"
+msgstr "Налагодження"
+
 msgid "default_401"
 msgstr "Схоже, ви не уповноважені..."
 
-#, fuzzy
 msgid "default_403"
-msgstr "Looks like this action is forbidden..."
+msgstr "Схоже, ця акція заборонена..."
 
 msgid "default_404"
 msgstr "Нам не вдалося знайти цю сторінку..."
@@ -585,9 +521,8 @@ msgstr "Видалити публічний профіль"
 msgid "delete_success"
 msgstr "Програму успішно видалено."
 
-#, fuzzy
 msgid "delete_tag_prompt"
-msgstr "Are you sure you want to delete this tag?"
+msgstr "Ви впевнені, що бажаєте видалити цей тег?"
 
 msgid "destroy_profile"
 msgstr "Видалити профіль"
@@ -598,25 +533,20 @@ msgstr "Режим програміста"
 msgid "directly_available"
 msgstr "Безпосередньо відкрити"
 
-#, fuzzy
 msgid "disable"
-msgstr "Disable"
+msgstr "Вимкнути"
 
-#, fuzzy
 msgid "disable_explore_page"
-msgstr "Disable explore page"
+msgstr "Вимкнути сторінку огляду"
 
-#, fuzzy
 msgid "disable_parsons"
-msgstr "Disable all puzzles"
+msgstr "Відключити всі головоломки"
 
-#, fuzzy
 msgid "disable_quizes"
-msgstr "Disable all quizes"
+msgstr "Вимкнути всі тести"
 
-#, fuzzy
 msgid "disabled"
-msgstr "Disabled"
+msgstr "Вимкнено"
 
 msgid "disabled_button_quiz"
 msgstr "Ваш результат тесту нижчий за прохідногу балу, спробуйте ще раз!"
@@ -633,241 +563,167 @@ msgstr "подвійні лапки"
 msgid "download"
 msgstr "Завантажити"
 
-msgid "download_login_credentials"
-msgstr "Бажаєте завантажити логіни для входу після створення акаунтів?"
-
 msgid "duplicate"
 msgstr "Дублювання"
 
-#, fuzzy
 msgid "echo_and_ask_mismatch_exception"
-msgstr "Echo and ask mismatch"
+msgstr "Невідповідність луни та запиту"
 
 msgid "echo_out"
-msgstr "Починаючи з рівня 2 команда `{echo}` більше не потрібна. Тепер ви можете повторити відповідь за допомогою `{ask}` і `{print}`. Приклад: ім'я - `{ask}` Як тебе звати? `{print}` привіт ім'я"
+msgstr "Починати з рівня 2 `{echo}` більше не потрібно. Тепер ви можете повторити відповідь за допомогою `{ask}` і `{print}`. Приклад: `name {is} {ask} Як тебе звати? {print} привіт ім'я`"
 
-#, fuzzy
 msgid "edit_adventure"
-msgstr "Edit adventure"
+msgstr "Редагувати пригоди"
 
-#, fuzzy
 msgid "edit_code_button"
-msgstr "Edit code"
+msgstr "Редагувати код"
 
-#, fuzzy
 msgid "email"
-msgstr "Email"
+msgstr "Електронна пошта"
 
-#, fuzzy
 msgid "email_invalid"
-msgstr "Please enter a valid email."
+msgstr "Введіть дійсну адресу електронної пошти."
 
-#, fuzzy
 msgid "end_quiz"
-msgstr "Quiz end"
+msgstr "Кінець вікторини"
 
-#, fuzzy
 msgid "english"
-msgstr "English"
+msgstr "англійська"
 
-#, fuzzy
 msgid "enter"
 msgstr "Enter"
 
 msgid "enter_password"
 msgstr "Введіть новий пароль для"
 
-#, fuzzy
 msgid "enter_text"
-msgstr "Enter your answer here..."
+msgstr "Введіть свою відповідь тут..."
 
 msgid "error_logo_alt"
-msgstr "Error logo"
+msgstr "логотип помилки"
 
-#, fuzzy
 msgid "errors"
-msgstr "Errors"
+msgstr "Помилки"
 
 msgid "exclamation mark"
 msgstr "знак оклику"
 
-#, fuzzy
 msgid "exercise"
-msgstr "Exercise"
+msgstr "вправи"
 
-#, fuzzy
 msgid "exercise_doesnt_exist"
-msgstr "This exercise doesn't exist"
+msgstr "Цієї вправи не існує"
 
-#, fuzzy
 msgid "exists_email"
-msgstr "That email is already in use."
+msgstr "Ця електронна адреса вже використовується."
 
-#, fuzzy
 msgid "exists_username"
-msgstr "That username is already in use."
+msgstr "Це ім’я користувача вже використовується."
 
-#, fuzzy
 msgid "exit_preview_mode"
-msgstr "Exit preview mode"
+msgstr "Вийти з режиму попереднього перегляду"
 
-#, fuzzy
 msgid "experience_invalid"
-msgstr "Please select a valid experience, choose (Yes, No)."
+msgstr "Виберіть дійсний досвід, виберіть (Так, Ні)."
 
 msgid "expiration_date"
 msgstr "Термін придатності"
 
-#, fuzzy
-msgid "explore_programs"
-msgstr "Explore programs"
-
-#, fuzzy
-msgid "explore_programs_logo_alt"
-msgstr "Explore programs icon"
-
-#, fuzzy
 msgid "favorite_program"
-msgstr "Favorite program"
+msgstr "Улюблена програма"
 
-#, fuzzy
 msgid "favourite_confirm"
-msgstr "Are you sure you want to set this program as your favourite?"
+msgstr "Ви впевнені, що хочете встановити цю програму як свою улюблену?"
 
-#, fuzzy
 msgid "favourite_program"
-msgstr "Favourite program"
+msgstr "Улюблена програма"
 
 msgid "favourite_program_invalid"
 msgstr "Обрана вами улюблена програма недійсна."
 
-#, fuzzy
 msgid "favourite_success"
-msgstr "Your program is set as favourite."
+msgstr "Ваша програма встановлена як улюблена."
 
-#, fuzzy
-msgid "feature"
-msgstr "Feature"
-
-#, fuzzy
-msgid "feedback"
-msgstr "Feedback"
-
-#, fuzzy
 msgid "feedback_message_error"
-msgstr "Something went wrong, please try again later."
+msgstr "Щось пішло не так, спробуйте пізніше."
 
-#, fuzzy
-msgid "feedback_message_success"
-msgstr "Thank you, we recieved your feedback and will contact you if needed."
-
-#, fuzzy
-msgid "feedback_modal_message"
-msgstr "Please send us a message with a category. We appreciate your help to improve Hedy!"
-
-#, fuzzy
 msgid "female"
-msgstr "Female"
+msgstr "Жінка"
 
-#, fuzzy
 msgid "flag_adventure_prompt"
-msgstr "Do you want to flag this adventure so that we check its appropriateness?"
+msgstr "Хочете позначити цю пригоду, щоб ми перевірили її відповідність?"
 
-#, fuzzy
 msgid "float"
-msgstr "a number"
+msgstr "число"
 
-#, fuzzy
 msgid "for_teachers"
-msgstr "For teachers"
+msgstr "Для вчителів"
 
-#, fuzzy
 msgid "forgot_password"
-msgstr "Forgot your password?"
+msgstr "Забули пароль?"
 
-#, fuzzy
 msgid "from_another_teacher"
-msgstr "From another teacher"
+msgstr "Від іншої вчительки"
 
-#, fuzzy
 msgid "from_magazine_website"
-msgstr "From a magazine or website"
+msgstr "З журналу чи сайту"
 
-#, fuzzy
 msgid "from_video"
-msgstr "From a video"
+msgstr "З відео"
 
 msgid "fun_statistics_msg"
 msgstr "Ось трохи цікавої статистики!"
 
-#, fuzzy
 msgid "gender"
-msgstr "Gender"
+msgstr "Стать"
 
-#, fuzzy
 msgid "gender_invalid"
-msgstr "Please select a valid gender, choose (Female, Male, Other)."
+msgstr "Будь ласка, виберіть дійсну стать, виберіть (Жінка, Чоловічий, Інше)."
 
 msgid "general_settings"
 msgstr "Загальні налаштування"
 
-msgid "generate_passwords"
-msgstr "Згенерувати паролі"
-
-#, fuzzy
 msgid "get_certificate"
-msgstr "Get your certificate!"
+msgstr "Отримай сертифікат!"
 
-#, fuzzy
 msgid "give_link_to_teacher"
-msgstr "Give the following link to your teacher:"
+msgstr "Дайте наступне посилання своєму вчителю:"
 
-#, fuzzy
 msgid "go_back"
-msgstr "Go back"
+msgstr "Іди назад"
 
-#, fuzzy
 msgid "go_back_to_main"
-msgstr "Go back to main page"
+msgstr "Повернутися на головну сторінку"
 
-#, fuzzy
 msgid "go_to_question"
-msgstr "Go to question"
+msgstr "Перейти до запитання"
 
-#, fuzzy
 msgid "go_to_quiz_result"
-msgstr "Go to quiz result"
+msgstr "Перейти до результатів тесту"
 
 msgid "goto_profile"
 msgstr "Перейти до мого профілю"
 
-#, fuzzy
 msgid "graph_title"
-msgstr "Errors per adventure completed on level {level}"
+msgstr "Помилки в кожній пригоді, завершеній на рівні {level}"
 
-#, fuzzy
 msgid "hand_in"
-msgstr "Hand in"
+msgstr "Здати"
 
-#, fuzzy
 msgid "hand_in_exercise"
-msgstr "Hand in exercise"
+msgstr "Рука в вправі"
 
-#, fuzzy
 msgid "heard_about_hedy"
-msgstr "How have you heard about Hedy?"
+msgstr "Як ви дізналися про Хеді?"
 
-#, fuzzy
 msgid "heard_about_invalid"
-msgstr "Please select a valid way you heard about us."
+msgstr "Виберіть правильний спосіб, яким ви дізналися про нас."
 
-#, fuzzy
 msgid "hedy_choice_title"
-msgstr "Hedy's Choice"
+msgstr "Вибір Хеді"
 
-#, fuzzy
 msgid "hedy_introduction_slides"
-msgstr "Hedy Introduction Slides"
+msgstr "Слайди вступу Хеді"
 
 msgid "hedy_logo_alt"
 msgstr "Логотип Hedy"
@@ -875,20 +731,23 @@ msgstr "Логотип Hedy"
 msgid "hedy_on_github"
 msgstr "Hedy на Github"
 
-#, fuzzy
-msgid "hedy_tutorial_logo_alt"
-msgstr "Hedy tutorial icon"
-
 msgid "hello_logo"
-msgstr "Привіт!"
+msgstr "Привіт"
 
-#, fuzzy
+msgid "hide_adventures"
+msgstr "Сховати пригоди"
+
 msgid "hide_cheatsheet"
-msgstr "Hide cheatsheet"
+msgstr "Сховати шпаргалку"
 
-#, fuzzy
+msgid "hide_classes"
+msgstr "Приховати класи"
+
 msgid "hide_keyword_switcher"
-msgstr "Hide keyword switcher"
+msgstr "Приховати перемикач ключових слів"
+
+msgid "hide_slides"
+msgstr "Сховати слайди"
 
 msgid "highest_level_reached"
 msgstr "Досягнуто найвищого рівня"
@@ -896,72 +755,56 @@ msgstr "Досягнуто найвищого рівня"
 msgid "highest_quiz_score"
 msgstr "Найвищий бал у тестуванні"
 
-#, fuzzy
 msgid "hint"
-msgstr "Hint?"
+msgstr "Підказка?"
 
-#, fuzzy
 msgid "ill_work_some_more"
-msgstr "I'll work on it a little longer"
+msgstr "Я ще трохи попрацюю над цим"
 
-#, fuzzy
 msgid "image_invalid"
-msgstr "Обрана вами картинка є невірною."
+msgstr "Вибране вами зображення недійсне."
 
-#, fuzzy
 msgid "incomplete_command_exception"
-msgstr "Incomplete Command"
+msgstr "Незавершена команда"
 
-#, fuzzy
 msgid "incorrect_handling_of_quotes_exception"
-msgstr "Incorrect handling of quotes"
+msgstr "Некоректна обробка котирувань"
 
-#, fuzzy
 msgid "incorrect_use_of_types_exception"
-msgstr "Incorrect use of types"
+msgstr "Некоректне використання типів"
 
-#, fuzzy
 msgid "incorrect_use_of_variable_exception"
-msgstr "Incorrect use of variable"
+msgstr "Некоректне використання змінної"
 
-#, fuzzy
 msgid "indentation_exception"
-msgstr "Incorrect Indentation"
+msgstr "Неправильний відступ"
 
 msgid "input"
 msgstr "вхідні дані з `{ask}`"
 
-#, fuzzy
 msgid "input_variable_role"
-msgstr "input"
+msgstr "введення"
 
-#, fuzzy
 msgid "integer"
-msgstr "кількість"
+msgstr "число"
 
-#, fuzzy
 msgid "invalid_class_link"
-msgstr "Invalid link for joining the class."
+msgstr "Недійсне посилання для приєднання до класу."
 
-#, fuzzy
 msgid "invalid_command_exception"
-msgstr "Invalid command"
+msgstr "Недійсна команда"
 
-#, fuzzy
 msgid "invalid_keyword_language_comment"
-msgstr "# The provided keyword language is invalid, keyword language is set to English"
+msgstr "# Надана мова ключового слова недійсна, мовою ключового слова встановлено англійську"
 
-#, fuzzy
 msgid "invalid_language_comment"
-msgstr "# The provided language is invalid, language set to English"
+msgstr "# Вказана мова недійсна, вибрано англійську мову"
 
-#, fuzzy
 msgid "invalid_level_comment"
-msgstr "# The provided level is invalid, level is set to level 1"
+msgstr "# Наданий рівень недійсний, встановлено рівень 1"
 
-#, fuzzy
 msgid "invalid_program_comment"
-msgstr "# The provided program is invalid, please try again"
+msgstr "# Надана програма недійсна, спробуйте ще раз"
 
 msgid "invalid_teacher_invitation_code"
 msgstr "Код запрошення для викладача недійсний. Щоб стати викладачем, зверніться за адресою hello@hedy.org."
@@ -969,9 +812,8 @@ msgstr "Код запрошення для викладача недійсний
 msgid "invalid_tutorial_step"
 msgstr "Невірний крок туторіалу"
 
-#, fuzzy
 msgid "invalid_username_password"
-msgstr "Invalid username/password."
+msgstr "Недійсне ім'я користувача/пароль."
 
 msgid "invite_by_username"
 msgstr "Запросити по імені користувача"
@@ -979,16 +821,14 @@ msgstr "Запросити по імені користувача"
 msgid "invite_date"
 msgstr "Дата запрошення"
 
-#, fuzzy
 msgid "invite_message"
-msgstr "You have received an invitation to join class"
+msgstr "Ви отримали запрошення приєднатися до класу"
 
 msgid "invite_prompt"
 msgstr "Введіть ім'я користувача"
 
-#, fuzzy
 msgid "invite_teacher"
-msgstr "Invite a teacher"
+msgstr "Запросити вчителя"
 
 msgid "join_class"
 msgstr "Приєднуйтесь до класу"
@@ -996,64 +836,50 @@ msgstr "Приєднуйтесь до класу"
 msgid "join_prompt"
 msgstr "Щоб приєднатися до класу, вам необхідно мати обліковий запис. Бажаєте увійти зараз?"
 
-#, fuzzy
 msgid "keybinding_waiting_for_keypress"
-msgstr "Waiting for a button press..."
+msgstr "Очікування натискання клавіші..."
 
-#, fuzzy
 msgid "keyword_language_invalid"
-msgstr "Please select a valid keyword language (select English or your own language)."
+msgstr "Будь ласка, виберіть дійсну мову ключового слова (виберіть англійську або свою мову)."
 
-#, fuzzy
 msgid "landcode_phone_number"
-msgstr "Please also add your country's landcode"
+msgstr "Також додайте код країни"
 
-#, fuzzy
 msgid "language"
-msgstr "Language"
+msgstr "Мова"
 
-#, fuzzy
 msgid "language_invalid"
-msgstr "Please select a valid language."
+msgstr "Виберіть дійсну мову."
 
-#, fuzzy
 msgid "languages"
-msgstr "Which of these programming languages have you used before?"
+msgstr "Якою з цих мов програмування ви користувалися раніше?"
 
-#, fuzzy
 msgid "last_edited"
-msgstr "Last edited"
+msgstr "Останнє редагування"
 
-#, fuzzy
 msgid "last_update"
-msgstr "Last update"
+msgstr "Останнє оновлення"
 
-#, fuzzy
 msgid "lastname"
-msgstr "Last Name"
+msgstr "Прізвище"
 
-#, fuzzy
 msgid "leave_class"
-msgstr "Leave class"
+msgstr "Залиште урок"
 
 msgid "level"
 msgstr "Рівень"
 
-#, fuzzy
 msgid "level_accessible"
-msgstr "Level is open to students"
+msgstr "Рівень відкритий для студентів"
 
-#, fuzzy
 msgid "level_disabled"
-msgstr "Level disabled"
+msgstr "Рівень вимкнено"
 
-#, fuzzy
 msgid "level_future"
-msgstr "This level will open automatically after the opening date"
+msgstr "Цей рівень автоматично відкривається на "
 
-#, fuzzy
 msgid "level_invalid"
-msgstr "This Hedy level in invalid."
+msgstr "Цей рівень Hedy недійсний."
 
 msgid "level_not_class"
 msgstr "Цей рівень ще не доступний у вашому класі"
@@ -1061,122 +887,102 @@ msgstr "Цей рівень ще не доступний у вашому кла�
 msgid "level_title"
 msgstr "Рівень"
 
-#, fuzzy
 msgid "levels"
-msgstr "levels"
+msgstr "рівнях"
 
-#, fuzzy
 msgid "link"
-msgstr "Link"
+msgstr "Посилання"
 
 msgid "list"
 msgstr "список"
 
-#, fuzzy
 msgid "list_variable_role"
-msgstr "list"
+msgstr "список"
 
-#, fuzzy
 msgid "logged_in_to_share"
-msgstr "You must be logged in to save and share a program."
+msgstr "Ви повинні увійти, щоб зберегти програму та поділитися нею."
 
-#, fuzzy
 msgid "login"
-msgstr "Log in"
+msgstr "авторизуватися"
 
-#, fuzzy
 msgid "login_long"
-msgstr "Log in to your account"
+msgstr "Увійдіть у свій обліковий запис"
 
-#, fuzzy
 msgid "login_to_save_your_work"
-msgstr "Log in to save your work"
+msgstr "Увійдіть, щоб зберегти свою роботу"
 
-#, fuzzy
 msgid "logout"
-msgstr "Log out"
+msgstr "Вийти"
 
 msgid "longest_program"
 msgstr "Найдовша програма"
 
-#, fuzzy
 msgid "mail_change_password_body"
 msgstr ""
-"Your Hedy password has been changed. If you did this, all is good.\n"
-"If you didn't change your password, please contact us immediately by replying to this email."
+"Ваш пароль Hedy було змінено. Якщо ви зробили це, все добре.\n"
+"Якщо ви не змінювали свій пароль, негайно зв’яжіться з нами, відповівши на цей електронний лист."
 
-#, fuzzy
 msgid "mail_change_password_subject"
-msgstr "Your Hedy password has been changed"
+msgstr "Ваш пароль Hedy було змінено"
 
-#, fuzzy
 msgid "mail_error_change_processed"
-msgstr "Something went wrong when sending a validation mail, the changes are still correctly processed."
+msgstr "Щось пішло не так під час надсилання листа перевірки, зміни все ще правильно обробляються."
 
-#, fuzzy
 msgid "mail_goodbye"
 msgstr ""
-"Keep programming!\n"
-"The Hedy team"
+"Продовжуйте програмувати!\n"
+"Команда Hedy"
 
-#, fuzzy
 msgid "mail_hello"
-msgstr "Hi {username}!"
+msgstr "привіт {username}!"
 
-#, fuzzy
 msgid "mail_recover_password_body"
 msgstr ""
-"By clicking on this link, you can set a new Hedy password. This link is valid for <b>4</b> hours.\n"
-"If you haven't required a password reset, please ignore this email: {link}"
+"Натиснувши це посилання, ви можете встановити новий пароль Hedy. Це посилання дійсне протягом <b>4</b> годин.\n"
+"Якщо ви не вимагали скидання пароля, проігноруйте цей електронний лист: {link}"
 
 msgid "mail_recover_password_subject"
 msgstr "Запит на скидання пароля."
 
-#, fuzzy
 msgid "mail_reset_password_body"
 msgstr ""
-"Your Hedy password has been reset to a new one. If you did this, all is good.\n"
-"If you didn't change your password, please contact us immediately by replying to this email."
+"Ваш пароль Hedy скинуто на новий. Якщо ви зробили це, все добре.\n"
+"Якщо ви не змінювали свій пароль, негайно зв’яжіться з нами, відповівши на цей електронний лист."
 
-#, fuzzy
 msgid "mail_reset_password_subject"
-msgstr "Your Hedy password has been reset"
+msgstr "Ваш пароль Hedy скинуто"
 
-#, fuzzy
 msgid "mail_welcome_teacher_body"
 msgstr ""
-"<strong>Welcome!</strong>\n"
-"Congratulations on your brand new Hedy teacher's account. Welcome to the world wide community of Hedy teachers!\n"
+"<strong>Ласкаво просимо!</strong> \n"
+"Вітаємо з новим обліковим записом вчителя Hedy. Ласкаво просимо до всесвітньої спільноти вчителів Hedy! \n"
 "\n"
-"<strong>What teacher's accounts can do</strong>\n"
-"There are a number of extra options unlocked for you now.\n"
+"<strong>Що можуть зробити облікові записи вчителя</strong> \n"
+"Зараз для вас розблоковано кілька додаткових опцій. \n"
 "\n"
-"1. Extra explanation is available in the <a href=\"https://hedy.org/for-teachers/manual\">teacher's manual</a>.\n"
-"2. With your teacher account, you can create classes. Your students can than join your classes and you can see their progress. Classes are made and managed though the for <a href=\"https://hedycode.com/for-teachers\">teachers page</a>.\n"
-"3. You can fully customize your classes, for example you can open and close levels, enable or disable adventures and author your own adventures!\n"
+"1. Додаткове пояснення є в <a href=\"https://hedy.org/for-teachers/manual\">посібнику для вчителя</a> . \n"
+"2. За допомогою облікового запису вчителя ви можете створювати класи. Ваші студенти можуть приєднатися до ваших занять, і ви можете бачити їхній прогрес. Класи створюються та керуються через <a href=\"https://hedycode.com/for-teachers\">сторінку для викладачів</a> . \n"
+"3. Ви можете повністю налаштувати свої класи, наприклад, ви можете відкривати та закривати рівні, вмикати та вимикати пригоди та створювати власні пригоди! \n"
 "\n"
-"<strong>Join our online community!</strong>\n"
-"All Hedy teachers, programmers and other fans are welcome to join our <a href=\"https://discord.gg/8yY7dEme9r\">Discord server</a>. This is the ideal place to chat about Hedy: we have channels where you can show your cool projects and lessons, channels to report bugs, and channels to chat with other teachers and with the Hedy team.\n"
+"<strong>Приєднуйтесь до нашої онлайн-спільноти!</strong> \n"
+"Запрошуємо всіх викладачів Hedy, програмістів та інших шанувальників приєднатися до нашого <a href=\"https://discord.gg/8yY7dEme9r\">сервера Discord</a> . Це ідеальне місце для спілкування про Hedy: у нас є канали, де ви можете показати свої класні проекти та уроки, канали для повідомлення про помилки та канали для спілкування з іншими вчителями та командою Hedy. \n"
 "\n"
-"<strong>How to ask for help </strong>\n"
-"If anything is unclear, you can let us know on Discord, or <a href=\"mailto: hello@hedy.org\">send us an email</a>.\n"
+"<strong>Як звернутися за допомогою</strong> \n"
+"Якщо щось незрозуміло, ви можете повідомити нам про це на Discord або <a href=\"mailto: hello@hedy.org\">надіслати нам електронний лист</a> . \n"
 "\n"
-"<strong>How to report bugs</strong>\n"
-"In Discord, we have a channel for reporting bugs, called #bugs. That is the perfect place to let us know about issues you are running into. If you know how to use GitHub, you can create an <a href=\"https://github.com/hedyorg/hedy/issues/new?assignees=&labels=&template=bug_report.md&title=%5BBUG%5D\">issue</a> there.\n"
+"<strong>Як повідомляти про помилки</strong> \n"
+"У Discord у нас є канал для повідомлення про помилки під назвою #bugs. Це ідеальне місце, щоб повідомити нам про проблеми, з якими ви стикаєтеся. Якщо ви знаєте, як користуватися GitHub, ви можете створити <a href=\"https://github.com/hedyorg/hedy/issues/new?assignees=&labels=&template=bug_report.md&title=%5BBUG%5D\">проблему</a> там.\n"
 
-#, fuzzy
 msgid "mail_welcome_teacher_subject"
-msgstr "Your Hedy teacher account is ready"
+msgstr "Ваш обліковий запис викладача Hedy готовий"
 
-#, fuzzy
 msgid "mail_welcome_verify_body"
 msgstr ""
-"Your Hedy account has been created successfully. Welcome!\n"
-"Please click on this link to verify your email address: {link}"
+"Ваш обліковий запис Hedy успішно створено. Ласкаво просимо!\n"
+"Натисніть це посилання, щоб підтвердити свою електронну адресу: {link}"
 
-#, fuzzy
 msgid "mail_welcome_verify_subject"
-msgstr "Welcome to Hedy"
+msgstr "Ласкаво просимо до Хеді"
 
 msgid "mailing_title"
 msgstr "Підписатися на розсилку новин Hedy"
@@ -1184,52 +990,44 @@ msgstr "Підписатися на розсилку новин Hedy"
 msgid "main_subtitle"
 msgstr "Поступова мова програмування"
 
-#, fuzzy
 msgid "main_title"
-msgstr "Hedy"
+msgstr "Хеді"
 
-#, fuzzy
 msgid "make_sure_you_are_done"
-msgstr "Make sure you are done! You will not be able to change your program anymore after you click \"Hand in\"."
+msgstr "Переконайтеся, що ви закінчили! Ви більше не зможете змінити свою програму після натискання «Здати»."
 
-#, fuzzy
 msgid "male"
-msgstr "Male"
+msgstr "Чоловік"
 
-#, fuzzy
 msgid "mandatory_mode"
-msgstr "Mandatory developer's mode"
+msgstr "Обов'язковий режим розробника"
 
-#, fuzzy
+msgid "more_info"
+msgstr "Більше інформації"
+
 msgid "more_options"
-msgstr "More options"
+msgstr "Більше варіантів"
 
-#, fuzzy
 msgid "multiple_keywords_warning"
-msgstr "You are trying to use the keyword {orig_keyword}, but this keyword might have several meanings. Please choose the one you're trying to use from this list and copy paste it in your code, curly braces included: {keyword_list}"
+msgstr "Ви намагаєтеся використати ключове слово {orig_keyword}, але воно може мати кілька значень. Будь ласка, виберіть із цього списку той, який ви намагаєтеся використати, і скопіюйте, вставте його у свій код, включаючи фігурні дужки: {keyword_list}"
 
 msgid "multiple_levels_warning"
-msgstr "We've noticed you have both selected several levels and included code snippets in your adventure, this might cause issues with the syntax highlighter and the automatic translation of keywords"
+msgstr "Ми помітили, що ви вибрали кілька рівнів і включили у свою пригоду фрагменти коду, це може спричинити проблеми з підсвічуванням синтаксису та автоматичним перекладом ключових слів"
 
-#, fuzzy
 msgid "my_account"
-msgstr "My account"
+msgstr "Мій рахунок"
 
-#, fuzzy
 msgid "my_adventures"
-msgstr "My adventures"
+msgstr "Мої пригоди"
 
-#, fuzzy
 msgid "my_classes"
-msgstr "My classes"
+msgstr "Мої заняття"
 
-#, fuzzy
 msgid "my_messages"
-msgstr "My messages"
+msgstr "Мої повідомлення"
 
-#, fuzzy
 msgid "my_public_profile"
-msgstr "My public profile"
+msgstr "Мій публічний профіль"
 
 msgid "name"
 msgstr "Ім'я"
@@ -1237,9 +1035,8 @@ msgstr "Ім'я"
 msgid "nav_explore"
 msgstr "Дослідити"
 
-#, fuzzy
 msgid "nav_hedy"
-msgstr "Hedy"
+msgstr "Хеді"
 
 msgid "nav_learn_more"
 msgstr "Дізнатися більше"
@@ -1247,284 +1044,236 @@ msgstr "Дізнатися більше"
 msgid "nav_start"
 msgstr "Головна"
 
-#, fuzzy
 msgid "new_password"
-msgstr "New password"
+msgstr "Новий пароль"
 
-#, fuzzy
 msgid "new_password_repeat"
-msgstr "Repeat new password"
+msgstr "Повторіть новий пароль"
 
 msgid "newline"
 msgstr "нова лінія"
 
-#, fuzzy
-msgid "next_exercise"
-msgstr "Next exercise"
+msgid "next_adventure"
+msgstr "Наступна пригода"
 
-#, fuzzy
+msgid "next_exercise"
+msgstr "Наступна вправа"
+
 msgid "next_page"
-msgstr "Next page"
+msgstr "Наступна сторінка"
 
 msgid "next_step_tutorial"
 msgstr "Наступний крок >>>"
 
+msgid "next_student"
+msgstr "Наступний учень"
+
 msgid "no"
 msgstr "Ні"
 
-#, fuzzy
 msgid "no_account"
-msgstr "No account?"
+msgstr "Немає облікового запису?"
 
-#, fuzzy
 msgid "no_accounts"
-msgstr "There are no accounts to create."
+msgstr "Немає облікових записів для створення."
 
-#, fuzzy
 msgid "no_adventures_yet"
-msgstr "There are no public adventures yet..."
+msgstr "Публічних пригод ще немає..."
 
-#, fuzzy
 msgid "no_more_flat_if"
-msgstr "Starting in level 8, the line after `{if}` needs to start with 4 spaces."
+msgstr "Починаючи з рівня 8, код після `{if}` має бути розміщений у наступному рядку та починатися з 4 пробілів."
 
-#, fuzzy
 msgid "no_programs"
-msgstr "You have no programs yet."
+msgstr "Програм немає."
 
-#, fuzzy
-msgid "no_public_profile"
-msgstr "You don't have a public profile text yet..."
-
-#, fuzzy
 msgid "no_shared_programs"
-msgstr "has no shared programs..."
+msgstr "не має спільних програм..."
+
+msgid "no_students"
+msgstr "У цьому класі немає учнів"
 
 msgid "no_such_adventure"
 msgstr "Така пригода не існує!"
 
-#, fuzzy
 msgid "no_such_class"
-msgstr "No such Hedy class."
+msgstr "Немає такого класу Hedy."
 
 msgid "no_such_level"
 msgstr "Такого рівня Хеди не існує!"
 
-#, fuzzy
 msgid "no_such_program"
 msgstr "Немає такої програми Hedy!"
 
-#, fuzzy
 msgid "no_tag"
-msgstr "No tag provided!"
+msgstr "Тег не надано!"
 
-#, fuzzy
 msgid "not_adventure_yet"
-msgstr "You must fill in an adventure name first"
+msgstr "Спочатку потрібно ввести назву пригоди"
 
 msgid "not_enrolled"
 msgstr "Схоже, що ви не з цього класу!"
 
-#, fuzzy
 msgid "not_in_class_no_handin"
-msgstr "You are not in a class, so there's no need for you to hand in anything."
+msgstr "Ви не в класі, тому вам не потрібно нічого здавати."
 
-#, fuzzy
 msgid "not_logged_in_cantsave"
-msgstr "Your program will not be saved."
+msgstr "Ваша програма не буде збережена."
 
-#, fuzzy
 msgid "not_logged_in_handin"
-msgstr "You must be logged in to hand in an assignment."
+msgstr "Ви повинні увійти в систему, щоб здати завдання."
 
 msgid "not_teacher"
 msgstr "Схоже, ви не вчитель!"
 
-#, fuzzy
 msgid "number"
-msgstr "номер"
+msgstr "число"
 
-#, fuzzy
 msgid "number_lines"
-msgstr "Number of lines"
+msgstr "Кількість ліній"
 
-#, fuzzy
 msgid "number_of_errors"
-msgstr "Number of errors: {number_of_errors}"
+msgstr "Кількість помилок: {number_of_errors}"
 
-#, fuzzy
 msgid "number_programs"
-msgstr "Кількість виконаних програм"
+msgstr "Кількість запущених програм"
 
-#, fuzzy
 msgid "ok"
 msgstr "OK"
 
-#, fuzzy
 msgid "one_level_error"
-msgstr "You need to select at least one level."
+msgstr "Потрібно вибрати хоча б один рівень."
 
-#, fuzzy
 msgid "only_you_can_see"
-msgstr "Only you can see this program."
+msgstr "Тільки ви можете бачити цю програму."
 
-#, fuzzy
 msgid "open"
-msgstr "Open"
+msgstr "ВІДЧИНЕНО"
 
-#, fuzzy
 msgid "opening_date"
-msgstr "Opening date"
+msgstr "Дата відкриття"
 
-#, fuzzy
 msgid "opening_dates"
-msgstr "Opening dates"
+msgstr "Дати відкриття"
 
-#, fuzzy
 msgid "option"
-msgstr "Option"
+msgstr "Варіант"
 
 msgid "or"
 msgstr "або"
 
-#, fuzzy
 msgid "other"
-msgstr "Other"
+msgstr "інше"
 
-#, fuzzy
 msgid "other_block"
-msgstr "Another block language"
+msgstr "Ще одна блокова мова"
 
-#, fuzzy
 msgid "other_settings"
-msgstr "Other settings"
+msgstr "Інші налаштування"
 
-#, fuzzy
 msgid "other_source"
-msgstr "Other"
+msgstr "інше"
 
-#, fuzzy
 msgid "other_text"
-msgstr "Another text language"
+msgstr "Інша мова тексту"
 
-#, fuzzy
 msgid "overwrite_warning"
-msgstr "You already have a program with this name, saving this program will replace the old one. Are you sure?"
+msgstr "У вас уже є програма з такою назвою, збереження цієї програми замінить стару. Ви впевнені?"
 
-#, fuzzy
 msgid "owner"
-msgstr "Owner"
+msgstr "Власник"
 
 msgid "page_not_found"
 msgstr "Ми не змогли знайти цю сторінку!"
 
-#, fuzzy
 msgid "pair_with_teacher"
-msgstr "I would like to be paired with another teacher for help"
+msgstr "Я хотів би, щоб мене об’єднали з іншим учителем для допомоги"
 
-#, fuzzy
 msgid "parsons_title"
-msgstr "Puzzle"
+msgstr "Головоломка"
 
 msgid "password"
 msgstr "Пароль"
 
-#, fuzzy
 msgid "password_change_not_allowed"
-msgstr "You're not allowed to change the password of this user."
+msgstr "Вам заборонено змінювати пароль цього користувача."
 
 msgid "password_change_prompt"
 msgstr "Ви впевнені, що хочете змінити цей пароль?"
 
-#, fuzzy
 msgid "password_change_success"
-msgstr "Password of your student is successfully changed."
+msgstr "Пароль вашого студента успішно змінено."
 
-#, fuzzy
 msgid "password_invalid"
-msgstr "Your password is invalid."
+msgstr "Ваш пароль недійсний."
 
-#, fuzzy
 msgid "password_repeat"
-msgstr "Repeat password"
+msgstr "Повторіть пароль"
 
-#, fuzzy
 msgid "password_resetted"
-msgstr "Your password has been successfully reset. You are being redirected to the login page."
+msgstr "Ваш пароль успішно скинуто. Вас буде перенаправлено на сторінку входу."
 
-#, fuzzy
 msgid "password_six"
-msgstr "Your password must contain at least six characters."
+msgstr "Ваш пароль має містити не менше шести символів."
 
-#, fuzzy
 msgid "password_updated"
-msgstr "Password updated."
+msgstr "Пароль оновлено."
 
-#, fuzzy
 msgid "passwords_six"
-msgstr "All passwords need to be six characters or longer."
+msgstr "Усі паролі мають містити не менше шести символів."
 
-#, fuzzy
+msgid "passwords_too_short"
+msgstr "Довжина паролів має бути не менше 6 символів. Виправте наступні паролі, щоб вони містили щонайменше 6 символів: {passwords}"
+
 msgid "pending_invites"
-msgstr "Pending invites"
+msgstr "Очікують запрошення"
 
-#, fuzzy
 msgid "people_with_a_link"
-msgstr "Other people with a link can see this program. It also can be found on the \"Explore\" page."
+msgstr "Інші люди, які мають посилання, можуть бачити цю програму. Його також можна знайти на сторінці «Дослідження»."
 
-#, fuzzy
 msgid "percentage"
-msgstr "percentage"
+msgstr "відсоток"
 
 msgid "period"
 msgstr "період"
 
-#, fuzzy
 msgid "personal_text"
-msgstr "Personal text"
+msgstr "Особистий текст"
 
-#, fuzzy
 msgid "personal_text_invalid"
-msgstr "Ваш особистий текст є недійсним."
+msgstr "Ваш особистий текст недійсний."
 
-#, fuzzy
 msgid "phone_number"
-msgstr "Phone number"
+msgstr "Номер телефону"
 
-#, fuzzy
-msgid "postfix_classname"
-msgstr "Postfix classname"
-
-#, fuzzy
 msgid "preferred_keyword_language"
-msgstr "Preferred keyword language"
+msgstr "Бажана мова ключових слів"
 
-#, fuzzy
 msgid "preferred_language"
-msgstr "Preferred language"
+msgstr "Бажана мова"
 
 msgid "preview"
 msgstr "Переглянути"
 
-#, fuzzy
 msgid "preview_teacher_mode"
-msgstr "This account is for you to try out Hedy, note that you need to sign out and create an actual account to save your progress."
+msgstr "Цей обліковий запис призначений для того, щоб ви спробували Hedy, зверніть увагу, що вам потрібно вийти та створити справжній обліковий запис, щоб зберегти свій прогрес."
 
-#, fuzzy
 msgid "previewing_adventure"
-msgstr "Previewing adventure"
+msgstr "Попередній перегляд пригод"
 
-#, fuzzy
 msgid "previewing_class"
-msgstr "You are previewing class <em>{class_name}</em> as a teacher."
+msgstr "Ви переглядаєте клас <em>{class_name}</em> як викладач."
 
-#, fuzzy
 msgid "previous_campaigns"
-msgstr "View previous campaigns"
+msgstr "Переглянути попередні кампанії"
 
-#, fuzzy
 msgid "previous_page"
-msgstr "Previous page"
+msgstr "Попередня сторінка"
+
+msgid "print_accounts"
+msgstr "Роздрукувати"
+
+msgid "print_accounts_title"
+msgstr "Студентські акаунти для hedy.org"
 
 msgid "print_logo"
 msgstr "друкуй"
@@ -1532,355 +1281,297 @@ msgstr "друкуй"
 msgid "privacy_terms"
 msgstr "Політика конфіденційності"
 
-#, fuzzy
 msgid "private"
-msgstr "Private"
+msgstr "Приватний"
 
-#, fuzzy
 msgid "profile_logo_alt"
-msgstr "Profile icon."
+msgstr "Значок профілю."
 
-#, fuzzy
 msgid "profile_picture"
-msgstr "Profile picture"
+msgstr "Фото профілю"
 
-#, fuzzy
 msgid "profile_updated"
-msgstr "Profile updated."
+msgstr "Профіль оновлено."
 
-#, fuzzy
 msgid "profile_updated_reload"
-msgstr "Profile updated, page will be re-loaded."
+msgstr "Профіль оновлено, сторінка буде перезавантажена."
 
 msgid "program_contains_error"
 msgstr "Ця програма містить помилку, ви дійсно хочете нею поділитися?"
 
-#, fuzzy
 msgid "program_header"
-msgstr "My programs"
+msgstr "Мої програми"
 
-#, fuzzy
 msgid "program_too_large_exception"
-msgstr "Programs too large"
+msgstr "Програми занадто великі"
 
-#, fuzzy
 msgid "programming_experience"
-msgstr "Do you have programming experience?"
+msgstr "У вас є досвід програмування?"
 
-#, fuzzy
 msgid "programming_invalid"
-msgstr "Please select a valid programming language."
+msgstr "Виберіть дійсну мову програмування."
 
-#, fuzzy
 msgid "programs"
 msgstr "Програми"
 
 msgid "prompt_join_class"
 msgstr "Бажаєте приєднатися до цього класу?"
 
-#, fuzzy
+msgid "provided_username_duplicates"
+msgstr "Ви вказали такі імена користувачів кілька разів: {usernames}"
+
 msgid "public"
-msgstr "Public"
+msgstr "Громадський"
 
 msgid "public_adventures"
-msgstr "Browse public adventures"
+msgstr "Перегляньте публічні пригоди"
 
-#, fuzzy
 msgid "public_content"
-msgstr "Public content"
+msgstr "Загальнодоступний контент"
 
-#, fuzzy
 msgid "public_content_info"
-msgstr "You can also look for public adventures and use them as an example."
+msgstr "Тут ви можете знайти наші публічні пригоди. Це пригоди інших вчителів з усього світу. Подивіться і сміливо використовуйте пригоди на своїх уроках."
 
-#, fuzzy
 msgid "public_invalid"
-msgstr "This agreement selection is invalid"
+msgstr "Цей вибір угоди недійсний"
 
-#, fuzzy
 msgid "public_profile"
-msgstr "Public profile"
+msgstr "Загальнодоступний профіль"
 
-#, fuzzy
 msgid "public_profile_info"
-msgstr "By selecting this box I make my profile visible for everyone. Be careful not to share personal information like your name or home address, because everyone will be able to see it!"
+msgstr "Вибравши цей прапорець, я зроблю свій профіль видимим для всіх. Будьте обережні, не повідомляйте особисту інформацію, як-от ваше ім’я чи домашню адресу, тому що кожен зможе її побачити!"
 
 msgid "public_profile_updated"
 msgstr "Публічний профіль оновлено, сторінка буде перезавантажена."
 
+msgid "put"
+msgstr "Покласти"
+
 msgid "question mark"
 msgstr "знак питання"
 
-#, fuzzy
 msgid "quiz_logo_alt"
-msgstr "Quiz logo"
+msgstr "Вікторина логотип"
 
-#, fuzzy
 msgid "quiz_score"
-msgstr "Quiz score"
+msgstr "Оцінка вікторини"
 
-#, fuzzy
 msgid "quiz_tab"
-msgstr "Quiz"
+msgstr "Вікторина"
 
 msgid "quiz_threshold_not_reached"
 msgstr "Поріг проходження тестування не досягнуто, щоб розблокувати цей рівень"
 
-#, fuzzy
 msgid "read_code_label"
-msgstr "Read aloud"
+msgstr "Прочитайте вголос"
 
-#, fuzzy
 msgid "recent"
-msgstr "My recent programs"
+msgstr "Мої останні програми"
 
 msgid "recover_password"
 msgstr "Запит на скидання пароля"
 
-#, fuzzy
 msgid "regress_button"
-msgstr "Go back to level {level}"
+msgstr "Повернутися на рівень {level}"
 
 msgid "remove"
 msgstr "Видалити"
 
-#, fuzzy
 msgid "remove_customization"
-msgstr "Remove customization"
+msgstr "Видалити налаштування"
 
-#, fuzzy
 msgid "remove_customizations_prompt"
-msgstr "Are you sure you want to remove this class's customizations?"
+msgstr "Ви впевнені, що хочете видалити налаштування цього класу?"
 
 msgid "remove_student_prompt"
 msgstr "Ви впевнені, що хочете видалити учня з класу?"
 
-#, fuzzy
 msgid "remove_user_prompt"
-msgstr "Confirm removing this user from the class."
+msgstr "Підтвердьте видалення цього користувача з класу."
 
-#, fuzzy
+msgid "rename_class"
+msgstr "Перейменувати клас"
+
+msgid "rename_class_prompt"
+msgstr "Яку назву ви хочете дати цьому класу?"
+
 msgid "repair_program_logo_alt"
-msgstr "Repair program icon"
+msgstr "Значок програми відновлення"
 
-#, fuzzy
 msgid "repeat_dep"
-msgstr "Starting in level 8, `{repeat}` needs to be used with indentation. You can see examples on the `{repeat}` tab in level 8."
+msgstr "Починаючи з рівня 8, `{repeat}` потрібно використовувати з відступом. Ви можете побачити приклади на вкладці `{repeat}` на рівні 8."
 
-#, fuzzy
 msgid "repeat_match_password"
-msgstr "The repeated password does not match."
+msgstr "Повторний пароль не збігається."
 
-#, fuzzy
 msgid "repeat_new_password"
-msgstr "Repeat new password"
+msgstr "Повторіть новий пароль"
 
-#, fuzzy
 msgid "report_failure"
-msgstr "This program does not exist or is not public"
+msgstr "Ця програма не існує або не є публічною"
 
-#, fuzzy
 msgid "report_program"
-msgstr "Are you sure you want to report this program?"
+msgstr "Ви впевнені, що бажаєте повідомити про цю програму?"
 
-#, fuzzy
 msgid "report_success"
-msgstr "This program has been reported"
+msgstr "Про цю програму повідомлено"
 
-#, fuzzy
 msgid "request_invalid"
-msgstr "Request invalid"
+msgstr "Запит недійсний"
 
-#, fuzzy
 msgid "request_teacher"
-msgstr "Would you like to apply for a teacher's account?"
+msgstr "Чи хотіли б ви стати вчителем?"
 
-#, fuzzy
 msgid "request_teacher_account"
-msgstr "Request teacher account"
+msgstr "Стати вчителем"
 
-#, fuzzy
 msgid "required_field"
-msgstr "Fields marked with an * are required"
+msgstr "Поля, позначені *, обов'язкові для заповнення"
 
-#, fuzzy
 msgid "reset_adventure_prompt"
-msgstr "Are you sure you want to reset all selected adventures?"
+msgstr "Ви впевнені, що бажаєте скинути всі вибрані пригоди?"
 
-#, fuzzy
 msgid "reset_adventures"
-msgstr "Reset selected adventures"
+msgstr "Скинути вибрані пригоди"
 
-#, fuzzy
 msgid "reset_button"
-msgstr "Reset"
+msgstr "Скинути"
 
-#, fuzzy
 msgid "reset_password"
-msgstr "Reset password"
+msgstr "Скинути пароль"
 
-msgid "reset_view"
-msgstr "Перезавантажити"
+msgid "restart"
+msgstr "Перезапустіть"
 
-#, fuzzy
 msgid "retrieve_adventure_error"
-msgstr "You're not allowed to view this adventure!"
+msgstr "Вам заборонено переглядати цю пригоду!"
 
-#, fuzzy
 msgid "retrieve_class_error"
-msgstr "Only teachers can retrieve classes"
+msgstr "Тільки вчителі можуть отримати класи"
 
-#, fuzzy
 msgid "retrieve_tag_error"
-msgstr "Error retrieving tags"
+msgstr "Помилка отримання тегів"
 
-#, fuzzy
 msgid "role"
-msgstr "Role"
+msgstr "Роль"
 
-#, fuzzy
 msgid "run_code_button"
-msgstr "Run code"
+msgstr "Запустити код"
 
-#, fuzzy
 msgid "save_parse_warning"
-msgstr "This program contains an error, are you sure you want to save it?"
+msgstr "Ця програма містить помилку. Ви впевнені, що хочете її зберегти?"
 
-#, fuzzy
 msgid "save_prompt"
-msgstr "You need to have an account to save your program. Would you like to login now?"
+msgstr "Щоб зберегти програму, потрібно мати обліковий запис. Бажаєте увійти зараз?"
 
-#, fuzzy
 msgid "save_success_detail"
-msgstr "Program saved successfully."
+msgstr "Програму успішно збережено."
 
-#, fuzzy
 msgid "score"
-msgstr "Score"
+msgstr "Оцінка"
 
-#, fuzzy
 msgid "search"
-msgstr "Search..."
+msgstr "Пошук..."
 
-#, fuzzy
 msgid "search_button"
-msgstr "Search"
+msgstr "Пошук"
 
-#, fuzzy
 msgid "second_teacher"
-msgstr "Second teacher"
+msgstr "Друга вчителька"
 
-#, fuzzy
 msgid "second_teacher_copy_prompt"
-msgstr "Are you sure you want to copy this teacher?"
+msgstr "Ви впевнені, що хочете скопіювати цього вчителя?"
 
-#, fuzzy
 msgid "second_teacher_prompt"
-msgstr "Enter a teacher username to invite them."
+msgstr "Введіть ім’я користувача вчителя, щоб запросити його."
 
-#, fuzzy
 msgid "second_teacher_warning"
-msgstr "All teachers in this class can customize it."
+msgstr "Усі вчителі цього класу можуть налаштувати його."
 
-#, fuzzy
 msgid "see_certificate"
-msgstr "Див. сертифікат {username}!"
+msgstr "Перегляньте сертифікат {username}!"
 
-#, fuzzy
 msgid "select"
-msgstr "Select"
+msgstr "Виберіть"
 
-#, fuzzy
 msgid "select_adventures"
-msgstr "Select adventures"
+msgstr "Виберіть і замовте пригоди"
 
 msgid "select_all"
-msgstr "Select all"
+msgstr "Вибрати все"
 
-#, fuzzy
 msgid "select_lang"
-msgstr "Select language"
+msgstr "Виберіть мову"
 
 msgid "select_levels"
-msgstr "Select levels"
+msgstr "Виберіть рівні"
 
-#, fuzzy
 msgid "select_tag"
-msgstr "Select tag"
+msgstr "Виберіть тег"
 
 msgid "selected"
-msgstr "Selected"
+msgstr "Вибране"
 
-#, fuzzy
 msgid "self_removal_prompt"
-msgstr "Are you sure you want to leave this class?"
+msgstr "Ви впевнені, що бажаєте залишити цей курс?"
 
-#, fuzzy
 msgid "send_password_recovery"
-msgstr "Send me a password recovery link"
+msgstr "Надішліть мені посилання для відновлення пароля"
 
-#, fuzzy
 msgid "sent_by"
-msgstr "This invitation is sent by"
+msgstr "Це запрошення надіслано"
 
-#, fuzzy
 msgid "sent_password_recovery"
-msgstr "You should soon receive an email with instructions on how to reset your password."
+msgstr "Невдовзі ви маєте отримати електронний лист із інструкціями щодо скидання пароля."
 
-#, fuzzy
 msgid "settings"
-msgstr "My personal settings"
+msgstr "Мої особисті налаштування"
 
-#, fuzzy
+msgid "share"
+msgstr "Поділіться"
+
 msgid "share_by_giving_link"
-msgstr "Show your program to other people by giving them the link below:"
+msgstr "Покажіть свою програму іншим людям, надавши їм посилання нижче:"
 
-#, fuzzy
 msgid "share_your_program"
-msgstr "Share your program"
+msgstr "Поділіться своєю програмою"
 
-#, fuzzy
 msgid "signup_student_or_teacher"
-msgstr "Are you a student or a teacher?"
+msgstr "Ви студент чи викладач?"
 
-#, fuzzy
 msgid "single quotes"
-msgstr "a single quote"
+msgstr "одна цитата"
 
 msgid "slash"
 msgstr "коса риска"
 
-#, fuzzy
 msgid "sleeping"
-msgstr "Sleeping..."
+msgstr "спить..."
 
-#, fuzzy
 msgid "slides"
-msgstr "Slides"
+msgstr "Слайди"
 
-#, fuzzy
 msgid "slides_for_level"
-msgstr "Slides for level"
+msgstr "Слайди для рівня"
 
-#, fuzzy
 msgid "slides_info"
-msgstr "For each level of Hedy, we have created slides to help you teach. The slides contain explanations of each level, and Hedy examples that you can run inside the slides. Just click the link and get started! the Introduction slides are a general explanation of Hedy before level 1 The slides were created using <a href=\"https://slides.com\">slides.com</a>. If you want to adapt them yourself, you can download them, and then upload the resulting zip file to <a href=\"https://slides.com\">slides.com</a>. You can find more information about the slides in the <a href=\"https://hedy.org/for-teachers/manual/features\">teacher's manual</a>."
+msgstr "Для кожного рівня Hedy ми створили слайди, які допоможуть вам навчати. Слайди містять пояснення кожного рівня та приклади Hedy, які можна запускати на слайдах. Просто клацніть посилання та почніть! Слайди вступу є загальним поясненням Hedy до рівня 1. Слайди створено за допомогою <a href=\"https://slides.com\">slides.com</a>. Якщо ви хочете адаптувати їх самостійно, ви можете завантажити їх, а потім завантажити отриманий файл zip на <a href=\"https://slides.com\">slides.com</a>. Ви можете знайти більше інформації про слайди в <a href=\"https://hedy.org/for-teachers/manual/features\">посібнику для вчителя</a>."
 
-#, fuzzy
 msgid "social_media"
-msgstr "Social media"
+msgstr "Соціальні мережі"
 
-#, fuzzy
 msgid "solution_example"
-msgstr "Solution Example"
+msgstr "Приклад рішення"
 
-#, fuzzy
 msgid "solution_example_explanation"
-msgstr "This is where the solution of your adventure goes. This can be used if you want to share this adventure with other teacher's, so they can know what your suggested solution is."
+msgstr "Ось де рішення вашої пригоди. Це можна використати, якщо ви хочете поділитися цією пригодою з іншими вчителями, щоб вони могли знати, яке рішення ви пропонуєте."
+
+msgid "some_rows_missing_separator"
+msgstr "У наступних рядках відсутня крапка з комою, тому немає імені користувача або пароля: {rows}"
 
 #, fuzzy
 msgid "something_went_wrong_keyword_parsing"
-msgstr "There is a mistake in your adventure, are all keywords correctly surrounded with { }?"
+msgstr "У вас є всі ключові слова правильно об'єднані { }?"
 
 msgid "space"
 msgstr "пробіл"
@@ -1888,233 +1579,179 @@ msgstr "пробіл"
 msgid "star"
 msgstr "зірка"
 
-#, fuzzy
-msgid "start_hedy_tutorial"
-msgstr "Start hedy tutorial"
-
-#, fuzzy
 msgid "start_learning"
-msgstr "Start learning"
+msgstr "Почніть навчання"
 
-#, fuzzy
-msgid "start_programming"
-msgstr "Start programming"
-
-#, fuzzy
-msgid "start_programming_logo_alt"
-msgstr "Start programming icon"
-
-#, fuzzy
 msgid "start_quiz"
-msgstr "Start quiz"
+msgstr "Розпочати вікторину"
 
-#, fuzzy
-msgid "start_teacher_tutorial"
-msgstr "Start teacher tutorial"
-
-#, fuzzy
 msgid "start_teaching"
-msgstr "Start teaching"
+msgstr "Почніть викладати"
 
-#, fuzzy
 msgid "step_title"
-msgstr "Assignment"
+msgstr "призначення"
 
-#, fuzzy
 msgid "stepper_variable_role"
-msgstr "stepper"
+msgstr "степпер"
 
-#, fuzzy
+msgid "stop"
+msgstr "СТІЙ"
+
 msgid "stop_code_button"
-msgstr "Stop program"
+msgstr "Зупинити програму"
 
 msgid "string"
 msgstr "текст"
 
-#, fuzzy
 msgid "student"
-msgstr "Student"
+msgstr "студент"
 
-#, fuzzy
+msgid "student_accounts_created"
+msgstr "Успішно створені облікові записи студентів"
+
+msgid "student_adventures_table"
+msgstr "Студентські пригоди"
+
+msgid "student_adventures_table_explanation"
+msgstr "У цій таблиці показано програми, створені учнями для кожної пригоди рівня. Натиснувши значок ока, ви можете переглянути сторінку програми; після перегляду програми ви можете поставити галочку, щоб вказати завершення."
+
 msgid "student_already_in_class"
-msgstr "This student is already in your class."
+msgstr "Цей студент уже у вашому класі."
 
-#, fuzzy
 msgid "student_already_invite"
-msgstr "This student already has a pending invitation."
+msgstr "У цього студента вже є запрошення, що очікує на розгляд."
 
-#, fuzzy
-msgid "student_not_allowed_in_class"
-msgstr "Student not allowed in class"
+msgid "student_in_another_class"
+msgstr "Цей учень в іншому класі. Попросіть учня залишити всі заняття та повторити спробу."
 
-#, fuzzy
+msgid "student_information"
+msgstr "Інформація для студента"
+
+msgid "student_information_explanation"
+msgstr "У цій таблиці відображається основна інформація про учнів вашого класу. У цій таблиці також можна виконати кілька дій: змінити пароль студента, клацнувши значок олівця, переглянути сторінку програми студента, клацнувши значок коду, і видалити студента з класу, клацнувши червоний значок кошика ."
+
 msgid "student_not_existing"
-msgstr "This username doesn't exist."
+msgstr "Це ім'я користувача не існує."
 
-#, fuzzy
 msgid "student_signup_header"
-msgstr "Student"
+msgstr "студент"
 
-#, fuzzy
 msgid "students"
-msgstr "students"
+msgstr "студентів"
 
-#, fuzzy
 msgid "submission_time"
-msgstr "Handed in at"
+msgstr "Здано о"
 
-#, fuzzy
 msgid "submit_answer"
-msgstr "Answer question"
+msgstr "Відповідь на запитання"
 
-#, fuzzy
 msgid "submit_program"
-msgstr "Submit"
+msgstr "Надіслати"
 
-#, fuzzy
 msgid "submit_warning"
-msgstr "Are you sure you want to submit this program?"
+msgstr "Ви впевнені, що хочете подати цю програму?"
 
-#, fuzzy
 msgid "submitted"
-msgstr "Submitted"
+msgstr "Надіслано"
 
-#, fuzzy
 msgid "submitted_header"
-msgstr "This is a submitted program and can't be altered."
+msgstr "Це подана програма, і вона не може бути змінена."
 
-#, fuzzy
 msgid "subscribe"
-msgstr "Subscribe"
+msgstr "Підпишіться"
 
-#, fuzzy
 msgid "subscribe_newsletter"
-msgstr "Subscribe to the newsletter"
+msgstr "Підпишіться на розсилку"
 
-#, fuzzy
 msgid "successful_runs"
-msgstr "Successful runs: {successful_runs}"
+msgstr "Успішні пробіжки: {successful_runs}"
 
-#, fuzzy
 msgid "suggestion_color"
-msgstr "Try using another color"
+msgstr "Спробуйте використати інший колір"
 
-#, fuzzy
 msgid "suggestion_note"
-msgstr "Use a note between C0 and B9 or a number between 1 and 70"
+msgstr "Спробуйте використати ноту від C0 до B9 або число від 1 до 70"
 
-#, fuzzy
 msgid "suggestion_number"
-msgstr "Try changing the value to a number"
+msgstr "Спробуйте змінити значення на число"
 
 msgid "suggestion_numbers_or_strings"
-msgstr "Try changing the values to be all text or all numbers"
+msgstr "Спробуйте змінити значення, щоб вони були лише текстом або лише числами"
 
-#, fuzzy
 msgid "surname"
-msgstr "First Name"
+msgstr "Ім'я"
 
-#, fuzzy
 msgid "survey"
-msgstr "Survey"
+msgstr "Опитування"
 
-#, fuzzy
 msgid "survey_completed"
-msgstr "Survey completed"
+msgstr "Опитування завершено"
 
-#, fuzzy
 msgid "survey_skip"
-msgstr "Don't show this again"
+msgstr "Не показувати це знову"
 
-#, fuzzy
 msgid "survey_submit"
-msgstr "Submit"
+msgstr "Надіслати"
 
-#, fuzzy
 msgid "tag_in_adventure"
-msgstr "Tag in adventure"
+msgstr "Теги в пригодах"
 
-#, fuzzy
 msgid "tag_input_placeholder"
-msgstr "Enter a new tag"
+msgstr "Введіть новий тег"
 
-#, fuzzy
 msgid "tags"
-msgstr "Tags"
+msgstr "Теги"
 
 msgid "teacher"
 msgstr "Вчитель"
 
-#, fuzzy
-msgid "teacher_account_request"
-msgstr "You have a pending teacher account request"
-
-#, fuzzy
-msgid "teacher_account_success"
-msgstr "You successfully requested a teacher account."
-
-#, fuzzy
 msgid "teacher_invalid"
-msgstr "Your teacher value is invalid."
+msgstr "Ваше значення викладача недійсне."
 
-#, fuzzy
 msgid "teacher_invitation_require_login"
-msgstr "To set up your profile as a teacher, we will need you to log in. If you don't have an account, please create one."
+msgstr "Щоб налаштувати свій профіль як викладача, нам потрібно буде увійти. Якщо у вас немає облікового запису, створіть його."
 
 msgid "teacher_manual"
 msgstr "Посібник учителя"
 
-#, fuzzy
 msgid "teacher_signup_header"
-msgstr "Teacher"
+msgstr "вчитель"
 
-#, fuzzy
-msgid "teacher_tutorial_logo_alt"
-msgstr "Teacher tutorial icon"
-
-#, fuzzy
 msgid "teacher_welcome"
-msgstr "Welcome to Hedy! Your are now the proud owner of a teachers account which allows you to create classes and invite students."
+msgstr "Ласкаво просимо до Hedy! Тепер ви щасливий власник облікового запису вчителя, який дозволяє вам створювати класи та запрошувати студентів."
 
-#, fuzzy
 msgid "teachers"
-msgstr "Teachers"
+msgstr "Вчителі"
 
 msgid "template_code"
 msgstr ""
 "Ось пояснення моєї пригоди!\n"
 "\n"
-"Таким чином я можу показати команду: <code>{print}</code>\n"
+"Таким чином я можу показати команду: <code>print</code>\n"
 "\n"
-"Але іноді мені хочеться показати шматок коду, наприклад, такий:\n"
-"<pre>\n"
-"ask Як тебе звати?\n"
-"echo Отже, твоє ім'я \n"
+"Але іноді я можу показати фрагмент коду, як-от:\n"
+"<pre> \n"
+"запитай Як тебе звати?\n"
+"echo так ваше ім'я \n"
 "</pre>"
 
-#, fuzzy
 msgid "this_turns_in_assignment"
-msgstr "This turns in your assignment to your teacher."
+msgstr "Це перетворює ваше завдання на вчителя."
 
-#, fuzzy
 msgid "title"
-msgstr "Title"
+msgstr "Назва"
 
-#, fuzzy
 msgid "title_admin"
-msgstr "Hedy - Administrator page"
+msgstr "Hedy - сторінка адміністратора"
 
-#, fuzzy
 msgid "title_class-overview"
-msgstr "Hedy - Class overview"
+msgstr "Hedy - Огляд класу"
 
-#, fuzzy
 msgid "title_customize-adventure"
-msgstr "Hedy - Customize adventure"
+msgstr "Hedy - Налаштуйте пригоду"
 
-#, fuzzy
 msgid "title_customize-class"
-msgstr "Hedy - Customize class"
+msgstr "Hedy - Налаштувати клас"
 
 msgid "title_explore"
 msgstr "Hedy - Ознайомитися"
@@ -2122,12 +1759,8 @@ msgstr "Hedy - Ознайомитися"
 msgid "title_for-teacher"
 msgstr "Hedy - Для вчителів"
 
-#, fuzzy
 msgid "title_join-class"
-msgstr "Hedy - Join class"
-
-msgid "title_landing-page"
-msgstr "Ласкаво просимо до Hedy!"
+msgstr "Хеді - Приєднуйтесь до класу"
 
 msgid "title_learn-more"
 msgstr "Hedy - Дізнатись більше"
@@ -2144,9 +1777,8 @@ msgstr "Hedy - Умови конфіденційності"
 msgid "title_programs"
 msgstr "Hedy - Мої програми"
 
-#, fuzzy
 msgid "title_public-adventures"
-msgstr "Hedy - Public adventures"
+msgstr "Хеді - Публічні пригоди"
 
 msgid "title_recover"
 msgstr "Hedy - Відновити акаунт"
@@ -2160,17 +1792,17 @@ msgstr "Hedy - Створити акаунт"
 msgid "title_start"
 msgstr "Hedy - Мова поступового програмування"
 
-#, fuzzy
 msgid "title_view-adventure"
-msgstr "Hedy - View adventure"
+msgstr "Hedy - Переглянути пригоди"
 
-#, fuzzy
 msgid "token_invalid"
-msgstr "Your token is invalid."
+msgstr "Ваш маркер недійсний."
 
-#, fuzzy
+msgid "too_many_accounts"
+msgstr "Ви не можете створити більше 100 облікових записів студентів."
+
 msgid "tooltip_level_locked"
-msgstr "Your teacher disabled this level"
+msgstr "Ваш учитель вимкнув цей рівень"
 
 msgid "translate_error"
 msgstr "Щось пішло не так під час виконання перекладу коду. Спробуйте запустити код на виконання, щоб перевірити, чи немає в ньому помилки. Код з помилками не може бути перекладений."
@@ -2178,13 +1810,14 @@ msgstr "Щось пішло не так під час виконання пер�
 msgid "translating_hedy"
 msgstr "Перекласти Hedy"
 
-#, fuzzy
 msgid "translator"
-msgstr "Translator"
+msgstr "Перекладач"
 
-#, fuzzy
+msgid "turned_into_teacher"
+msgstr "Щиро вітаю! Ви успішно перетворилися на вчителя."
+
 msgid "tutorial"
-msgstr "Tutorial"
+msgstr "Підручник"
 
 msgid "tutorial_code_snippet"
 msgstr ""
@@ -2200,69 +1833,56 @@ msgstr "Етап туторіалу не знайдено"
 msgid "unauthorized"
 msgstr "У вас немає прав доступу до цієї сторінки"
 
-#, fuzzy
 msgid "unfavourite_confirm"
-msgstr "Are you sure you want to unfavourite this program?"
+msgstr "Ви впевнені, що хочете видалити цю програму з улюблених?"
 
-#, fuzzy
 msgid "unfavourite_success"
-msgstr "Your program is unfavourited."
+msgstr "Ваша програма не є улюбленою."
 
-#, fuzzy
-msgid "unique_usernames"
-msgstr "All usernames need to be unique."
-
-#, fuzzy
 msgid "unknown_variable_role"
-msgstr "unknown"
+msgstr "невідомий"
 
-#, fuzzy
 msgid "unlock_thresholds"
-msgstr "Unlock level thresholds"
+msgstr "Розблокувати пороги рівня"
 
-#, fuzzy
 msgid "unsaved_class_changes"
-msgstr "There are unsaved changes, are you sure you want to leave this page?"
+msgstr "Є незбережені зміни. Ви впевнені, що бажаєте залишити цю сторінку?"
 
-#, fuzzy
 msgid "unsubmit_program"
-msgstr "Unsubmit program"
+msgstr "Скасувати надсилання програми"
 
-#, fuzzy
 msgid "unsubmit_warning"
-msgstr "Are you sure you want to unsubmit this program?"
+msgstr "Ви впевнені, що бажаєте скасувати цю програму?"
 
-#, fuzzy
 msgid "unsubmitted"
-msgstr "Unsubmitted"
+msgstr "Не надіслано"
 
-#, fuzzy
 msgid "update_adventure_prompt"
-msgstr "Are you sure you want to update this adventure?"
+msgstr "Ви впевнені, що хочете оновити цю пригоду?"
 
-#, fuzzy
 msgid "update_public"
-msgstr "Update public profile"
+msgstr "Оновити публічний профіль"
 
-#, fuzzy
 msgid "updating_indicator"
-msgstr "Updating"
+msgstr "Оновлення"
 
-#, fuzzy
+msgid "use_custom_passwords"
+msgstr "Введіть власні паролі"
+
+msgid "use_generated_passwords"
+msgstr "Автоматична генерація паролів"
+
 msgid "use_of_blanks_exception"
-msgstr "Use of blanks in programs"
+msgstr "Використання пробілів у програмах"
 
-#, fuzzy
 msgid "use_of_nested_functions_exception"
-msgstr "Use of nested functions"
+msgstr "Використання вкладених функцій"
 
-#, fuzzy
 msgid "used_in"
-msgstr "Used in:"
+msgstr "Використовується в:"
 
-#, fuzzy
 msgid "user"
-msgstr "user"
+msgstr "користувача"
 
 msgid "user_inexistent"
 msgstr "Цього користувача не існує"
@@ -2273,92 +1893,104 @@ msgstr "Цей користувач або не існує, або не має �
 msgid "username"
 msgstr "Ім'я користувача"
 
-#, fuzzy
+msgid "username_contains_invalid_symbol"
+msgstr "Імена користувачів не можуть містити символ «:» або «@». Видаліть ці символи з таких імен користувачів: {usernames}"
+
+msgid "username_contains_separator"
+msgstr "Імена користувачів не можуть містити крапку з комою. Можливо, ви хочете надати власні паролі? Якщо так, натисніть перемикач паролів і створіть облікові записи знову. Якщо це не так, видаліть крапку з комою з таких імен користувачів: {usernames}"
+
 msgid "username_empty"
-msgstr "You didn't enter an username!"
+msgstr "Ви не ввели ім'я користувача!"
 
-#, fuzzy
 msgid "username_invalid"
-msgstr "Your username is invalid."
+msgstr "Ваше ім'я користувача недійсне."
 
-#, fuzzy
 msgid "username_special"
-msgstr "Username cannot contain `:` or `@`."
+msgstr "Ім’я користувача не може містити `:` або `@`."
 
-#, fuzzy
 msgid "username_three"
-msgstr "Username must contain at least three characters."
+msgstr "Ім'я користувача має містити не менше трьох символів."
 
-#, fuzzy
-msgid "usernames_exist"
-msgstr "One or more usernames is already in use."
+msgid "usernames_too_short"
+msgstr "Ім’я користувача має містити принаймні 3 символи. Виправте такі імена користувачів, щоб вони складалися з 3 або більше символів: {usernames}"
 
-#, fuzzy
+msgid "usernames_unavailable"
+msgstr "Наступні імена користувачів недоступні: {usernames}. Ви можете створити подібні облікові записи, наприклад, додавши підкреслення або назву свого класу."
+
 msgid "value"
-msgstr "Value"
+msgstr "Значення"
 
-#, fuzzy
 msgid "view_adventures"
-msgstr "View adventures"
+msgstr "Переглянути пригоди"
 
-#, fuzzy
 msgid "view_classes"
-msgstr "View classes"
+msgstr "Переглянути класи"
 
-#, fuzzy
 msgid "view_program"
-msgstr "View program"
+msgstr "Переглянути програму"
 
-#, fuzzy
 msgid "view_slides"
-msgstr "View slides"
+msgstr "Перегляд слайдів"
 
-#, fuzzy
 msgid "waiting_for_submit"
-msgstr "Waiting for submit"
+msgstr "Очікування надсилання"
 
-#, fuzzy
 msgid "walker_variable_role"
-msgstr "walker"
+msgstr "ходунки"
 
-#, fuzzy
-msgid "welcome"
-msgstr "Welcome"
+msgid "website"
+msgstr "Веб-сайт"
 
-#, fuzzy
-msgid "welcome_back"
-msgstr "Welcome back"
-
-#, fuzzy
 msgid "what_is_your_role"
-msgstr "What is your role?"
+msgstr "Яка твоя роль?"
 
-#, fuzzy
 msgid "what_should_my_code_do"
-msgstr "What should my code do?"
+msgstr "Що повинен робити мій код?"
 
-#, fuzzy
+msgid "workbook_circle_question_text"
+msgstr "**Запитання**: обведіть {goal} у цьому коді:"
+
+msgid "workbook_circle_question_title"
+msgstr "Призначити"
+
+msgid "workbook_define_question_text"
+msgstr "**Запитання**: Що означає {word}?"
+
+msgid "workbook_define_question_title"
+msgstr "Визначити"
+
+msgid "workbook_input_question_text"
+msgstr "**Запитання**: Який фрагмент коду створив цей результат?"
+
+msgid "workbook_input_question_title"
+msgstr "Введення"
+
+msgid "workbook_multiple_choice_question_text"
+msgstr "**Запитання**: Чи правильний цей код чи містить помилку?"
+
+msgid "workbook_multiple_choice_question_title"
+msgstr "Виберіть"
+
+msgid "workbook_open_question_title"
+msgstr "Відкрите питання"
+
+msgid "workbook_output_question_text"
+msgstr "**Запитання**: Що таке вихід цього коду?"
+
+msgid "workbook_output_question_title"
+msgstr "Вихід"
+
 msgid "year_invalid"
-msgstr "Please enter a year between 1900 and {current_year}."
+msgstr "Введіть рік між 1900 і {current_year}."
 
 msgid "yes"
 msgstr "Так"
 
-#, fuzzy
-msgid "your_account"
-msgstr "Your profile"
-
-#, fuzzy
-msgid "your_last_program"
-msgstr "Your last saved program"
-
-#, fuzzy
 msgid "your_personal_text"
-msgstr "Your personal text..."
+msgstr "Ваш особистий текст..."
 
-#, fuzzy
 msgid "your_program"
-msgstr "Your program"
+msgstr "Ваша програма"
 
 #~ msgid "only_teacher_create_class"
 #~ msgstr "Only teachers are allowed to create classes!"
@@ -2459,9 +2091,6 @@ msgstr "Your program"
 #~ msgid "too_many_attempts"
 #~ msgstr "Too many attempts"
 
-#~ msgid "class_logs"
-#~ msgstr "Логи"
-
 #~ msgid "class_stats"
 #~ msgstr "Статистика класу"
 
@@ -2518,9 +2147,6 @@ msgstr "Your program"
 
 #~ msgid "hide_quiz"
 #~ msgstr "Hide quiz"
-
-#~ msgid "back_to_class"
-#~ msgstr "Поверніться до класу"
 
 #~ msgid "Locked Language Feature"
 #~ msgstr "Ви використовуєте {concept}! Це чудово, але {concept} ще не розблоковано! Його буде розблоковано на наступному рівні."
@@ -2650,4 +2276,121 @@ msgstr "Your program"
 
 #~ msgid "number_achievements"
 #~ msgstr "Кількість досягнень"
+
+#~ msgid "create_question"
+#~ msgstr "Хочете створити один?"
+
+#~ msgid "explore_programs"
+#~ msgstr "Explore programs"
+
+#~ msgid "explore_programs_logo_alt"
+#~ msgstr "Explore programs icon"
+
+#~ msgid "hedy_tutorial_logo_alt"
+#~ msgstr "Hedy tutorial icon"
+
+#~ msgid "no_public_profile"
+#~ msgstr "You don't have a public profile text yet..."
+
+#~ msgid "start_hedy_tutorial"
+#~ msgstr "Start hedy tutorial"
+
+#~ msgid "start_programming"
+#~ msgstr "Start programming"
+
+#~ msgid "start_programming_logo_alt"
+#~ msgstr "Start programming icon"
+
+#~ msgid "start_teacher_tutorial"
+#~ msgstr "Start teacher tutorial"
+
+#~ msgid "teacher_tutorial_logo_alt"
+#~ msgstr "Teacher tutorial icon"
+
+#~ msgid "title_landing-page"
+#~ msgstr "Ласкаво просимо до Hedy!"
+
+#~ msgid "welcome"
+#~ msgstr "Welcome"
+
+#~ msgid "welcome_back"
+#~ msgstr "Welcome back"
+
+#~ msgid "your_account"
+#~ msgstr "Your profile"
+
+#~ msgid "your_last_program"
+#~ msgstr "Your last saved program"
+
+#~ msgid "already_teacher"
+#~ msgstr "У вас вже є обліковий запис викладача."
+
+#~ msgid "already_teacher_request"
+#~ msgstr "У вас вже є заявка на викладача, яка перебуває на розгляді."
+
+#~ msgid "teacher_account_request"
+#~ msgstr "You have a pending teacher account request"
+
+#~ msgid "teacher_account_success"
+#~ msgstr "You successfully requested a teacher account."
+
+#~ msgid "student_not_allowed_in_class"
+#~ msgstr "Student not allowed in class"
+
+#~ msgid "accounts_created"
+#~ msgstr "Облікові записи успішно створено."
+
+#~ msgid "accounts_intro"
+#~ msgstr "На цій сторінці ви можете створити аккаунти для декількох учнів одночасно. Вони автоматично додаються до поточного класу, переконайтеся, що обраний клас є правильним! Натиснувши на зелений + в правому нижньому куті сторінки ви можете додати додаткові рядки. Видалити рядок можна, натиснувши відповідний червоний хрестик. Переконайтеся, що при натисканні кнопки \"Створити акаунт\" не залишилося порожніх рядків. Будь ласка, пам'ятайте, що кожне ім'я користувача повинно бути унікальним, а пароль повинен містити <b>не менше</b> 6 символів."
+
+#~ msgid "create_multiple_accounts"
+#~ msgstr "Створіть кілька акаунтів"
+
+#~ msgid "download_login_credentials"
+#~ msgstr "Бажаєте завантажити логіни для входу після створення акаунтів?"
+
+#~ msgid "generate_passwords"
+#~ msgstr "Згенерувати паролі"
+
+#~ msgid "postfix_classname"
+#~ msgstr "Postfix classname"
+
+#~ msgid "reset_view"
+#~ msgstr "Перезавантажити"
+
+#~ msgid "unique_usernames"
+#~ msgstr "All usernames need to be unique."
+
+#~ msgid "usernames_exist"
+#~ msgstr "One or more usernames is already in use."
+
+#~ msgid "**Question**: What is the output of this code?"
+#~ msgstr ""
+
+#~ msgid "Output"
+#~ msgstr ""
+
+#~ msgid "clear"
+#~ msgstr "Очистити"
+
+#~ msgid "bug"
+#~ msgstr "помилка"
+
+#~ msgid "feature"
+#~ msgstr "Особливість"
+
+#~ msgid "feedback"
+#~ msgstr "Зворотній зв'язок"
+
+#~ msgid "feedback_message_success"
+#~ msgstr "Дякуємо, ми отримали ваш відгук і за потреби зв’яжемося з вами."
+
+#~ msgid "feedback_modal_message"
+#~ msgstr "Будь ласка, надішліть нам повідомлення з категорією. Ми цінуємо вашу допомогу покращити Hedy!"
+
+#~ msgid "adventures"
+#~ msgstr "Пригоди"
+
+#~ msgid "classes"
+#~ msgstr "Класи"
 

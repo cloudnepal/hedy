@@ -8,22 +8,22 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2000-01-01 00:00+0000\n"
-"PO-Revision-Date: 2024-08-06 14:07+0000\n"
-"Last-Translator: Prefill add-on <noreply-addon-prefill@weblate.org>\n"
+"PO-Revision-Date: 2024-12-16 23:27+0000\n"
+"Last-Translator: \"zoom.quiet\" <zoomquiet+hedy@gmail.com>\n"
 "Language-Team: zh_Hans <LL@li.org>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.7-dev\n"
+"X-Generator: Weblate 5.9\n"
 "Generated-By: Babel 2.14.0\n"
 
 msgid "Access Before Assign"
-msgstr "我们检测到变量 `{name}` 在设置之前已在第 {access_line_number} 行被使用。您可以在使用之前设置该变量吗？"
+msgstr "我们检测到变量“{name}”在设置之前已在第 {access_line_number} 行被使用。您能在使用该变量之前设置它吗？"
 
 msgid "Cyclic Var Definition"
-msgstr "我们检测到变量 `{variable}` 在“{is}”命令的右侧被使用，但尚未设置。你应该在使用之前设置该变量？"
+msgstr "我们检测到变量“{variable}”在“{is}”命令的右侧被使用，但尚未设置。您可以在使用之前设置该变量吗?"
 
 msgid "Else Without If Error"
 msgstr "我们检测到在第 {line_number} 行的 `{if}` 之前使用了 `{else}`。你应该尝试在 `{else}` 之前写入 `{if}` ？"
@@ -35,7 +35,7 @@ msgid "Has Blanks"
 msgstr "我们发现代码似乎不完整。能能用代码填补空白吗？"
 
 msgid "Incomplete"
-msgstr "我们发现第 {line_number} 行的 `{incomplete_command}` 部分代码似乎缺失。你可以尝试添加缺失的内容吗？"
+msgstr "我们发现第 {line_number} 行的 `{incomplete_command}` 部分代码似乎缺失。您可以尝试添加缺失的内容吗？"
 
 msgid "Incomplete Repeat"
 msgstr "我们检测到第 {line_number} 行的 `{repeat}` 缺少 `{command}` 命令。你可以尝试添加它吗？"
@@ -65,7 +65,7 @@ msgid "Lonely Text"
 msgstr "我们检测到代码中似乎缺少一个包含第 {line_number} 行所用文本的命令。你能否尝试使用文本编写所需的命令"
 
 msgid "Missing Additional Command"
-msgstr "我们发现代码第 {line_number} 行似乎缺少 `{command}`。您能否尝试在代码中使用 `{missing_command}`。"
+msgstr "我们检测到第 {line_number} 行上的命令 `{command}` 缺少某些内容。您可以尝试在代码中使用 `{missing_command}` 吗？"
 
 msgid "Missing Colon Error"
 msgstr "我们检测到 `{command}` 在第 {line_number} 行末尾需要一个 `:`。从第 17 级开始，你可以在命令行末尾添加 `:` ？"
@@ -80,7 +80,7 @@ msgid "Missing Square Brackets"
 msgstr "我们检测到您在第 {line_number} 行创建的列表缺少方括号 `[]`。你可以尝试在列表的 `[]` 两边添加方括号吗？"
 
 msgid "Missing Variable"
-msgstr "我们检测到 `{command}` 在行首缺少一个变量。可以尝试在 `{command}` 之前写入该变量吗?"
+msgstr "我们检测到 `{command}` 在行首缺少一个变量。您可以尝试在 `{command}` 之前写入该变量吗?"
 
 msgid "Misspelled At Command"
 msgstr "看来您可能拼错了 `{command}` 命令，而是在第 {line_number} 行中写了 `{invalid_argument}`。"
@@ -151,12 +151,6 @@ msgstr "我们发现函数 {name} 的参数数量有误，为 {used_number}。�
 msgid "account_overview"
 msgstr "账户概览"
 
-msgid "accounts_created"
-msgstr "账户已成功创建。"
-
-msgid "accounts_intro"
-msgstr "在此页面上，您可以同时为多个学生创建帐户。也可以直接将它们添加到您的某个班级中。通过按页面右下角的绿色 +，您可以添加额外的行。您可以通过按相应的红叉来删除一行。确保按“创建帐户”时没有行为空。请记住，每个用户名和邮件地址必须是唯一的，密码必须<b>至少</b>为 6 个字符。"
-
 msgid "actions"
 msgstr "行动"
 
@@ -193,8 +187,9 @@ msgstr "您已经使用此名称进行了一次探险活动。"
 msgid "adventure_empty"
 msgstr "你没有输入一个探险活动的名字！"
 
+#, fuzzy
 msgid "adventure_exp_3"
-msgstr "当您在代码块之外编写关键字时，请确保始终用 { } 将关键字括起来，然后才能正确识别它们。 您可以使用“预览”按钮查看冒险的风格版本。 要在专用页面上查看冒险，请从教师页面中选择“查看”。"
+msgstr "确保在代码块外编写关键字时始终用 { } 括住关键字, 这样它们才能被正确识别. 可以使用“预览”按钮查看冒险的样式版本.要在专用页面上查看冒险，请从教师页面中选择“查看”."
 
 msgid "adventure_exp_classes"
 msgstr "您的冒险将在以下类中使用"
@@ -220,9 +215,6 @@ msgstr "我同意我的冒险可以在海蒂上公开。"
 msgid "adventure_updated"
 msgstr "这个探险活动已被更新！"
 
-msgid "adventures"
-msgstr "探险"
-
 msgid "adventures_completed"
 msgstr "已完成的冒险：{number_of_adventures}"
 
@@ -231,6 +223,9 @@ msgstr "每个 海蒂 级别都为学生提供内置练习，我们称之为冒�
 
 msgid "adventures_restored"
 msgstr "默认的冒险已经恢复。"
+
+msgid "adventures_ticked"
+msgstr "冒险已完成"
 
 msgid "adventures_tried"
 msgstr "尝试冒险"
@@ -253,17 +248,14 @@ msgstr "全部"
 msgid "all_class_highscores"
 msgstr "所有学生在班级中都可见高分"
 
+msgid "all_rows_missing_separator"
+msgstr "所有行均不包含分号。也许您想让我们自动生成密码？如果是这样，请单击密码切换按钮并重新创建帐户。如果不是这种情况，请在以下行中使用分号分隔用户名和密码：{rows}"
+
 msgid "already_account"
 msgstr "是否已经有账户?"
 
 msgid "already_program_running"
 msgstr "已经正在运行着一个程序，请先完成那个程序。"
-
-msgid "already_teacher"
-msgstr "你已经有了一个教师账户。"
-
-msgid "already_teacher_request"
-msgstr "你已经有一个待处理的教师请求。"
 
 msgid "are_you_sure"
 msgstr "你确定吗？ 你无法撤销此操作。"
@@ -274,14 +266,14 @@ msgstr "从第2关开始，`{ask}`需要和变量共同使用。例子：名字`
 msgid "available_in"
 msgstr "适用于："
 
+msgid "back_to_class"
+msgstr "回到课室"
+
 msgid "become_a_sponsor"
 msgstr "成为赞助商"
 
 msgid "birth_year"
 msgstr "出生年份"
-
-msgid "bug"
-msgstr "Bug"
 
 msgid "by"
 msgstr "经由"
@@ -311,7 +303,10 @@ msgid "class_customize_success"
 msgstr "成功自定义课程。"
 
 msgid "class_graph_explanation"
-msgstr "在这张图表中，你可以看到学生尝试过的冒险次数（意味着他们在该次冒险中做了有意义的工作）以及错误次数和成功次数。"
+msgstr "在这张图表中，你可以看到学生尝试过的冒险次数（意味着他们在那次冒险中做了有意义的工作），以及错误次数和成功次数。"
+
+msgid "class_logs"
+msgstr "日志"
 
 msgid "class_name_duplicate"
 msgstr "您已经有一个同名的班级了。"
@@ -346,9 +341,6 @@ msgstr "你们班级性别平衡嘛？"
 msgid "class_survey_question4"
 msgstr "你的学生与其他学生有何不同？"
 
-msgid "classes"
-msgstr "课程"
-
 msgid "classes_info"
 msgstr "创建一个班级，在仪表板中跟踪每个学生的进度，并自定义学生看到的冒险，甚至添加你自己的冒险！ 可以根据需要创建任意数量的班级，每个班级可以有多名教师，每个教师具有不同的角色。 还可以根据需要添加任意数量的学生，但请注意每个学生一次只能在一个班级中。 您可以在<a href=\"https://hedy.org/for-teachers/manual/preparations#for-teachers\">教师手册</a>中找到有关课程的更多信息。"
 
@@ -373,6 +365,9 @@ msgstr "命令不再正确"
 msgid "commands"
 msgstr "命令"
 
+msgid "complete"
+msgstr "完成"
+
 msgid "congrats_message"
 msgstr "恭喜你，{username}，你已经完成了Hedy!"
 
@@ -385,8 +380,14 @@ msgstr "持续的"
 msgid "content_invalid"
 msgstr "这个探险活动无效。"
 
+msgid "continue"
+msgstr "继续"
+
 msgid "contributor"
 msgstr "贡献者"
+
+msgid "copy_accounts_to_clipboard"
+msgstr "复制到剪贴板"
 
 msgid "copy_clipboard"
 msgstr "已成功复制到剪贴板"
@@ -421,8 +422,11 @@ msgstr "创建账户"
 msgid "create_accounts"
 msgstr "创建多个账户"
 
+msgid "create_accounts_placeholder"
+msgstr "键入帐户或从电子表格中粘贴"
+
 msgid "create_accounts_prompt"
-msgstr "你确定要创建这些帐户吗？"
+msgstr "将创建 {number_of_accounts} 个学生帐户。确定吗？"
 
 msgid "create_adventure"
 msgstr "创建探险"
@@ -430,23 +434,32 @@ msgstr "创建探险"
 msgid "create_class"
 msgstr "创建一个新的教室"
 
-msgid "create_multiple_accounts"
-msgstr "创建多个帐户"
-
-msgid "create_question"
-msgstr "你想创建一个吗？"
-
 msgid "create_student_account"
 msgstr "创建一个账户"
 
 msgid "create_student_account_explanation"
 msgstr "你可以使用帐户保存自己的程序。"
 
+msgid "create_student_accounts"
+msgstr "创建学生帐户"
+
 msgid "create_teacher_account"
 msgstr "创建一个教师账户"
 
 msgid "create_teacher_account_explanation"
 msgstr "使用教师帐户，你可以保存自己的程序并查看学生的学习结果。"
+
+msgid "create_usernames_and_passwords_desc"
+msgstr "每行输入一个用户名和密码，以分号分隔。或者，如果您的数据在双列电子表格中，请复制文件内容并粘贴在此处。"
+
+msgid "create_usernames_and_passwords_title"
+msgstr "用户名和密码"
+
+msgid "create_usernames_desc"
+msgstr "每行输入一个用户名或从电子表格中粘贴。"
+
+msgid "create_usernames_title"
+msgstr "用户名"
 
 msgid "creator"
 msgstr "创建者"
@@ -468,6 +481,9 @@ msgstr "定制课室"
 
 msgid "dash"
 msgstr "横杠"
+
+msgid "debug"
+msgstr "调试"
 
 msgid "default_401"
 msgstr "看起来您未获得授权..."
@@ -547,9 +563,6 @@ msgstr "双引号"
 msgid "download"
 msgstr "下载"
 
-msgid "download_login_credentials"
-msgstr "是否要在创建帐户后下载登录凭据？"
-
 msgid "duplicate"
 msgstr "重复"
 
@@ -616,12 +629,6 @@ msgstr "请选择有效的经验，选择（是，否）。"
 msgid "expiration_date"
 msgstr "过期日期"
 
-msgid "explore_programs"
-msgstr "探索程序"
-
-msgid "explore_programs_logo_alt"
-msgstr "浏览程序图标"
-
 msgid "favorite_program"
 msgstr "最喜欢的项目"
 
@@ -637,20 +644,8 @@ msgstr "你选择的最喜欢的程序是无效的。"
 msgid "favourite_success"
 msgstr "你的程序被设定为最喜欢的程序。"
 
-msgid "feature"
-msgstr "特性"
-
-msgid "feedback"
-msgstr "反馈"
-
 msgid "feedback_message_error"
 msgstr "发生错误。请稍后再试。"
-
-msgid "feedback_message_success"
-msgstr "谢谢，我们已到你的反馈，如有需要，会与你联系。"
-
-msgid "feedback_modal_message"
-msgstr "请给我们发送带有类别的消息。 我们感谢你为改进 Hedy 提供的帮助！"
 
 msgid "female"
 msgstr "女"
@@ -687,9 +682,6 @@ msgstr "请选择有效的性别，选择（女性、男性、其他）。"
 
 msgid "general_settings"
 msgstr "常规设置"
-
-msgid "generate_passwords"
-msgstr "生成密码"
 
 msgid "get_certificate"
 msgstr "获取你的证书!"
@@ -739,17 +731,23 @@ msgstr "海蒂标志"
 msgid "hedy_on_github"
 msgstr "海蒂在 Github 上"
 
-msgid "hedy_tutorial_logo_alt"
-msgstr "Hedy 教程的图标"
-
 msgid "hello_logo"
 msgstr "你好"
+
+msgid "hide_adventures"
+msgstr "隐藏探险"
 
 msgid "hide_cheatsheet"
 msgstr "隐藏备忘单"
 
+msgid "hide_classes"
+msgstr "隐藏课程"
+
 msgid "hide_keyword_switcher"
 msgstr "隐藏关键字切换器"
+
+msgid "hide_slides"
+msgstr "隐藏幻灯"
 
 msgid "highest_level_reached"
 msgstr "达到的最高等级"
@@ -839,7 +837,7 @@ msgid "join_prompt"
 msgstr "你需要有一个帐户才能加入课程。你想立即登录吗？"
 
 msgid "keybinding_waiting_for_keypress"
-msgstr "等待按下按钮..."
+msgstr "等待按键..."
 
 msgid "keyword_language_invalid"
 msgstr "请选择有效的关键词语言（选择英语或你自己的语言）。"
@@ -993,7 +991,7 @@ msgid "main_subtitle"
 msgstr "一种渐进式的编程语言"
 
 msgid "main_title"
-msgstr "Hedy"
+msgstr "海蒂"
 
 msgid "make_sure_you_are_done"
 msgstr "确保你完成了！单击“上交”后，你无法再更改程序。"
@@ -1003,6 +1001,9 @@ msgstr "男"
 
 msgid "mandatory_mode"
 msgstr "强制开发者模式"
+
+msgid "more_info"
+msgstr "更多信息"
 
 msgid "more_options"
 msgstr "更多选项"
@@ -1052,6 +1053,9 @@ msgstr "重复新密码"
 msgid "newline"
 msgstr "另起一行"
 
+msgid "next_adventure"
+msgstr "下一个冒险"
+
 msgid "next_exercise"
 msgstr "下一个练习"
 
@@ -1060,6 +1064,9 @@ msgstr "下一页"
 
 msgid "next_step_tutorial"
 msgstr "下一步>>>"
+
+msgid "next_student"
+msgstr "下一个学生"
 
 msgid "no"
 msgstr "不"
@@ -1079,11 +1086,11 @@ msgstr "从第 8 级开始，`{if}` 之后的代码需要放在下一行，并�
 msgid "no_programs"
 msgstr "还没有程序."
 
-msgid "no_public_profile"
-msgstr "你还没有公开的个人档案……"
-
 msgid "no_shared_programs"
 msgstr "没有共享程序..."
+
+msgid "no_students"
+msgstr "此班级还没有学生"
 
 msgid "no_such_adventure"
 msgstr "这个探险不存在！"
@@ -1133,9 +1140,8 @@ msgstr "运行了的程序数量"
 msgid "ok"
 msgstr "好的"
 
-#, fuzzy
 msgid "one_level_error"
-msgstr "You need to select at least one level."
+msgstr "你需要至少选择一个级别。"
 
 msgid "only_you_can_see"
 msgstr "只有你可以看到该程序。"
@@ -1215,11 +1221,14 @@ msgstr "密码已更新。"
 msgid "passwords_six"
 msgstr "所有的密码都至少需要六个字符或更长。"
 
+msgid "passwords_too_short"
+msgstr "密码长度必须至少为 6 个字符。请更正以下密码，使其至少包含 6 个符号：{passwords}"
+
 msgid "pending_invites"
 msgstr "等待邀请"
 
 msgid "people_with_a_link"
-msgstr "Other people with a link can see this program. It also can be found on the \"Explore\" page."
+msgstr "有链接的其他人可以看到这个程序。也可以在“探索”页面上找到它。"
 
 msgid "percentage"
 msgstr "百分比"
@@ -1235,9 +1244,6 @@ msgstr "你的个人信息是无效的。"
 
 msgid "phone_number"
 msgstr "电话号码"
-
-msgid "postfix_classname"
-msgstr "后缀类名"
 
 msgid "preferred_keyword_language"
 msgstr "首选关键字语言"
@@ -1262,6 +1268,12 @@ msgstr "查看之前的活动"
 
 msgid "previous_page"
 msgstr "上一页"
+
+msgid "print_accounts"
+msgstr "打印"
+
+msgid "print_accounts_title"
+msgstr "hedy.org 的学生账户"
 
 msgid "print_logo"
 msgstr "打印"
@@ -1305,6 +1317,9 @@ msgstr "程序"
 msgid "prompt_join_class"
 msgstr "你想参加这个课程吗？"
 
+msgid "provided_username_duplicates"
+msgstr "您多次提供了以下用户名：{usernames}"
+
 msgid "public"
 msgstr "公开"
 
@@ -1315,7 +1330,7 @@ msgid "public_content"
 msgstr "发布内容"
 
 msgid "public_content_info"
-msgstr "您还可以寻找公共探险活动并以它们为例。"
+msgstr "您可以在这里找到我们的公开冒险故事。这些是来自世界各地的其他教师制作的冒险故事。请浏览并随意在自己的课程中使用冒险故事。"
 
 msgid "public_invalid"
 msgstr "此协议选择无效"
@@ -1328,6 +1343,9 @@ msgstr "通过选择此框，我使我的个人资料对所有人可见。请注
 
 msgid "public_profile_updated"
 msgstr "公开资料已更新。"
+
+msgid "put"
+msgstr "推送"
 
 msgid "question mark"
 msgstr "问号"
@@ -1370,6 +1388,12 @@ msgstr "你确定要将这名学生移出班级吗？"
 
 msgid "remove_user_prompt"
 msgstr "确认从班级中删除该用户。"
+
+msgid "rename_class"
+msgstr "重命名类"
+
+msgid "rename_class_prompt"
+msgstr "你想给这个班级起什么名字?"
 
 msgid "repair_program_logo_alt"
 msgstr "修复程序图标"
@@ -1416,8 +1440,8 @@ msgstr "重置"
 msgid "reset_password"
 msgstr "重置密码"
 
-msgid "reset_view"
-msgstr "重置"
+msgid "restart"
+msgstr "重来"
 
 msgid "retrieve_adventure_error"
 msgstr "您无权查看这个探险活动！"
@@ -1480,7 +1504,7 @@ msgid "select_lang"
 msgstr "选择语言"
 
 msgid "select_levels"
-msgstr "Select levels"
+msgstr "选择级别"
 
 msgid "select_tag"
 msgstr "选择标签"
@@ -1502,6 +1526,9 @@ msgstr "你很快就会收到一封电子邮件，说明如何重置你的密码
 
 msgid "settings"
 msgstr "我的个人设置"
+
+msgid "share"
+msgstr "分享"
 
 msgid "share_by_giving_link"
 msgstr "通过向其他人提供以下链接向他们展示你的程序："
@@ -1539,6 +1566,9 @@ msgstr "解决方案示例"
 msgid "solution_example_explanation"
 msgstr "这是您冒险的解决方案。如果您想与其他老师分享这次冒险，可以使用它，这样他们就可以知道您建议的解决方案是什么。"
 
+msgid "some_rows_missing_separator"
+msgstr "以下行缺少分号，因此缺少用户名或密码：{rows}"
+
 msgid "something_went_wrong_keyword_parsing"
 msgstr "您的冒险中有一个错误，所有关键字都正确地用 { } 括起来吗？"
 
@@ -1548,23 +1578,11 @@ msgstr "空格"
 msgid "star"
 msgstr "星号"
 
-msgid "start_hedy_tutorial"
-msgstr "开始 Hedy 教程"
-
 msgid "start_learning"
 msgstr "开始学习"
 
-msgid "start_programming"
-msgstr "开始编程"
-
-msgid "start_programming_logo_alt"
-msgstr "开始编程图标"
-
 msgid "start_quiz"
 msgstr "开始测验"
-
-msgid "start_teacher_tutorial"
-msgstr "开始教师教程"
 
 msgid "start_teaching"
 msgstr "开始教学"
@@ -1575,6 +1593,9 @@ msgstr "任务"
 msgid "stepper_variable_role"
 msgstr "步进机"
 
+msgid "stop"
+msgstr "停止"
+
 msgid "stop_code_button"
 msgstr "停止程序"
 
@@ -1584,14 +1605,29 @@ msgstr "文本"
 msgid "student"
 msgstr "学生"
 
+msgid "student_accounts_created"
+msgstr "成功创建学生账户"
+
+msgid "student_adventures_table"
+msgstr "学生的探险"
+
+msgid "student_adventures_table_explanation"
+msgstr "此表显示学生为某一级别的每个冒险创建的程序。单击眼睛图标可查看程序页面；查看程序后，可勾选对勾以表示完成。"
+
 msgid "student_already_in_class"
 msgstr "该学生已在你的班级中。"
 
 msgid "student_already_invite"
 msgstr "该学生有待处理的邀请。"
 
-msgid "student_not_allowed_in_class"
-msgstr "学生不允许进入课堂"
+msgid "student_in_another_class"
+msgstr "该学生正在上其他课程。请该学生退出所有课程并重试。"
+
+msgid "student_information"
+msgstr "学生信息"
+
+msgid "student_information_explanation"
+msgstr "此表显示你班级学生的基本信息。你还可以在此表中执行多项操作：单击铅笔图标可更改学生的密码，单击代码图标可查看学生的课程页面，单击红色垃圾箱图标可从班级中删除学生。"
 
 msgid "student_not_existing"
 msgstr "此用户名不存在。"
@@ -1668,12 +1704,6 @@ msgstr "标签"
 msgid "teacher"
 msgstr "教师"
 
-msgid "teacher_account_request"
-msgstr "您有一个待处理的教师账户申请"
-
-msgid "teacher_account_success"
-msgstr "你成功地申请了一个教师账户。"
-
 msgid "teacher_invalid"
 msgstr "你的教师值无效。"
 
@@ -1685,9 +1715,6 @@ msgstr "教师手册"
 
 msgid "teacher_signup_header"
 msgstr "教师"
-
-msgid "teacher_tutorial_logo_alt"
-msgstr "教师教程图标"
 
 msgid "teacher_welcome"
 msgstr "欢迎来到海蒂！ 您现在是教师帐户的自豪拥有者，该帐户允许您创建课程并邀请学生。"
@@ -1734,9 +1761,6 @@ msgstr "海蒂 - 教师专用"
 msgid "title_join-class"
 msgstr "海蒂 - 加入班级"
 
-msgid "title_landing-page"
-msgstr "欢迎来到海蒂！"
-
 msgid "title_learn-more"
 msgstr "海蒂 - 了解更多"
 
@@ -1773,6 +1797,9 @@ msgstr "海蒂-查看探险活动"
 msgid "token_invalid"
 msgstr "你的令牌无效。"
 
+msgid "too_many_accounts"
+msgstr "您不能创建超过 100 个学生帐户。"
+
 msgid "tooltip_level_locked"
 msgstr "你的老师禁用了这个级别"
 
@@ -1784,6 +1811,9 @@ msgstr "翻译 海蒂"
 
 msgid "translator"
 msgstr "翻译"
+
+msgid "turned_into_teacher"
+msgstr "恭喜！你已成功晋升为教师。"
 
 msgid "tutorial"
 msgstr "教程"
@@ -1807,9 +1837,6 @@ msgstr "您确定要取消收藏该程序吗？"
 
 msgid "unfavourite_success"
 msgstr "您的节目已经取消收藏."
-
-msgid "unique_usernames"
-msgstr "所有用户名都必须是唯一的。"
 
 msgid "unknown_variable_role"
 msgstr "未知"
@@ -1838,6 +1865,12 @@ msgstr "更新公开的个人资料"
 msgid "updating_indicator"
 msgstr "更新"
 
+msgid "use_custom_passwords"
+msgstr "提供您自己的密码"
+
+msgid "use_generated_passwords"
+msgstr "自动生成密码"
+
 msgid "use_of_blanks_exception"
 msgstr "程序中空格的使用"
 
@@ -1859,6 +1892,12 @@ msgstr "此用户不存在或没有公开个人资料"
 msgid "username"
 msgstr "用户名"
 
+msgid "username_contains_invalid_symbol"
+msgstr "用户名不能包含符号“:”或“@”。从以下用户名中删除这些符号：{usernames}"
+
+msgid "username_contains_separator"
+msgstr "用户名不能包含分号。也许您想提供自己的密码？如果是这样，请单击密码切换并重新创建帐户。如果不是这种情况，请从以下用户名中删除分号：{usernames}"
+
 msgid "username_empty"
 msgstr "你没有输入用户名！"
 
@@ -1871,8 +1910,11 @@ msgstr "用户名不能包含`:`或`@`。"
 msgid "username_three"
 msgstr "用户名必须至少包含三个字符。"
 
-msgid "usernames_exist"
-msgstr "一个或多个用户名已在使用中。"
+msgid "usernames_too_short"
+msgstr "用户名必须至少包含 3 个字符。请更正以下用户名，使其包含 3 个或更多字符：{usernames}"
+
+msgid "usernames_unavailable"
+msgstr "以下用户名不可用：{usernames}。您可以创建类似的帐户，例如，通过附加下划线或您的班级名称。"
 
 msgid "value"
 msgstr "值"
@@ -1895,11 +1937,8 @@ msgstr "等待提交"
 msgid "walker_variable_role"
 msgstr "漫游者"
 
-msgid "welcome"
-msgstr "欢迎"
-
-msgid "welcome_back"
-msgstr "欢迎回来"
+msgid "website"
+msgstr "网站"
 
 msgid "what_is_your_role"
 msgstr "你的角色是什么？"
@@ -1907,17 +1946,44 @@ msgstr "你的角色是什么？"
 msgid "what_should_my_code_do"
 msgstr "我的代码能做什么？"
 
+msgid "workbook_circle_question_text"
+msgstr "**问题**: 在此代码中圈出{goal}:"
+
+msgid "workbook_circle_question_title"
+msgstr "分配"
+
+msgid "workbook_define_question_text"
+msgstr "**问题**：{word} 是什么意思?"
+
+msgid "workbook_define_question_title"
+msgstr "Define"
+
+msgid "workbook_input_question_text"
+msgstr "**问题**：哪个代码片段产生了这个输出？"
+
+msgid "workbook_input_question_title"
+msgstr "输入"
+
+msgid "workbook_multiple_choice_question_text"
+msgstr "**问题**：此代码正确吗？或者有错误？"
+
+msgid "workbook_multiple_choice_question_title"
+msgstr "选择"
+
+msgid "workbook_open_question_title"
+msgstr "开放式问题"
+
+msgid "workbook_output_question_text"
+msgstr "**问题**：这段代码的输出是什么？"
+
+msgid "workbook_output_question_title"
+msgstr "输出"
+
 msgid "year_invalid"
 msgstr "请输入介于 1900 和 {current_year} 之间的年份。"
 
 msgid "yes"
 msgstr "是的"
-
-msgid "your_account"
-msgstr "你的个人档案"
-
-msgid "your_last_program"
-msgstr "您上次保存的程序"
 
 msgid "your_personal_text"
 msgstr "你的个人文本..."
@@ -2027,9 +2093,6 @@ msgstr "你的程序"
 #~ msgid "too_many_attempts"
 #~ msgstr "Too many attempts"
 
-#~ msgid "class_logs"
-#~ msgstr "日志"
-
 #~ msgid "class_stats"
 #~ msgstr "班级统计数据"
 
@@ -2086,9 +2149,6 @@ msgstr "你的程序"
 
 #~ msgid "hide_quiz"
 #~ msgstr "隐藏测验"
-
-#~ msgid "back_to_class"
-#~ msgstr "回到课室"
 
 #~ msgid "Locked Language Feature"
 #~ msgstr "你正在使用{concept}！这很棒，但是{concept}还没有解锁！它会在后续关卡中解锁。"
@@ -2203,4 +2263,121 @@ msgstr "你的程序"
 
 #~ msgid "number_achievements"
 #~ msgstr "成就数"
+
+#~ msgid "create_question"
+#~ msgstr "你想创建一个吗？"
+
+#~ msgid "explore_programs"
+#~ msgstr "探索程序"
+
+#~ msgid "explore_programs_logo_alt"
+#~ msgstr "浏览程序图标"
+
+#~ msgid "hedy_tutorial_logo_alt"
+#~ msgstr "Hedy 教程的图标"
+
+#~ msgid "no_public_profile"
+#~ msgstr "你还没有公开的个人档案……"
+
+#~ msgid "start_hedy_tutorial"
+#~ msgstr "开始 Hedy 教程"
+
+#~ msgid "start_programming"
+#~ msgstr "开始编程"
+
+#~ msgid "start_programming_logo_alt"
+#~ msgstr "开始编程图标"
+
+#~ msgid "start_teacher_tutorial"
+#~ msgstr "开始教师教程"
+
+#~ msgid "teacher_tutorial_logo_alt"
+#~ msgstr "教师教程图标"
+
+#~ msgid "title_landing-page"
+#~ msgstr "欢迎来到海蒂！"
+
+#~ msgid "welcome"
+#~ msgstr "欢迎"
+
+#~ msgid "welcome_back"
+#~ msgstr "欢迎回来"
+
+#~ msgid "your_account"
+#~ msgstr "你的个人档案"
+
+#~ msgid "your_last_program"
+#~ msgstr "您上次保存的程序"
+
+#~ msgid "already_teacher"
+#~ msgstr "你已经有了一个教师账户。"
+
+#~ msgid "already_teacher_request"
+#~ msgstr "你已经有一个待处理的教师请求。"
+
+#~ msgid "teacher_account_request"
+#~ msgstr "您有一个待处理的教师账户申请"
+
+#~ msgid "teacher_account_success"
+#~ msgstr "你成功地申请了一个教师账户。"
+
+#~ msgid "student_not_allowed_in_class"
+#~ msgstr "学生不允许进入课堂"
+
+#~ msgid "accounts_created"
+#~ msgstr "账户已成功创建。"
+
+#~ msgid "accounts_intro"
+#~ msgstr "在此页面上，您可以同时为多个学生创建帐户。也可以直接将它们添加到您的某个班级中。通过按页面右下角的绿色 +，您可以添加额外的行。您可以通过按相应的红叉来删除一行。确保按“创建帐户”时没有行为空。请记住，每个用户名和邮件地址必须是唯一的，密码必须<b>至少</b>为 6 个字符。"
+
+#~ msgid "create_multiple_accounts"
+#~ msgstr "创建多个帐户"
+
+#~ msgid "download_login_credentials"
+#~ msgstr "是否要在创建帐户后下载登录凭据？"
+
+#~ msgid "generate_passwords"
+#~ msgstr "生成密码"
+
+#~ msgid "postfix_classname"
+#~ msgstr "后缀类名"
+
+#~ msgid "reset_view"
+#~ msgstr "重置"
+
+#~ msgid "unique_usernames"
+#~ msgstr "所有用户名都必须是唯一的。"
+
+#~ msgid "usernames_exist"
+#~ msgstr "一个或多个用户名已在使用中。"
+
+#~ msgid "**Question**: What is the output of this code?"
+#~ msgstr ""
+
+#~ msgid "Output"
+#~ msgstr ""
+
+#~ msgid "clear"
+#~ msgstr "清除"
+
+#~ msgid "bug"
+#~ msgstr "问题"
+
+#~ msgid "feature"
+#~ msgstr "特性"
+
+#~ msgid "feedback"
+#~ msgstr "反馈"
+
+#~ msgid "feedback_message_success"
+#~ msgstr "谢谢你，收到反馈，如有需要会与你联系。"
+
+#~ msgid "feedback_modal_message"
+#~ msgstr "请给我们发送带有类别的消息。 我们感谢你为改进 Hedy 提供的帮助！"
+
+#~ msgid "adventures"
+#~ msgstr "探险"
+
+#~ msgid "classes"
+#~ msgstr "课程"
 

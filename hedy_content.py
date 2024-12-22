@@ -24,15 +24,15 @@ CUSTOM_BABEL_LANGUAGES = {'pa_PK': 'pa_Arab_PK',
                           'tl': 'en',
                           'iba': 'en',
                           'peo': 'fa',
-                          'enm': 'en'
                           }
 
 # For the non-existing language manually overwrite the display language to make sure it is displayed correctly
 CUSTOM_LANGUAGE_TRANSLATIONS = {'kmr': 'Kurdî (Tirkiye)',
                                 'tl': 'ᜆᜄᜎᜓᜄ᜔',
                                 'peo': 'Old Persian',
-                                'enm': 'English (Middle)',
-                                'iba': 'Iban'}
+                                'iba': 'Iban',
+                                'kab': 'Taqbaylit',
+                                }
 
 customize_babel_locale(CUSTOM_BABEL_LANGUAGES)
 
@@ -241,7 +241,6 @@ ADVENTURE_ORDER_PER_LEVEL = {
         'maths',
         'quotation_marks',
         'functions',
-        'story',
         'fortune',
         'music',
         'songs',
@@ -262,10 +261,12 @@ ADVENTURE_ORDER_PER_LEVEL = {
         'secret',
         'functions',
         'music',
+        'songs',
         'story',
         'rock',
         'turtle_draw_it',
         'restaurant',
+        'hotel',
         'calculator',
         'debugging',
         'quiz',

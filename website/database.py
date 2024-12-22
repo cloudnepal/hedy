@@ -32,30 +32,15 @@ from datetime import date
 import sys
 from os import path
 
-from utils import timems, times, is_debug_mode
+from utils import timems, times
 
 from . import dynamo, auth
 from . import querylog
 
 from .dynamo import DictOf, OptionalOf, ListOf, SetOf, RecordOf, EitherOf
 
+
 is_offline = getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS')
-if is_offline:
-    # Offline mode. Store data 1 directory upwards from `_internal`
-    storage = dynamo.MemoryStorage(path.join(sys._MEIPASS, "..", "database.json"))
-else:
-    # Production or dev: use environment variables or dev storage
-    storage = dynamo.AwsDynamoStorage.from_env() or dynamo.MemoryStorage("dev_database.json")
-
-
-def only_in_dev(x):
-    """Return the argument only in debug mode. In production or offline mode, return None.
-
-    This is intended to be used with validation expressions, so that when testing
-    locally we do validation, but production data that happens to work but doesn't
-    validate doesn't throw exceptions.
-    """
-    return x if is_debug_mode() else None
 
 
 # Program stats also includes a boolean array indicating the order of successful and non-successful runs.
@@ -77,7 +62,34 @@ CURRENT_USER_EPOCH = 1
 
 
 class Database:
-    def __init__(self):
+    def __init__(self, for_testing=False):
+        if for_testing:
+            # In-memory testing: empty database that does not get persisted to disk
+            storage = dynamo.MemoryStorage()
+            is_dev = True
+        elif is_offline:
+            # Offline mode. Store data 1 directory upwards from `_internal`
+            storage = dynamo.MemoryStorage(path.join(sys._MEIPASS, "..", "database.json"))
+            is_dev = False
+        elif storage := dynamo.AwsDynamoStorage.from_env():
+            # Production: use environment variables
+            is_dev = False
+        else:
+            # Use dev storage
+            is_dev = True
+            storage = dynamo.MemoryStorage("dev_database.json")
+
+        self.storage = storage
+
+        def only_in_dev(x):
+            """Return the argument only in debug mode. In production or offline mode, return None.
+
+            This is intended to be used with validation expressions, so that when testing
+            locally we do validation, but production data that happens to work but doesn't
+            validate doesn't throw exceptions.
+            """
+            return x if is_dev else None
+
         self.class_errors = dynamo.Table(storage, "class_errors", "id",
                                          types=only_in_dev({'id': str}),
                                          )
@@ -164,6 +176,7 @@ class Database:
                                             'username': str,
                                         }))),
                                         'students': OptionalOf(SetOf(str)),
+                                        'last_viewed_level': OptionalOf(int)
                                     }),
                                     indexes=[
                                         dynamo.Index('teacher'),
@@ -324,9 +337,9 @@ class Database:
                                         'username': str,
                                         'level': str,
                                         'exercise': str,
-                                        'order': str,
+                                        'order': ListOf(str),
                                         'correct': str,
-                                        'timestamp': ListOf(int)
+                                        'timestamp': int
                                     }),
                                     )
         self.STUDENT_ADVENTURES = dynamo.Table(storage, "student_adventures", "id",
@@ -466,9 +479,7 @@ class Database:
             if level and int(program.get('level', 0)) != int(level):
                 return False
             if adventure:
-                if adventure == 'default' and program.get('adventure_name') != '':
-                    return False
-                if adventure != 'default' and program.get('adventure_name') != adventure:
+                if program.get('adventure_name') != adventure:
                     return False
             if submitted is not None:
                 if program.get('submitted') != submitted:
@@ -716,7 +727,7 @@ class Database:
         """Return all the classes belonging to a teacher."""
         classes = None
         user = auth.current_user()
-        if isinstance(storage, dynamo.AwsDynamoStorage):
+        if isinstance(self.storage, dynamo.AwsDynamoStorage):
             classes = list(self.classes.get_many({"teacher": username}, reverse=True))
 
             # if current user is a second teacher, we show the related classes.
@@ -756,6 +767,16 @@ class Database:
                 if student not in students:
                     students.append(student)
         return students
+
+    def get_student_teachers(self, username):
+        """Return a list of the main and all secondary teachers of a student."""
+        teachers = []
+        for class_id in self.get_student_classes_ids(username):
+            class_ = self.get_class(class_id)
+            teachers.append(class_["teacher"])
+            sec_teachers = [t['username'] for t in class_.get('second_teachers', []) if t.get('role', '') == 'teacher']
+            teachers.extend(sec_teachers)
+        return teachers
 
     def get_adventure(self, adventure_id):
         return self.adventures.get({"id": adventure_id})
@@ -874,9 +895,8 @@ class Database:
         """Updates a class."""
         self.classes.update({"id": id}, class_data)
 
-    def store_feedback(self, feedback):
-        """Store a feedback message in the database"""
-        self.feedback.create(feedback)
+    def update_last_viewed_level_in_class(self, id, level):
+        self.classes.update({"id": id}, {"last_viewed_level": level})
 
     def store_survey(self, survey):
         self.surveys.create(survey)
@@ -1155,7 +1175,7 @@ class Database:
         return f"{cal[0]}-{cal[1]:02d}"
 
     def get_username_role(self, username):
-        role = "teacher" if self.users.get({"username": username}).get("teacher_request") is True else "student"
+        role = "teacher" if self.users.get({"username": username}).get("is_teacher") == 1 else "student"
         return role
 
 

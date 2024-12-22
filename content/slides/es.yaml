@@ -12,7 +12,7 @@ levels:
         3:
             header: Lenguaje de programación
             text: |-
-                ¿Quizá ya conoces algunos lenguajes de programación?
+                ¿Quizá ya conozcas algunos lenguajes de programación?
                 Algunos ejemplos son:
                 * Scratch
                 * Python
@@ -42,10 +42,8 @@ levels:
             code: '{print} ¡Bienvenido/a a Hedy!'
         9:
             header: Programar en Hedy
-            text: La salida también puede ser un dibujo.
-            code: |-
-                {forward} 100
-                {turn} {left}
+            text: El resultado también puede ser un dibujo.
+            code: "{forward} 100\n{turn} {left}"
     1:
         1:
             header: ¡Bienvenido al nivel 1!
@@ -54,12 +52,12 @@ levels:
 
                 Necesitamos tres códigos de texto para crear historias interactivas.
         2:
-            header: '{print}'
             text: |-
                 El primer código que puede utilizar en el nivel 1 es `{print}`.
 
                 `{print}` se utiliza para mostrar texto en la pantalla.
             code: '{print} Put text on the screen'
+            header: '{print}'
         3:
             header: El comando {print}
             text: |-
@@ -70,7 +68,6 @@ levels:
                 {print} ¡Bienvenido/a a Hedy!
                 {print} ¡Empieza a programar ya!
         4:
-            header: '{ask}'
             text: |-
                 El segundo código que puedes usar en el nivel 1 es `{ask}`.
 
@@ -78,8 +75,8 @@ levels:
             code: |-
                 {print} ¡Bienvenido/a a tu propio piedra papel tijera!
                 {ask} ¿Qué elegirás?
+            header: '{ask}'
         5:
-            header: '{echo}'
             text: |-
                 Como puedes ver en el ejemplo anterior. Si usas el comando `{ask}`, puedes hacer una pregunta.
                 En cambio, la respuesta no se muestra en la pantalla de salida.
@@ -90,20 +87,21 @@ levels:
                 {print} ¡Hola!
                 {ask} ¿Cómo te llamas?
                 {echo} hola
+            header: '{echo}'
         6:
-            header: ¡Programando!
+            header: ¡Programación!
             text: |-
                 Con `{print}`, `{ask}` y `{echo}` ya puedes crear una pequeña historia.
                 Este es un buen momento para probar las aventuras Loro, Cuento y Piedra, papel o tijera.
             editor: /hedy/1
         7:
-            header: ¡Programando!
+            header: ¡Programación!
             text: Las aventuras se muestran en pestañas.
             editor: /hedy/1
         8:
             header: ¡Programación!
             text: Los botones de flecha amarillos se pueden utilizar para copiar ejemplos.
-            editor: /hedy/1
+            editor: /hedy#print_command
         9:
             header: Dibuja con la tortuga
             text: Ahora que ya hemos visto los códigos de texto, veremos a continuación los códigos de dibujo.
@@ -114,9 +112,7 @@ levels:
         11:
             header: 'Dibuja con la tortuga: {turn}'
             text: '`{turn}` se utiliza para hacer que la tortuga gire a la izquierda o a la derecha.'
-            code: |-
-                {forward} 50
-                {turn} {left}
+            code: "{forward} 50\n{turn} {left}"
         12:
             header: Depurar
             text: Depurar un código significa eliminar los errores en el código. Depuremos este código juntos. Haz clic en el botón de la mariquita para iniciar el depurador.
@@ -139,12 +135,12 @@ levels:
 
                 Por ejemplo: un nombre, edad o equipo de deportes favorito.
         2:
-            header: Variables
             text: Para crear o 'establecer' una variable usamos el comando `{is}`
             code: |-
                 nombre {is} Hedy
                 edad {is} 15
                 {print} nombre tiene edad
+            header: Variables
         3:
             header: Interactivo
             text: |-
@@ -270,7 +266,7 @@ levels:
             code: '{print} ''¡imprimir con comillas!'''
         2:
             header: Problema
-            text: 'En los niveles anteriores, quizá te hayas encontrado este problema:'
+            text: 'En los niveles anteriores, puede que te hayas encontrado este problema:'
             code: |-
                 nombre {is} Sophie
                 {print} Mi nombre es nombre
@@ -308,7 +304,7 @@ levels:
         8:
             header: Comillas y contracciones
             text: |-
-                ¡Cuidado! Ahora que estás usando comillas, no puedes usar apóstrofes en las abreviaturas.
+                ¡Cuidado! Ahora que estás usando comillas, no puedes usar apóstrofos en las abreviaturas.
 
                 Por favor intenta imprimir una contracción como "you're" o "I'm" en la pantalla de abajo y verás que sucede....
             code: '{print} ''¡Esto no'' funcionará!'''
@@ -359,7 +355,7 @@ levels:
                 nombre {is} {ask} '¿Cómo te llamas?'
                 {if} nombre {is} Hedy {print} 'genial'
         3:
-            header: No te olvides imprimir
+            header: No te olvides de imprimir
             text: |-
                 Al usar el comando `{if}`, no te olvides de usar el comando `{print}`.
                 ¡Este código no funcionará!
@@ -1039,7 +1035,6 @@ levels:
             header: Bienvenido al nivel 15
             text: En este nivel aprenderás sobre el bucle `{while}`.
         2:
-            header: '{while}'
             text: |-
                 Vamos a aprender un nuevo bucle, ¡el bucle mientras! El bucle continua tanto que la sentencia sea verdadera. Así que no te olvides de cambiar el valor en el bucle.
 
@@ -1049,6 +1044,7 @@ levels:
                 {while} respuesta != 25
                     respuesta = {ask} '¿Cuánto es 5 veces 5?'
                 {print} 'Se ha dado una respuesta correcta'
+            header: '{while}'
         3:
             header: Depuración
             text: ¡Depuremos este código!
@@ -1073,7 +1069,6 @@ levels:
                      {else} respuesta = número_aleatorio
                          {print} 'correcto'
                          conjeturas = 10
-
             debug: 'Verdadero'
         4:
             header: ¡Vamos a probarlo!

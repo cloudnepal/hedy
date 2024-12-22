@@ -2,7 +2,7 @@ import uuid
 
 from flask import make_response, redirect, request, session
 from jinja_partials import render_partial
-from flask_babel import gettext
+from website.flask_helpers import gettext_with_fallback as gettext
 
 import utils
 from config import config
@@ -79,7 +79,7 @@ class ClassModule(WebsiteModule):
                 return make_response(gettext("class_name_duplicate"), 200)
 
         self.db.update_class(class_id, body["name"])
-        return make_response('', 200)
+        return make_response({}, 200)
 
     @route("/<class_id>", methods=["DELETE"])
     @requires_login
@@ -139,7 +139,7 @@ class ClassModule(WebsiteModule):
             elif invited_as == "student":
                 student_classes = self.db.get_student_classes(username)
                 if len(student_classes):
-                    return make_response(gettext("student_not_allowed_in_class"), 400)
+                    return make_response(gettext("student_in_another_class"), 400)
                 self.db.add_student_to_class(Class["id"], username)
 
             refresh_current_user_from_db()
@@ -165,7 +165,7 @@ class ClassModule(WebsiteModule):
 
         student_classes = self.db.get_student_classes(username)
         if len(student_classes):
-            return make_response(gettext("student_not_allowed_in_class"), 400)
+            return make_response(gettext("student_in_another_class"), 400)
 
         self.db.add_student_to_class(Class["id"], username)
         refresh_current_user_from_db()
@@ -305,7 +305,7 @@ class MiscClassPages(WebsiteModule):
         else:
             student_classes = self.db.get_student_classes(username)
             if len(student_classes):
-                return make_response(gettext("student_not_allowed_in_class"), 400)
+                return make_response(gettext("student_in_another_class"), 400)
         if self.db.get_user_invitations(user["username"]):
             return make_response(gettext("student_already_invite"), 400)
 

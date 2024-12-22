@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-06-26 16:04+0200\n"
+"POT-Creation-Date: 2024-10-28 19:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -149,12 +149,6 @@ msgstr ""
 msgid "account_overview"
 msgstr ""
 
-msgid "accounts_created"
-msgstr ""
-
-msgid "accounts_intro"
-msgstr ""
-
 msgid "actions"
 msgstr ""
 
@@ -218,9 +212,6 @@ msgstr ""
 msgid "adventure_updated"
 msgstr ""
 
-msgid "adventures"
-msgstr ""
-
 msgid "adventures_completed"
 msgstr ""
 
@@ -228,6 +219,9 @@ msgid "adventures_info"
 msgstr ""
 
 msgid "adventures_restored"
+msgstr ""
+
+msgid "adventures_ticked"
 msgstr ""
 
 msgid "adventures_tried"
@@ -251,16 +245,13 @@ msgstr ""
 msgid "all_class_highscores"
 msgstr ""
 
+msgid "all_rows_missing_separator"
+msgstr ""
+
 msgid "already_account"
 msgstr ""
 
 msgid "already_program_running"
-msgstr ""
-
-msgid "already_teacher"
-msgstr ""
-
-msgid "already_teacher_request"
 msgstr ""
 
 msgid "are_you_sure"
@@ -272,13 +263,13 @@ msgstr ""
 msgid "available_in"
 msgstr ""
 
+msgid "back_to_class"
+msgstr ""
+
 msgid "become_a_sponsor"
 msgstr ""
 
 msgid "birth_year"
-msgstr ""
-
-msgid "bug"
 msgstr ""
 
 msgid "by"
@@ -309,6 +300,9 @@ msgid "class_customize_success"
 msgstr ""
 
 msgid "class_graph_explanation"
+msgstr ""
+
+msgid "class_logs"
 msgstr ""
 
 msgid "class_name_duplicate"
@@ -344,9 +338,6 @@ msgstr ""
 msgid "class_survey_question4"
 msgstr ""
 
-msgid "classes"
-msgstr ""
-
 msgid "classes_info"
 msgstr ""
 
@@ -371,6 +362,9 @@ msgstr ""
 msgid "commands"
 msgstr ""
 
+msgid "complete"
+msgstr ""
+
 msgid "congrats_message"
 msgstr ""
 
@@ -383,7 +377,13 @@ msgstr ""
 msgid "content_invalid"
 msgstr ""
 
+msgid "continue"
+msgstr ""
+
 msgid "contributor"
+msgstr ""
+
+msgid "copy_accounts_to_clipboard"
 msgstr ""
 
 msgid "copy_clipboard"
@@ -419,6 +419,9 @@ msgstr ""
 msgid "create_accounts"
 msgstr ""
 
+msgid "create_accounts_placeholder"
+msgstr ""
+
 msgid "create_accounts_prompt"
 msgstr ""
 
@@ -428,22 +431,31 @@ msgstr ""
 msgid "create_class"
 msgstr ""
 
-msgid "create_multiple_accounts"
-msgstr ""
-
-msgid "create_question"
-msgstr ""
-
 msgid "create_student_account"
 msgstr ""
 
 msgid "create_student_account_explanation"
 msgstr ""
 
+msgid "create_student_accounts"
+msgstr ""
+
 msgid "create_teacher_account"
 msgstr ""
 
 msgid "create_teacher_account_explanation"
+msgstr ""
+
+msgid "create_usernames_and_passwords_desc"
+msgstr ""
+
+msgid "create_usernames_and_passwords_title"
+msgstr ""
+
+msgid "create_usernames_desc"
+msgstr ""
+
+msgid "create_usernames_title"
 msgstr ""
 
 msgid "creator"
@@ -465,6 +477,9 @@ msgid "customize_class"
 msgstr ""
 
 msgid "dash"
+msgstr ""
+
+msgid "debug"
 msgstr ""
 
 msgid "default_401"
@@ -545,9 +560,6 @@ msgstr ""
 msgid "download"
 msgstr ""
 
-msgid "download_login_credentials"
-msgstr ""
-
 msgid "duplicate"
 msgstr ""
 
@@ -614,12 +626,6 @@ msgstr ""
 msgid "expiration_date"
 msgstr ""
 
-msgid "explore_programs"
-msgstr ""
-
-msgid "explore_programs_logo_alt"
-msgstr ""
-
 msgid "favorite_program"
 msgstr ""
 
@@ -635,19 +641,7 @@ msgstr ""
 msgid "favourite_success"
 msgstr ""
 
-msgid "feature"
-msgstr ""
-
-msgid "feedback"
-msgstr ""
-
 msgid "feedback_message_error"
-msgstr ""
-
-msgid "feedback_message_success"
-msgstr ""
-
-msgid "feedback_modal_message"
 msgstr ""
 
 msgid "female"
@@ -684,9 +678,6 @@ msgid "gender_invalid"
 msgstr ""
 
 msgid "general_settings"
-msgstr ""
-
-msgid "generate_passwords"
 msgstr ""
 
 msgid "get_certificate"
@@ -737,16 +728,22 @@ msgstr ""
 msgid "hedy_on_github"
 msgstr ""
 
-msgid "hedy_tutorial_logo_alt"
+msgid "hello_logo"
 msgstr ""
 
-msgid "hello_logo"
+msgid "hide_adventures"
 msgstr ""
 
 msgid "hide_cheatsheet"
 msgstr ""
 
+msgid "hide_classes"
+msgstr ""
+
 msgid "hide_keyword_switcher"
+msgstr ""
+
+msgid "hide_slides"
 msgstr ""
 
 msgid "highest_level_reached"
@@ -974,6 +971,9 @@ msgstr ""
 msgid "mandatory_mode"
 msgstr ""
 
+msgid "more_info"
+msgstr ""
+
 msgid "more_options"
 msgstr ""
 
@@ -1022,6 +1022,9 @@ msgstr ""
 msgid "newline"
 msgstr ""
 
+msgid "next_adventure"
+msgstr ""
+
 msgid "next_exercise"
 msgstr ""
 
@@ -1029,6 +1032,9 @@ msgid "next_page"
 msgstr ""
 
 msgid "next_step_tutorial"
+msgstr ""
+
+msgid "next_student"
 msgstr ""
 
 msgid "no"
@@ -1049,10 +1055,10 @@ msgstr ""
 msgid "no_programs"
 msgstr ""
 
-msgid "no_public_profile"
+msgid "no_shared_programs"
 msgstr ""
 
-msgid "no_shared_programs"
+msgid "no_students"
 msgstr ""
 
 msgid "no_such_adventure"
@@ -1184,6 +1190,9 @@ msgstr ""
 msgid "passwords_six"
 msgstr ""
 
+msgid "passwords_too_short"
+msgstr ""
+
 msgid "pending_invites"
 msgstr ""
 
@@ -1203,9 +1212,6 @@ msgid "personal_text_invalid"
 msgstr ""
 
 msgid "phone_number"
-msgstr ""
-
-msgid "postfix_classname"
 msgstr ""
 
 msgid "preferred_keyword_language"
@@ -1230,6 +1236,12 @@ msgid "previous_campaigns"
 msgstr ""
 
 msgid "previous_page"
+msgstr ""
+
+msgid "print_accounts"
+msgstr ""
+
+msgid "print_accounts_title"
 msgstr ""
 
 msgid "print_logo"
@@ -1274,6 +1286,9 @@ msgstr ""
 msgid "prompt_join_class"
 msgstr ""
 
+msgid "provided_username_duplicates"
+msgstr ""
+
 msgid "public"
 msgstr ""
 
@@ -1296,6 +1311,9 @@ msgid "public_profile_info"
 msgstr ""
 
 msgid "public_profile_updated"
+msgstr ""
+
+msgid "put"
 msgstr ""
 
 msgid "question mark"
@@ -1338,6 +1356,12 @@ msgid "remove_student_prompt"
 msgstr ""
 
 msgid "remove_user_prompt"
+msgstr ""
+
+msgid "rename_class"
+msgstr ""
+
+msgid "rename_class_prompt"
 msgstr ""
 
 msgid "repair_program_logo_alt"
@@ -1385,7 +1409,7 @@ msgstr ""
 msgid "reset_password"
 msgstr ""
 
-msgid "reset_view"
+msgid "restart"
 msgstr ""
 
 msgid "retrieve_adventure_error"
@@ -1472,6 +1496,9 @@ msgstr ""
 msgid "settings"
 msgstr ""
 
+msgid "share"
+msgstr ""
+
 msgid "share_by_giving_link"
 msgstr ""
 
@@ -1508,6 +1535,9 @@ msgstr ""
 msgid "solution_example_explanation"
 msgstr ""
 
+msgid "some_rows_missing_separator"
+msgstr ""
+
 msgid "something_went_wrong_keyword_parsing"
 msgstr ""
 
@@ -1517,22 +1547,10 @@ msgstr ""
 msgid "star"
 msgstr ""
 
-msgid "start_hedy_tutorial"
-msgstr ""
-
 msgid "start_learning"
 msgstr ""
 
-msgid "start_programming"
-msgstr ""
-
-msgid "start_programming_logo_alt"
-msgstr ""
-
 msgid "start_quiz"
-msgstr ""
-
-msgid "start_teacher_tutorial"
 msgstr ""
 
 msgid "start_teaching"
@@ -1544,6 +1562,9 @@ msgstr ""
 msgid "stepper_variable_role"
 msgstr ""
 
+msgid "stop"
+msgstr ""
+
 msgid "stop_code_button"
 msgstr ""
 
@@ -1553,13 +1574,28 @@ msgstr ""
 msgid "student"
 msgstr ""
 
+msgid "student_accounts_created"
+msgstr ""
+
+msgid "student_adventures_table"
+msgstr ""
+
+msgid "student_adventures_table_explanation"
+msgstr ""
+
 msgid "student_already_in_class"
 msgstr ""
 
 msgid "student_already_invite"
 msgstr ""
 
-msgid "student_not_allowed_in_class"
+msgid "student_in_another_class"
+msgstr ""
+
+msgid "student_information"
+msgstr ""
+
+msgid "student_information_explanation"
 msgstr ""
 
 msgid "student_not_existing"
@@ -1637,12 +1673,6 @@ msgstr ""
 msgid "teacher"
 msgstr ""
 
-msgid "teacher_account_request"
-msgstr ""
-
-msgid "teacher_account_success"
-msgstr ""
-
 msgid "teacher_invalid"
 msgstr ""
 
@@ -1653,9 +1683,6 @@ msgid "teacher_manual"
 msgstr ""
 
 msgid "teacher_signup_header"
-msgstr ""
-
-msgid "teacher_tutorial_logo_alt"
 msgstr ""
 
 msgid "teacher_welcome"
@@ -1694,9 +1721,6 @@ msgstr ""
 msgid "title_join-class"
 msgstr ""
 
-msgid "title_landing-page"
-msgstr ""
-
 msgid "title_learn-more"
 msgstr ""
 
@@ -1733,6 +1757,9 @@ msgstr ""
 msgid "token_invalid"
 msgstr ""
 
+msgid "too_many_accounts"
+msgstr ""
+
 msgid "tooltip_level_locked"
 msgstr ""
 
@@ -1743,6 +1770,9 @@ msgid "translating_hedy"
 msgstr ""
 
 msgid "translator"
+msgstr ""
+
+msgid "turned_into_teacher"
 msgstr ""
 
 msgid "tutorial"
@@ -1764,9 +1794,6 @@ msgid "unfavourite_confirm"
 msgstr ""
 
 msgid "unfavourite_success"
-msgstr ""
-
-msgid "unique_usernames"
 msgstr ""
 
 msgid "unknown_variable_role"
@@ -1796,6 +1823,12 @@ msgstr ""
 msgid "updating_indicator"
 msgstr ""
 
+msgid "use_custom_passwords"
+msgstr ""
+
+msgid "use_generated_passwords"
+msgstr ""
+
 msgid "use_of_blanks_exception"
 msgstr ""
 
@@ -1817,6 +1850,12 @@ msgstr ""
 msgid "username"
 msgstr ""
 
+msgid "username_contains_invalid_symbol"
+msgstr ""
+
+msgid "username_contains_separator"
+msgstr ""
+
 msgid "username_empty"
 msgstr ""
 
@@ -1829,7 +1868,10 @@ msgstr ""
 msgid "username_three"
 msgstr ""
 
-msgid "usernames_exist"
+msgid "usernames_too_short"
+msgstr ""
+
+msgid "usernames_unavailable"
 msgstr ""
 
 msgid "value"
@@ -1853,10 +1895,7 @@ msgstr ""
 msgid "walker_variable_role"
 msgstr ""
 
-msgid "welcome"
-msgstr ""
-
-msgid "welcome_back"
+msgid "website"
 msgstr ""
 
 msgid "what_is_your_role"
@@ -1865,16 +1904,43 @@ msgstr ""
 msgid "what_should_my_code_do"
 msgstr ""
 
+msgid "workbook_circle_question_text"
+msgstr ""
+
+msgid "workbook_circle_question_title"
+msgstr ""
+
+msgid "workbook_define_question_text"
+msgstr ""
+
+msgid "workbook_define_question_title"
+msgstr ""
+
+msgid "workbook_input_question_text"
+msgstr ""
+
+msgid "workbook_input_question_title"
+msgstr ""
+
+msgid "workbook_multiple_choice_question_text"
+msgstr ""
+
+msgid "workbook_multiple_choice_question_title"
+msgstr ""
+
+msgid "workbook_open_question_title"
+msgstr ""
+
+msgid "workbook_output_question_text"
+msgstr ""
+
+msgid "workbook_output_question_title"
+msgstr ""
+
 msgid "year_invalid"
 msgstr ""
 
 msgid "yes"
-msgstr ""
-
-msgid "your_account"
-msgstr ""
-
-msgid "your_last_program"
 msgstr ""
 
 msgid "your_personal_text"

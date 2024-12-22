@@ -1,8 +1,13 @@
+"""General helpers for Flask that are not Hedy-specific."""
 import dataclasses
 import json
+
+from markupsafe import Markup
+
 from . import querylog
 
 import flask
+from flask_babel import force_locale, gettext
 from flask.json.provider import JSONProvider
 from jinja2 import Undefined
 
@@ -29,6 +34,18 @@ def proper_json_dumps(x, **kwargs):
 def proper_tojson(x):
     """A version of 'tojson' that uses the conversions we want."""
     return proper_json_dumps(x)
+
+
+def gettext_with_fallback(x):
+    if flask.session:
+        locale = flask.session['lang']
+    else:
+        locale = 'en'
+    res = gettext(x)
+    if locale != 'en' and res == x:
+        with force_locale('en'):
+            res = gettext(x)
+    return Markup(res)
 
 
 class EnhancedJSONEncoder(json.JSONEncoder):

@@ -1,111 +1,23 @@
 title: Hedy документація
-home-sections:
--   title: Textual programming made easy!
-    text: |-
-        Many schools and teachers around the world want to teach their students programming. Initially this is often done with playful tools, ranging from the Beebot robot to
-        Scratch Junior or Scratch. After using such tools, kids often want to move to more powerful, textual programming languages, like Python.
-
-        Python however is hard, because it is only available in English, and requires learners to learn complex programming concepts and syntax at once.
-        Hedy is the easy way to get started with textual programming languages! Hedy is free to use, open source, and unlike any other textual programming language in three ways.
-
-        1. Hedy is multi-lingual, you can use Hedy in your own language
-        2. Hedy is gradual, so you can learn one concept and its syntax a time
-        3. Hedy is built for the classroom, allowing teachers to fully customize their student's experience
--   title: Multi-lingual programming
-    text: While almost all textual programming language have keywords in English, such as `for` or `repeat`, Hedy can be used in any language! We currently support 39 different languages, including Spanish, Arabic, Simplified Chinese and Hindi. If your language is not available you can always start a a new translation.
--   title: Step by step learning
-    text: Learning a programming language can be overwhelming, since learners have to learn concepts (for example if-else or loops) and syntax (like quotation marks or round brackets) at the same time. In Hedy, concepts are first introduced with little syntax and then refined. A scientifically proven way to learn!
--   title: Built for the classroom
-    text: |-
-        Hedy is suitable for kids aged 10 and up and designed for classroom use.
-        Teachers can use our free, built-in lesson plans, but can also author their own lessons and load these into the Hedy user interface.
--   title: Programming in context
-    text: Hedy shows programming in the broadest way possible, and can be used in variety of exciting ways. Hedy allows for the creation of digital and interactive stories, colorful drawings that can be shown on the screen but also drawn with a pen plotter or embroidered on a shirt, and can be used to create games or apps with buttons and keyboard actions.
--   title: Is Hedy free?
-    text: |-
-        Yes! Hedy is 'Open source', which means that everyone can help us make Hedy better.
-        You can find our code on [GitHub](https://github.com/hedyorg/hedy).
-        If you like Hedy and want to contribute, we accept (and are very grateful for) [donations](https://github.com/sponsors/hedyorg)!
--   title: Do I need to install anything?
-    text: No. Hedy works in the browser, which is the program you are using to look at this page. Probably Chrome or Edge or Firefox. Hedy also works on phones and tablets.
--   title: Do I need programming experience to teach with Hedy?
-    text: |-
-        No, that is not needed. All concepts are explained in the slides and in the interface for learners.
-        If you create a free teacher's account, you also get access to the teacher's manual with information on how to teach
-        and frequently made mistakes.
 join-sections:
 -   title: Підтримати Hedy
-    text: "# There are three ways in which you can support Hedy!"
--   title: Improving the language
-    text: |-
-        The gradual and multi-lingual nature of Hedy create a lot of interesting technical challenges.
-        Find those issues on [Github](https://github.com/hedyorg/hedy/issues?q=is%3Aopen+is%3Aissue+label%3Alanguage).
--   title: Translating Hedy
-    text: |-
-        Not a programmer? No problem! Another way to support Hedy is by [translating keywords, error messages, adventures are other content](https://github.com/hedyorg/hedy/wiki/Hedy-Translation-Tutorial)
-
-        This is the current status, help us complete a language, or add a new one!
-        <a href="https://hosted.weblate.org/engage/hedy/">
-        <img src="https://hosted.weblate.org/widgets/hedy/-/multi-auto.svg" alt="Translation status" /></a>
--   title: Help teachers get started
-    text: |-
-        Hedy is designed to support teachers in providing programming lessons in class. We have specific teacher features like the option to create a class, customize it and see how your students are doing.
-        If you like Hedy, you can reach out to schools that you know to help teachers get started! We can help you find schools or teachers via [Discord](https://discord.gg/8yY7dEme9r).
+    text: Є три способи, якими ви можете підтримати Хеді!
+-   title: Удосконалення мови
+    text: "Поступовий і багатомовний характер Hedy створює багато цікавих технічних проблем.\nЗнайдіть ці проблеми на <a href=\"https://github.com/hedyorg/hedy/issues?q=is%3Aopen+is%3Aissue+label%3Alanguage\" target=\"_blank\">Github</a> ."
+-   title: Переклад Хеді
+    text: "Не програміст? немає проблем! Ще один спосіб підтримати Hedy – це <a href=\"https://github.com/hedyorg/hedy/wiki/Hedy-Translation-Tutorial\" target=\"_blank\">переклад ключових слів, повідомлень про помилки, пригод та іншого вмісту</a> .\nЦе поточний статус, допоможіть нам завершити мову або додати нову!\n<a href=\"https://hosted.weblate.org/engage/hedy/\">\n<img src=\"https://hosted.weblate.org/widgets/hedy/-/multi-auto.svg\" alt=\"Translation status\" /></a>"
+-   title: Допоможіть вчителям почати роботу
+    text: "Hedy призначений для підтримки вчителів у проведенні уроків програмування в класі. У нас є спеціальні функції для вчителів, як-от можливість створити клас, налаштувати його та переглянути, як учні навчаються.\nЯкщо вам подобається Hedy, ви можете звернутися до шкіл, які ви знаєте, щоб допомогти вчителям почати! Ми можемо допомогти вам знайти школи чи вчителів через <a href=\"https://discord.gg/8yY7dEme9r\" target=\"_blank\">Discord</a> ."
 learn-more-sections:
--   title: Приєднатися до Спільноти Hedy
-    text: |-
-        We love to hear from you!
-        [Click here to send us a message](mailto:hello@hedy.org "About Hedy")
--   title: Глибоке занурення!
-    text: "[Let us know on GitHub](https://github.com/hedyorg/hedy/issues/new/choose)"
--   title: Hedy у новинах
+-   title: Фонд Хеді
+    text: "Hedy підтримується Фондом Hedy (Stichting Hedy), Sportmanstaat 8, 2341 JG Oegstgeest, Голландська торгова палата, номер 94013985.\n\nПравління фонду складається з:\n\n  * Фелієн Германс, президент\n  * Елко Хейзінг, фінанси\n  * Рене Мербіс, секретар\n\nПравління Stichting Hedy не отримує фінансової винагороди за виконання своїх завдань. "
+-   title: Hedy у новинах!
     text: |-
         Want to know more about Hedy? Check out this talk Felienne gave at the European Code Week 2020:
 
         <iframe width="560" height="315" class="mx-auto mt-4" src="https://www.youtube.com/embed/R2U9MEowYag?wmode=opaque" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-start-sections:
--   title: Getting started with Hedy
-    text: "*Something about teachers accounts, slides etc*"
--   title: What other teachers say
-    text: |-
-        A while ago we ran a few short Hedy teachers surveys. 
-        The questions span between suggestions of improvement and Hedy’s best features. 
-        Below is a testimony of their thoughts:
-
-        Simple interface and good examples. *Teacher: 3rd - 6th grades (elementary)*
-
-        Multilingual programming and just the gradual programming concept itself. - *US: middle school, 6th-8th grade*
-
-        The gradual nature of introducing programming. *Australia: High school*
-
-        The construction is so good. *Netherlands: Lower secondary school HAVO-VWO*
-
-        I can keep the pace of the class. *Netherlands: group 7 en 8* 
-
-        Continues automatically. *Netherlands: 2 HAVO-VWO*
-
-        Both that the explanation can be in Dutch (and the code in English), and that it builds up with more 
-        and more possibilities. *Netherlands: Plus class group 7*
-
-        The 'realness' of programming, it resembles how it is in reality. *Netherlands: Plus class group 4 to 8*
-
-        Step-by-step activities. Fun activities. *Netherlands: 1e All levels, 2e VWO/HAVO 2e VWO +, 3e HAVO 3e VWO*
-
-        But Hedy and its gradual levels... what an idea, 
-        I wanted to personally thank you for creating this. I cannot thank you enough. Also, I have never seen the level of engagement and enthusiasm of my 
-        students, as I have seen with Hedy. We have covered till level 5, and plan to spend one more week on it in classes and labs, 
-        before starting Python.  *Pakistan*
-
-        I really like Hedy very much and it is also nicely set up, which makes it good to use in primary school. 
-        Hedy's gradual approach works very well. 
-        The short explanation at the beginning of each level and the short example programs help to give the children a quick insight into what is new in the chosen level. 
-        The different assignments that the children can choose also work very well. 
-        You see the children choose assignments that appeal to them and they then get to work with them, 
-        through the levels. Hedy is great fun for children who are good at programming and want to get a 
-        taste of a real programming language. It is good preparation for secondary school as soon as more ICT 
-        education is given there. *Netherlands: Oegstgeest Montessori school*
-
-        <img width="500px" src="static/images/teacherfeedback/Fkids1.JPG"></img>
+-   title: Хеді в новинах
+    text: "Деякі веб-сайти та газети писали про Hedy після нашого випуску на початку 2020 року. Ми зберігаємо список тут:\n* [Журнал Java 04.2023](images/Hedy_Javamagazine2023.pdf)\n* [Tech Optimism - A Solution to the IT Shortage (Нідерландська мова), серпень 2022 р.](https://pom.show/2022/08/12/een-vlucht-voor-het-it-shortage/)\n* [Codeweek Podcast, липень 2022](https://codeweek.eu/podcast/26)\n* [Heise.de (німецька), січень 2022 р.](https://www.heise.de/news/Hedy-die-mitgrowing-Programmiersprach-6336264.html)\n* [Strumenta, листопад 2021 р.](https://tomassetti.me/teaching-programming-with-hedy/)\n* [Vives (Нідерланди), CodeWeek Special, жовтень 2021 р.](images/Vives-174-Codeweek.pdf)\n* [CodeWeek.eu – конкурс Haunted House Challenge, вересень 2021 р.](https://codeweek.eu/2021/challenges/haunted-house)\n* [Opensource.com, квітень 2021 р.](https://opensource.com/article/21/4/hedy-teach-code)\n* [IO Magazine, квітень 2021](https://ict-research.nl/wordpress/wp-content/uploads/2021/04/IO-magazine-NR1-2021_web.pdf)\n* [Розробка програмного забезпечення (іспанською), лютий 2021 р.](https://ingenieriadesoftware.es/hedy-mejor-lenguaje-ensenar-programacion-ninos/)\n* [Журнал Hello World, лютий 2021 р.](images/Hello_World_15_Hedy.pdf)\n* [Discoro, січень 2021 р.](https://discoro.wordpress.com/2021/01/09/hedy-gradually-learning-a-programming-language/)\n* [Фелієнне отримує голландську нагороду за дослідження ІКТ для Hedy, січень 2021](https://www.nwo.nl/en/news/felienne-hermans-receives-dutch-prize-ict-research-2021)\n* [SlashDot, серпень 2020 р.](https://news.slashdot.org/story/20/08/17/024248/scientist-proposes-a-new-programming-language-for-teaching-coding-and-python)\n* [GenBeta (іспанською), серпень 2020 р.](https://www.genbeta.com/desarrollo/nuevo-lenguaje-para-ensenar-programacion-a-ninos-como-se-ensena-a-leer-ecripta-forma -поступові рівні)\n* [Developpez (французька), серпень 2020 р.](https://programmation.developpez.com/actu/308095/Une-scientifique-propose-un-nouveau-langage-de-programmation-pour-enseignement-aux-enfants-le -комп'ютерне-кодування-через-поступовий-підхід-реалізоване-в-Python-на-13-рівнях/)\n* [Vives (Нідерланди), жовтень 2020 р.](images/artikelen_vives.pdf) «Навчіться крок за кроком програмувати з Hedy»\n* [Лейденський університет, квітень 2020 р.](https://www.universiteitleiden.nl/en/news/2020/03/looking-to-distract-the-kids-while-you-work-from-home-get-them -програмування)\n* [Маре (голландська), квітень 2020 р.](https://www.mareonline.nl/cultuur/computercode-voor-de-kids/)\n* [AG Connect (Нідерланди), квітень 2020 р.](https://www.agconnect.nl/artikelen/stapsgewijs-python-leren-programmeren-met-nieuwe-taal-hedy)"
 teacher-guide:
 -   title: Введення
     key: введення
@@ -141,16 +53,8 @@ teacher-guide:
         text: |-
             Усі вчителі Hedy, програмісти та інші шанувальники можуть приєднатися до нашого <a href="https://discord.gg/8yY7dEme9r" target="_blank">сервера Discord</a>. Це ідеальне місце для спілкування про Hedy: у нас є канали, де ви можете показати свої круті проекти та уроки, канали для повідомлення про помилки та канали для спілкування з іншими викладачами та командою Hedy.
             <a href="https://www.youtube.com/watch?v=Lyz_Lnd-_aI" target="_blank">Тут</a> ви можете знайти відео про те, як приєднатися до спільноти Discord.
-    -   title: Hedy and the GDPR
-        text: |-
-            Organizations in the EU have to comply with the GDPR (General Data Protection Regulation) when processing personal data.
-            Because this is a complex issue for many schools, you can use all Hedy programming functionalities without sharing personal data.
-            The easiest way to do this is to use Hedy without creating accounts for the teacher and students. Without accounts, all functionality is available, with the exception of personalizing levels, saving students' programs and viewing their progress. That is limiting, but there are schools that use Hedy in that way.
-
-            A second way is for a teacher to create an account with an email address without personal data, for example "docent25@email.com". Apart from an email address, which is only required to reset your password, you do not need to share any information when you create a teacher account.
-            With a teacher account, you can create anonymous accounts for students, e.g. rainbow-student1, rainbow-student2, etc (See 'Teaching preparations' for a detailed manual). This way you can use all functionality of Hedy, including saving progress, without sharing personal data of yourself or your students.
-
-            If the above is not sufficient for your context, we can sign a processing agreement for the processing of your personal data.
+    -   title: Хеді та GDPR
+        text: "Під час обробки персональних даних організації в ЄС повинні дотримуватися GDPR (Загального регламенту захисту даних).\nОскільки це складне питання для багатьох шкіл, ви можете використовувати всі функції програмування Hedy без надання особистих даних.\nНайпростіший спосіб зробити це — використовувати Hedy без створення облікових записів для вчителя та учнів. Без облікових записів доступні всі функції, за винятком персоналізації рівнів, збереження програм студентів і перегляду їх прогресу. Це обмежує, але є школи, які використовують Hedy таким чином.\n\nДругий спосіб полягає в тому, щоб викладач створив обліковий запис з електронною адресою без особистих даних, наприклад «docent25@email.com». Окрім адреси електронної пошти, яка потрібна лише для скидання пароля, вам не потрібно ділитися жодною інформацією під час створення облікового запису викладача.\nЗа допомогою облікового запису вчителя ви можете створювати анонімні облікові записи для учнів, наприклад, rainbow-student1, rainbow-student2 тощо (докладний посібник див. у «Підготовці до навчання»). Таким чином ви можете використовувати всі функції Hedy, включно зі збереженням прогресу, не передаючи особистих даних про себе чи своїх учнів.\n\nЯкщо вищезазначеного недостатньо для вашого контексту, ми можемо підписати угоду про обробку ваших персональних даних."
 -   title: Tutorial
     key: tutorial
     subsections:
@@ -159,68 +63,31 @@ teacher-guide:
 -   title: Приготування
     key: приготування
     subsections:
-    -   title: For teachers
-        text: You can prepare your classes at the <a href="https://hedy.org/for-teachers" target="_blank">For Teachers page</a>. On this page you'll find everything you'll need to teach with Hedy, like your classes, your adventures and slides. All the functionalities of the for teachers page are explained below.
+    -   title: Для вчителів
+        text: Підготувати заняття можна на <a href="https://hedy.org/for-teachers" target="_blank">сторінці Вчителям</a> . На цій сторінці ви знайдете все, що вам знадобиться для навчання з Hedy, як-от ваші заняття, ваші пригоди та слайди. Усі функції сторінки для вчителів пояснюються нижче.
     -   title: Створення класу
         text: |-
             Як вчитель, ви можете створити клас для своїх учнів. У цьому класі ви можете бачити облікові записи студентів та їхні програми, а також контролювати їхній прогрес.
             Це <a href="https://www.youtube.com/watch?v=Y3RTIWftJQg" target="_blank">відео</a> показує, як швидко створити клас у Hedy.
-    -   title: Duplicate a class
-        text: |-
-            Are you teaching multiple classes? Then you don't have to customize each class individually. Simply make a class, costumize the class (see "Customize your Class" to learn how) and then duplicate this class as many times as you want.
-            You can duplicate the class on the 'For Teachers' page. If you duplicate a class, all the class settings are duplicated as well. This means that all the levels and adventures you've mande unavailable for the first class will now be unavailable for the new class(es) as well.
-            The student accounts and second teacher accounts in your class will not be duplicated into the new class.
-    -   title: Add a second teacher
-        text: |-
-            Are you not the only teacher that teaches your class? Then you can now add another teacher to the class. Go to the 'For teachers' page and click on the class. Then choose 'Invite a teacher' and fill in the username of your colleague.
-            Your colleague will get an invitation on their account to join your class. They can see that invitation message by clicking on their username in the upper right corner of the screen and selecting 'My account'.
-            Once the other teacher accepts the invitation they can customize the class as well.
-            To remove a second teacher from your class, go to the class page and remove the second teacher. The teacher who's created the class cannot be removed.
-    -   title: Customize your Class
-        text: |-
-            You can customize your class and choose which adventures are available for your students. This way your students won't be overwhelmed by the amount of adventures and levels, and they can specifically focus on the adventures you'd like them to practice with.
-            Click on your class on the for teachers page and choose 'customize class'. On this page you can select levels, set opening dates, unlock level thresholds and more.
-
-            **Select and order adventures**
-            <img src="https://github.com/hedyorg/hedy/assets/80678586/df38cbb2-468e-4317-ac67-92eaf4212adc" width="1000">
-            In this section you can select and order adventures. The pink tabs are adventures with new commands. The gray tabs are regular adventures. To rearrange the order of the adventures, you can drag the tabs. However, we do advise you to use the regular order of adventures as the Hedy team made sure the adventures go from easiest to hardest.
-            If you want to remove an adventure for your students, simply click the cross on the adventure's tab.
-            <img src="https://github.com/hedyorg/hedy/assets/80678586/0ddd10b5-ef60-4480-a0c4-fc9a0f323baa" width="300">
-            If you want to add adventures, for instance your own adventure or an adventure you accidentally removed, use this menu to add the adventure to your students' adventures. Simply click the adventure you want to add and it (re)appears in the line of adventures. To undo all your changes to the adventures, click 'Reset'.
-
-            **Opening dates**
-            <img src="https://github.com/hedyorg/hedy/assets/80678586/4e59acfa-4772-429f-8328-babb43c942d5" width="300">
-            With this feature you can set opening dates for the levels. This way you can make a lesson plan before your course begins and not worry about opening new levels each week. In the image above the first level is opened directly, the second will open the 23th of september, and the 3rd level the week after. The other levels are closed.
-            Don't want to set opening dates? No problem, just leave this section blank.
-
-            **Unlock level thresholds**
-            <img src="https://github.com/hedyorg/hedy/assets/80678586/99a34dab-f112-459e-bfd1-07618be4715a" width = "1000">
-            This featue allows you to set a threshold for your students' quiz grade, before they can continue to the next level. For example, if you enter "80" your students have to score at least 80% on the quiz before they are allowed to go to the next level. If they haven't met the threshold, they are not allowed to continue and have to retake the quiz.
-            Don't want to use the threshold? No worries, just keep this section blank.
-
-
-            **Other settings**
-            <img src="https://github.com/hedyorg/hedy/assets/80678586/a8491d67-6d6e-42a7-b672-fd3d083a76f8"/>
-            There are some other setting that could be usefu to you aswell. Our first extra setting is 'Mandatory developer's mode'. In developers mode the students only see their input and output screens and the run button. The adventures are hidden and there are no cheatsheets available. This might come in handy in a test situation.
-            If this option is not selected the developer's mode is available for students too as a voluntary option.
-
-            If you want all your students to be visible in de class highscore, you can select the second option.
-            With all the other options you can choose to hide some functions or content for your students, this might help them focus more.
-
-            **Save**
-            <img src="https://github.com/hedyorg/hedy/assets/80678586/df179df3-3073-4d15-bba6-62e58fb675be" width="300">
-            Don't forget to save your changes when you're done customizing your class.
+    -   title: Дублювати клас
+        text: "Ви навчаєте кількох класів? Тоді вам не доведеться налаштовувати кожен клас окремо. Просто створіть клас, костюмуйте клас (дивіться «Налаштуйте свій клас», щоб дізнатися, як), а потім дублюйте цей клас скільки завгодно разів.\nПродублювати клас можна на сторінці «Для вчителів». Якщо ви дублюєте клас, усі налаштування класу також дублюються. Це означає, що всі рівні та пригоди, які ви зробили недоступними для першого класу, тепер також будуть недоступні для нового класу(ів).\nОблікові записи учнів і другого вчителя у вашому класі не будуть дублюватися в новому класі."
+    -   title: Додайте другого вчителя
+        text: "Ви не єдиний вчитель, який навчає у вашому класі? Тоді ви можете додати ще одного вчителя до класу. Перейдіть на сторінку «Для вчителів» і натисніть на клас. Потім виберіть «Запросити вчителя» та введіть ім’я користувача свого колеги.\nВаш колега отримає в обліковому записі запрошення приєднатися до вашого класу. Вони можуть побачити це запрошення, натиснувши своє ім’я користувача у верхньому правому куті екрана та вибравши «Мій обліковий запис».\nКоли інший викладач прийме запрошення, він також зможе налаштувати клас.\nЩоб видалити другого вчителя зі свого класу, перейдіть на сторінку класу та видаліть другого вчителя. Викладача, який створив клас, не можна видалити."
+    -   title: Налаштуйте свій клас
+        text: "Ви можете налаштувати свій клас і вибрати, які пригоди доступні для ваших учнів. Таким чином ваші учні не будуть перевантажені кількістю пригод і рівнів, і вони зможуть конкретно зосередитися на пригодах, які ви хочете, щоб вони вправлялися.\nНатисніть свій клас на сторінці для вчителів і виберіть «налаштувати клас». На цій сторінці ви можете вибрати рівні, встановити дати відкриття, розблокувати порогові значення рівня тощо.\n\n**Вибирайте та замовляйте пригоди**\n<img src=\"https://github.com/hedyorg/hedy/assets/80678586/df38cbb2-468e-4317-ac67-92eaf4212adc\" width=\"1000\">\nУ цьому розділі ви можете вибрати та замовити пригоди. Рожеві вкладки — це пригоди з новими командами. Сірі вкладки - це звичайні пригоди. Щоб змінити порядок пригод, ви можете перетягувати вкладки. Однак ми радимо вам використовувати звичайний порядок пригод, оскільки команда Hedy подбала про те, щоб пригоди переходили від найпростіших до найважчих.\nЯкщо ви хочете видалити пригоду для ваших учнів, просто натисніть хрестик на вкладці пригоди.\n<img src=\"https://github.com/hedyorg/hedy/assets/80678586/0ddd10b5-ef60-4480-a0c4-fc9a0f323baa\" width=\"300\">\nЯкщо ви хочете додати пригоди, наприклад, свою власну пригоду або пригоду, яку ви випадково видалили, скористайтеся цим меню, щоб додати пригоду до пригод ваших учнів. Просто клацніть пригоду, яку хочете додати, і вона (знову) з’явиться в рядку пригод. Щоб скасувати всі зміни в пригодах, натисніть «Скинути».\n\n**Дати відкриття**\n<img src=\"https://github.com/hedyorg/hedy/assets/80678586/4e59acfa-4772-429f-8328-babb43c942d5\" width=\"300\">\nЗа допомогою цієї функції ви можете встановити дати відкриття рівнів. Таким чином ви можете скласти план уроку до початку курсу і не турбуватися про відкриття нових рівнів щотижня. На зображенні вище перший рівень відкривається безпосередньо, другий відкриється 23 вересня, а 3-й рівень через тиждень. Інші рівні закриті.\nНе хочете встановлювати дати відкриття? Немає проблем, просто залиште цей розділ порожнім.\n\n**Розблокувати порогові значення рівня**\n<img src=\"https://github.com/hedyorg/hedy/assets/80678586/99a34dab-f112-459e-bfd1-07618be4715a\" width = \"1000\">\nЦя функція дозволяє встановити порогове значення для оцінки тесту ваших учнів, перш ніж вони зможуть перейти на наступний рівень. Наприклад, якщо ви введете «80», ваші учні повинні набрати принаймні 80% у вікторині, перш ніж їм буде дозволено перейти на наступний рівень. Якщо вони не досягли порогу, їм не дозволено продовжувати, і вони повинні пройти повторне тестування.\nНе хочете використовувати поріг? Не хвилюйтеся, просто залиште цей розділ порожнім.\n\n\n**Інші налаштування**\n<img src=\"https://github.com/hedyorg/hedy/assets/80678586/a8491d67-6d6e-42a7-b672-fd3d083a76f8\"/>\nЄ деякі інші налаштування, які також можуть бути корисними для вас. Нашим першим додатковим параметром є «Обов’язковий режим розробника». У режимі розробника учні бачать лише свої екрани введення та виведення та кнопку запуску. Пригоди приховані, а шпаргалок немає. Це може стати в нагоді в тестовій ситуації.\nЯкщо цей параметр не вибрано, режим розробника також доступний для студентів як добровільний варіант.\n\nЯкщо ви бажаєте, щоб усі ваші учні були видимі в рейтингу класу, ви можете вибрати другий варіант.\nЗ усіма іншими параметрами ви можете приховати деякі функції чи вміст для ваших учнів, це може допомогти їм більше зосередитися.\n\n**Зберегти**\n<img src=\"https://github.com/hedyorg/hedy/assets/80678586/df179df3-3073-4d15-bba6-62e58fb675be\" width=\"300\">\nНе забудьте зберегти зміни, коли завершите налаштування класу."
     -   title: Облікові записи студентів
         text: |-
-            Є 2 способи дозволити студентам приєднатися до вашого класу: ви можете дозволити їм створювати власні облікові записи або ви можете створити для них облікові записи.
+            Щоб додати учнів до свого класу, перейдіть на сторінку класу, клацнувши назву класу на сторінці «для вчителів». Потім натисніть «додати студентів». Є 2 способи дозволити студентам приєднатися до вашого класу: ви можете створити для них облікові записи або вони можуть створити власні облікові записи. 
 
-            **Студенти самостійно створюють облікові записи**
-            Ваші учні можуть перейти на веб-сайт Hedy і створити власні облікові записи, як це зробили ви. Щоб залучити їх до вашого класу, вони просто повинні натиснути посилання запрошення.
-            Ви можете знайти посилання для запрошення на сторінці класу та надіслати його своїм учням. Майте на увазі, що ваші студенти мають увійти в систему Hedy, коли вони натискають посилання, тому робота буде безперебійною.
+            **Ви створюєте облікові записи для своїх учнів** 
+            Найпростіший спосіб додати студентів до свого класу – створити для них обліковий запис. Це можна зробити, натиснувши кнопку «створити облікові записи студентів» і ввівши імена користувачів і паролі для них. 
+            Студенти можуть увійти за допомогою імені користувача та пароля, які ви вибрали. Після цього вони можуть змінити своє ім’я користувача чи пароль, якщо захочуть, і залишаться у вашому класі. 
+            У цьому <a href="https://www.youtube.com/watch?v=eEQvik-Ce5M" target="_blank">відео</a> показано, як найшвидше та найпростіше додати учнів до свого класу. 
 
-            **Ви створюєте облікові записи для своїх учнів**
-            Іноді простіше самостійно створити цілу купу облікових записів для своїх учнів. Це можна зробити, натиснувши кнопку «створити облікові записи студентів» і ввівши імена користувачів і паролі для них.
-            Студенти можуть увійти за допомогою імені користувача та пароля, які ви вибрали. Після цього вони можуть змінити своє ім’я користувача чи пароль, якщо захочуть, і залишаться у вашому класі.
+            **Студенти самостійно створюють облікові записи** 
+            Ваші студенти також можуть перейти на веб-сайт Hedy і створити власні облікові записи, як це зробили ви. Щоб залучити їх до вашого класу, вони просто повинні натиснути посилання запрошення. 
+            Ви можете знайти посилання для запрошення на сторінці класу та надіслати його своїм учням. Майте на увазі, що ваші студенти повинні бути ввійшли в Hedy, коли вони натискають посилання, щоб забезпечити безперебійну роботу. 
+            Ви також можете вручну запросити студента до свого класу за допомогою кнопки «Запросити за іменем користувача».
     -   title: Налаштування бажаної мови
         text: |-
             Коли учні створюють профіль, вони повинні вибрати «бажану мову». Hedy завжди завантажуватиметься цією вибраною мовою.
@@ -237,12 +104,17 @@ teacher-guide:
             This <a href="https://www.youtube.com/watch?v=QrVZETj4oLM" target="_blank">video</a> show you how to set a preferred language and change the keywords to you preferred language as well.
     -   title: Зберігання програм
         text: |-
-            Оскільки ви вже ввійшли в систему, ви побачите синій банер в розділах Мій профіль та Мої програми.
-            Ці вкладки також існують для ваших учнів. У розділі Мої програми ви можете знайти всі коди, які ви зберегли.
+            Коли ви ввійдете в систему, ви побачите Мої програми поруч із піктограмою вашого профілю. 
+            Цей варіант доступний і для ваших студентів. У розділі «Мої програми» ви можете знайти всі програми, над якими ви працювали. 
+            За замовчуванням програми зберігаються в розділі «Мої програми» під час запуску коду та кожні 10 секунд під їх назвами за замовчуванням 
+            та їхній рівень (наприклад: Розповідь 5). Якщо ви хочете зберегти програму під новою назвою, просто введіть нову назву в рядку назви. 
+            Наразі лише одну програму можна зберегти на рівні, на вкладці. 
 
-            Ви можете легко зберегти свої проекти, вказавши назву проекту на білій панелі та натиснувши зелену кнопку Зберегти код.
-            Ви (і ваші студенти) також можете ділитися програмами. Ці програми будуть опубліковані на нашій сторінці огляду, щоб усі бачили та використовували.
-            Якщо ви хочете скасувати спільний доступ до своєї програми, перейдіть до «Мої програми» та натисніть «Скасувати спільний доступ».
+            Ви (і ваші учні) також можете ділитися програмами за допомогою кнопки спільного доступу поруч із назвами програм. 
+            Ці програми буде опубліковано на нашій <a href="https://hedy.org/explore" target="_blank">сторінці огляду</a>, щоб усі бачили та використовували. 
+            Якщо ви хочете скасувати спільний доступ до своєї програми, перейдіть до «Мої програми» та натисніть «Скасувати спільний доступ». 
+
+            Піктограму паперового літака можна використовувати, щоб передати програми вчителю класу. Програми, які були передані, більше не можна буде редагувати.
 -   title: Навчання з Хеди
     key: teaching
     subsections:
@@ -250,11 +122,9 @@ teacher-guide:
         text: |-
             Hedy містить багато різних рівнів, кожен з яких навчає окремим новим навичкам. Ми рекомендуємо викладати один рівень за урок.
             Це дає вашим учням час, щоб повністю зрозуміти нову команду чи концепцію та потренуватися з ними, перш ніж переходити до наступного рівня.
-            Ми використовуємо цю структуру на наших уроках:
-    -   title: Slides
-        text: |-
-            When giving instructions you might want to use our slides. Our slides are available on the 'For teachers' page. There is a set of slides for each level. In the slides all the new commands for that level are explained. We have aimed to explain why these changes are nessecary or how the new commands come in handy.
-            We also give some examples of how the new commands can be used. You could of course also use your own slides, or just open Hedy and show your students around the website. Whichever you prefer to give the best Hedy lessons!
+            Ми використовуємо цю структуру на наших уроках.
+    -   title: Слайди
+        text: "Коли ви даєте інструкції, ви можете використовувати наші слайди. Наші слайди доступні на сторінці «Для вчителів». Для кожного рівня є набір слайдів. На слайдах пояснюються всі нові команди для цього рівня. Ми мали на меті пояснити, чому ці зміни необхідні або як нові команди стають у нагоді.\nМи також наводимо кілька прикладів того, як можна використовувати нові команди. Звичайно, ви також можете використовувати власні слайди або просто відкрити Hedy і показати своїм студентам веб-сайт. Що б ви не віддали перевагу, дайте найкращі уроки Хеді!"
     -   title: Вступ
         text: |-
             Ви можете розпочинати свої уроки, активізуючи попередні знання своїх учнів: що вони вже знають про предмет, чого навчилися на попередньому уроці та яких помилок вони припустилися, на яких тепер навчилися?
@@ -273,80 +143,54 @@ teacher-guide:
             Остання вкладка «що далі» дає невелику підказку про те, що ви дізнаєтесь на наступному рівні. Звичайно, ви можете вибрати пригоди, які ви хочете, щоб ваші учні зробили для кожного рівня.
             Їм не завжди потрібно робити всі пригоди. Кожна пригода містить приклад коду, який учні можуть спробувати за допомогою зеленої кнопки.
             Приклад коду копіюється в робоче поле, де студенти можуть випробувати код і налаштувати його, щоб зробити його власним.
-            Стимулюйте своїх учнів перетворювати приклади кодів на власні проекти, додаючи власні ідеї та створюючи власну варіацію пригоди.
+            Стимулюйте своїх студентів перетворювати приклад коду на власні проекти, додаючи власні ідеї та створюючи власну варіацію пригоди.
     -   title: Тест
         text: |-
-            Щоб перевірити, чи ваші учні підібрали всю нову інформацію на рівні, ви можете дозволити їм виконати тест.
-            Тест містить 10 запитань з декількома варіантами відповідей про нові концепції та команди для цього рівня.
-            Ще не на кожному рівні є вікторини, оскільки ми все ще створюємо вікторини.
+            Щоб перевірити, чи ваші учні зрозуміли всю нову інформацію на рівні, ви можете дозволити їм пройти тест. 
+            Тест містить 10 запитань з декількома варіантами відповідей про нові поняття та команди цього рівня. 
+            Ще не на кожному рівні є вікторина, оскільки ми ще створюємо вікторини. 
+            Деякі рівні також містять головоломки. Головоломки показують учням пару рядків коду, які учні повинні розмістити в правильному порядку. 
+
+            Це <a href="https://www.youtube.com/watch?v=lNh5EdZVUwc" target="_blank">відео</a> показує вікторини та головоломки.
     -   title: Оцінка
         text: |-
             Завершіть свій урок короткою оцінкою. Чого навчилися учні? З якими труднощами вони зіткнулися?
             Як вони вчилися на своїх помилках? І звичайно: що вони створили?
             Студенти часто дуже пишаються своїми творіннями, тому приємно заощадити трохи часу та дати студентам можливість показати свої роботи своїм однокласникам.
--   title: Teacher Statistics
-    key: teacher_statistics
+-   title: Статистика вчителів
+    key: вчитель_статистика
     subsections:
-    -   title: Live Dashboard
-        text: |-
-            If you would like to keep track of your students' progress, you can make use of the live dashboard. You can find the live dashboard by clicking 'Live statistics' on your class page.
-            <img src="https://github.com/hedyorg/hedy/assets/80678586/97a54679-b1d6-46b4-a633-ab0161114642" width="1000">
-            All the features of this dashboard are explained below.
-    -   title: Level Selection
-        text: |-
-            <img src="https://github.com/hedyorg/hedy/assets/80678586/94dc891d-cdd6-4311-91f2-51900eaf4c2a" width="500">
-            Firstly, you can select the levels you'd like to see on the dahsboard. Select the levels your students are currently working on by clicking on the number of that level. Deselect levels that you do not want to see by clicking them again.
-            In this example level 1 and 2 are selected. You can click on refresh to refresh the dashboard and get the most current stats.
-    -   title: Class Overview
-        text: |-
-            <img src="https://github.com/hedyorg/hedy/assets/80678586/b2c30ef9-6eba-4c02-92a3-9669504a54a8" width="1000">
-            In the class overview you can see which adventure your students are working on right now. You can see that one student is working on the 'Rock, Paper, Scissors' adventure in level 1, one is working on the 'Fortune Teller' in level 1 and one student is working on the 'Rock, Paper, Scissors' adventure in level 2.
-            If you'd like to know which of your students is working on the adventure, simply click the number and their accountnames will appear.
-            You can also see how many of your students have finished the quiz. In this case, one student finished the quiz in level 1. Again, you can click the 1 to see which of your students it is.
-
-            You can also see one of the students is 'missing' from this overview. That's because he's working on an adventure in level 4, which is not selected.
-    -   title: Student List
-        text: |-
-            <img src="https://github.com/hedyorg/hedy/assets/80678586/693e976c-199f-46f4-abae-3f18f9854cd0" width="1000">
-            Here you can find a list of your students and you can see their individual progress. The blue ring shows you what your students are currently working on.
-            <img src="https://github.com/hedyorg/hedy/assets/80678586/c7e2150f-60de-4ef7-8862-5901a7fb6609" width="150">
-            It is important to notice that the blue dots means that a students 'attempted' the adventure. This means that they ran a code in this adventure and went on to the next adventure, so this does not automatically mean that they did a good job!
-            If you want to see how an individual student is getting along, you can click their name in this overview. This is what you see if you click on marleen_h3a for example:
-            <img src="https://github.com/hedyorg/hedy/assets/80678586/f8c2480d-c724-46f9-a702-33532828de70" width="800">
-            You see that Marleen is having some trouble programming. She tried to run a program that contains blanks multiple times, so she probably doesn't know that she has to change something in the example code before running it.
-            In this way this overview can give you a better understanding of what a student is struggling with.
-    -   title: Common Errors
-        text: |-
-            <img src="https://github.com/hedyorg/hedy/assets/80678586/e7af5ce3-ca74-48e7-9654-f17435596fbc" width="500">
-            If you're not only interested in individual struggles of your students, but you'd like to know what the whole class seems to be doing wrong, you can use this oversight of common errors.
-            The most common error messages that your students are recieving will appear in this oversight for you, so you could give some more instructions to the whole class if needed.
-            By clicking the error, you can see which students are having trouble with this error. By clicking resolve, you'll remove this error from the list.
-    -   title: Overview of programs per adventure
-        text: |-
-            <img src="https://github.com/hedyorg/hedy/assets/80678586/f07bf714-7250-4711-82a1-616f9f7b55e8" width="1000">
-            Another useful overview of all the programs your students made in a level can be found on your class page. Go to the class page and click 'Overview of programs per adventure'. Here you'll find this overview.
-            You could use this overview to check your students' work. If they have made a program in an adventure, an eye appears in your overview. Click the eye to view their work. Did you like it? Then you can check the box and a green tick will appear.
-            This way you create a nice overview for yourself of your students' results.
+    -   title: Жива інформаційна панель
+        text: "Якщо ви хочете стежити за прогресом своїх учнів, ви можете скористатися інформаційною панеллю в реальному часі. Ви можете знайти інформаційну панель у прямому ефірі, натиснувши «Статистика в реальному часі» на сторінці свого класу.\n<img src=\"https://github.com/hedyorg/hedy/assets/80678586/97a54679-b1d6-46b4-a633-ab0161114642\" width=\"1000\">\nУсі функції цієї інформаційної панелі пояснюються нижче."
+    -   title: Вибір рівня
+        text: "<img src=\"https://github.com/hedyorg/hedy/assets/80678586/94dc891d-cdd6-4311-91f2-51900eaf4c2a\" width=\"500\">\nПо-перше, ви можете вибрати рівні, які хочете бачити на панелі приладів. Виберіть рівні, на яких зараз працюють ваші учні, клацнувши на номер цього рівня. Зніміть вибір рівнів, які ви не хочете бачити, клацнувши їх знову.\nУ цьому прикладі вибрано рівні 1 і 2. Ви можете натиснути «Оновити», щоб оновити інформаційну панель і отримати найновішу статистику."
+    -   title: Огляд класу
+        text: "<img src=\"https://github.com/hedyorg/hedy/assets/80678586/b2c30ef9-6eba-4c02-92a3-9669504a54a8\" width=\"1000\">\nВ огляді класу ви можете побачити, над якою пригодою зараз працюють ваші учні. Ви бачите, що один учень працює над пригодою «Камінь, ножиці, папір» на рівні 1, один працює над пригодою «Ворожка» на рівні 1, а один учень працює над пригодою «Камінь, ножиці, папір» на рівні 1. рівень 2.\nЯкщо ви хочете знати, хто з ваших студентів працює над пригодою, просто натисніть номер, і з’являться імена їхніх облікових записів.\nВи також можете побачити, скільки ваших учнів пройшли тест. У цьому випадку один учень пройшов тест на рівні 1. Знову ж таки, ви можете натиснути 1, щоб побачити, хто це з ваших учнів.\n\nВи також можете побачити, що один із студентів «відсутній» у цьому огляді. Це тому, що він працює над пригодою на рівні 4, який не вибрано."
+    -   title: Список учнів
+        text: "<img src=\"https://github.com/hedyorg/hedy/assets/80678586/693e976c-199f-46f4-abae-3f18f9854cd0\" width=\"1000\">\nТут ви можете знайти список своїх студентів і побачити їхній індивідуальний прогрес. Синє кільце показує, над чим зараз працюють ваші учні.\n<img src=\"https://github.com/hedyorg/hedy/assets/80678586/c7e2150f-60de-4ef7-8862-5901a7fb6609\" width=\"150\">\nВажливо зауважити, що сині крапки означають, що учні «спробували» пригоду. Це означає, що вони запустили код у цій пригоді та перейшли до наступної пригоди, тож це не означає автоматично, що вони зробили гарну роботу!\nЯкщо ви хочете побачити, як ладнає окремий учень, ви можете клацнути його ім’я в цьому огляді. Ось що ви побачите, наприклад, якщо натиснути на marleen_h3a:\n<img src=\"https://github.com/hedyorg/hedy/assets/80678586/f8c2480d-c724-46f9-a702-33532828de70\" width=\"800\">\nВи бачите, що у Марлен проблеми з програмуванням. Вона кілька разів намагалася запустити програму, яка містить пробіли, тому могла не усвідомлювати, що їй потрібно змінити приклади коду перед їх запуском.\nТаким чином цей огляд може дати вам краще розуміння того, з чим стикається учень."
+    -   title: Загальні помилки
+        text: "<img src=\"https://github.com/hedyorg/hedy/assets/80678586/e7af5ce3-ca74-48e7-9654-f17435596fbc\" width=\"500\">\nIf you're not only interested in individual struggles of your students, but you'd like to know what the whole class seems to be doing wrong, you can use this oversight of common errors.\nThe most common error messages that your students are recieving will appear in this oversight for you, so you could give some more instructions to the whole class if needed.\nBy clicking the error, you can see which students are having trouble with this error. By clicking resolve, you'll remove this error from the list."
+    -   title: Огляд програм для пригод
+        text: "<img src=\"https://github.com/hedyorg/hedy/assets/80678586/f07bf714-7250-4711-82a1-616f9f7b55e8\" ширина=\"1000\">\nЩе один корисний огляд всіх програм, які навчаються на рівні, можна знайти на сторінці Вашого класу. Перейдіть на сторінку класу та натисніть кнопку «Огляд програм за пригодами». Тут ви знайдете цей огляд.\nВи можете використовувати цей огляд для перевірки роботи студентів. Якщо вони зробили програму в пригоді, око з'являється у вашому огляді. Натисніть на очі, щоб переглянути свою роботу. Як ти? Потім можна перевірити коробку і з'явиться зелений тик.\nЦей спосіб ви створюєте хороший огляд для себе ваших студентів."
 -   title: Додаткові можливості Hedy
     key: функції
     subsections:
     -   title: Створіть власну пригоду
-        text: Вчителі також можуть створити власну пригоду. [Це відео] (https://www.youtube.com/watch?v=A0zbXpxX4q4) показує, як створити власну пригоду для вчителя та додати її до свого класу (класів).
-    -   title: Ознайомитися зі сторінкою
+        text: Вчителі також можуть створити власну пригоду. Це <a href="https://www.youtube.com/watch?v=A0zbXpxX4q4" target="_blank">відео</a> показує, як створити власну пригоду як вчитель і додати її до свого класу (es).
+    -   title: Громадські пригоди
         text: |-
-            На сторінці [ознайомленя](https://hedy.org/explore) ви можете переглянути роботи інших користувачів Hedy. Ви можете спробувати їхні програми і використати їх як натхнення для створення чогось крутого самостійно.
-            Ви також можете додати програму, яку ви створили, на сторінку ознайомлення, натиснувши "Зберегти та поділитися кодом" на екрані кодування або перейти до "Мої програми" і натиснути "Поділитися".
-            Не хочете більше ділитися своєю роботою? Просто перейдіть до "Моїх програм" і натисніть "Відкликати".
-            Якщо ви хочете дізнатися більше про сторінку ознайомлення, перегляньте це [відео] (https://www.youtube.com/watch?v=26boFjqvS5Q).
+            Чи хотіли б ви використати пригоди інших вчителів? Тоді ви можете відвідати нашу <a href="https://hedy.org/public-adventures" target="_blank">сторінку публічних пригод</a> . Тут ви можете знайти всі пригоди інших викладачів з усього світу. Щоб знайти відповідний для себе, ви можете вибрати рівень, мову і навіть тег. Ви знайшли пригоду, якою б хотіли скористатися? Потім ви можете натиснути «клонувати», щоб зробити копію цієї пригоди у свій обліковий запис. Ви можете відредагувати клон на свій смак і додати пригоду до свого класу так само, як і свої власні пригоди. Ви не можете редагувати оригінал, тому оригінал завжди буде в безпеці. Ви самі створили пригоду, яку хотіли б додати до публічних пригод? Поставте прапорець, який робить вашу пригоду загальнодоступною під час створення пригоди!
+    -   title: Переглянути сторінку
+        text: "На <a href=\"https://hedy.org/explore\" target=\"_blank\">сторінці огляду</a> ви можете переглянути роботи інших користувачів Hedy. Ви можете випробувати їхні програми та використовувати їх як натхнення, щоб створити щось круте самостійно.\nВи також можете самостійно додати програму, яку ви створили, на сторінку огляду, натиснувши «Зберегти та поділитися кодом» на екрані кодування, або перейдіть до «Моїх програм» і натисніть «Поділитися».\nБільше не хочете ділитися своєю роботою? Просто перейдіть до «Моїх програм» і натисніть «Скасувати доступ».\nЯкщо вам потрібна додаткова інформація про сторінку дослідження, перегляньте це <a href=\"https://www.youtube.com/watch?v=26boFjqvS5Q\" target=\"_blank\">відео</a> ."
     -   title: Мої досягнення
         text: |-
-            Якщо ви натиснете на своє ім'я користувача у верхньому правому куті екрану, ви зможете перейти до [Мої досягнення] (https://hedy.org/my-achievements). На цій сторінці зібрані ваші досягнення. Ваші учні також мають таку сторінку.
-            Коли ви наведете мишкою на значок, ви побачите, як його заробити. Існують також приховані значки, про які вам доведеться дізнатися самостійно, як їх заробити.
-            Якщо ви хочете отримати більше інформації про досягнення, перегляньте це [відео] (https://www.youtube.com/watch?v=-FjmKejukCs).
+            Якщо ви клацнете своє ім’я користувача у верхньому правому куті екрана, ви зможете перейти до <a href="https://hedy.org/my-achievements" target="_blank">Мої досягнення</a>. На цій сторінці зібрані ваші досягнення. У ваших учнів теж є така сторінка. 
+            Коли ви наведете курсор миші на значок, ви побачите, як отримати значок. Також є приховані значки, які вам доведеться самостійно з’ясувати, як їх заробити. 
+            Якщо ви хочете отримати більше інформації про досягнення, перегляньте це <a href="https://www.youtube.com/watch?v=-FjmKejukCs" target="_blank">відео</a>.
     -   title: Високі результати
         text: |-
-            На [цій сторінці] (https://hedy.org/highscores) ви можете побачити високі оцінки всіх користувачів Hedy.
-            У цьому [відео](https://www.youtube.com/watch?v=IqTiUkBVTo8) ви можете дізнатися більше про високі оцінки.
+            На <a href="www.https://hedy.org/highscores" target="_blank">цій сторінці</a> ви можете побачити високі результати всіх користувачів Hedy. 
+            У цьому <a href="https://www.youtube.com/watch?v=IqTiUkBVTo8" target="_blank">відео</a>ви можете дізнатися більше про високі результати.
     -   title: Відладчик
         text: |-
             Ваш (студентський) код не працює? Мабуть, у ньому є баг (помилка кодування)! Ви можете скористатися відладчиком, щоб знайти помилку.
@@ -356,40 +200,30 @@ teacher-guide:
         text: Ви хочете, щоб вихідні дані вашої програми були прочитані вголос? Тоді ви можете скористатися функцією читання вголос, яка знаходиться під кнопкою "виконати код" на екрані кодування.
     -   title: Cheat sheets
         text: |-
-            In every level there is a button with this emoji 🤔. You and your students can find the "cheat sheets" there. On this cheat sheet, you can find all the commands that are usable in this level in their correct form.
-            So if you've forgotten how a command works, simply take a peek at the cheat sheet!
+            Відволіклися на всі пригоди або хочете зробити довгу програму? Потім перегляньте перемикач «Режим програміста» внизу екрана кодування. 
+            Режим програміста дозволяє вам і вашим учням використовувати більший екран кодування.
     -   title: Режим програміста
         text: |-
             Відволіклися від усіх пригод або хочете написати довгу програму? Тоді зверніть увагу на перемикач "Режим для програмістів" внизу екрана кодування.
-            Режим програміста дозволяє вам та вашим учням використовувати більший екран для кодування.
+            Режим програміста дозволяє вам та вашим учням використовувати більший екран для кодування!
     -   title: Інші корисні можливості
-        text: У цьому [відео] (https://www.youtube.com/watch?v=c4MntPPgl1Y) показано ще більше можливостей Hedy, наприклад, шпаргалки та перемикач клавіатури.
--   title: After Hedy
-    key: after
+        text: У цьому <a href="https://www.youtube.com/watch?v=c4MntPPgl1Y" target="_blank">відео</a> показано ще більше функцій Hedy, як-от шпаргалки та перемикач ключових слів.
+-   key: після
     subsections:
-    -   title: What to do after Hedy?
-        text: |-
-            Congratulations on reaching the end of Hedy! Your students have now learned how to create their own basic code in the Python programming language.
-            Of course, you could keep programming in our Hedy compiler, but it might be more exciting for your students to transfer to a "real" Python interface.
-            Would you like to continue teaching Python? Then please visit <a href="https://www.python.org/about/gettingstarted/" target="_blank">the Python website</a> to learn how to get started in another compiler.
-
-            Now that your students have a basic knowledge of programming in general, you could also show them around in other textual programming languages. The language might change but the concepts do not, so Hedy will still give them a big advantage.
--   title: Answers to the exercises
-    key: answers
-    intro: |-
-        The answers to all the exercises can be found on the public profile of the useraccount 'Hedy_answers'. We often encourage students to use their own creativity in their answers, so these answers are merely a guideline as to what a possible correct answer could look like.
-
-        To go to the 'Hedy_answers' profile, please click <a href="https://hedy.org/user/hedy_answers" target="_blank">here</a>.
+    -   title: Що робити після Хеді?
+        text: "Вітаємо з завершенням Hedy! Тепер ваші студенти навчилися створювати власні базові програми мовою програмування Python.\nЗвичайно, ви можете продовжувати програмувати в нашому компіляторі Hedy, але для ваших студентів може бути цікавіше перейти на «справжній» інтерфейс Python.\nЧи хотіли б ви продовжувати викладати Python? Тоді відвідайте <a href=\"https://www.python.org/about/gettingstarted/\" target=\"_blank\">веб-сайт Python</a> , щоб дізнатися, як розпочати роботу з іншим компілятором.\n\nТепер, коли ваші студенти мають базові знання про програмування загалом, ви також можете показати їм інші текстові мови програмування. Мова може змінитися, але концепції – ні, тому Hedy все одно надасть їм велику перевагу."
+    title: Після Хеді
+-   title: Відповіді до вправ
+    key: відповіді
+    intro: "Відповіді до всіх вправ можна знайти в публічному профілі користувача 'Hedy_answers'. Ми часто заохочуємо студентів використовувати власну творчість у відповідях, тому ці відповіді є лише орієнтиром щодо того, як може виглядати можлива правильна відповідь.\n\nЩоб перейти до профілю \"Hedy_answers\", натисніть <a href=\"https://hedy.org/user/hedy_answers\" target=\"_blank\">тут</a> ."
 -   title: Часті помилки
     key: типові_помилки
     intro: |-
-        Ви можете вчитися на своїх помилках, особливо в кодуванні!
-        Роблення помилок неминуче, і це чудова можливість вчитися, але для вчителів може бути складним завданням знайти правильне виправлення помилки!
-        Особливо тому, що коди стають все довшими в міру просування рівнів. Ось чому ми склали список із частими помилками на кожному рівні та способами їх вирішення.
+        Ви можете вчитися на своїх помилках, особливо в кодуванні! Роблення помилок неминуче, і це чудова нагода для навчання, але для вчителів може бути складно знайти правильне виправлення помилки! Особливо тому, що програми стають все довшими і довшими, оскільки студенти просуваються по рівнях. Ось чому ми склали список із частими помилками на кожному рівні та способами їх вирішення.
     levels:
     -   level: "1"
         sections:
-        -   title: Учні забувають ввести команди
+        -   title: Учні забувають вводити команди
             example:
                 error_text: Наприклад, вони вводять речення без використання друку.
                 error_code: Hedy не може це надрукувати
@@ -429,11 +263,11 @@ teacher-guide:
                 error_code: |-
                     {forward} 300
                     {turn} 90
-                solution_text: "На прикладі: Учні схильні думати, що команда turn не працює. Незважаючи на те, що вона працює, бо ви не можете побачити, як це відбувається за екраном. Щоб цього не сталося, використовуйте менші числа."
+                solution_text: "У цьому прикладі студенти схильні думати, що команда повороту не вдалася; незважаючи на те, що він зробив те, що мав. Що сталося, черепаха вийшла за рамки екрана. Щоб цього не сталося, використовуйте менші числа."
                 solution_code: |-
                     {forward} 100
                     {turn} 90
-        -   title: "Черепаха: Учні використовують команду backward, але її не існує"
+        -   title: "Черепаха: Учні використовують команду назад, але такої команди немає."
             example:
                 error_text: Backward не є командою.
                 error_code: назад 100
@@ -579,7 +413,7 @@ teacher-guide:
                     your_name {is} {ask} Who are you?
                     {add} your_name {to_list} names
                     {print} names {at} {random}
-        -   title: Students forget to use to/from in add/remove
+        -   title: Студенти забувають використовувати `{to}`/`{from}` у `{add}`/`{remove}`
             example:
                 error_text: Without to/from the add/remove command won't work.
                 error_code: |-
@@ -609,7 +443,7 @@ teacher-guide:
                     mood {is} {ask} 'How are you?'
         -   title: Students use the wrong quotation marks
             example:
-                error_text: It is important to start your lesson by checking if the students know how to type a quotation mark properly. Else they might use the "double quotes" or the skewed one `.
+                error_text: Важливо почати урок з перевірки того, чи вміють учні правильно друкувати лапки. На Hedy студенти можуть використовувати одинарні лапки ('') і подвійні лапки (""). З іншого боку, зворотні галочки не вважаються дійсними лапками (``).
                 error_code: |-
                     {print} `Welcome to the restaurant`
                     food {is} {ask} "What would you like to order?"
@@ -669,19 +503,19 @@ teacher-guide:
                 solution_code: |-
                     {if} name {is} Hedy {print} 'fun'
                     {else} {print} 'meh!
-        -   title: Students use long variable names containing two words
+        -   title: Учні використовують довгі імена змінних, що містять два або більше слів
             example:
-                error_text: A variable should be named with one word. You could use an underscore to connect two words. That counts as one.
+                error_text: Змінні в Hedy не можуть містити пробіли, тому, щоб використовувати кілька слів разом, студенти повинні з’єднати їх за допомогою підкреслення (_)
                 error_code: chosen door is ask  Which door do you pick?
-                solution_text: Додати підкреслення
+                solution_text: Додати підкреслення.
                 solution_code: chosen_door {is} {ask} 'which door do you pick?'
         -   title: Students want multiple answers to be correct
             example:
-                error_text: For example this student Hedy to tell all his friends that they are funny, but other classmates would be told that they are not.
-                error_code: "{if} name {is} Jesse, David, Souf print  You are funny  {else} {print} 'You are not funny'"
+                error_text: Наприклад, цей учень хоче, щоб Хеді сказала всім його друзям, що вони смішні, а іншим однокласникам – ні.
+                error_code: "{if} name {is} Джессі, Девід, Суф {print} «Ви смішний» {else} {print} «Ви не смішний»"
                 solution_text: |-
-                    You could use the `in` command for that. It is explained in a higher level, but it does already work in level 5.
-                    Another solution is to use multiple if commands and no else command. The disadvantage is that it won't tell the other classmates that they are not funny.
+                    Для цього можна використати команду `{in}`. Хоча це пояснюється на вищому рівні, воно вже працює на рівні 5. 
+                    Іншим рішенням є використання кількох команд `{if}` і жодної команди `{else}`. Недоліком є те, що він не скаже іншим однокласникам, що вони не смішні.
                 solution_code: |-
                     friends {is} Jesse, David, Souf
                     name {is} {ask} 'Who are you?'
@@ -817,9 +651,9 @@ teacher-guide:
         -   title: Students use the if command to check if the variable value is the same as the variable name
             example:
                 error_text: |-
-                    We have seen this mistake by some of our students. They make a password for their computer, but they make the password 'password'.
-                    In line 2 the computer is asked to check wheter the variable password is the same as the variable password, so itself. Which means the answer is alway yes.
-                    So with this code the answer will always be 'You can come in' no matter what the player fills in.
+                    Ми помітили типову помилку наших студентів: вони намагаються створити програму, яка перевіряє пароль, але роблять пароль «паролем». 
+                    У рядку 2 комп’ютеру пропонується перевірити, чи змінний пароль збігається зі змінним паролем, тобто сам. Це означає, що відповідь завжди так. 
+                    Тому з цим кодом відповідь завжди буде «Ви можете зайти» незалежно від того, що заповнює гравець.
                 error_code: |-
                     password {is} {ask} 'What is the password?'
                     {if} password {is} password
@@ -867,7 +701,7 @@ teacher-guide:
                         {print} 'Robin goes home'
     -   level: "10"
         sections:
-        -   title: Students so not use the for command correctly
+        -   title: Студенти неправильно використовують команду `{for}`
             example:
                 error_text: We often see that students try to print the list (in the example animals) instead of the items of the list.
                 error_code: |-
@@ -957,7 +791,7 @@ teacher-guide:
                 solution_code: "{print} 2.5 + 2.5"
     -   level: "13"
         sections:
-        -   title: Students confuse `and` with `or`
+        -   title: Студенти плутають `{and}` з `{or}`
             example:
                 error_text: Both commands might appear similar, but their functions are very different.
                 error_code: |-
@@ -1147,3 +981,809 @@ teacher-guide:
                 solution_code: |-
                     temperature = 25
                     {print}('It is ', temperature, 'degrees outside')
+home-sections:
+-   title: Текстове програмування стало простіше!
+    text: "Багато шкіл і вчителів у всьому світі хочуть навчити своїх учнів програмуванню. Спочатку це часто робиться за допомогою грайливих інструментів, від робота Beebot до\nScratch Junior або Scratch. Після використання таких інструментів діти часто хочуть перейти на більш потужні, текстові мови програмування, такі як Python.\n\nPython, однак, складний, оскільки він доступний лише англійською мовою, і вимагає від учнів вивчення складних концепцій програмування та синтаксису відразу.\nHedy — це простий спосіб розпочати роботу з мовами текстового програмування! Hedy є вільною у використанні, має відкритий вихідний код і відрізняється від будь-якої іншої мови текстового програмування трьома способами.\n\n1. Hedy є багатомовним, ви можете використовувати Hedy своєю рідною мовою\n2. Хеді є поступовим, тому ви можете вивчати одну концепцію та її синтаксис за раз\n3. Hedy створено для класу, дозволяючи вчителям повністю налаштувати досвід своїх учнів"
+-   title: Багатомовне програмування
+    text: У той час як майже всі текстові мови програмування мають ключові слова англійською мовою, такі як `for` або `repeat`, Hedy можна використовувати будь-якою мовою! Зараз ми підтримуємо 47 різних мов, включаючи голландську, іспанську, арабську, турецьку, китайську та хінді. Якщо ваша мова недоступна, ви завжди можете почати новий переклад.
+-   title: Крок за кроком навчання
+    text: Вивчення мови програмування може бути надзвичайно складним, оскільки учні повинні вивчати поняття (наприклад, if-else або цикли) і синтаксис (наприклад, лапки або круглі дужки) одночасно. У Hedy поняття спочатку вводяться з невеликим синтаксисом, а потім уточнюються. Науково перевірений спосіб навчання!
+-   title: Створено для класу
+    text: "Hedy підходить для дітей віком від 10 років і призначений для використання в класі.\nВчителі можуть використовувати наші безкоштовні вбудовані плани уроків, але також можуть створювати власні уроки та завантажувати їх в інтерфейс користувача Hedy."
+-   title: Програмування в контексті
+    text: Hedy показує програмування найширше, і його можна використовувати різноманітними захоплюючими способами. Hedy дозволяє створювати цифрові та інтерактивні історії, барвисті малюнки, які можна показувати на екрані, а також малювати ручним плотером або вишивати на сорочці, а також можна використовувати для створення ігор або програм за допомогою кнопок і дій на клавіатурі.
+-   title: Хеді вільна?
+    text: "так! Hedy є «відкритим кодом», що означає, що кожен може допомогти нам зробити Hedy кращим.\nВи можете знайти наш код на <a href=\"https://github.com/hedyorg/hedy\" target=\"_blank\">Github</a> .\nЯкщо вам подобається Hedy і ви хочете зробити внесок, ми приймаємо (і дуже вдячні за) <a href=\"https://github.com/sponsors/hedyorg\" target=\"_blank\">пожертви</a> !"
+-   title: Чи потрібно мені щось встановлювати?
+    text: Ні. Hedy працює в браузері, який є програмою, яку ви використовуєте для перегляду цієї сторінки. Ймовірно, Chrome, або Edge, або Firefox. Hedy також працює на телефонах і планшетах.
+-   title: Чи потрібен мені досвід програмування, щоб навчати з Hedy?
+    text: "Ні, це не потрібно. Усі поняття пояснюються на слайдах та в інтерфейсі для учнів.\nЯкщо ви створюєте безкоштовний обліковий запис учителя, ви також отримуєте доступ до посібника для вчителя з інформацією про те,\nяк викладати і часто робив помилки."
+start-sections:
+-   title: Початок роботи з Hedy
+    text: "Ласкаво просимо до Hedy, ми раді допомогти вам розпочати роботу з Hedy.\n\nУ нашому [Посібнику для вчителя] (https://www.hedy.org/for-teachers/manual) міститься детальний огляд усіх функцій, але на цій сторінці є короткий огляд, щоб ви знали, що це таке, перш ніж занурюватися.\n\nКілька основних моментів, які важливо знати:\n* Hedy — це інструмент, який допомагає керувати класом дитячого програмування! Ви можете створювати власні заняття, плани уроків і стежити за успіхами дітей.\n* Вам не потрібно знати багато програмування, якщо ви починаєте, Hedy працює крок за кроком, також для вас!\n* Ви можете використовувати Hedy своєю рідною мовою, оскільки її перекладено на багато інших мов!\n* Кожна дитина може програмувати!! Hedy особливо корисний для дітей, які мають проблеми із зором, оскільки він може читати вам матеріал вголос без використання миші.\n* Ми тут, щоб допомогти, ви можете знайти нас, наприклад, на [Discord](https://discord.gg/8yY7dEme9r) або ви можете [написати нам](hello@hedy.org)."
+-   text: "Різні вчителі в усьому світі висловили свою пристрасть до Хеді, як деякі поділилися з нами:\n\n*Неймовірно надихає! Дуже хороший спосіб зробити програмування набагато доступнішим для себе, а також для студентів. Дуже весело грати і багато можливостей для використання зі студентами. Я вважаю, що це дуже гарний інструмент! Я вважаю, що це цінний спосіб для дітей почати вивчати програмування. Python і кодування завжди були дуже захоплюючими, тому що бар’єр для навчання дуже високий. Зараз усе трохи нижче, і було пояснено, що насправді це може бути дуже легко. Мені сподобалося бачити, як Хеді намагається зробити програмування максимально доступним для користувачів!*\nНідерланди: навчаються вчителі математики (середня школа)\n\n*Простий інтерфейс і гарні приклади.* Вчитель: 3-6 класи (початкова)\n\n*Багатомовне програмування та лише сама концепція поступового програмування.* США: середня школа, 6-8 класи\n\n*Поступовий характер впровадження програмування.* Австралія: Середня школа\n\n*Продовжує автоматично.* Нідерланди: 2 HAVO-VWO\n\n*І те, що пояснення може бути голландською (а код англійською), і те, що воно створює все більше і більше можливостей.* Нідерланди: група плюс класу\n\n*Але Хеді та його поступові рівні... яка ідея, я хотів особисто подякувати вам за створення цього. Я не можу вам достатньо подякувати. Крім того, я ніколи не бачив такого рівня залученості та ентузіазму моїх студентів, як я бачив у Хеді. Ми досягли рівня 5 і плануємо витратити на це ще один тиждень у класах і лабораторіях, перш ніж розпочати роботу з Python.* Пакистан\n\n* «Реальність» програмування, воно нагадує те, як воно є в реальності.* Нідерланди: плюс група класів з 4 по 8\n\n*Покрокова діяльність. Розваги.* Нідерланди: 1e Усі рівні, 2e VWO/HAVO 2e VWO +, 3e HAVO 3e VWO\n\n*Мені дуже подобається Hedy, і він також гарно налаштований, тому його добре використовувати в початковій школі. Поступовий підхід Хеді працює дуже добре. Коротке пояснення на початку кожного рівня та короткі приклади програм допомагають дітям швидко зрозуміти, що нового в обраному рівні. Різні завдання, які діти можуть вибрати, також дуже добре працюють. Ви бачите, як діти вибирають завдання, які їм подобаються, і потім вони починають з ними працювати через рівні. Hedy — чудова розвага для дітей, які добре вміють програмувати та хочуть відчути смак справжньої мови програмування. Це хороша підготовка до середньої школи, оскільки там дається більше освіти з ІКТ.* Нідерланди: школа Oegstgeest Монтессорі\n\n*Конструкція така хороша.* Нідерланди: початкова середня школа HAVO-VWO\n\n*Я можу тримати темп класу.* Нідерланди: група 7 і 8\n\n![Фелієн навчає дітей](/images/teacherfeedback/Fkids1.JPG) *Фелієн навчає дітей* ![Діти вивчають Хеді](/images/teacherfeedback/Fkids2.JPG) *Діти вивчають Хеді*"
+    title: Вчителі про Хеді
+workbooks:
+    levels:
+    -   level: '1'
+        intro: "### Друк і введення\nДо кінця цього уроку ви зможете:\n* Напишіть код, який друкує текст\n* Створіть історію з введенням"
+        exercises:
+        -   type: текст
+            contents: "### Вправи \nКомп’ютер не робить щось сам по собі. Ви завжди повинні давати комп'ютеру завдання. Таке завдання називається командою. Щоб роздрукувати код, ми використовуємо команду `print`. \n\n### Друк тексту \nНа екрані ви щойно деактивували команду `print`. \nКоманда `print` друкує слово, якщо воно знаходиться в лапках. Наприклад, `print hello`. \n#### Вправа 1: Спрогнозуйте результат"
+        -   type: вихід
+            code: друк Привіт усім
+            answer: привіт всім
+            lines: '1'
+        -   type: вихід
+            code: друкувати goedemorgen
+            answer: goedemorgen
+            lines: '1'
+        -   type: текст
+            contents: "#### Вправа 2: Помилка? \nІноді помилка прокрадається у ваш код. Це нічого страшного, але тоді Хеді не зможе правильно прочитати ваш код. \nЯкі з цих програм, на вашу думку, є неправильними?"
+        -   type: MC-code
+            options:
+            -   правильно
+            -   неправильно
+            code: prnt Всім привіт!
+            answer: неправильно
+        -   code: друк друк
+            type: MC-code
+            options:
+            -   правильно
+            -   неправильно
+            answer: правильно
+        -   type: текст
+            contents: "### Запит на введення \n\nТільки текст трохи нудний. Ви також можете запитати _input_ в Hedy. Введення – це текст, який ви передаєте комп’ютеру. \nКомп’ютер запам’ятовує цей текст і може показати його вам пізніше. \nЦей код показує запитання \"Як вас звуть?\" \n\n```хеді \nзапитай Як тебе звати? \n``` \n\n### Показ введених даних \n\nКоманда ask зберігає відповідь, але ще не показує її. Для цього вам знадобиться команда `echo`. `echo` покаже відповідь у кінці речення. \nяк це:\n\n```хеді \nзапитай як тебе звати? \necho, тому ваше ім'я: \n``` \n\nЯкщо хтось на ім’я Олівія використає цей код, результат буде таким: \n\n``` \nтож тебе звати: Олівія \n``` \n\nМайте на увазі, що комп’ютер надрукує текст точно так, як ви його ввели. Тож із двокрапкою та однаковим використанням великих і малих літер! \n\n#### Вправа 3: Спрогнозуйте результат \n\nСпрогнозуйте результати цих програм. Зробіть вигляд, що ви вказали своє ім’я."
+        -   type: вихід
+            code: "запитай як тебе звати?\necho, тому ваше ім'я:"
+            answer: "тож твоє ім'я: **ім'я**"
+            lines: '2'
+        -   type: вихід
+            code: "запитати як тебе звуть\necho Приємно познайомитися,"
+            answer: Приємно познайомитися, **ім’я**
+            lines: '2'
+        -   type: текст
+            contents: "##### Вправа 4: Програмування слів\n\nКожен урок ми навчимося вивчати нові слова, в тому числі цей урок. Чи знаєте ви, які ці умови? Визначте його з власних слів."
+        -   type: define
+            word: головна
+            lines: '1'
+            answer: Завдання, яке ви надаєте на комп'ютер, наприклад, друк.
+        -   type: define
+            word: вхід
+            answer: Що ви введіть в комп'ютер, коли він показує запит екрана
+            lines: '1'
+        -   type: define
+            word: вихід
+            answer: Що він показує в правому екрані після того, як ви натиснете кнопку «біг».
+            lines: '1'
+        -   type: текст
+            contents: "###### Вправа 5: Команди\n\nМи навчились 3 команд: `sprint`, `ask` та `echo`. Що робити? Пояснення у власних словах."
+        -   answer: Показати текст на екрані.
+            type: define
+            word: команда `print`
+            lines: '1'
+        -   type: define
+            word: команда `ask`
+            lines: '1'
+            answer: Запитати користувача для входу.
+        -   type: define
+            word: команда `echo`
+            answer: Повторює введення користувача.
+            lines: '1'
+    -   exercises:
+        -   contents: "#### Використання змінних\n\nВи просто побачили команду `is``s` на екрані.\nКоманда `is` зберігає щось в пам'яті комп'ютера і надає йому назву. Ми називаємо цю змінну.\nЩо зберігається в зміні викликає значення змінної."
+            code: "ім'я\nназва друку"
+            type: текст
+        -   type: текст
+            contents: '##### Вправа 1: Позначити правильний шматок коду'
+        -   type: коло
+            goal: змінні
+            code: "ім'я Hedy\nдрук Ім'я\nвік 17\nдрук У віці"
+            answer: На всіх лініях
+        -   type: коло
+            goal: місця, де змінна встановлена ** ім'я *
+            code: "ім'я Hedy\nдрук Ім'я\nвік 17\nдрук У віці"
+            answer: Лінія 1 & 3
+        -   code: "ім'я Hedy\nдрук Ім'я\nвік 17\nдрук У віці"
+            type: коло
+            goal: місця, де змінні доступні* ім'я *
+            answer: Лінія 2 і 4
+        -   type: текст
+            contents: "##### Вправа 2: Попередити вихід\nПорада: чи є у вас жорсткий час прогнозування виходу? Слідкуйте за цими кроками:\n\n1,1 км Розмітка місця, де встановлюється змінна\n2,2 км Розмітка місця, де використовується змінна\n3. У Намалюйте лінію між двома місцями\n4. У Напишіть значення (що надходить після `is`) у місці, де використовується змінна."
+        -   type: вихідний
+            code: "ім'я\nдрук Ім'я користувача!"
+            answer: Чудова робота!
+            lines: '1'
+        -   type: вихід
+            code: "ім'я\nДрук Великий робот Мо!"
+            answer: Чудова робота!
+            lines: '1'
+        -   type: вихід
+            code: "first_name Лайла\nДрук Гармонійний перший_name!"
+            answer: Доброго ранку Лейла!
+            lines: '1'
+        -   type: текст
+            contents: "###### Вправа 3: помилка?\nЧитати програми ретельно. Які вони правильні?"
+        -   answer: Правильно
+            type: МЦ-код
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "ім'я користувача\nДрук Ім'я!"
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "ім'я\nдрук Доброго дня, ім'я!"
+            answer: Некоректний. Ім'я не встановлюється.
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "ім'я Johnson\nдрук Доброго дня!\nдрук Добрий день!"
+            answer: Правильно. Ви можете використовувати змінну декілька разів.
+        -   type: текст
+            contents: "###Покупка для входу\n\nПросто заощаджуйте текст не дуже корисний. На рівні 1 ми бачили код `ask`.\n\nВідтепер можна об’єднати `ask` з `is`, як це:"
+            code: ім'я Що таке ім'я?
+        -   type: текст
+            contents: "Українська Вхід\nЗ змінами, нам більше не потрібно `echo`. Просто використовуйте `print`, щоб показати відповідь."
+            code: "ім'я Що таке ім'я?\nдрук, так що ви назвали: ім'я"
+        -   contents: "Якщо хтось назвав Olivia, то вихід буде: Олива`\n##### Вправа 4: Попередити вихід\nВидача цих програм. Припинити використання власної назви."
+            type: текст
+        -   type: вихід
+            answer: "так що ви назвали: *** ім'я *"
+            code: "ім'я Що таке ім'я?\nдрук, так що ви назвали: ім'я"
+            lines: '1'
+        -   type: вихід
+            code: "настрій Як ви робите сьогодні?\nдрук Так ви відчуваєте настрій сьогодні"
+            answer: Так ви відчуваєте **mood *** сьогодні
+            lines: '1'
+        -   type: текст
+            contents: "###### Вправа 5: Програмування слів\nМи навчили нові слова цього рівня! Визначте їх у власних словах."
+        -   type: define
+            word: змінна
+            answer: Прізвище, ім'я, прізвище або вік.
+            lines: '1'
+        -   type: define
+            word: значення
+            answer: Що зберігається в змінній, як Ендрю або 12.
+            lines: '1'
+        -   type: define
+            word: налаштування
+            answer: Ви можете встановити змінну команду `is`
+            lines: '1'
+        -   type: define
+            word: інтерактивний
+            answer: Програма, в якій користувач може дати вхід.
+            lines: '1'
+        -   type: текст
+            contents: "###### Вправа 6: Команди\nМи навчили нових команд: `is` і `is ask`` разом. Що робити? Пояснення у власних словах."
+        -   type: define
+            word: команда `is`
+            answer: Збереження значення (після `is`) у змінній (до `is`)
+            lines: '1'
+        -   type: define
+            word: команда `is ask`
+            answer: Запитати користувача для введення та збереження його в змінній.
+            lines: '1'
+        level: '2'
+        intro: "### Варіанти\nДо закінчення цього уроку можна:\nІм'я * Збережіть щось в змінній\n* Створити історію або малюнок за допомогою змінних"
+    -   level: '3'
+        intro: "### Списки та випадання\nДо закінчення цього уроку можна:\nІм'я * Збережіть декілька елементів у змінній, це називається список.\n* Створіть історію, в якій буде відбуватися випадкові речі.\n* Створити малюнок, в якому буде намальовано випадково."
+        exercises:
+        -   type: текст
+            contents: "### Змінні \nВи щойно бачили, як команда `is` використовується зі списком. \nЯк і зі звичайною змінною, ми використовуємо `is`, щоб щось зберегти."
+            code: "друзі Мо, Лайла, Денна\nдрук Сьогодні Я побачу друзів у випадковому режимі"
+        -   type: текст
+            contents: '##### Вправа 1: Позначити правильний шматок коду'
+        -   type: коло
+            goal: список
+            code: "сьогодні понеділок\n1ХК, 1ХБ, 1Х\nКімнати 011, 304, 305, 501"
+            answer: класи та приміщення
+        -   type: коло
+            goal: place(s) де використовується текст зі списку
+            code: "1ХК, 1ХБ, 1Х\nДрукувати сьогодні класи в випадковому режимі!"
+            answer: Кінець лінії 2
+        -   type: текст
+            contents: "#### Вправа 2: Спрогнозуйте результат \nВам важко? Скористайтеся цими кроками знову, щоб передбачити результат змінної. \n1. Позначте місце, де встановлюється змінна \n2. Позначте місце, де використовується змінна \n3. Проведіть лінію між цими двома місцями \n4. Вибирайте випадковий елемент зі списку, якщо використовується `at` `random`."
+        -   type: вихід
+            code: "викладачі - Германи, Мербіс, Бачі, Senkal\nДрук Сьогодні викладачі з випадковими будуть викладати вас!"
+            answer: Сьогодні**вибрати вчителя** буде навчатися!
+            lines: '1'
+        -   type: вихід
+            code: "викладачі - Германи, Мербіс, Бачі, Senkal\nдруку Сьогодні вчитель є германами."
+            answer: Сьогодні вчителька є її германами.
+            lines: '1'
+        -   type: вихід
+            answer: Що гарно погода сьогодні!
+            lines: '1'
+            code: "сонячний, дощовий, хмарний, бурхливий\nдрук Що гарно погода сьогодні!"
+        -   type: текст
+            contents: "###### Вправа 3: помилка?\nЧитати програми ретельно. Які вони правильні?"
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "скелі - гальки, камені, бульйони\nДрук Я люблю програмування! Це скелі!"
+            answer: Некоректний. Ви не можете друкувати список
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "викладачі Германи\nдрук Це будуть викладачі на випадковому сьогодні"
+            answer: Некоректний. Вчителі не список
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "вчителі сонячні, дощові, хмарні, бурі\nдрук Це будуть викладачі на випадковому сьогодні"
+            answer: Правильно, комп'ютер не піклується, якщо змінна назва не має сенсу.
+        -   type: текст
+            contents: "##Пригоди\nЦе хороший час, щоб почати з цих пригод:\nВступ\nВипадковий\nДії\nСкеля, папір, ножиці\nМузика\nТовстушки\nРесторани\nХаунт Хаус\nДесерти"
+        -   type: текст
+            contents: "Українська Налаштування списку\n\nДо цього часу ми завжди встановлюємо наші списки на початку програми."
+            code: "відповіді так, немає, можливо\nдрук Відповіді на випадковому"
+        -   type: текст
+            code: "й\nтварини запитують Що таке звук?\nДодати тварину до тварин\nдрук Це було... тварин у випадковому"
+            contents: "Але іноді ви хочете, щоб ваш користувач додавати товари до списку.\nВи можете використовувати команду `add для цього. Ви також можете видалити товари зі списку з`їздом."
+        -   contents: '###### Вправа 4: виправити або неправильно?'
+            type: текст
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "літери a,b,c,d\nвидалити листи"
+            answer: Некоректний. Від`їзд з`їзду, не від`їзд до`їзду.
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "їжа піца, картопля, тако\nвидалення бургера з їжі"
+            answer: Ви можете видалити щось, що не на списку. Але це не має сенсу робити так
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "їжа піца, картопля, тако\nдодати піцу в їжу"
+            answer: Ви можете покласти щось на список двічі або кілька разів.
+        -   type: текст
+            contents: "###### Вправа 5: Напишіть код\nВізьміть хороший погляд на вихід і напишіть код матчу для нього.\n**Виконайте, що ваш код містить принаймні один випадковий вибір, тому не просто використовуйте друк! Готель"
+        -   type: вхід
+            answer: "кількість 1, 2, 3, 4, 5, 7, 8, 9, 10\nДрук Ласкаво просимо на Bingo ніч!\nдрук 3 щасливих чисел:\nДрук номерів у випадкових та друкованих номерах у випадкових та друкованих номерах у випадковому порядку"
+            output: "Ласкаво просимо на bingo ніч!<br>\n3 щасливих чисел:<br>\n5 і 3 і 10"
+        -   type: вхід
+            answer: "кіно є avengers, Барбі, усередині з\nдрук Ми будемо дивитися фільм на ніч.\nдрук Ми підберемо: фільми у випадковому режимі"
+            output: "Ми будемо дивитися фільм на ніч.<br>\nМи підберемо: Всередині"
+        -   type: текст
+            contents: "###### Вправа 6: Програмування слів\nМи дізналися про нові слова програмування знову! Визначте їх у власних словах."
+        -   type: define
+            word: список
+            answer: Змінна, в якій зберігаються декілька значень
+            lines: '1'
+        -   type: define
+            word: випадковій
+            answer: Підібрати комп'ютер.
+            lines: '1'
+        -   type: define
+            word: додати
+            answer: внесення чогось до списку
+            lines: '1'
+        -   type: текст
+            contents: "###### Вправа 7: Команди\nКоманда `is`s змінилася на цьому рівні, і ми дізналися нові команди.\nЩо робити? Пояснення щодо власних слів."
+        -   type: define
+            word: 'Команда `is` (Mind: `is` тепер може зробити декілька речей!)'
+            answer: Збереження значення (для є) в змінному або списку (після того, як це)
+            lines: '1'
+        -   type: define
+            word: 'Команда `add to` '
+            answer: 'Додати товар до списку. Це виглядає так: додати товар до списку'
+            lines: '1'
+        -   type: define
+            word: 'Команда `видалити з` '
+            answer: 'Видалити пункт зі списку. Це виглядає так: видаліть пункт зі списку'
+            lines: '1'
+        -   type: define
+            word: 'Команда `at випадковим`` '
+            answer: Виберіть випадковий елемент зі списку.
+            lines: '1'
+        -   type: текст
+            contents: '#### Яка ваша думка?'
+        -   type: питання
+            lines: '1'
+            text: Які вправи ви хотіли б краще в цьому рівні?
+        -   type: питання
+            lines: '5'
+            text: Що вам сподобалося про це вправи?
+        -   type: питання
+            lines: '1'
+            text: Які вправи ви хотіли б принаймні на цьому рівні?
+        -   text: Що не сподобалося про це вправи?
+            lines: '5'
+            type: питання
+    -   exercises:
+        -   type: текст
+            contents: "#### Оцінка ставок\n\nМи навчимося використовувати позначки цитат, коли текст повинен з'явитися буквально таким чином на екрані.\nВикористовуємо цінні знаки з `принтом` і `ask`."
+            code: "подруга запитує «що таке ім’я? Р\nДрук «Коло» Я зустрінемося з \"другою\""
+        -   type: текст
+            contents: "##### Вправа 1: Оздоблення коду.\nРобіть цю вправу в двох кроках:\n1,1 км Помістіть позначки цитати правильно в коді.\n2,2 км Ви це робили? Потім прогнозувати вихід цього коду."
+        -   type: вихід
+            answer: "Привіт всім!\nЛаскаво просимо до Hedy"
+            code: "друк Привіт всім!\nДрук Ласкаво просимо до Hedy"
+            lines: '2'
+        -   contents: Не забудьте зробити обидва кроки цієї вправи. Поставте котирування на ліву сторону і код на праву сторону.
+            type: текст
+        -   lines: '1'
+            type: вихід
+            code: "ім'я Hermans\nКласна кімната 305\nдрук Сьогодні урок є ім'ям в класі номерів!"
+            answer: Сьогодні урок - Германи в номері 305!
+        -   lines: '1'
+            code: "викладачі - Германи, Мербіс, Бачі, Senkal\nдруку Сьогодні викладачі випадкові є викладанням."
+            type: вихід
+            answer: Сьогодні Германи навчаються
+        -   type: вихід
+            code: "скелі - гальки, камені, бульйони\nДрук Я люблю програмування! Це скелі!"
+            lines: '1'
+            answer: Я люблю програмування! Скелі
+        -   answer: Прекрасна погода сьогодні!
+            type: вихід
+            code: "друк Прекрасна погода сьогодні!\nім'я Бозо"
+            lines: '1'
+        -   contents: "###### Вправа 2: помилка?\nЧитати програми ретельно. Які вони правильні?"
+            type: текст
+        -   options:
+            -   Правильно
+            -   Некоректний
+            type: MC-code
+            code: друк «Я зустрінемося з зоопарком»
+            answer: Некоректний. Ви не можете використовувати апотрофію, коли ви використовуєте одинарні лапки.
+        -   code: друк «Я бачив лами на зооо
+            answer: Некоректний. Вам потрібні знаки квотації в кінці вироку.
+            type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: друк "Я думаю, що я буду годувати лами"
+            answer: Корисно! Ви можете використовувати апотрофію при використанні подвійних лапок.
+        -   type: MC-code
+            answer: Корисно! Ви не повинні використовувати однакові значення цитати в кожному вирокі, але ми рекомендуємо це, хоча
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "друк «Лама просто дивиться на вулиці Р\nпринт \"Шух пригод\""
+        -   type: текст
+            contents: "#### Запитуйте\nНе забувайте також використовувати лапки після `запитати`!\n\n#### Вправа 3: Помилка?\nУважно читайте програми! Які з них правильні?"
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            answer: Некоректний. Пам'ятайте, що використовувати змінну з запитом!
+            code: попросити 'Ви бачите два кролики? Р
+        -   type: MC-code
+            answer: Некоректний. Вам потрібна пара цінних знаків.
+            options:
+            -   Правильно
+            -   Некоректний
+            code: naam запитати 'Що таке ім'я
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: власник попросить "Я, що куртка чи Луки?"
+            answer: Правильно.
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "власник попросить \"Я, що куртка чи Луки?\"\nдрук 'Це власник'"
+            answer: Некоректний. Власник слова буде друкувати, не значення змінної
+        -   type: текст
+            contents: "##### Вправа 4: Напишіть код\nДивитися на виході і скласти код фітинга."
+        -   answer: "друк 'Welcome to bingo ніч Р\nДрук «Веде перше число...! Р"
+            output: "Доброго дня!\nОсь перший номер..!"
+            type: вхід
+        -   answer: "друк 'Ми йдемо на кіно ніч Р\nфільм попросить «Що таке кіно? Р"
+            output: "Ми їдемо в кіно на ніч\nЩо таке кіно?"
+            type: вхід
+        -   type: текст
+            contents: "###### Вправа 5: Програмування слів\nВивчаємо нові слова програмування! Визначте їх у власних словах."
+        -   type: define
+            word: лапки
+            answer: Апотрофії, які ви використовуєте для друку або запитуючи щось.
+            lines: '1'
+        -   type: define
+            lines: '1'
+            answer: Якщо ви хочете друкувати текст на екрані буквально
+            word: як використовувати позначки квоти в Hedy?
+        -   type: текст
+            contents: "###### Вправа 6: Команди\nМи також дізналися про нові команди на рівні 4."
+        -   type: define
+            word: команда `clear`
+            answer: Empties екрана
+            lines: '1'
+        -   type: define
+            word: команда `color`
+            answer: зміни кольору черепахи
+            lines: '1'
+        -   type: текст
+            contents: '#### Що ти робиш?'
+        -   type: питання
+            text: Яка вправа вам подобається кращий цей рівень?
+            lines: '1'
+        -   type: питання
+            text: Що вам сподобалося про це?
+            lines: '5'
+        -   type: питання
+            text: Які вправи ви хотіли б принаймні цей рівень?
+            lines: '1'
+        -   type: питання
+            lines: '5'
+            text: Що вам не сподобалося?
+        intro: "##Оцінки котирування\nДо закінчення цього уроку можна:\n* Розумійте, чому значення цитати потрібні в програмі.\n* ставити позначки квоти в правильному місці.\n* Розумійте повідомлення про помилкове використання лапок."
+        level: '4'
+    -   level: '5'
+        intro: "## якщо інше\nДо закінчення цього уроку можна:\n* Дайте реагацію комп'ютера на інший вхід."
+        exercises:
+        -   contents: "Українська Вибір продукції\nДо сьогодні Він завжди буде працювати кожен і кожен рядок коду. Відтепер можна запустити лише певні лінії в певних випадках, з`ясними.\nВведіть номер мобільного, який Ви вказали при укладаннi договору з банком - для ідентифікації.\nУ цьому прикладі умовний `friend є Yasmine`."
+            type: текст
+            code: "повідомляємо, що Ваше ім’я?\nякщо друг Ясминовий друк \"Хі Ясмин!\" Я не маю на увазі"
+        -   type: текст
+            contents: "###### Вправа 1: Позначити умови\nЩо таке умовний? Позначте умови в наступних програмах!"
+        -   type: коло
+            goal: умовний
+            code: "сьогодні запитати 'Що дня це? Р\nякщо сьогодні friday друку 'Я' ще друк 'No'"
+            answer: сьогодні є friday
+        -   goal: умовний
+            type: коло
+            code: "сьогодні запитати 'Що сьогодні? Р\nякщо сьогодні є субота друку 'ні школа сьогодні! Р\nще друк \"Ви повинні піти в школу\""
+            answer: сьогодні середа
+        -   type: коло
+            goal: умовний
+            code: "вік запитати 'Як старий ти? Р\nякщо вік 16 друку 'Perfecto Р\nще друк - Ти занадто молодий! Р"
+            answer: вік 16
+        -   type: текст
+            contents: "##### Вправа 2: Позначити правильні лінії\nЯкий код буде ran? Визначте лише ті частини.\nДодайте, що сьогодні є friday і ви 12 років."
+        -   type: коло
+            goal: поштовий індекс* ім'я *
+            code: "сьогодні запитати 'Що сьогодні? Р\nякщо сьогодні friday друку 'Я' ще друк 'No'"
+            answer: друк 'Яй Р
+        -   type: коло
+            goal: поштовий індекс* ім'я *
+            answer: друк «Ви повинні піти в школу»
+            code: "сьогодні запитати 'Що сьогодні? Р\nякщо сьогодні є субота друку 'ні школа сьогодні! Р\nще друк \"Ви повинні піти в школу\""
+        -   code: "вік запитати 'Як старий ти? Р\nякщо вік 16 друку 'Perfecto Р\nще друк - Ти занадто молодий! Р"
+            type: коло
+            goal: поштовий індекс* ім'я *
+            answer: друк «Ви занадто молодий! Р
+        -   type: текст
+            contents: "###### Вправа 3: помилка?\nШановні друзі! Які вони правильні?"
+        -   options:
+            -   Правильно
+            -   Некоректний
+            type: MC-code
+            code: "вік запитати 'Як старий ти? Р\nЯкщо у віці 16 друку 'Право на!' ще 'Ви занадто молодий! Р"
+            answer: Некоректний. Немає `sprint` після `else`
+        -   code: "тварина запитує: \"Що це за тварина?\"\nякщо тварина лама, надрукуйте \"Bahhhhh\""
+            answer: Корисно! Не обов’язково потрібен `else`
+            type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: «Я так щасливий!»
+            answer: Корисно! Ви можете використовувати апотрофію при використанні подвійних лапок.
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "якщо ім'я Геди\nДрук 'Програмування весело! Р"
+            answer: Некоректний. Для того, щоб бути `is` в лінії frist.
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "попросити 'Що школа ви йдете до? Р\nякщо школа LK друку 'Я! Р"
+            answer: Некоректний. У першому рядку немає змінної.
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "кількість запитують \"як багато капібарів над ними?\"\nякщо сума 5 друку 'Наближається кількість капібарів. Р"
+            answer: Некоректний. Внутрішня сума друкується як текст.
+        -   type: текст
+            contents: "##### Вправа 4: Попередити вихід\nЩо буде вихід цих програм?\nЗверніть увагу! Іноді `random` використовується в програмі. Ви можете вибрати випадковий елемент самостійно.\nЦе означає багаторазові відповіді можна виправити!"
+        -   type: вихід
+            code: "викладачі - Германи, Мербіс, Бачі, Senkal\nвчителька є вчителями в випадковому порядку\nякщо вчитель є германи друку 'Хуай! Р"
+            answer: Хурай! або без вихідних
+            lines: '1'
+        -   code: "викладачі - Германи, Мербіс, Бачі, Senkal\nвчителька є вчителями в випадковому порядку\nЯкщо вчитель є германи друку 'То погано!' ще друк 'Гуорея! Р"
+            answer: Поганий! або Хурей!
+            lines: '1'
+            type: вихід
+        -   type: вихід
+            code: "кількість 1, 2, 3, 4, 5, 7, 8, 9, 10\nДрук «Welcome в bingo ніч! Р\nкількість чисел у випадковому режимі\nякщо номер 10 друку 'Я виграв!' ще друк 'Bummer Р"
+            answer: "Доброго дня!\nЯ завоював"
+            lines: '2'
+        -   type: вихід
+            code: "номер запитати 'Що таке улюблене число? Р\nякщо номер 10 друк 'Мінь теж! Р"
+            answer: Про нас або без вихідних
+            lines: '1'
+        -   type: текст
+            contents: "###### Вправа 5: Програмування слів\nМи навчили нові слова програмування цього уроку! Визначте їх у власних словах."
+        -   type: define
+            word: стан
+            answer: Що таке правда або помилково. Далі за `if`.
+            lines: '1'
+        -   type: текст
+            contents: "###### Вправа 6: Команди\nМи також навчили нових команд на рівні 5."
+        -   type: define
+            word: команда `if`
+            answer: Дециди, які код буде працювати. Якщо умовний є вірним, код за ним буде працювати.
+            lines: '1'
+        -   type: define
+            word: команда `else`
+            lines: '1'
+            answer: Дециди, які код буде працювати. Якщо умовний помилковий, код за ним буде працювати.
+        -   type: текст
+            contents: '#### Що ти робиш?'
+        -   type: питання
+            text: Яка вправа вам подобається кращий цей рівень?
+            lines: '1'
+        -   type: питання
+            lines: '5'
+            text: Що вам сподобалося про це?
+        -   type: питання
+            text: Які вправи ви хотіли б принаймні цей рівень?
+            lines: '1'
+        -   type: питання
+            text: Що вам не сподобалося?
+            lines: '5'
+    -   level: '6'
+        intro: "## Мафи\nДо закінчення цього уроку можна:\n* використання математики в Hedy"
+        exercises:
+        -   type: текст
+            code: друк "п'ять разів п'ять - ' 5 * 5
+            contents: "####Мафи\nЗдійснення розрахунків є важливим завданням для комп'ютерів.\n\nДодаток здійснюється за допомогою стандартного знака плюс: `5 + 5`.\nВідшкодування також здійснюється за допомогою звичайного знака мінуса: `5 - 5`.\nМи можемо самі зателефонувати одержувачу і узгодити зручний час і місце вручення квітів, а якщо необхідно, то збережемо сюрприз.\nВідділення виконано з війною вперед: `5 / 5`\n\nБудь ласка, зауважте, що код математики не потребує позначок розсилки."
+        -   type: текст
+            contents: "##### Вправа 1: Визначити вихід\nЩо ви думаєте про вихід цих програм?"
+        -   type: вихід
+            code: "друк 'два плюс десять ' 2 * 10\nдрук 5 * 5 ' - 30 мінус 5'\nдрук 10 / 2"
+            answer: "до 20\n25 - 30 хв 5\n5 хв"
+            lines: '3'
+        -   type: текст
+            contents: "##### Вправа 2: Матусі\nСлідкуйте за цими кроками, щоб завершити вправу:\n1,1 км Оздоблення програм за допомогою заповнення суми на лініях. Код має сенс.\n2. Готові? Заповніть те, що ви думаєте, що вихід коду буде."
+        -   code: "надрукувати \"п'ять плюс десять це\" ___\nвивести 'шість мінус п'ять є' ___\nprint 'одна сотня, поділена на п'ять, це ' ___\n___ __________________________ 4 * 12"
+            answer: "п'ять плюс десять 50\n6 хв\nп'ять - 20\nчотири рази дванадцять - 48"
+            lines: '4'
+            type: вихід
+        -   type: текст
+            contents: "### Вправа 2: Математика із запитом і змінними \nВи також можете зберегти суму в змінній, порівняти її з `ask` і запустити її з `if`. \nЗараз ми це попрактикуємо. \nСпрогнозуйте результати цих програм. \nКоли використовуються «запитати» та «випадковий», ви можете придумати власні відповіді."
+        -   type: вихід
+            code: "сума = 2 * 5\nДрук «Відповіді на цю суму»"
+            answer: Відповідь на цю суму 10
+            lines: '1'
+        -   type: вихід
+            code: "javaScript licenses API Веб-сайт Go1.13.8\nyour_answer = запитати 'Що таке 142 розділено на 2? Р\nякщо правильно_ Відповідає Ваш відгук\nДрук 'Велика робота Р\nще друк 'Буммер! Р"
+            answer: Чудова робота!
+            lines: '1'
+        -   type: вихід
+            answer: 'Скільки коштує 7 разів? (або будь-який інший номер зі списку: 2, 4, 6, 9, 11, 17)'
+            lines: '1'
+            code: "кількість 2, 4, 6, 7, 9, 11, 17\nкількість чисел у випадковому режимі\nдрук 'Як багато ' кількість ' разів 7? Р"
+        -   type: вихід
+            code: "улюблений запит «Що таке улюблене число? Р\nДрук '3 раз ' улюблений '' 3 * улюблений"
+            answer: 3 рази 6 (наприклад,) 18
+            lines: '1'
+        -   type: текст
+            contents: "#### Вправа 3: Вхід\nВи побачите вихід. Написати програму, яка може виробляти цей вихід.\nБудь ласка, зауважте: Кілька відповідей можна виправити. Виберіть те, що ви хочете, доки це правильно.\nНаповніть всі лінії, тому уважно огляньте на кількість ліній!"
+        -   type: вхід
+            output: 'Це дуже великий номер: 68'
+            answer: "'Це дуже великий номер:' 4*17"
+        -   type: вхід
+            output: 100 - відповідь на 1000/10.
+            answer: друк 1000/10 ' це відповідь на 1000/10. р
+        -   type: вхід
+            answer: "до 1 2 3 4 5+\nномер друку в випадковому * 7 ' випадковий кілька 7'"
+            output: 14 є випадковою множиною 7
+        -   type: текст
+            contents: "##### Вправа 4: Програмування слів\nМи навчимося використовувати нові ознаки в нашому коді. Які ознаки використовуються в цих випадках?"
+        -   type: define
+            word: час
+            answer: '*'
+            lines: '1'
+        -   type: define
+            word: поділитися
+            answer: /
+            lines: '1'
+        -   type: текст
+            contents: '#### Що ти думав?'
+        -   type: питання
+            text: Яка вправа вам подобається кращий цей рівень?
+            lines: '1'
+        -   type: питання
+            text: Що вам сподобалося про це?
+            lines: '5'
+        -   type: питання
+            text: Які вправи ви хотіли б принаймні цей рівень?
+            lines: '1'
+        -   type: питання
+            text: Що вам не сподобалося?
+            lines: '5'
+    -   exercises:
+        -   type: текст
+            contents: "####Повернення\nІноді ви хочете повторити рядок коду кілька разів, наприклад, в пісні або оповідання."
+            code: повторіть 5 разів друк "Бабі акула!" Р
+        -   type: текст
+            contents: "##### Вправа 1: Визначити вихід\nЩо буде вихід цих програм?"
+        -   type: вихід
+            code: повторити 3 рази друк 'Baby shark! Р
+            lines: '3'
+            answer: "Дитяча акула!\nДитяча акула!\nДитяча акула!"
+        -   type: вихід
+            code: повторіть 1 раз друкуйте "Хі кожен! Р
+            lines: '1'
+            answer: Привіт всім!
+        -   type: вихід
+            code: "до 4\nповторити час друку \"Чи всі Р"
+            answer: "Привіт всім!\nПривіт всім!\nПривіт всім!\nПривіт всім!"
+            lines: '4'
+        -   type: текст
+            contents: "### Вправа 2: Вхід\nВізьміть погляд на вихід. Написати програму, яка може бути включена до цього виходу.\n\nБудь ласка, зауважте: Кілька відповідей можна виправити. Виберіть те, що ви хочете, доки це правильно.\nНаповніть всі лінії, тому уважно огляньте на кількість ліній!\n"
+        -   type: вхід
+            answer: "друкувати «Хі кожен! Р\nповторити 2 рази друк 'Це один рядок. Р"
+            output: "Привіт всім!\nЦе одна лінія.\nЦе одна лінія."
+            lines: '2'
+        -   type: вхід
+            answer: "друк 'Це рядок 1'\nДрук 'Це рядок 2'\nДрук 'Це рядок 3'"
+            lines: '3'
+            output: "Це рядок 1\nЦе рядок 2\nЦе рядок 3"
+        -   type: текст
+            contents: "#### Вправа 3: Корисний або неправильний\nПрийміть обережний погляд на програми і вирішіть, якщо вони запускатимуть повідомлення про помилку або ні."
+        -   options:
+            -   Правильно
+            -   Некоректний
+            code: "друк «Принц зберіг кричущу за допомогу Р\nповторіть 3 рази «Допомога!» Р"
+            answer: Некоректний друк відсутні
+            type: MC-code
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            code: "про нас 100 р.\nповторити 3 рази перетворювати 90"
+            answer: Правильно
+        -   options:
+            -   Правильно
+            -   Некоректний
+            type: MC-code
+            code: "люди = mum, dad, emma, Софі\nповторити 7 раз друку «Чисті будуть зроблені чоловічим"
+            answer: Невірно, в випадковому режимі відсутні
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Некоректний
+            answer: Правильно
+            code: "параметри = 1, 2, 3, 4, 5, 6\nповторити 5 раз друку 'Ви кинули: ' варіанти в випадковому режимі"
+        -   type: текст
+            contents: "###### Вправа 6: Програмування слів\nМи дізналися про нове програмування! Пояснення у власних словах."
+        -   type: define
+            word: повторити
+            answer: повторення рядка кількох разів
+            lines: '1'
+        -   type: текст
+            contents: '#### Що ти думав?'
+        -   type: питання
+            text: Яка вправа вам подобається кращий цей рівень?
+            lines: '1'
+        -   type: питання
+            text: Що вам сподобалося про це?
+            lines: '5'
+        -   lines: '1'
+            type: питання
+            text: Які вправи ви хотіли б принаймні цей рівень?
+        -   lines: '5'
+            type: питання
+            text: Що вам не сподобалося?
+        level: '7'
+        intro: "## Повторити!\nДо закінчення цього уроку можна:\n* запустити рядок коду кілька разів"
+    -   level: '8'
+        intro: "## Повторіть!\nДо кінця цього уроку ви зможете:\n* повторення кількох рядків коду"
+        exercises:
+        -   type: текст
+            contents: "### Повторення \nМожливо, ви помітили, що раніше можна було повторити лише 1 рядок коду, дуже спрощено. \nЧасто вам потрібно повторити кілька рядків, щоб зробити більш складну програму. \nУ Hedy, а також у Python це робиться з відступом! \nВідступ означає початок рядка з кількох пробілів."
+            code: "повторити 5 разів\n    print 'Baby Shark!'"
+        -   type: текст
+            contents: "#### Вправа 1: Які рядки будуть повторюватися?\n\nПорада: уважно подивіться на відступ (рядок починається з пробілів)."
+        -   type: коло
+            goal: відступ
+            answer: Рядки 2 і 3
+            code: "повторити 3 рази\n    print 'Baby Shark!'\n    print 'Туду туту туду!'                  \nprint 'Baby Shark!'"
+        -   type: коло
+            answer: рядок 3
+            goal: відступ
+            code: "print 'Привіт!'\nповторити 2 рази\n    print 'Так, привіт усім'"
+        -   type: коло
+            goal: відступ
+            code: "ім'я запитайте \"Як вас звуть?\"\nякщо ім'я Хеді\n    надрукувати \"Так\"\nінше\n    надрукувати \"Ні\""
+            answer: Ніяких ліній! Існує відступ через if та else, але рядки не повторюватимуться.
+        -   contents: "#### Вправа 2: Спрогнозуйте результат\nЯкими будуть результати цих програм?"
+            type: текст
+        -   type: вихід
+            answer: "Привіт!\n:)"
+            code: "print 'Привіт!'\nповторити 1 раз \n    надрукувати ':)'"
+        -   answer: "Привіт!\n:(\n:(\n:(\n:(\n:(\nГотово!"
+            type: вихід
+            code: "print 'Привіт!'\nповторити 5 разів \n    надрукувати ':('\nнадрукувати 'Готово!'"
+        -   type: текст
+            contents: "## Якщо та ще \nПри використанні «if» і «else» вам також потрібен відступ. Таким чином ви можете виконати кілька рядків, коли умова є істинною або хибною. \n\n### Вправа 3: Спрогнозуйте результат \n\nСпрогнозуйте результати цих програм.\n"
+        -   lines: '1'
+            type: вихід
+            code: "ім'я запитайте \"Як вас звуть?\"\nякщо ім'я Хеді\n    надрукувати \"Так\"\nінше\n    надрукувати \"Ні\""
+            answer: Ні
+        -   answer: О ні!
+            lines: '2'
+            type: вихід
+            code: "числа 1, 2, 3, 4, 5, 6, 7\nвибір - випадкові числа\nякщо вибір п'ять\n    print 'Ура!'\n    print 'Ура!'\nінше\n    print 'О ні!'"
+        -   type: вихід
+            answer: "Ви кинули: < 1, 2, 3, 4, 5 або 6>\nГра закінчена\nВи кинули: < 1, 2, 3, 4, 5 або 6>\nГра закінчена\nВи кинули: < 1, 2, 3, 4, 5 або 6>\nГра закінчена"
+            lines: '6'
+            code: "кубики = 1, 2, 3, 4, 5, 6\nповторити 3 рази \n    вивести 'Ви кинули:' гральний кубик навмання\n    надрукувати «Гру закінчено»"
+        -   type: текст
+            contents: "### Вправа 4: Правильно чи неправильно?\nУважно перегляньте програми та вирішіть, чи викличуть вони повідомлення про помилку чи ні."
+        -   type: MC-code
+            code: "ім'я Германс\nякщо ім'я Senkal\n  print 'Ура!'\nінше\nдрук \"Не пощастило\""
+            answer: Неправильно, немає відступу після іншого
+            options:
+            -   Правильно
+            -   Невірно
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Невірно
+            code: "число 10\n  якщо число 5\nprint 'Ура!'\n  інше\nдрук \"Не пощастило\""
+            answer: Неправильно, відступ використано неправильно.
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Невірно
+            code: "люди = мама, тато, Емма, Софі\nповторити 7 разів print 'Посуд митимуть ' люди навмання"
+            answer: Неправильно, ви більше не можете використовувати команду повторення лише в одному рядку.
+        -   type: MC-code
+            options:
+            -   Правильно
+            -   Невірно
+            answer: добре
+            code: "день запитати \"Що це?\"\nякщо день п'ятниця\n    надрукувати 'Так!'"
+        -   type: текст
+            contents: "#### Вправа 5: Напишіть код\nУважно подивіться на вихід і напишіть для нього відповідний код. Якщо можливо, використовуйте «повторити».\n\nЗверніть увагу на кількість рядків, які потрібні вашому коду!"
+        -   type: введення
+            answer: "повторити 4 рази\n    друкувати \"Yoo Hoo!\""
+            output: "Yoo Hoo!\nYoo Hoo!\nYoo Hoo!\nYoo Hoo!"
+        -   type: введення
+            answer: "повторити 2 рази\n    print 'Ти спиш?'\nповторити 2 рази\n    друк «Брат Джон»\nповторити 2 рази\n    друкувати 'Ранкові дзвони дзвонять!'\nповторити 2 рази\n    друкувати \"Ding Dang Dong!\""
+            output: "Ви спите?\nВи спите?\nБрат Джон\nБрат Джон\nРанкові дзвони лунають!\nРанкові дзвони лунають!\nДінь Данг Донг\nДінь Данг Донг"
+        -   type: текст
+            contents: "#### Вправа 6: Програмування слів\nМи знову вивчили новий термін програмування: відступ! Поясніть це своїми словами."
+        -   type: визначити
+            word: Як створити відступ?
+            answer: за початок рядка з кількох пробілів
+            lines: '1'
+        -   type: текст
+            contents: '#### Що ви думали?'
+        -   type: запитання
+            text: Яка вправа вам найбільше сподобалася на цьому рівні?
+            lines: '1'
+        -   text: Що вам там сподобалось?
+            type: запитання
+            lines: '5'
+        -   text: Яка вправа цього рівня вам сподобалася найменше?
+            lines: '1'
+            type: запитання
+        -   type: запитання
+            text: Що тобі в ньому не сподобалось?
+            lines: '5'
